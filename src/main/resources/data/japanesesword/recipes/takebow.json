@@ -2,14 +2,11 @@
   "group": "buki",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "012",
+    " 12",
     "3 5",
     " 78"
   ],
   "key": {
-    "0": {
-      "item": "minecraft:spruce_wood"
-    },
     "1": {
       "item": "minecraft:bamboo"
     },
