@@ -1,0 +1,3471 @@
+{
+  "mod_elements": [
+    {
+      "name": "G",
+      "type": "gui",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "g"
+    },
+    {
+      "name": "J",
+      "type": "tool",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "j"
+    },
+    {
+      "name": "Entyant",
+      "type": "enchantment",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entyant"
+    },
+    {
+      "name": "Buki",
+      "type": "tab",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buki"
+    },
+    {
+      "name": "Test",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bou",
+      "type": "rangeditem",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bou"
+    },
+    {
+      "name": "Takebow",
+      "type": "recipe",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "takebow"
+    },
+    {
+      "name": "Katana",
+      "type": "recipe",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "katana"
+    },
+    {
+      "name": "Takebow2",
+      "type": "recipe",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "takebow_2"
+    },
+    {
+      "name": "Tantou",
+      "type": "tool",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tantou"
+    },
+    {
+      "name": "Tantou1",
+      "type": "recipe",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tantou_1"
+    },
+    {
+      "name": "Nannka",
+      "type": "item",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nannka"
+    },
+    {
+      "name": "Kill",
+      "type": "enchantment",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill"
+    },
+    {
+      "name": "Kill1",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JapaneseSword",
+      "type": "tool",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "japanese_sword"
+    },
+    {
+      "name": "Tubanoatukatana",
+      "type": "tool",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tubanoatukatana"
+    },
+    {
+      "name": "Tubatukikatana",
+      "type": "recipe",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tubatukikatana"
+    },
+    {
+      "name": "Saikyounokatana",
+      "type": "recipe",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "saikyounokatana"
+    },
+    {
+      "name": "Goukinntou",
+      "type": "tool",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "goukinntou"
+    },
+    {
+      "name": "Kazarinoarukataba",
+      "type": "tool",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kazarinoarukataba"
+    },
+    {
+      "name": "Kazarigaatukatana",
+      "type": "recipe",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kazarigaatukatana"
+    },
+    {
+      "name": "Tetotokin",
+      "type": "item",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tetotokin"
+    },
+    {
+      "name": "Goukin",
+      "type": "item",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "goukin"
+    },
+    {
+      "name": "Goukintukurikata",
+      "type": "recipe",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "goukintukurikata"
+    },
+    {
+      "name": "Goukintou",
+      "type": "recipe",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "goukintou"
+    },
+    {
+      "name": "Tetutokinnoresipi",
+      "type": "recipe",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tetutokinnoresipi"
+    },
+    {
+      "name": "Tetutokinnoresipi2",
+      "type": "recipe",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tetutokinnoresipi_2"
+    },
+    {
+      "name": "Hannmaa",
+      "type": "tool",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hannmaa"
+    },
+    {
+      "name": "Doku",
+      "type": "plant",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doku"
+    },
+    {
+      "name": "Doku2",
+      "type": "potioneffect",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doku_2"
+    },
+    {
+      "name": "Doku3",
+      "type": "potion",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doku_3"
+    },
+    {
+      "name": "Doku2posiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "doku_2posiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Naguru",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naguru",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Resipu",
+      "type": "recipe",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "resipu"
+    },
+    {
+      "name": "Nagenaihu",
+      "type": "rangeditem",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nagenaihu"
+    },
+    {
+      "name": "Nagenaihuresipu",
+      "type": "recipe",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nagenaihuresipu"
+    },
+    {
+      "name": "Naihu",
+      "type": "rangeditem",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naihu"
+    },
+    {
+      "name": "Hitokiri",
+      "type": "achievement",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hitokiri"
+    },
+    {
+      "name": "Naihuresipi",
+      "type": "recipe",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naihuresipi"
+    },
+    {
+      "name": "Naihunage",
+      "type": "achievement",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naihunage"
+    },
+    {
+      "name": "Naihunege",
+      "type": "recipe",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naihunege"
+    },
+    {
+      "name": "Nanka",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nanka",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JapaneseSwordKongQiwoYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "japanese_sword_kong_qiwo_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "R",
+      "type": "keybind",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "r"
+    },
+    {
+      "name": "Bakudan",
+      "type": "enchantment",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bakudan"
+    },
+    {
+      "name": "Bakudann",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bakudann",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JapaneseSwordenteiteigaaitemuwoZhentutaShi",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "japanese_swordenteiteigaaitemuwo_zhentuta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Youmu",
+      "type": "livingentity",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "youmu"
+    },
+    {
+      "name": "Zanngeki",
+      "type": "particle",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zanngeki"
+    },
+    {
+      "name": "YoumuenteiteigaSiWangsitaShi",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "youmuenteiteiga_si_wangsita_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bukinanigasuki",
+      "type": "achievement",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bukinanigasuki"
+    },
+    {
+      "name": "Tap",
+      "type": "overlay",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tap"
+    },
+    {
+      "name": "Yuugenkenn",
+      "type": "tool",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuugenkenn"
+    },
+    {
+      "name": "YuugenkennKongQiwoYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuugenkenn_kong_qiwo_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "KesukomandogaShiXingsaretaShi",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kesukomandoga_shi_xingsareta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Yuugennkenn",
+      "type": "recipe",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuugennkenn"
+    },
+    {
+      "name": "AkigaYasaretatoki",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "akiga_yasaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A",
+      "type": "keybind",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a"
+    },
+    {
+      "name": "Kesu",
+      "type": "command",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kesu"
+    },
+    {
+      "name": "YuugenkennenteiteigaaitemuwoZhentutaShi",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yuugenkennenteiteigaaitemuwo_zhentuta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tekitou",
+      "type": "armor",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tekitou",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Yaa",
+      "type": "livingentity",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yaa"
+    },
+    {
+      "name": "Kill2posiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
+      "type": "procedure",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_2posiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kill2",
+      "type": "potioneffect",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_2"
+    },
+    {
+      "name": "Nannk",
+      "type": "rangeditem",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nannk"
+    },
+    {
+      "name": "Nanka8",
+      "type": "block",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nanka_8"
+    },
+    {
+      "name": "Ginn",
+      "type": "item",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gin"
+    },
+    {
+      "name": "Gin",
+      "type": "recipe",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gin"
+    },
+    {
+      "name": "Ginnburokku",
+      "type": "block",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ginnburokku"
+    },
+    {
+      "name": "TekitouherumetutonoMeiteitukunoibento",
+      "type": "procedure",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tekitouherumetutono_meiteitukunoibento",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TekitoutiesutopuretonoMeiteitukunoibento",
+      "type": "procedure",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tekitoutiesutopuretono_meiteitukunoibento",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TekitoureginsunoMeiteitukunoibento",
+      "type": "procedure",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tekitoureginsuno_meiteitukunoibento",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TekitoubutunoMeiteitukunoibento",
+      "type": "procedure",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tekitoubutuno_meiteitukunoibento",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tinotorikata",
+      "type": "recipe",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tinotorikata"
+    },
+    {
+      "name": "Kuroyoumu",
+      "type": "livingentity",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kuroyoumu"
+    },
+    {
+      "name": "Sakuya",
+      "type": "livingentity",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sakuya"
+    },
+    {
+      "name": "Naihu2",
+      "type": "tool",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "naihu_2"
+    },
+    {
+      "name": "Ginyade",
+      "type": "armor",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ginyade",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Tidaisuki",
+      "type": "achievement",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tidaisuki"
+    },
+    {
+      "name": "TiShiLiaowoShibetatoki",
+      "type": "procedure",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ti_shi_liaowo_shibetatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ha",
+      "type": "tool",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ha"
+    },
+    {
+      "name": "HaturuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "haturuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Remiria",
+      "type": "livingentity",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "remiria"
+    },
+    {
+      "name": "Huran",
+      "type": "livingentity",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "huran"
+    },
+    {
+      "name": "Nannnnnka",
+      "type": "enchantment",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nannnnnka"
+    },
+    {
+      "name": "Nannnnka",
+      "type": "procedure",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nannnnka",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Nannnka",
+      "type": "enchantment",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flame"
+    },
+    {
+      "name": "Nannnnnnka",
+      "type": "procedure",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nannnnnnka",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ginnbunnkai",
+      "type": "recipe",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ginnbunnkai"
+    },
+    {
+      "name": "Ginnburokkuturikata",
+      "type": "recipe",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ginnburokkuturikata"
+    },
+    {
+      "name": "Saisei",
+      "type": "enchantment",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "saisei"
+    },
+    {
+      "name": "Saiseinakami",
+      "type": "procedure",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "saiseinakami",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tera",
+      "type": "structure",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tera"
+    },
+    {
+      "name": "Kurutaimunasi",
+      "type": "potioneffect",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kurutaimunasi"
+    },
+    {
+      "name": "WazakigaYasaretatoki",
+      "type": "procedure",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wazakiga_yasaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Waza",
+      "type": "keybind",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "waza"
+    },
+    {
+      "name": "Noroharetakatana",
+      "type": "tool",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "motonokatana"
+    },
+    {
+      "name": "Haka666",
+      "type": "structure",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "haka_666"
+    },
+    {
+      "name": "Kanata",
+      "type": "procedure",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kanata",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NoroinokatanaturuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noroinokatanaturuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NoroinokatanaKongQiwoYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noroinokatana_kong_qiwo_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Migikurikkiu",
+      "type": "procedure",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "migikurikkiu",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NoroharetakatanamobugaturudeGongJisaretatoki",
+      "type": "procedure",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noroharetakatanamobugaturude_gong_jisaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "I",
+      "type": "procedure",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gnoyatudesu",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hon",
+      "type": "item",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hon"
+    },
+    {
+      "name": "C",
+      "type": "procedure",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "c",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "F",
+      "type": "procedure",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "f",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "H",
+      "type": "procedure",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "h",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "B",
+      "type": "gui",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "b"
+    },
+    {
+      "name": "Mint",
+      "type": "armor",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mint",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Honn",
+      "type": "item",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "honn"
+    },
+    {
+      "name": "Syodan",
+      "type": "achievement",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "syodan"
+    },
+    {
+      "name": "Tyudan",
+      "type": "achievement",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tyudan"
+    },
+    {
+      "name": "Bokutou",
+      "type": "tool",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bokutou"
+    },
+    {
+      "name": "Bokutouresipu",
+      "type": "recipe",
+      "sortid": 125,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bokutouresipu"
+    },
+    {
+      "name": "Daiazyui",
+      "type": "item",
+      "sortid": 126,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "daiazyui"
+    },
+    {
+      "name": "Daiazyoi",
+      "type": "block",
+      "sortid": 127,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "daiazyoi"
+    },
+    {
+      "name": "Nezarazyoiyi",
+      "type": "block",
+      "sortid": 129,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nezarazyoiyi"
+    },
+    {
+      "name": "Daiazyuiresipu",
+      "type": "recipe",
+      "sortid": 130,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "daiazyuiresipu"
+    },
+    {
+      "name": "Daiazyuiresipu1",
+      "type": "recipe",
+      "sortid": 131,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "daiazyuiresipu_1"
+    },
+    {
+      "name": "Nezarazyoui",
+      "type": "recipe",
+      "sortid": 132,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nezarazyoui"
+    },
+    {
+      "name": "Nezara",
+      "type": "recipe",
+      "sortid": 133,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nezara"
+    },
+    {
+      "name": "E",
+      "type": "recipe",
+      "sortid": 134,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e"
+    },
+    {
+      "name": "Nezarazyouigokan",
+      "type": "armor",
+      "sortid": 135,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nezarazyouigokan",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "E1",
+      "type": "recipe",
+      "sortid": 136,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_1"
+    },
+    {
+      "name": "E2",
+      "type": "recipe",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_2"
+    },
+    {
+      "name": "E3",
+      "type": "recipe",
+      "sortid": 138,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_3"
+    },
+    {
+      "name": "W1",
+      "type": "recipe",
+      "sortid": 139,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "w_1"
+    },
+    {
+      "name": "W",
+      "type": "recipe",
+      "sortid": 140,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "w"
+    },
+    {
+      "name": "W2",
+      "type": "recipe",
+      "sortid": 141,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "w_2"
+    },
+    {
+      "name": "W3",
+      "type": "recipe",
+      "sortid": 142,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "w_3"
+    },
+    {
+      "name": "E4",
+      "type": "recipe",
+      "sortid": 143,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "e_4"
+    },
+    {
+      "name": "Daiakatana",
+      "type": "tool",
+      "sortid": 144,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "daiakatana"
+    },
+    {
+      "name": "Dkr",
+      "type": "recipe",
+      "sortid": 145,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dkr"
+    },
+    {
+      "name": "Nezaraitokatana",
+      "type": "tool",
+      "sortid": 146,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nezaraitokatana"
+    },
+    {
+      "name": "Kyoukadaiyamonndonokatana",
+      "type": "tool",
+      "sortid": 147,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kyoukadaiyamonndonokatana"
+    },
+    {
+      "name": "Kyoukanezaraitonokatana",
+      "type": "tool",
+      "sortid": 148,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kyoukanezaraitonokatana"
+    },
+    {
+      "name": "Nk",
+      "type": "recipe",
+      "sortid": 149,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nk"
+    },
+    {
+      "name": "W4",
+      "type": "recipe",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "w_4"
+    },
+    {
+      "name": "N",
+      "type": "item",
+      "sortid": 151,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "n"
+    },
+    {
+      "name": "Noro",
+      "type": "procedure",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noro",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Supuidokyouka",
+      "type": "potioneffect",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "supuidokyouka"
+    },
+    {
+      "name": "Haato",
+      "type": "potioneffect",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "haato"
+    },
+    {
+      "name": "HaatoposiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
+      "type": "procedure",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "haatoposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Norooinokatana",
+      "type": "tool",
+      "sortid": 157,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "norooinokatana"
+    },
+    {
+      "name": "Norinanokore",
+      "type": "procedure",
+      "sortid": 158,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "norinanokore",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Poizunsword",
+      "type": "tool",
+      "sortid": 159,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "poizunsword"
+    },
+    {
+      "name": "PoizunswordKongQiwoYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 159,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "poizunsword_kong_qiwo_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PoizunswordmobugaturudeGongJisaretatoki",
+      "type": "procedure",
+      "sortid": 160,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "poizunswordmobugaturude_gong_jisaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hon2",
+      "type": "item",
+      "sortid": 162,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hon_2"
+    },
+    {
+      "name": "Hon3",
+      "type": "item",
+      "sortid": 163,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hon_3"
+    },
+    {
+      "name": "Hon4",
+      "type": "item",
+      "sortid": 164,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hon_4"
+    },
+    {
+      "name": "Honn1",
+      "type": "recipe",
+      "sortid": 165,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "honn_1"
+    },
+    {
+      "name": "Honn2",
+      "type": "recipe",
+      "sortid": 166,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "honn_2"
+    },
+    {
+      "name": "Honn3",
+      "type": "recipe",
+      "sortid": 167,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "honn_3"
+    },
+    {
+      "name": "Honnnn",
+      "type": "recipe",
+      "sortid": 168,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "honnnn"
+    },
+    {
+      "name": "Zyoudan",
+      "type": "achievement",
+      "sortid": 169,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zyoudan"
+    },
+    {
+      "name": "Ti",
+      "type": "item",
+      "sortid": 170,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ti"
+    },
+    {
+      "name": "Yabaiaitemu",
+      "type": "fluid",
+      "sortid": 171,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yabaiaitemu",
+      "metadata": {
+        "gb": true
+      }
+    },
+    {
+      "name": "No",
+      "type": "gui",
+      "sortid": 172,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "no"
+    },
+    {
+      "name": "Y",
+      "type": "villagertrade",
+      "sortid": 173,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "y"
+    },
+    {
+      "name": "M",
+      "type": "procedure",
+      "sortid": 174,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "m",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "M1",
+      "type": "procedure",
+      "sortid": 175,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "m_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "M2",
+      "type": "procedure",
+      "sortid": 176,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "m_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NorooinokatanaenteiteigaaitemuwoZhentutaShi",
+      "type": "procedure",
+      "sortid": 177,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "norooinokatanaenteiteigaaitemuwo_zhentuta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "M3",
+      "type": "procedure",
+      "sortid": 178,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "m_3",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Nannnkaa",
+      "type": "particle",
+      "sortid": 179,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nannnkaa"
+    },
+    {
+      "name": "MusucdiscUN",
+      "type": "musicdisc",
+      "sortid": 180,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "musucdisc_un"
+    },
+    {
+      "name": "Musucdiscti",
+      "type": "musicdisc",
+      "sortid": 182,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "musucdiscti"
+    },
+    {
+      "name": "Mcsucdiscne",
+      "type": "musicdisc",
+      "sortid": 183,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mcsucdiscne"
+    },
+    {
+      "name": "Mcsucdiscka",
+      "type": "musicdisc",
+      "sortid": 184,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mcsucdiscka"
+    },
+    {
+      "name": "Mcsucdisctu",
+      "type": "musicdisc",
+      "sortid": 185,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mcsucdisctu"
+    },
+    {
+      "name": "Arrow1ehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 186,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arrow_1ehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Arrow1",
+      "type": "potioneffect",
+      "sortid": 186,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arrow_1"
+    },
+    {
+      "name": "Mcsucdesicna",
+      "type": "musicdisc",
+      "sortid": 187,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mcsucdesicna"
+    },
+    {
+      "name": "Isei",
+      "type": "structure",
+      "sortid": 188,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "isei"
+    },
+    {
+      "name": "A1YuanJuLiWuQigaLiYongsaretaShi",
+      "type": "procedure",
+      "sortid": 189,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_1_yuan_ju_li_wu_qiga_li_yongsareta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A1",
+      "type": "rangeditem",
+      "sortid": 189,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_1"
+    },
+    {
+      "name": "K",
+      "type": "procedure",
+      "sortid": 190,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "k",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kunoyoumu",
+      "type": "gui",
+      "sortid": 190,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kunoyoumu"
+    },
+    {
+      "name": "Kuyoumu",
+      "type": "livingentity",
+      "sortid": 190,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kuyoumu"
+    },
+    {
+      "name": "Mcsucdiscko",
+      "type": "musicdisc",
+      "sortid": 191,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mcsucdiscko"
+    },
+    {
+      "name": "A2",
+      "type": "gui",
+      "sortid": 192,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_2"
+    },
+    {
+      "name": "A3",
+      "type": "procedure",
+      "sortid": 193,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_3",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A4",
+      "type": "procedure",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_4",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A5Youkuritukusitatoki",
+      "type": "procedure",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_5_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A5",
+      "type": "item",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_5"
+    },
+    {
+      "name": "A6",
+      "type": "recipe",
+      "sortid": 196,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_6"
+    },
+    {
+      "name": "Kama",
+      "type": "tool",
+      "sortid": 197,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kama"
+    },
+    {
+      "name": "KamaYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 197,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kama_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kuso",
+      "type": "particle",
+      "sortid": 198,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kuso"
+    },
+    {
+      "name": "Tuki",
+      "type": "particle",
+      "sortid": 199,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tuki"
+    },
+    {
+      "name": "Noroi",
+      "type": "tool",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noroi"
+    },
+    {
+      "name": "NoroiYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noroi_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NoKamaroi",
+      "type": "tool",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "no_kamaroi"
+    },
+    {
+      "name": "NoKamaroiYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "no_kamaroi_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kennkaku",
+      "type": "achievement",
+      "sortid": 202,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kennkaku"
+    },
+    {
+      "name": "Damezinasi",
+      "type": "potioneffect",
+      "sortid": 203,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "damezinasi"
+    },
+    {
+      "name": "NoroimobugaturudeGongJisaretatoki",
+      "type": "procedure",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noroimobugaturude_gong_jisaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NoroituruwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "noroituruwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NoKamaroituruwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 205,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "no_kamaroituruwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Atoti",
+      "type": "structure",
+      "sortid": 206,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atoti"
+    },
+    {
+      "name": "Airbougu",
+      "type": "armor",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "airbougu",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Booktokubetu",
+      "type": "item",
+      "sortid": 210,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "booktokubetu"
+    },
+    {
+      "name": "Bookash",
+      "type": "item",
+      "sortid": 211,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bookash"
+    },
+    {
+      "name": "Kamanoyotei",
+      "type": "rangeditem",
+      "sortid": 212,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kamanoyotei"
+    },
+    {
+      "name": "KamanoyoteiFeibiDaoJugaFeindeiruJian",
+      "type": "procedure",
+      "sortid": 213,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kamanoyotei_feibi_dao_juga_feindeiru_jian",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NoKamaroienteiteigaaitemuwoZhentutaShi",
+      "type": "procedure",
+      "sortid": 214,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "no_kamaroienteiteigaaitemuwo_zhentuta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bookblood",
+      "type": "item",
+      "sortid": 215,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bookblood"
+    },
+    {
+      "name": "Nagerukatana",
+      "type": "rangeditem",
+      "sortid": 216,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nagerukatana"
+    },
+    {
+      "name": "Otachi",
+      "type": "tool",
+      "sortid": 218,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "otachi"
+    },
+    {
+      "name": "OtachibloodYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 219,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "otachiblood_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OtachibloodenteiteigaaitemuwoZhentutaShi",
+      "type": "procedure",
+      "sortid": 220,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "otachibloodenteiteigaaitemuwo_zhentuta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Nagenaihuto",
+      "type": "procedure",
+      "sortid": 221,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nagenaihuto",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Otachiresipi",
+      "type": "recipe",
+      "sortid": 222,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "otachiresipi"
+    },
+    {
+      "name": "KanasibariehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 223,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kanasibariehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kanasibari",
+      "type": "potioneffect",
+      "sortid": 223,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kanasibari"
+    },
+    {
+      "name": "Ancientbooks",
+      "type": "item",
+      "sortid": 224,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancientbooks"
+    },
+    {
+      "name": "AncientbooksaitemuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 225,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancientbooksaitemuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Otachibloodcurse",
+      "type": "tool",
+      "sortid": 226,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "otachibloodcurse"
+    },
+    {
+      "name": "Axekatana",
+      "type": "tool",
+      "sortid": 227,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "axekatana"
+    },
+    {
+      "name": "Turuhasi",
+      "type": "tool",
+      "sortid": 228,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "turuhasi"
+    },
+    {
+      "name": "Syabel",
+      "type": "tool",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "syabel"
+    },
+    {
+      "name": "Turuhasi1",
+      "type": "tool",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "turuhasi_1"
+    },
+    {
+      "name": "Axesword",
+      "type": "tool",
+      "sortid": 231,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "axesword"
+    },
+    {
+      "name": "Sukop",
+      "type": "tool",
+      "sortid": 232,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sukop"
+    },
+    {
+      "name": "Ok",
+      "type": "villagertrade",
+      "sortid": 233,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ok"
+    },
+    {
+      "name": "Katanakatana",
+      "type": "tool",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "katanakatana"
+    },
+    {
+      "name": "Resipuno",
+      "type": "recipe",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "resipuno"
+    },
+    {
+      "name": "KatanakatanaYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "katanakatana_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "KatanakatanaturuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "katanakatanaturuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "KatanakatanapureiyagaShiYongwoTingZhisitaShi",
+      "type": "procedure",
+      "sortid": 237,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "katanakatanapureiyaga_shi_yongwo_ting_zhisita_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MutekiposiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
+      "type": "procedure",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutekiposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MutekiehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mutekiehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Muteki",
+      "type": "potioneffect",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "muteki"
+    },
+    {
+      "name": "EffectehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 239,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "effectehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Effect",
+      "type": "potioneffect",
+      "sortid": 240,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "effect"
+    },
+    {
+      "name": "Youyoumu",
+      "type": "livingentity",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "youyoumu"
+    },
+    {
+      "name": "Katana2",
+      "type": "procedure",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "katana_2",
+      "metadata": {
+        "return_type": "logic",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Zanngekimob",
+      "type": "livingentity",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zanngekimob"
+    },
+    {
+      "name": "ZanngekimobenteiteigasuponsitaShi",
+      "type": "procedure",
+      "sortid": 243,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zanngekimobenteiteigasuponsita_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "YouyoumuenteiteinotitukuGengXinShi",
+      "type": "procedure",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "youyoumuenteiteinotituku_geng_xin_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Katana3",
+      "type": "procedure",
+      "sortid": 244,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "katana_3",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "kaunnto",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "nanka",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "nanka1",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "nanka2",
+      "type": "number",
+      "scope": "map",
+      "value": "0.0"
+    },
+    {
+      "name": "N",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "2.0"
+    },
+    {
+      "name": "nanndarou",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "a",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "c",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "b",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "e",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "f",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "k",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [
+    {
+      "name": "un",
+      "files": [
+        "dong_fang_hong_mo_xiang__-u.n.oenhabi_nu_nanoka-_yuan_qu_gao_yin_zhi___1"
+      ],
+      "category": "neutral",
+      "subtitle": "U.N.オーエンは彼女なのか?"
+    },
+    {
+      "name": "ne",
+      "files": [
+        "dong_fang_feng_shen_lu__-neiteibuhueisu-_"
+      ],
+      "category": "neutral",
+      "subtitle": "ネガティブフィス"
+    },
+    {
+      "name": "ka",
+      "files": [
+        "dong_fang_feng_shen_lu__-shen_galian_sitahuan_xiang_xiang_-_"
+      ],
+      "category": "neutral",
+      "subtitle": "神々が恋した幻想郷"
+    },
+    {
+      "name": "tu",
+      "files": [
+        "dong_fang_yong_ye_chao__yue_madejie_ke_bu_si_noyan_yuan_qu__"
+      ],
+      "category": "neutral",
+      "subtitle": "月まで届け、不死の煙"
+    },
+    {
+      "name": "ti",
+      "files": [
+        "th11_01.-di_ling_da_noqi_chuang_"
+      ],
+      "category": "neutral",
+      "subtitle": "地霊達の起床"
+    },
+    {
+      "name": "g",
+      "files": [
+        "jian_dezhan_ru1"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "na",
+      "files": [
+        "naitoobunaitu"
+      ],
+      "category": "neutral",
+      "subtitle": "ナイト・オブザ・ナイツ"
+    },
+    {
+      "name": "g2",
+      "files": [
+        "jian_dezhan_ru3"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "ko",
+      "files": [
+        "guang_you_she_guai_niao_shi__-till-when"
+      ],
+      "category": "neutral",
+      "subtitle": "広有射怪鳥事"
+    },
+    {
+      "name": "noiz",
+      "files": [
+        "tutu4"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "advancements.naihunage.title": "ナイフ投げを始める",
+      "item.japanesesword.airbougu_boots": "Airブーツ",
+      "block.japanesesword.doku": "Doku",
+      "item.japanesesword.mint_leggings": "Mint 個のレギンス",
+      "item.japanesesword.kama": "Kama",
+      "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
+      "entity.japanesesword.kuyoumu": "Kuyoumu",
+      "item.japanesesword.ha": "Ha",
+      "key.japanesesword.r": "R",
+      "item.japanesesword.sukop": "Sukop",
+      "enchantment.japanesesword.saisei": "回復",
+      "advancements.kennkaku.descr": "剣に自信はあるかい?",
+      "entity.japanesesword.youyoumu": "その他",
+      "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
+      "subtitles.na": "ナイト・オブザ・ナイツ",
+      "effect.effect": "effect",
+      "item.japanesesword.norooinokatana": "§r 呪いの刀",
+      "subtitles.ne": "ネガティブフィス",
+      "item.japanesesword.tubanoatukatana": "鍔のある刀",
+      "advancements.zyoudan.title": "上段",
+      "item.japanesesword.yuugenkenn": "幽玄剣",
+      "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
+      "effect.haato": "回復強化版",
+      "effect.muteki": "muteki",
+      "item.japanesesword.ancientbooks": "§0§kcursebook",
+      "item.japanesesword.mcsucdiscko.desc": "広有射怪鳥事",
+      "subtitles.g2": "",
+      "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
+      "advancements.tyudan.title": "中段",
+      "item.japanesesword.naihu_2": "Naihu 2",
+      "entity.japanesesword.kuroyoumu": "黒魂魄妖夢",
+      "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
+      "item.japanesesword.noroi": "§4§k好きな人いない",
+      "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
+      "effect.kurutaimunasi": "クールタイムを無くす",
+      "item.japanesesword.motonokatana": "刀(封)",
+      "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
+      "item.japanesesword.hon_3": "本",
+      "item.japanesesword.hon_4": "本",
+      "item.japanesesword.turuhasi_1": "Turuhasi 1",
+      "item.japanesesword.hannmaa": "牛蒡刀",
+      "item.japanesesword.nagenaihu": "投げナイフ",
+      "item.japanesesword.hon_2": "本",
+      "key.japanesesword.a": "落下ダメージ防止",
+      "subtitles.un": "U.N.オーエンは彼女なのか?",
+      "entity.japanesesword.huran": "フラン・スカーレット",
+      "entity.japanesesword.youmu": "魂魄妖夢",
+      "item.japanesesword.bookblood": "Book blood",
+      "item.japanesesword.tantou": "短刀",
+      "item.japanesesword.no_kamaroi": "§4§k刀と鎌大好き",
+      "item.japanesesword.katanakatana": "飾りのついた刀,二刀流",
+      "entity.japanesesword.sakuya": "十六夜咲夜",
+      "item.japanesesword.musucdisc_un": "U.N.オーエンは彼女なのか?",
+      "item.japanesesword.kuyoumu_spawn_egg": "Kuyoumu Spawn Egg",
+      "item.japanesesword.daiakatana": "ダイアモンドの刀",
+      "item.japanesesword.yaa_spawn_egg": "Yaa Spawn Egg",
+      "advancements.tidaisuki.title": "吸血鬼の仲間入り",
+      "item.japanesesword.nannka": "Nannka",
+      "key.japanesesword.waza": "クールタイムとかを無しにする",
+      "item.japanesesword.nezarazyouigokan_boots": "Nezarazyouigokan 個のブーツ",
+      "enchantment.japanesesword.nannnnnka": "ダメージ防止",
+      "effect.damezinasi": "反動なし",
+      "item.japanesesword.kuroyoumu_spawn_egg": "黒魂魄妖夢 Spawn Egg",
+      "enchantment.japanesesword.flame": "Flame defense",
+      "advancements.kennkaku.title": "剣士",
+      "advancements.hitokiri.descr": "剣士を選ぶ",
+      "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
+      "item.japanesesword.remiria_spawn_egg": "レミリア・スカーレット Spawn Egg",
+      "item.japanesesword.honn": "本",
+      "item.japanesesword.a_5": "A5",
+      "item.japanesesword.bookash": "Book ash",
+      "item.japanesesword.youyoumu_spawn_egg": "その他 Spawn Egg",
+      "item.japanesesword.tekitou_chestplate": "Tekitou 個の胴着",
+      "item.japanesesword.a_1": "A 1",
+      "block.japanesesword.ginnburokku": "銀ブロック",
+      "subtitles.noiz": "",
+      "effect.kanasibari": "金縛り",
+      "item.japanesesword.naihu": "強化された投げナイフ",
+      "advancements.bukinanigasuki.descr": "竹の弓を持つ",
+      "item.japanesesword.gin": "銀インゴット",
+      "block.japanesesword.nezarazyoiyi": "ネザーライトブロック上位",
+      "item.minecraft.potion.effect.doku_3": "毒2ボトル瓶",
+      "item.japanesesword.bou": "竹の弓",
+      "entity.japanesesword.yaa": "Yaa",
+      "subtitles.sword": "",
+      "item.japanesesword.mcsucdiscne": "ネガティブフィイス",
+      "item.minecraft.tipped_arrow.effect.doku_3": "毒2の矢",
+      "enchantment.japanesesword.bakudan": "explosion",
+      "advancements.syodan.descr": "初段",
+      "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
+      "entity.japanesesword.zanngekimob": "Zanngekimob",
+      "item.japanesesword.mcsucdisctu": "月まで届け、不死の煙",
+      "item.japanesesword.tetotokin": "鉄と金",
+      "advancements.bukinanigasuki.title": "こんな武器一々作るか普通",
+      "itemGroup.tabbuki": "武器",
+      "subtitles.a": "U.N.オーエンは彼女なのか?",
+      "item.minecraft.lingering_potion.effect.doku_3": "毒2残留",
+      "item.japanesesword.japanese_sword": "日本刀",
+      "item.japanesesword.ti": "血",
+      "effect.kill_2": "kill",
+      "item.japanesesword.nannk": "Nannk",
+      "item.japanesesword.mcsucdisctu.desc": "月まで届け、不死の煙",
+      "item.japanesesword.tekitou_boots": "Tekitou 個のブーツ",
+      "enchantment.japanesesword.entyant": "Lightnung sirike",
+      "advancements.zyoudan.descr": "上段",
+      "item.japanesesword.booktokubetu": "book rare",
+      "item.japanesesword.musucdiscti": "地霊達の起床",
+      "item.japanesesword.ginyade_leggings": "Ginyade レギンス",
+      "item.japanesesword.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
+      "subtitles.g": "",
+      "item.japanesesword.otachibloodcurse": "§4§k守血刀",
+      "item.japanesesword.nagerukatana": "Nagerukatana",
+      "enchantment.japanesesword.kill": "Kill",
+      "subtitles.i": "",
+      "advancements.syodan.title": "初段",
+      "item.japanesesword.mcsucdiscko": "広有射怪鳥事",
+      "item.japanesesword.airbougu_leggings": "Airレギンス",
+      "item.japanesesword.tekitou_helmet": "Tekitou ヘルメット",
+      "entity.japanesesword.remiria": "レミリア・スカーレット",
+      "item.japanesesword.youmu_spawn_egg": "魂魄妖夢 Spawn Egg",
+      "item.japanesesword.mint_helmet": "Mint ヘルメット",
+      "advancements.hitokiri.title": "剣に夢見て",
+      "effect.supuidokyouka": "スピード強化版",
+      "advancements.naihunage.descr": "投げナイフを持つ",
+      "item.japanesesword.mint_chestplate": "Mint 個の胴着",
+      "item.japanesesword.mcsucdesicna": "ナイト・オブザ・ナイツ",
+      "item.japanesesword.kamanoyotei": "Kamanoyotei",
+      "item.japanesesword.goukinntou": "合金刀",
+      "item.japanesesword.ginyade_chestplate": "Ginyade 胴着",
+      "item.japanesesword.ginyade_boots": "Ginyade ブーツ",
+      "item.japanesesword.musucdisc_un.desc": "U.N.オーエンは彼女なのか?",
+      "subtitles.tu": "月まで届け、不死の煙",
+      "item.japanesesword.n": "ネザーライト上位",
+      "effect.doku_2": "毒2",
+      "item.japanesesword.musucdiscti.desc": "地霊達の起床",
+      "item.japanesesword.zanngekimob_spawn_egg": "Zanngekimob Spawn Egg",
+      "effect.arrow_1": "矢無効",
+      "item.japanesesword.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
+      "block.japanesesword.nanka_8": "銀鉱石",
+      "item.japanesesword.goukin": "合金",
+      "item.japanesesword.daiazyui": "ダイアモンドの強化",
+      "item.japanesesword.huran_spawn_egg": "フラン・スカーレット Spawn Egg",
+      "item.japanesesword.otachi": "大太刀",
+      "item.japanesesword.axekatana": "強化ダイヤモンドの斧",
+      "subtitles.ti": "地霊達の起床",
+      "item.japanesesword.airbougu_helmet": "Airヘルメット",
+      "item.japanesesword.j": "白鞘",
+      "advancements.tidaisuki.descr": "haを持つ",
+      "item.japanesesword.ginyade_helmet": "Ginyade ヘルメット",
+      "item.japanesesword.mcsucdiscka": "神々が恋した幻想郷",
+      "item.japanesesword.kazarinoarukataba": "飾りのある刀",
+      "block.japanesesword.yabaiaitemu": "液体",
+      "item.japanesesword.bokutou": "木刀",
+      "item.japanesesword.airbougu_chestplate": "Air胴着",
+      "subtitles.ko": "広有射怪鳥事",
+      "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
+      "item.japanesesword.mint_boots": "Mint 個のブーツ",
+      "fluid.japanesesword.yabaiaitemu": "液体",
+      "item.japanesesword.sakuya_spawn_egg": "十六夜咲夜 Spawn Egg",
+      "block.japanesesword.daiazyoi": "ダイヤモンド上位",
+      "item.japanesesword.axesword": "Axesword",
+      "item.japanesesword.hon": "本",
+      "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
+      "item.japanesesword.poizunsword": "毒の刀",
+      "subtitles.ka": "神々が恋した幻想郷",
+      "advancements.tyudan.descr": "中段",
+      "item.japanesesword.mcsucdiscne.desc": "ネガティブフィイス"
+    },
+    "ja_jp": {
+      "advancements.naihunage.title": "ナイフ投げを始める",
+      "item.japanesesword.airbougu_boots": "Airブーツ",
+      "block.japanesesword.doku": "Doku",
+      "item.japanesesword.mint_leggings": "Mint 個のレギンス",
+      "item.japanesesword.kama": "Kama",
+      "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
+      "entity.japanesesword.kuyoumu": "Kuyoumu",
+      "item.japanesesword.ha": "Ha",
+      "key.japanesesword.r": "R",
+      "item.japanesesword.sukop": "Sukop",
+      "enchantment.japanesesword.saisei": "Saisei",
+      "advancements.kennkaku.descr": "剣に自信はあるかい?",
+      "entity.japanesesword.youyoumu": "その他",
+      "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
+      "subtitles.na": "ナイト・オブザ・ナイツ",
+      "effect.effect": "effect",
+      "item.japanesesword.norooinokatana": "呪われた刀",
+      "subtitles.ne": "ネガティブフィス",
+      "item.japanesesword.tubanoatukatana": "鍔のある刀",
+      "advancements.zyoudan.title": "上段",
+      "item.japanesesword.yuugenkenn": "幽玄剣",
+      "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
+      "effect.haato": "回復強化版",
+      "effect.muteki": "muteki",
+      "item.japanesesword.ancientbooks": "§0§kcursebook",
+      "item.japanesesword.mcsucdiscko.desc": "広有射怪鳥事",
+      "subtitles.g2": "",
+      "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
+      "advancements.tyudan.title": "中段",
+      "item.japanesesword.naihu_2": "Naihu 2",
+      "entity.japanesesword.kuroyoumu": "Kuroyoumu",
+      "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
+      "item.japanesesword.noroi": "§4§k好きな人いない",
+      "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
+      "effect.kurutaimunasi": "クールタイムを無くす",
+      "item.japanesesword.motonokatana": "元の刀",
+      "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
+      "item.japanesesword.hon_3": "本",
+      "item.japanesesword.hon_4": "本",
+      "item.japanesesword.turuhasi_1": "Turuhasi 1",
+      "item.japanesesword.hannmaa": "牛蒡刀",
+      "item.japanesesword.nagenaihu": "投げナイフ",
+      "item.japanesesword.hon_2": "本",
+      "key.japanesesword.a": "落下ダメージ防止",
+      "subtitles.un": "U.N.オーエンは彼女なのか?",
+      "entity.japanesesword.huran": "フラン・スカーレット",
+      "entity.japanesesword.youmu": "Youmu",
+      "item.japanesesword.bookblood": "Book blood",
+      "item.japanesesword.tantou": "短刀",
+      "item.japanesesword.no_kamaroi": "§4§k刀と鎌大好き",
+      "item.japanesesword.katanakatana": "飾りのついた刀,二刀流",
+      "entity.japanesesword.sakuya": "十六夜咲夜",
+      "item.japanesesword.musucdisc_un": "U.N.オーエンは彼女なのか?",
+      "item.japanesesword.kuyoumu_spawn_egg": "Kuyoumu Spawn Egg",
+      "item.japanesesword.daiakatana": "ダイアモンドの刀",
+      "item.japanesesword.yaa_spawn_egg": "Yaa Spawn Egg",
+      "advancements.tidaisuki.title": "吸血鬼の仲間入り",
+      "item.japanesesword.nannka": "Nannka",
+      "key.japanesesword.waza": "クールタイムを無しにする",
+      "item.japanesesword.nezarazyouigokan_boots": "Nezarazyouigokan 個のブーツ",
+      "enchantment.japanesesword.nannnnnka": "ダメージ防止",
+      "effect.damezinasi": "反動なし",
+      "item.japanesesword.kuroyoumu_spawn_egg": "Kuroyoumu Spawn Egg",
+      "enchantment.japanesesword.flame": "Flame defense",
+      "advancements.kennkaku.title": "剣士",
+      "advancements.hitokiri.descr": "刀を持つ",
+      "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
+      "item.japanesesword.remiria_spawn_egg": "レミリア・スカーレット Spawn Egg",
+      "item.japanesesword.honn": "Honn",
+      "item.japanesesword.a_5": "A 5",
+      "item.japanesesword.bookash": "Book ash",
+      "item.japanesesword.youyoumu_spawn_egg": "その他 Spawn Egg",
+      "item.japanesesword.tekitou_chestplate": "Tekitou 個の胴着",
+      "item.japanesesword.a_1": "A 1",
+      "block.japanesesword.ginnburokku": "Ginnburokku",
+      "subtitles.noiz": "",
+      "effect.kanasibari": "金縛り",
+      "item.japanesesword.naihu": "強化された投げナイフ",
+      "advancements.bukinanigasuki.descr": "killエンチャント使う",
+      "item.japanesesword.gin": "銀インゴット",
+      "block.japanesesword.nezarazyoiyi": "ネザーライト上位",
+      "item.minecraft.potion.effect.doku_3": "毒2ボトル瓶",
+      "item.japanesesword.bou": "竹の弓",
+      "entity.japanesesword.yaa": "Yaa",
+      "subtitles.sword": "",
+      "item.japanesesword.mcsucdiscne": "ネガティブフィイス",
+      "item.minecraft.tipped_arrow.effect.doku_3": "毒2の矢",
+      "enchantment.japanesesword.bakudan": "Bakudan",
+      "advancements.syodan.descr": "　",
+      "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
+      "entity.japanesesword.zanngekimob": "Zanngekimob",
+      "item.japanesesword.mcsucdisctu": "月まで届け、不死の煙",
+      "item.japanesesword.tetotokin": "鉄と金",
+      "advancements.bukinanigasuki.title": "武器は何が好き？",
+      "itemGroup.tabbuki": "武器",
+      "subtitles.a": "U.N.オーエンは彼女なのか?",
+      "item.minecraft.lingering_potion.effect.doku_3": "毒2残留",
+      "item.japanesesword.japanese_sword": "日本刀",
+      "item.japanesesword.ti": "血",
+      "effect.kill_2": "kill",
+      "item.japanesesword.nannk": "Nannk",
+      "item.japanesesword.mcsucdisctu.desc": "月まで届け、不死の煙",
+      "item.japanesesword.tekitou_boots": "Tekitou 個のブーツ",
+      "enchantment.japanesesword.entyant": "Lightnung sirike",
+      "advancements.zyoudan.descr": "上段",
+      "item.japanesesword.booktokubetu": "レアな本",
+      "item.japanesesword.musucdiscti": "地霊達の起床",
+      "item.japanesesword.ginyade_leggings": "Ginyade 個のレギンス",
+      "item.japanesesword.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
+      "subtitles.g": "g",
+      "item.japanesesword.otachibloodcurse": "§4§k守血刀",
+      "item.japanesesword.nagerukatana": "Nagerukatana",
+      "enchantment.japanesesword.kill": "Kill",
+      "subtitles.i": "",
+      "advancements.syodan.title": "初段",
+      "item.japanesesword.mcsucdiscko": "広有射怪鳥事",
+      "item.japanesesword.airbougu_leggings": "Airレギンス",
+      "item.japanesesword.tekitou_helmet": "Tekitou ヘルメット",
+      "entity.japanesesword.remiria": "レミリア・スカーレット",
+      "item.japanesesword.youmu_spawn_egg": "Youmu Spawn Egg",
+      "item.japanesesword.mint_helmet": "Mint ヘルメット",
+      "advancements.hitokiri.title": "武士に夢見て",
+      "effect.supuidokyouka": "スピード強化版",
+      "advancements.naihunage.descr": "投げナイフを持つ",
+      "item.japanesesword.mint_chestplate": "Mint 個の胴着",
+      "item.japanesesword.mcsucdesicna": "ナイト・オブザ・ナイツ",
+      "item.japanesesword.kamanoyotei": "Kamanoyotei",
+      "item.japanesesword.goukinntou": "合金刀",
+      "item.japanesesword.ginyade_chestplate": "Ginyade 個の胴着",
+      "item.japanesesword.ginyade_boots": "Ginyade 個のブーツ",
+      "item.japanesesword.musucdisc_un.desc": "U.N.オーエンは彼女なのか?",
+      "subtitles.tu": "月まで届け、不死の煙",
+      "item.japanesesword.n": "ネザーライト上位",
+      "effect.doku_2": "毒2",
+      "item.japanesesword.musucdiscti.desc": "地霊達の起床",
+      "item.japanesesword.zanngekimob_spawn_egg": "Zanngekimob Spawn Egg",
+      "effect.arrow_1": "矢無効",
+      "item.japanesesword.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
+      "block.japanesesword.nanka_8": "Nanka 8",
+      "item.japanesesword.goukin": "合金",
+      "item.japanesesword.daiazyui": "ダイアモンドの強化",
+      "item.japanesesword.huran_spawn_egg": "フラン・スカーレット Spawn Egg",
+      "item.japanesesword.otachi": "大太刀",
+      "item.japanesesword.axekatana": "Axekatana",
+      "subtitles.ti": "地霊達の起床",
+      "item.japanesesword.airbougu_helmet": "Airヘルメット",
+      "item.japanesesword.j": "白鞘",
+      "advancements.tidaisuki.descr": "血を飲む",
+      "item.japanesesword.ginyade_helmet": "Ginyade ヘルメット",
+      "item.japanesesword.mcsucdiscka": "神々が恋した幻想郷",
+      "item.japanesesword.kazarinoarukataba": "飾りのある刀",
+      "block.japanesesword.yabaiaitemu": "液体",
+      "item.japanesesword.bokutou": "木刀",
+      "item.japanesesword.airbougu_chestplate": "Air胴着",
+      "subtitles.ko": "広有射怪鳥事",
+      "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
+      "item.japanesesword.mint_boots": "Mint 個のブーツ",
+      "fluid.japanesesword.yabaiaitemu": "液体",
+      "item.japanesesword.sakuya_spawn_egg": "十六夜咲夜 Spawn Egg",
+      "block.japanesesword.daiazyoi": "ダイヤモンド上位",
+      "item.japanesesword.axesword": "Axesword",
+      "item.japanesesword.hon": "本",
+      "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
+      "item.japanesesword.poizunsword": "毒の刀",
+      "subtitles.ka": "神々が恋した幻想郷",
+      "advancements.tyudan.descr": "中段",
+      "item.japanesesword.mcsucdiscne.desc": "ネガティブフィイス"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "japanesesword",
+    "modName": "katana",
+    "version": "1.0.0",
+    "author": "hiromichinagase, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "modPicture": "haato",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.japanesesword",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200120510
+}

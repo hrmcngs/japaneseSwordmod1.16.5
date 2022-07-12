@@ -1,0 +1,23 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "buki",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "Items.STICK"
+    },
+    "smithingInputAdditionStack": {
+      "value": "Items.DIAMOND"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:Daiakatana"
+    },
+    "name": "dkr",
+    "namespace": "mod"
+  }
+}

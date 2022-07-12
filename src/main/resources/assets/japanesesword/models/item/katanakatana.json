@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/katanalike",
+  "textures": {
+    "0": "japanesesword:blocks/katanalike",
+    "particle": "japanesesword:items/tubatokazarinoarukatana"
+  }
+}

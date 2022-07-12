@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "japanesesword:tubanoatukatana"
+    },
+    "title": {
+      "translate": "advancements.kennkaku.title"
+    },
+    "description": {
+      "translate": "advancements.kennkaku.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "kennkaku": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "japanesesword:zyoudan"
+}

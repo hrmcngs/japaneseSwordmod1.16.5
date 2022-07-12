@@ -1,0 +1,17 @@
+{
+  "_fv": 28,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "disc",
+    "name": "U.N.オーエンは彼女なのか?",
+    "description": "U.N.オーエンは彼女なのか?",
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "music": {
+      "value": "CUSTOM:un"
+    },
+    "specialInfo": [],
+    "hasGlow": true
+  }
+}

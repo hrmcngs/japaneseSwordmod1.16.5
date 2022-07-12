@@ -1,0 +1,11 @@
+{
+  "_fv": 28,
+  "_type": "tab",
+  "definition": {
+    "name": "武器",
+    "icon": {
+      "value": "Blocks.CRAFTING_TABLE"
+    },
+    "showSearch": true
+  }
+}

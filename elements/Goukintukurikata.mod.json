@@ -1,0 +1,20 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "xpReward": 1.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "goukin",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:Tetotokin"
+    },
+    "smeltingReturnStack": {
+      "value": "CUSTOM:Goukin"
+    },
+    "name": "goukintukurikata",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "tap!",
+          "onClick": {
+            "name": "K"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "tap!",
+          "x": 189,
+          "y": 139
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "中断になれるよ",
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "name": "中断になれるよ",
+          "x": 193,
+          "y": 72
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

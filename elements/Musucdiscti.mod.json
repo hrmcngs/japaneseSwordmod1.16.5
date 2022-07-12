@@ -1,0 +1,17 @@
+{
+  "_fv": 28,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "disc",
+    "name": "地霊達の起床",
+    "description": "地霊達の起床",
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "music": {
+      "value": "CUSTOM:ti"
+    },
+    "specialInfo": [],
+    "hasGlow": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "_fv": 28,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "noroharetakatana",
+    "customModelName": "Normal",
+    "name": "§r 呪いの刀",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 10,
+    "efficiency": 10.0,
+    "attackSpeed": 100.0,
+    "enchantability": 9,
+    "damageVsEntity": 4.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "NoroinokatanaKongQiwoYoukuritukusitatoki"
+    },
+    "onItemInUseTick": {
+      "name": "NoroinokatanaturuwoShoudeChituteiruJiannoteituku"
+    },
+    "onEntitySwing": {
+      "name": "NorooinokatanaenteiteigaaitemuwoZhentutaShi"
+    }
+  }
+}

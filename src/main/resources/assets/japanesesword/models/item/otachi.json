@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/otachi",
+  "textures": {
+    "0": "japanesesword:blocks/otachi",
+    "particle": "japanesesword:items/goukinntou"
+  }
+}

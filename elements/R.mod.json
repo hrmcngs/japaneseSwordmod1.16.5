@@ -1,0 +1,12 @@
+{
+  "_fv": 28,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "R",
+    "keyBindingName": "R",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "Nanka"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_fv": 28,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "回復強化版",
+    "icon": "ha1.png",
+    "color": {
+      "value": -393216,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "isBad": false,
+    "isBenefitical": true,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "HaatoposiyonnoXiaoGuogaKaiShiShiYongsaretatoki"
+    }
+  }
+}

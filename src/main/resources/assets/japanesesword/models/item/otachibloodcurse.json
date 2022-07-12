@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/otachiblood",
+  "textures": {
+    "0": "japanesesword:blocks/otachiblood",
+    "particle": "japanesesword:items/katana"
+  }
+}

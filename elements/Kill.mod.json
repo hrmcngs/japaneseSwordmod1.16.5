@@ -1,0 +1,44 @@
+{
+  "_fv": 28,
+  "_type": "enchantment",
+  "definition": {
+    "name": "Kill",
+    "type": "WEAPON",
+    "rarity": "RARE",
+    "minLevel": 10,
+    "maxLevel": 1,
+    "damageModifier": 5,
+    "compatibleEnchantments": [],
+    "compatibleItems": [
+      {
+        "value": "CUSTOM:JapaneseSword"
+      },
+      {
+        "value": "CUSTOM:Naihu"
+      },
+      {
+        "value": "CUSTOM:Yuugenkenn"
+      },
+      {
+        "value": "CUSTOM:Norooinokatana"
+      },
+      {
+        "value": "CUSTOM:Kama"
+      },
+      {
+        "value": "CUSTOM:Noroi"
+      },
+      {
+        "value": "CUSTOM:NoKamaroi"
+      },
+      {
+        "value": "CUSTOM:Otachibloodcurse"
+      }
+    ],
+    "isTreasureEnchantment": true,
+    "isCurse": false,
+    "isAllowedOnBooks": true,
+    "canGenerateInLootTables": true,
+    "canVillagerTrade": true
+  }
+}

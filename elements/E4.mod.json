@@ -1,0 +1,23 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "buki",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:Daiakatana"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:Daiazyui"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:Kyoukadaiyamonndonokatana"
+    },
+    "name": "e_4",
+    "namespace": "mod"
+  }
+}

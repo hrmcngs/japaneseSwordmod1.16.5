@@ -1,0 +1,42 @@
+{
+  "group": "buki",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "1": {
+      "item": "minecraft:golden_apple"
+    },
+    "2": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "3": {
+      "item": "minecraft:nether_star"
+    },
+    "4": {
+      "item": "japanesesword:tubanoatukatana"
+    },
+    "5": {
+      "item": "minecraft:golden_carrot"
+    },
+    "6": {
+      "item": "minecraft:feather"
+    },
+    "7": {
+      "item": "minecraft:nether_star"
+    },
+    "8": {
+      "item": "minecraft:golden_carrot"
+    }
+  },
+  "result": {
+    "item": "japanesesword:japanese_sword",
+    "count": 1
+  }
+}

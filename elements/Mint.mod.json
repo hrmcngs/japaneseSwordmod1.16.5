@@ -1,0 +1,65 @@
+{
+  "_fv": 28,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "yo-_head",
+    "enableBody": true,
+    "textureBody": "yo-_body",
+    "enableLeggings": true,
+    "textureLeggings": "yo-_leggings",
+    "enableBoots": true,
+    "textureBoots": "yo-_boots",
+    "creativeTab": {
+      "value": "CUSTOM:Buki"
+    },
+    "armorTextureFile": "yo-",
+    "helmetName": "Mint ヘルメット",
+    "bodyName": "Mint 個の胴着",
+    "leggingsName": "Mint 個のレギンス",
+    "bootsName": "Mint 個のブーツ",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 500,
+    "damageValueHelmet": 5,
+    "damageValueBody": 8,
+    "damageValueLeggings": 7,
+    "damageValueBoots": 4,
+    "enchantability": 5,
+    "toughness": 3.0,
+    "knockbackResistance": 0.5,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:Daiazyui"
+      },
+      {
+        "value": "CUSTOM:Mint.helmet"
+      }
+    ]
+  }
+}

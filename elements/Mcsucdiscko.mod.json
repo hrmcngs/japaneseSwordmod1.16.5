@@ -1,0 +1,17 @@
+{
+  "_fv": 28,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "disc",
+    "name": "広有射怪鳥事",
+    "description": "広有射怪鳥事",
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "music": {
+      "value": "CUSTOM:ko"
+    },
+    "specialInfo": [],
+    "hasGlow": true
+  }
+}

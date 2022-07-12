@@ -1,0 +1,12 @@
+{
+  "_fv": 28,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "X",
+    "keyBindingName": "落下ダメージ防止",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "AkigaYasaretatoki"
+    }
+  }
+}

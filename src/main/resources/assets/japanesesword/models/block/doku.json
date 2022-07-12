@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "japanesesword:blocks/tesuto",
+    "particle": "japanesesword:blocks/tesuto"
+  }
+}

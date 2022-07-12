@@ -1,0 +1,12 @@
+{
+  "group": "buki",
+  "type": "minecraft:smelting",
+  "experience": 10,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "japanesesword:nanka_8"
+  },
+  "result": {
+    "item": "japanesesword:gin"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_fv": 28,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "毒2",
+    "icon": "hato.png",
+    "color": {
+      "value": -10092391,
+      "falpha": 0.0
+    },
+    "isInstant": true,
+    "isBad": true,
+    "isBenefitical": false,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "Doku2posiyonnoXiaoGuogaKaiShiShiYongsaretatoki"
+    }
+  }
+}

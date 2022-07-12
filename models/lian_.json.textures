@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "aka",
+        "1": "kuro",
+        "2": "kuro"
+      },
+      "name": "default"
+    }
+  }
+}

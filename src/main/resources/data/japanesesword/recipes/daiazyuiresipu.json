@@ -1,0 +1,42 @@
+{
+  "group": "buki",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "japanesesword:daiazyui"
+    },
+    "1": {
+      "item": "japanesesword:daiazyui"
+    },
+    "2": {
+      "item": "japanesesword:daiazyui"
+    },
+    "3": {
+      "item": "japanesesword:daiazyui"
+    },
+    "4": {
+      "item": "japanesesword:daiazyui"
+    },
+    "5": {
+      "item": "japanesesword:daiazyui"
+    },
+    "6": {
+      "item": "japanesesword:daiazyui"
+    },
+    "7": {
+      "item": "japanesesword:daiazyui"
+    },
+    "8": {
+      "item": "japanesesword:daiazyui"
+    }
+  },
+  "result": {
+    "item": "japanesesword:daiazyoi",
+    "count": 1
+  }
+}

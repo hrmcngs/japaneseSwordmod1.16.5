@@ -1,0 +1,23 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "buki",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:Mint.body"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:N"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:Nezarazyouigokan.body"
+    },
+    "name": "w",
+    "namespace": "mod"
+  }
+}

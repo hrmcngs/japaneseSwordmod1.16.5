@@ -1,0 +1,21 @@
+{
+  "_fv": 28,
+  "_type": "potion",
+  "definition": {
+    "potionName": "毒2ボトル瓶",
+    "splashName": "毒2残留スプラッシュ",
+    "lingeringName": "毒2残留",
+    "arrowName": "毒2の矢",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Doku2"
+        },
+        "duration": 1,
+        "amplifier": 1,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "group": "buki",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "1": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "2": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "3": {
+      "item": "minecraft:nether_star"
+    },
+    "4": {
+      "item": "minecraft:firework_rocket"
+    },
+    "5": {
+      "item": "minecraft:nether_star"
+    },
+    "7": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "result": {
+    "item": "japanesesword:a_5",
+    "count": 1
+  }
+}

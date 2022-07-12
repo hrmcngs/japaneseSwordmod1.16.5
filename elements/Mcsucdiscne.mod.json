@@ -1,0 +1,17 @@
+{
+  "_fv": 28,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "disc",
+    "name": "ネガティブフィイス",
+    "description": "ネガティブフィイス",
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "music": {
+      "value": "CUSTOM:ne"
+    },
+    "specialInfo": [],
+    "hasGlow": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_fv": 28,
+  "_type": "enchantment",
+  "definition": {
+    "name": "Flame defense",
+    "type": "ARMOR",
+    "rarity": "RARE",
+    "minLevel": 5,
+    "maxLevel": 1,
+    "damageModifier": 5,
+    "compatibleEnchantments": [],
+    "compatibleItems": [],
+    "isTreasureEnchantment": true,
+    "isCurse": false,
+    "isAllowedOnBooks": true,
+    "canGenerateInLootTables": true,
+    "canVillagerTrade": true
+  }
+}

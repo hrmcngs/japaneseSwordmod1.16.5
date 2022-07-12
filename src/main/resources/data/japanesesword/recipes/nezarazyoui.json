@@ -1,0 +1,42 @@
+{
+  "group": "buki",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "japanesesword:n"
+    },
+    "1": {
+      "item": "japanesesword:n"
+    },
+    "2": {
+      "item": "japanesesword:n"
+    },
+    "3": {
+      "item": "japanesesword:n"
+    },
+    "4": {
+      "item": "japanesesword:n"
+    },
+    "5": {
+      "item": "japanesesword:n"
+    },
+    "6": {
+      "item": "japanesesword:n"
+    },
+    "7": {
+      "item": "japanesesword:n"
+    },
+    "8": {
+      "item": "japanesesword:n"
+    }
+  },
+  "result": {
+    "item": "japanesesword:nezarazyoiyi",
+    "count": 1
+  }
+}

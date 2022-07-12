@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "buki",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.SKULL#1"
+      },
+      {
+        "value": "Items.SKULL#1"
+      },
+      {
+        "value": "Items.SKULL#1"
+      },
+      {
+        "value": "Items.NETHER_STAR"
+      },
+      {
+        "value": "Items.FIREWORKS"
+      },
+      {
+        "value": "Items.NETHER_STAR"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.SOUL_SAND"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:A5"
+    },
+    "name": "a_6",
+    "namespace": "mod"
+  }
+}

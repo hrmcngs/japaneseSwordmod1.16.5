@@ -1,0 +1,81 @@
+{
+  "_fv": 28,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 167,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "民間人",
+          "width": 40,
+          "height": 20,
+          "name": "民間人",
+          "x": 140,
+          "y": 151
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "剣士",
+          "onClick": {
+            "name": "H"
+          },
+          "width": 35,
+          "height": 20,
+          "name": "剣士",
+          "x": 255,
+          "y": 151
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "吸血鬼",
+          "onClick": {
+            "name": "C"
+          },
+          "width": 40,
+          "height": 20,
+          "name": "吸血鬼",
+          "x": 198,
+          "y": 151
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sukurinsiyotuto_2022-05-08_16.41.14.png",
+          "use1Xscale": false,
+          "name": "sukurinsiyotuto_2022-05-08_16.41.14.png",
+          "x": 142,
+          "y": 52
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "abc.png",
+          "use1Xscale": false,
+          "name": "abc.png",
+          "x": 227,
+          "y": 51
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

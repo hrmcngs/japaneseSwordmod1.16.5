@@ -1,0 +1,99 @@
+{
+  "un": {
+    "category": "neutral",
+    "subtitle": "subtitles.un",
+    "sounds": [
+      {
+        "name": "japanesesword:dong_fang_hong_mo_xiang__-u.n.oenhabi_nu_nanoka-_yuan_qu_gao_yin_zhi___1",
+        "stream": false
+      }
+    ]
+  },
+  "ne": {
+    "category": "neutral",
+    "subtitle": "subtitles.ne",
+    "sounds": [
+      {
+        "name": "japanesesword:dong_fang_feng_shen_lu__-neiteibuhueisu-_",
+        "stream": false
+      }
+    ]
+  },
+  "ka": {
+    "category": "neutral",
+    "subtitle": "subtitles.ka",
+    "sounds": [
+      {
+        "name": "japanesesword:dong_fang_feng_shen_lu__-shen_galian_sitahuan_xiang_xiang_-_",
+        "stream": false
+      }
+    ]
+  },
+  "tu": {
+    "category": "neutral",
+    "subtitle": "subtitles.tu",
+    "sounds": [
+      {
+        "name": "japanesesword:dong_fang_yong_ye_chao__yue_madejie_ke_bu_si_noyan_yuan_qu__",
+        "stream": false
+      }
+    ]
+  },
+  "ti": {
+    "category": "neutral",
+    "subtitle": "subtitles.ti",
+    "sounds": [
+      {
+        "name": "japanesesword:th11_01.-di_ling_da_noqi_chuang_",
+        "stream": false
+      }
+    ]
+  },
+  "g": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "japanesesword:jian_dezhan_ru1",
+        "stream": false
+      }
+    ]
+  },
+  "na": {
+    "category": "neutral",
+    "subtitle": "subtitles.na",
+    "sounds": [
+      {
+        "name": "japanesesword:naitoobunaitu",
+        "stream": false
+      }
+    ]
+  },
+  "g2": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "japanesesword:jian_dezhan_ru3",
+        "stream": false
+      }
+    ]
+  },
+  "ko": {
+    "category": "neutral",
+    "subtitle": "subtitles.ko",
+    "sounds": [
+      {
+        "name": "japanesesword:guang_you_she_guai_niao_shi__-till-when",
+        "stream": false
+      }
+    ]
+  },
+  "noiz": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "japanesesword:tutu4",
+        "stream": false
+      }
+    ]
+  }
+}
