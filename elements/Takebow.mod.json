@@ -10,7 +10,7 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "Blocks.SPRUCE_WOOD"
       },
       {
         "value": "Blocks.BAMBOO"
