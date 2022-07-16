@@ -123,6 +123,9 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 		double zRaduis4 = 0;
 		double Y5 = 0;
 		double Y6 = 0;
+		double angle = 0;
+		double Numerical_value = 0;
+		double yaw = 0;
 		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 				.getItem() == KatanakatanaItem.block) {
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -689,353 +692,816 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 					((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
 				}
 				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-						.getItem() == BooktokubetuItem.block) {
-					if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-							((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 5;
-						ZRadius2 = 5;
-						Y_pos = (y + 1);
-						for (int index6 = 0; index6 < (int) (40); index6++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (4 / 2d), (Y + 1) - (4 / 2d),
-										Z - (4 / 2d), X + (4 / 2d), (Y + 1) + (4 / 2d), Z + (4 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+						.getItem() == BooktokubetuItem.block
+						|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+								.getItem() == BookashItem.block) {
+					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+							.getItem() == BooktokubetuItem.block) {
+						if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
+								((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+							Numerical_value = 1;
+							yaw = (entity.rotationYaw);
+							angle = (entity.rotationPitch);
+							for (int index6 = 0; index6 < (int) (100); index6++) {
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(
+											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))) - (5 / 2d),
+											((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))) - (5 / 2d),
+											(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))) - (5 / 2d),
+											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))) + (5 / 2d),
+											((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))) + (5 / 2d),
+											(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))) + (5 / 2d)), null)
+											.stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
+											}.compareDistOf((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))))
+											.collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (!(entityiterator == entity)) {
+											if (entityiterator instanceof MobEntity) {
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
 												}
 											}
 										}
 									}
 								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^0.3 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^-0.3 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^0.6 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^-0.6 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^0.9 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^-0.9 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^0.3 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^0.6 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^0.9 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^-0.3 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^-0.6 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^-0.9 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK,
+											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+											((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+											(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))), (int) 1, 0.01,
+											0.01, 0.01, 0.75);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT,
+											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+											((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+											(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))), (int) 15, 0.01,
+											0.01, 0.01, 0.75);
+								}
+								Numerical_value = (Numerical_value + 0.2);
 							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
+						} else {
+							Numerical_value = 1;
+							yaw = (entity.rotationYaw);
+							angle = (entity.rotationPitch);
+							for (int index7 = 0; index7 < (int) (100); index7++) {
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(
+											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))) - (5 / 2d),
+											((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))) - (5 / 2d),
+											(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))) - (5 / 2d),
+											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))) + (5 / 2d),
+											((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))) + (5 / 2d),
+											(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))) + (5 / 2d)), null)
+											.stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))))
+											.collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (!(entityiterator == entity)) {
+											if (entityiterator instanceof MobEntity) {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 30);
+											}
+										}
+									}
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^0.3 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^-0.3 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^0.6 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^-0.6 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^0.9 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^-0.9 ^ ^ 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^0.3 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^0.6 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^0.9 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^-0.3 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^-0.6 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((World) world).getServer().getCommandManager().handleCommand(new CommandSource(ICommandSource.DUMMY,
+											new Vector3d((x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+													((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+													(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw)))),
+											Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
+											.withFeedbackDisabled(), "particle minecraft:dust 0.385 0 0.213 1 ^ ^ ^-0.9 0.01 0.01 0.01 0 10");
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK,
+											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+											((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+											(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))), (int) 1, 0.01,
+											0.01, 0.01, 0.75);
+								}
+								Numerical_value = (Numerical_value + 0.2);
+							}
 						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 10;
-						ZRadius2 = 10;
-						Y_pos = (y + 1);
-						for (int index7 = 0; index7 < (int) (40); index7++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (4 / 2d), (Y + 1) - (4 / 2d),
-										Z - (4 / 2d), X + (4 / 2d), (Y + 1) + (4 / 2d), Z + (4 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
+					}
+					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+							.getItem() == BookashItem.block) {
+						if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
+								((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+							xRadius = 3;
+							zRadius = 3;
+							loop2 = Math.toRadians(entity.rotationYaw);
+							xRabius = 5;
+							xRabius = 5;
+							loop3 = Math.toRadians(entity.rotationYaw);
+							xRaduis3 = 8;
+							zRaduis3 = 8;
+							loop4 = Math.toRadians(entity.rotationYaw);
+							xRaduis4 = 10;
+							zRaduis4 = 10;
+							loop5 = Math.toRadians(entity.rotationYaw);
+							xRadius5 = 15;
+							zRadius5 = 15;
+							loop6 = Math.toRadians(entity.rotationYaw);
+							xRadius6 = 20;
+							zRadius6 = 20;
+							for (int index8 = 0; index8 < (int) (36); index8++) {
+								X = (x + Math.cos(loop) * xRadius);
+								Y = (y + 1);
+								Z = (z + Math.sin(loop) * zRadius);
+								X2 = (x + Math.cos(loop2) * xRabius);
+								Y2 = (y + 1);
+								Z2 = (z + Math.sin(loop2) * xRabius);
+								X3 = (x + Math.cos(loop3) * xRaduis3);
+								Y3 = (y + 1);
+								Z3 = (z + Math.sin(loop3) * zRaduis3);
+								X4 = (x + Math.cos(loop4) * xRaduis4);
+								Y4 = (y + 1);
+								Z4 = (z + Math.sin(loop4) * zRaduis4);
+								X5 = (x + Math.cos(loop5) * xRadius5);
+								Y5 = (y + 1);
+								Z5 = (z + Math.sin(loop5) * zRadius5);
+								X6 = (x + Math.cos(loop6) * xRadius6);
+								Y6 = (y + 1);
+								Z6 = (z + Math.sin(loop6) * zRadius6);
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
 								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 15;
-						ZRadius2 = 15;
-						Y_pos = (y + 1);
-						for (int index8 = 0; index8 < (int) (40); index8++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (5 / 2d), (Y + 1) - (5 / 2d),
-										Z - (5 / 2d), X + (5 / 2d), (Y + 1) + (5 / 2d), Z + (5 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
 								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 20;
-						ZRadius2 = 20;
-						Y_pos = (y + 1);
-						for (int index9 = 0; index9 < (int) (40); index9++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (5 / 2d), (Y + 1) - (5 / 2d),
-										Z - (5 / 2d), X + (5 / 2d), (Y + 1) + (5 / 2d), Z + (5 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
+											new AxisAlignedBB(X - (3 / 2d), Y - (3 / 2d), Z - (3 / 2d), X + (3 / 2d), Y + (3 / 2d), Z + (3 / 2d)),
+											null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
+											}.compareDistOf(X, Y, Z)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (entityiterator instanceof MobEntity) {
+											if (!(entityiterator == entity)) {
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
 												}
 											}
 										}
 									}
 								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-					} else {
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 5;
-						ZRadius2 = 5;
-						Y_pos = (y + 1);
-						for (int index10 = 0; index10 < (int) (40); index10++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (4 / 2d), (Y + 1) - (4 / 2d),
-										Z - (4 / 2d), X + (4 / 2d), (Y + 1) + (4 / 2d), Z + (4 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X2 - (3 / 2d), Y2 - (3 / 2d),
+											Z2 - (3 / 2d), X2 + (3 / 2d), Y2 + (3 / 2d), Z2 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X2, Y2, Z2)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
 										if (entityiterator instanceof MobEntity) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											if (!(entityiterator == entity)) {
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
+												}
+											}
 										}
 									}
 								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 10;
-						ZRadius2 = 10;
-						Y_pos = (y + 1);
-						for (int index11 = 0; index11 < (int) (40); index11++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (5 / 2d), (Y + 1) - (5 / 2d),
-										Z - (5 / 2d), X + (5 / 2d), (Y + 1) + (5 / 2d), Z + (5 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X3 - (3 / 2d), Y3 - (3 / 2d),
+											Z3 - (3 / 2d), X3 + (3 / 2d), Y3 + (3 / 2d), Z3 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X3, Y3, Z3)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
 										if (entityiterator instanceof MobEntity) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											if (!(entityiterator == entity)) {
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
+												}
+											}
 										}
 									}
 								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 15;
-						ZRadius2 = 15;
-						Y_pos = (y + 1);
-						for (int index12 = 0; index12 < (int) (40); index12++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (5 / 2d), (Y + 1) - (5 / 2d),
-										Z - (5 / 2d), X + (5 / 2d), (Y + 1) + (5 / 2d), Z + (5 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X4 - (3 / 2d), Y4 - (3 / 2d),
+											Z4 - (3 / 2d), X4 + (3 / 2d), Y4 + (3 / 2d), Z4 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X4, Y4, Z4)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
 										if (entityiterator instanceof MobEntity) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											if (!(entityiterator == entity)) {
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
+												}
+											}
 										}
 									}
 								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 20;
-						ZRadius2 = 20;
-						Y_pos = (y + 1);
-						for (int index13 = 0; index13 < (int) (40); index13++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (5 / 2d), (Y + 1) - (5 / 2d),
-										Z - (5 / 2d), X + (5 / 2d), (Y + 1) + (5 / 2d), Z + (5 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X5 - (3 / 2d), Y5 - (3 / 2d),
+											Z5 - (3 / 2d), X5 + (3 / 2d), Y5 + (3 / 2d), Z5 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X5, Y5, Z5)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
 										if (entityiterator instanceof MobEntity) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											if (!(entityiterator == entity)) {
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
+												}
+											}
 										}
 									}
 								}
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X6 - (3 / 2d), Y6 - (3 / 2d),
+											Z6 - (3 / 2d), X6 + (3 / 2d), Y6 + (3 / 2d), Z6 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X6, Y6, Z6)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (entityiterator instanceof MobEntity) {
+											if (!(entityiterator == entity)) {
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
+												}
+											}
+										}
+									}
+								}
+								loop = (loop + Math.toRadians(5));
+								loop2 = (loop2 + Math.toRadians(5));
+								loop3 = (loop3 + Math.toRadians(5));
+								loop4 = (loop4 + Math.toRadians(5));
+								loop5 = (loop5 + Math.toRadians(5));
+								loop6 = (loop6 + Math.toRadians(5));
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
 							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
+						} else {
+							xRadius = 3;
+							zRadius = 3;
+							loop2 = Math.toRadians(entity.rotationYaw);
+							xRabius = 5;
+							xRabius = 5;
+							loop3 = Math.toRadians(entity.rotationYaw);
+							xRaduis3 = 8;
+							zRaduis3 = 8;
+							loop4 = Math.toRadians(entity.rotationYaw);
+							xRaduis4 = 10;
+							zRaduis4 = 10;
+							loop5 = Math.toRadians(entity.rotationYaw);
+							xRadius5 = 15;
+							zRadius5 = 15;
+							loop6 = Math.toRadians(entity.rotationYaw);
+							xRadius6 = 20;
+							zRadius6 = 20;
+							for (int index9 = 0; index9 < (int) (36); index9++) {
+								X = (x + Math.cos(loop) * xRadius);
+								Y = (y + 1);
+								Z = (z + Math.sin(loop) * zRadius);
+								X2 = (x + Math.cos(loop2) * xRabius);
+								Y2 = (y + 1);
+								Z2 = (z + Math.sin(loop2) * xRabius);
+								X3 = (x + Math.cos(loop3) * xRaduis3);
+								Y3 = (y + 1);
+								Z3 = (z + Math.sin(loop3) * zRaduis3);
+								X4 = (x + Math.cos(loop4) * xRaduis4);
+								Y4 = (y + 1);
+								Z4 = (z + Math.sin(loop4) * zRaduis4);
+								X5 = (x + Math.cos(loop5) * xRadius5);
+								Y5 = (y + 1);
+								Z5 = (z + Math.sin(loop5) * zRadius5);
+								X6 = (x + Math.cos(loop6) * xRadius6);
+								Y6 = (y + 1);
+								Z6 = (z + Math.sin(loop6) * zRadius6);
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
+											new AxisAlignedBB(X - (3 / 2d), Y - (3 / 2d), Z - (3 / 2d), X + (3 / 2d), Y + (3 / 2d), Z + (3 / 2d)),
+											null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X, Y, Z)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (entityiterator instanceof MobEntity) {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == KatanakatanaItem.block) {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+											} else {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											}
+										}
+									}
+								}
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X2 - (3 / 2d), Y2 - (3 / 2d),
+											Z2 - (3 / 2d), X2 + (3 / 2d), Y2 + (3 / 2d), Z2 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X2, Y2, Z2)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (entityiterator instanceof MobEntity) {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == KatanakatanaItem.block) {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+											} else {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											}
+										}
+									}
+								}
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X3 - (3 / 2d), Y3 - (3 / 2d),
+											Z3 - (3 / 2d), X3 + (3 / 2d), Y3 + (3 / 2d), Z3 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X3, Y3, Z3)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (entityiterator instanceof MobEntity) {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == KatanakatanaItem.block) {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+											} else {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											}
+										}
+									}
+								}
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X4 - (3 / 2d), Y4 - (3 / 2d),
+											Z4 - (3 / 2d), X4 + (3 / 2d), Y4 + (3 / 2d), Z4 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X4, Y4, Z4)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (entityiterator instanceof MobEntity) {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == KatanakatanaItem.block) {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+											} else {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											}
+										}
+									}
+								}
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X5 - (3 / 2d), Y5 - (3 / 2d),
+											Z5 - (3 / 2d), X5 + (3 / 2d), Y5 + (3 / 2d), Z5 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X5, Y5, Z5)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (entityiterator instanceof MobEntity) {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == KatanakatanaItem.block) {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+											} else {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											}
+										}
+									}
+								}
+								{
+									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X6 - (3 / 2d), Y6 - (3 / 2d),
+											Z6 - (3 / 2d), X6 + (3 / 2d), Y6 + (3 / 2d), Z6 + (3 / 2d)), null).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator
+															.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+												}
+											}.compareDistOf(X6, Y6, Z6)).collect(Collectors.toList());
+									for (Entity entityiterator : _entfound) {
+										if (entityiterator instanceof MobEntity) {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == KatanakatanaItem.block) {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+											} else {
+												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+											}
+										}
+									}
+								}
+								loop = (loop + Math.toRadians(5));
+								loop2 = (loop2 + Math.toRadians(5));
+								loop3 = (loop3 + Math.toRadians(5));
+								loop4 = (loop4 + Math.toRadians(5));
+								loop5 = (loop5 + Math.toRadians(5));
+								loop6 = (loop6 + Math.toRadians(5));
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+								if (world instanceof ServerWorld) {
+									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
+								}
+							}
 						}
 					}
 				} else {
@@ -1045,7 +1511,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 3;
 						ZRadius2 = 3;
 						Y_pos = (y + 1);
-						for (int index14 = 0; index14 < (int) (36); index14++) {
+						for (int index10 = 0; index10 < (int) (36); index10++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -1095,7 +1561,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 6;
 						ZRadius2 = 6;
 						Y_pos = (y + 1);
-						for (int index15 = 0; index15 < (int) (36); index15++) {
+						for (int index11 = 0; index11 < (int) (36); index11++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -1149,7 +1615,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 3;
 						ZRadius2 = 3;
 						Y_pos = (y + 1);
-						for (int index16 = 0; index16 < (int) (36); index16++) {
+						for (int index12 = 0; index12 < (int) (36); index12++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -1190,704 +1656,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 6;
 						ZRadius2 = 6;
 						Y_pos = (y + 1);
-						for (int index17 = 0; index17 < (int) (36); index17++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (3 / 2d), (Y + 1) - (3 / 2d),
-										Z - (3 / 2d), X + (3 / 2d), (Y + 1) + (3 / 2d), Z + (3 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-													.getItem() == KatanakatanaItem.block) {
-												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-											} else {
-												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-											}
-										}
-									}
-								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-					}
-				}
-				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-						.getItem() == BookashItem.block) {
-					if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-							((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
-						xRadius = 3;
-						zRadius = 3;
-						loop2 = Math.toRadians(entity.rotationYaw);
-						xRabius = 5;
-						xRabius = 5;
-						loop3 = Math.toRadians(entity.rotationYaw);
-						xRaduis3 = 8;
-						zRaduis3 = 8;
-						loop4 = Math.toRadians(entity.rotationYaw);
-						xRaduis4 = 10;
-						zRaduis4 = 10;
-						loop5 = Math.toRadians(entity.rotationYaw);
-						xRadius5 = 15;
-						zRadius5 = 15;
-						loop6 = Math.toRadians(entity.rotationYaw);
-						xRadius6 = 20;
-						zRadius6 = 20;
-						for (int index18 = 0; index18 < (int) (36); index18++) {
-							X = (x + Math.cos(loop) * xRadius);
-							Y = (y + 1);
-							Z = (z + Math.sin(loop) * zRadius);
-							X2 = (x + Math.cos(loop2) * xRabius);
-							Y2 = (y + 1);
-							Z2 = (z + Math.sin(loop2) * xRabius);
-							X3 = (x + Math.cos(loop3) * xRaduis3);
-							Y3 = (y + 1);
-							Z3 = (z + Math.sin(loop3) * zRaduis3);
-							X4 = (x + Math.cos(loop4) * xRaduis4);
-							Y4 = (y + 1);
-							Z4 = (z + Math.sin(loop4) * zRaduis4);
-							X5 = (x + Math.cos(loop5) * xRadius5);
-							Y5 = (y + 1);
-							Z5 = (z + Math.sin(loop5) * zRadius5);
-							X6 = (x + Math.cos(loop6) * xRadius6);
-							Y6 = (y + 1);
-							Z6 = (z + Math.sin(loop6) * zRadius6);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ASH, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.ENCHANT, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X - (3 / 2d), Y - (3 / 2d), Z - (3 / 2d), X + (3 / 2d), Y + (3 / 2d), Z + (3 / 2d)), null)
-										.stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, Y, Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (!(entityiterator == entity)) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X2 - (3 / 2d), Y2 - (3 / 2d), Z2 - (3 / 2d), X2 + (3 / 2d), Y2 + (3 / 2d), Z2 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X2, Y2, Z2)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (!(entityiterator == entity)) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X3 - (3 / 2d), Y3 - (3 / 2d), Z3 - (3 / 2d), X3 + (3 / 2d), Y3 + (3 / 2d), Z3 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X3, Y3, Z3)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (!(entityiterator == entity)) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X4 - (3 / 2d), Y4 - (3 / 2d), Z4 - (3 / 2d), X4 + (3 / 2d), Y4 + (3 / 2d), Z4 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X4, Y4, Z4)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (!(entityiterator == entity)) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X5 - (3 / 2d), Y5 - (3 / 2d), Z5 - (3 / 2d), X5 + (3 / 2d), Y5 + (3 / 2d), Z5 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X5, Y5, Z5)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (!(entityiterator == entity)) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X6 - (3 / 2d), Y6 - (3 / 2d), Z6 - (3 / 2d), X6 + (3 / 2d), Y6 + (3 / 2d), Z6 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X6, Y6, Z6)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (!(entityiterator == entity)) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
-								}
-							}
-							loop = (loop + Math.toRadians(5));
-							loop2 = (loop2 + Math.toRadians(5));
-							loop3 = (loop3 + Math.toRadians(5));
-							loop4 = (loop4 + Math.toRadians(5));
-							loop5 = (loop5 + Math.toRadians(5));
-							loop6 = (loop6 + Math.toRadians(5));
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-						}
-					} else {
-						xRadius = 3;
-						zRadius = 3;
-						loop2 = Math.toRadians(entity.rotationYaw);
-						xRabius = 5;
-						xRabius = 5;
-						loop3 = Math.toRadians(entity.rotationYaw);
-						xRaduis3 = 8;
-						zRaduis3 = 8;
-						loop4 = Math.toRadians(entity.rotationYaw);
-						xRaduis4 = 10;
-						zRaduis4 = 10;
-						loop5 = Math.toRadians(entity.rotationYaw);
-						xRadius5 = 15;
-						zRadius5 = 15;
-						loop6 = Math.toRadians(entity.rotationYaw);
-						xRadius6 = 20;
-						zRadius6 = 20;
-						for (int index19 = 0; index19 < (int) (36); index19++) {
-							X = (x + Math.cos(loop) * xRadius);
-							Y = (y + 1);
-							Z = (z + Math.sin(loop) * zRadius);
-							X2 = (x + Math.cos(loop2) * xRabius);
-							Y2 = (y + 1);
-							Z2 = (z + Math.sin(loop2) * xRabius);
-							X3 = (x + Math.cos(loop3) * xRaduis3);
-							Y3 = (y + 1);
-							Z3 = (z + Math.sin(loop3) * zRaduis3);
-							X4 = (x + Math.cos(loop4) * xRaduis4);
-							Y4 = (y + 1);
-							Z4 = (z + Math.sin(loop4) * zRaduis4);
-							X5 = (x + Math.cos(loop5) * xRadius5);
-							Y5 = (y + 1);
-							Z5 = (z + Math.sin(loop5) * zRadius5);
-							X6 = (x + Math.cos(loop6) * xRadius6);
-							Y6 = (y + 1);
-							Z6 = (z + Math.sin(loop6) * zRadius6);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X2, Y2, Z2, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X3, Y3, Z3, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X4, Y4, Z4, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X5, Y5, Z5, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X6, Y6, Z6, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X - (3 / 2d), Y - (3 / 2d), Z - (3 / 2d), X + (3 / 2d), Y + (3 / 2d), Z + (3 / 2d)), null)
-										.stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, Y, Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == KatanakatanaItem.block) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-										} else {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X2 - (3 / 2d), Y2 - (3 / 2d), Z2 - (3 / 2d), X2 + (3 / 2d), Y2 + (3 / 2d), Z2 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X2, Y2, Z2)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == KatanakatanaItem.block) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-										} else {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X3 - (3 / 2d), Y3 - (3 / 2d), Z3 - (3 / 2d), X3 + (3 / 2d), Y3 + (3 / 2d), Z3 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X3, Y3, Z3)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == KatanakatanaItem.block) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-										} else {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X4 - (3 / 2d), Y4 - (3 / 2d), Z4 - (3 / 2d), X4 + (3 / 2d), Y4 + (3 / 2d), Z4 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X4, Y4, Z4)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == KatanakatanaItem.block) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-										} else {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X5 - (3 / 2d), Y5 - (3 / 2d), Z5 - (3 / 2d), X5 + (3 / 2d), Y5 + (3 / 2d), Z5 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X5, Y5, Z5)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == KatanakatanaItem.block) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-										} else {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-										}
-									}
-								}
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-										new AxisAlignedBB(X6 - (3 / 2d), Y6 - (3 / 2d), Z6 - (3 / 2d), X6 + (3 / 2d), Y6 + (3 / 2d), Z6 + (3 / 2d)),
-										null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X6, Y6, Z6)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == KatanakatanaItem.block) {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-										} else {
-											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-										}
-									}
-								}
-							}
-							loop = (loop + Math.toRadians(5));
-							loop2 = (loop2 + Math.toRadians(5));
-							loop3 = (loop3 + Math.toRadians(5));
-							loop4 = (loop4 + Math.toRadians(5));
-							loop5 = (loop5 + Math.toRadians(5));
-							loop6 = (loop6 + Math.toRadians(5));
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-						}
-					}
-				} else {
-					if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-							((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 3;
-						ZRadius2 = 3;
-						Y_pos = (y + 1);
-						for (int index20 = 0; index20 < (int) (36); index20++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (3 / 2d), (Y + 1) - (3 / 2d),
-										Z - (3 / 2d), X + (3 / 2d), (Y + 1) + (3 / 2d), Z + (3 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
-								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 6;
-						ZRadius2 = 6;
-						Y_pos = (y + 1);
-						for (int index21 = 0; index21 < (int) (36); index21++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (3 / 2d), (Y + 1) - (3 / 2d),
-										Z - (3 / 2d), X + (3 / 2d), (Y + 1) + (3 / 2d), Z + (3 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
-											}
-										}
-									}
-								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-					} else {
-						if (entity instanceof LivingEntity) {
-							((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
-						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 3;
-						ZRadius2 = 3;
-						Y_pos = (y + 1);
-						for (int index22 = 0; index22 < (int) (36); index22++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, (Y + 1), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (3 / 2d), (Y + 1) - (3 / 2d),
-										Z - (3 / 2d), X + (3 / 2d), (Y + 1) + (3 / 2d), Z + (3 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-													.getItem() == KatanakatanaItem.block) {
-												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-											} else {
-												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-											}
-										}
-									}
-								}
-							}
-							loop = (loop + Math.toRadians(5));
-							Y_pos = (Y_pos - 0.0555555555555556);
-						}
-						loop = Math.toRadians(entity.rotationYaw);
-						XRadius2 = 6;
-						ZRadius2 = 6;
-						Y_pos = (y + 1);
-						for (int index23 = 0; index23 < (int) (36); index23++) {
+						for (int index13 = 0; index13 < (int) (36); index13++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -1954,7 +1723,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 								}
 							}.compareDistOf(x, y, z)).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
-						for (int index24 = 0; index24 < (int) (10); index24++) {
+						for (int index14 = 0; index14 < (int) (10); index14++) {
 							if (!(entityiterator == entity)) {
 								if (entity instanceof MobEntity) {
 									if (world instanceof ServerWorld) {
