@@ -12,13 +12,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.japanesesword.procedures.KatanakatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
-import net.mcreator.japanesesword.procedures.KatanakatanapureiyagaShiYongwoTingZhisitaShiProcedure;
 import net.mcreator.japanesesword.procedures.KatanakatanaYoukuritukusitatokiProcedure;
-import net.mcreator.japanesesword.itemgroup.BukiItemGroup;
 import net.mcreator.japanesesword.JapaneseswordModElements;
 
 import java.util.stream.Stream;
@@ -32,7 +29,7 @@ public class KatanakatanaItem extends JapaneseswordModElements.ModElement {
 	public static final Item block = null;
 
 	public KatanakatanaItem(JapaneseswordModElements instance) {
-		super(instance, 234);
+		super(instance, 295);
 	}
 
 	@Override
@@ -43,25 +40,25 @@ public class KatanakatanaItem extends JapaneseswordModElements.ModElement {
 			}
 
 			public float getEfficiency() {
-				return 20f;
+				return 9f;
 			}
 
 			public float getAttackDamage() {
-				return 11f;
+				return 6f;
 			}
 
 			public int getHarvestLevel() {
-				return 20;
-			}
-
-			public int getEnchantability() {
 				return 9;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(AncientbooksItem.block));
+			public int getEnchantability() {
+				return 0;
 			}
-		}, 3, 96f, new Item.Properties().group(BukiItemGroup.tab).isImmuneToFire()) {
+
+			public Ingredient getRepairMaterial() {
+				return Ingredient.EMPTY;
+			}
+		}, 3, 96f, new Item.Properties().group(null)) {
 			@Override
 			public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
 				ActionResult<ItemStack> retval = super.onItemRightClick(world, entity, hand);
@@ -76,17 +73,6 @@ public class KatanakatanaItem extends JapaneseswordModElements.ModElement {
 								new AbstractMap.SimpleEntry<>("entity", entity))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
-			}
-
-			@Override
-			public void onPlayerStoppedUsing(ItemStack itemstack, World world, LivingEntity entity, int time) {
-				super.onPlayerStoppedUsing(itemstack, world, entity, time);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-
-				KatanakatanapureiyagaShiYongwoTingZhisitaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 
 			@Override

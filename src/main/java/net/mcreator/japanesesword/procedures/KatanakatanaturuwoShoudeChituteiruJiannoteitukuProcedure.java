@@ -3,12 +3,13 @@ package net.mcreator.japanesesword.procedures;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.EnchantmentHelper;
 
-import net.mcreator.japanesesword.potion.MutekiPotionEffect;
-import net.mcreator.japanesesword.item.KatanakatanaItem;
+import net.mcreator.japanesesword.potion.Arrow1PotionEffect;
+import net.mcreator.japanesesword.enchantment.YawoEnchantment;
+import net.mcreator.japanesesword.enchantment.HasiruEnchantment;
 import net.mcreator.japanesesword.JapaneseswordMod;
 
 import java.util.Map;
@@ -22,20 +23,19 @@ public class KatanakatanaturuwoShoudeChituteiruJiannoteitukuProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == KatanakatanaItem.block) {
+		double dis = 0;
+		if ((EnchantmentHelper.getEnchantmentLevel(HasiruEnchantment.enchantment,
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 240, (int) 255, (true), (true)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 9, (true), (false)));
+		} else {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 5, (true), (true)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 4, (true), (false)));
+		}
+		if ((EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment,
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SATURATION, (int) 1, (int) 10, (true), (true)));
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 1, (int) 255, (true), (true)));
-			if (entity instanceof PlayerEntity) {
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(MutekiPotionEffect.potion, (int) 1, (int) 1, (true), (true)));
-			}
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
 		}
 	}
 }

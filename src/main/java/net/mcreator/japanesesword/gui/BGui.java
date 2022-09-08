@@ -22,6 +22,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.gui.ScreenManager;
 
+import net.mcreator.japanesesword.procedures.OProcedure;
+import net.mcreator.japanesesword.procedures.MinnkannzinnProcedure;
 import net.mcreator.japanesesword.procedures.HProcedure;
 import net.mcreator.japanesesword.procedures.CProcedure;
 import net.mcreator.japanesesword.JapaneseswordModElements;
@@ -186,6 +188,11 @@ public class BGui extends JapaneseswordModElements.ModElement {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+
+			MinnkannzinnProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
 		if (buttonID == 1) {
 
 			HProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
@@ -194,6 +201,11 @@ public class BGui extends JapaneseswordModElements.ModElement {
 		if (buttonID == 2) {
 
 			CProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+		}
+		if (buttonID == 3) {
+
+			OProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}

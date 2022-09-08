@@ -1,0 +1,278 @@
+{
+  "_fv": 33,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "mana.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab1"
+          },
+          "name": "mana.png",
+          "x": -16,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mana.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab2"
+          },
+          "name": "mana.png",
+          "x": 19,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mana.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab3"
+          },
+          "name": "mana.png",
+          "x": 39,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mana.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab4"
+          },
+          "name": "mana.png",
+          "x": 57,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "mana.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab5"
+          },
+          "name": "mana.png",
+          "x": 78,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manaa.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab6"
+          },
+          "name": "manaa.png",
+          "x": 101,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manaa.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab7"
+          },
+          "name": "manaa.png",
+          "x": 123,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manaa.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab8"
+          },
+          "name": "manaa.png",
+          "x": 146,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manaa.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab9"
+          },
+          "name": "manaa.png",
+          "x": 167,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manaa.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manab10"
+          },
+          "name": "manaa.png",
+          "x": 190,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana1"
+          },
+          "name": "manekara.png",
+          "x": 0,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana2"
+          },
+          "name": "manekara.png",
+          "x": 19,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana3"
+          },
+          "name": "manekara.png",
+          "x": 39,
+          "y": -15
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana4"
+          },
+          "name": "manekara.png",
+          "x": 57,
+          "y": -15
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana5"
+          },
+          "name": "manekara.png",
+          "x": 78,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Manna6"
+          },
+          "name": "manekara.png",
+          "x": 101,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana7"
+          },
+          "name": "manekara.png",
+          "x": 123,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana8"
+          },
+          "name": "manekara.png",
+          "x": 146,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana9"
+          },
+          "name": "manekara.png",
+          "x": 167,
+          "y": -16
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "manekara.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "Mana10"
+          },
+          "name": "manekara.png",
+          "x": 190,
+          "y": -16
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

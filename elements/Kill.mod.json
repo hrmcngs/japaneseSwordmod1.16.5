@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "enchantment",
   "definition": {
     "name": "Kill",
@@ -33,6 +33,9 @@
       },
       {
         "value": "CUSTOM:Otachibloodcurse"
+      },
+      {
+        "value": "CUSTOM:Kogatana"
       }
     ],
     "isTreasureEnchantment": true,

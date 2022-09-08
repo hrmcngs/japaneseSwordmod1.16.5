@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -14,6 +14,9 @@
         "type": "button",
         "data": {
           "text": "民間人",
+          "onClick": {
+            "name": "Minnkannzinn"
+          },
           "width": 40,
           "height": 20,
           "name": "民間人",
@@ -67,6 +70,20 @@
           "name": "abc.png",
           "x": 227,
           "y": 51
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "王の一人",
+          "onClick": {
+            "name": "O"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "王の一人",
+          "x": 189,
+          "y": 176
         }
       }
     ],

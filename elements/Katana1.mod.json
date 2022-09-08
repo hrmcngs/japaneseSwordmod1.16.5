@@ -1,0 +1,36 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "tetunokatana",
+    "customModelName": "ying_guan_jian_:default",
+    "name": "桜観剣",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 9,
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 0,
+    "damageVsEntity": 13.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "Katana1Youkuritukusitatoki"
+    },
+    "onItemInUseTick": {
+      "name": "Katana1turuwoShoudeChituteiruJiannoteituku"
+    },
+    "onEntitySwing": {
+      "name": "Katana1enteiteigaaitemuwoZhentutaShi"
+    }
+  }
+}

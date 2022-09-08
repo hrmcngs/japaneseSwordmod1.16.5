@@ -1,0 +1,36 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "tetunokenn",
+    "customModelName": "naginata:default",
+    "name": "薙刀",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Buki"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 1,
+    "efficiency": 9.0,
+    "attackSpeed": 1.6,
+    "enchantability": 2,
+    "damageVsEntity": 7.6,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "NaginataYoukuritukusitatoki"
+    },
+    "onItemInUseTick": {
+      "name": "NaginataturuwoShoudeChituteiruJiannoteituku"
+    },
+    "onEntitySwing": {
+      "name": "NaginataenteiteigaaitemuwoZhentutaShi"
+    }
+  }
+}

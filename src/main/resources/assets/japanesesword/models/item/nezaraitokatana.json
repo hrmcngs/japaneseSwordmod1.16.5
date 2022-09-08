@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "japanesesword:items/nazara"
+    "layer0": "japanesesword:items/nezaraitonokatana"
   }
 }

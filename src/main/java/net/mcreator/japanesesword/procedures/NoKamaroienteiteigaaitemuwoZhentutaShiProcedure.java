@@ -1,12 +1,13 @@
 package net.mcreator.japanesesword.procedures;
 
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.World;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.japanesesword.item.KamanoyoteiItem;
 import net.mcreator.japanesesword.JapaneseswordMod;
 
-import java.util.Random;
 import java.util.Map;
 
 public class NoKamaroienteiteigaaitemuwoZhentutaShiProcedure {
@@ -19,10 +20,24 @@ public class NoKamaroienteiteigaaitemuwoZhentutaShiProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity.isSneaking()) {
-			if (entity instanceof LivingEntity) {
-				LivingEntity _ent = (LivingEntity) entity;
-				if (!_ent.world.isRemote()) {
-					KamanoyoteiItem.shoot(_ent.world, _ent, new Random(), 1, 1, 0);
+			{
+				Entity _shootFrom = entity;
+				World projectileLevel = _shootFrom.world;
+				if (!projectileLevel.isRemote()) {
+					ProjectileEntity _entityToSpawn = new Object() {
+						public ProjectileEntity getArrow(World world, Entity shooter, float damage, int knockback) {
+							AbstractArrowEntity entityToSpawn = new KamanoyoteiItem.ArrowCustomEntity(KamanoyoteiItem.arrow, world);
+							entityToSpawn.setShooter(shooter);
+							entityToSpawn.setDamage(damage);
+							entityToSpawn.setKnockbackStrength(knockback);
+							entityToSpawn.setSilent(true);
+
+							return entityToSpawn;
+						}
+					}.getArrow(projectileLevel, entity, 1, 0);
+					_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1, _shootFrom.getPosZ());
+					_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y, _shootFrom.getLookVec().z, 1, 0);
+					projectileLevel.addEntity(_entityToSpawn);
 				}
 			}
 		}

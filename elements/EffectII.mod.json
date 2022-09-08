@@ -1,0 +1,23 @@
+{
+  "_fv": 33,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "effectⅡ",
+    "icon": "are.png",
+    "color": {
+      "value": 0,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "isBad": false,
+    "isBenefitical": false,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onActiveTick": {
+      "name": "EffectIIehuekutogaYouXiaoShinoteituku"
+    },
+    "onExpired": {
+      "name": "EffectIIposiyonXiaoGuogaQieretaShi"
+    }
+  }
+}

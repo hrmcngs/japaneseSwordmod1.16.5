@@ -76,25 +76,29 @@ public class EffectehuekutogaYouXiaoShinoteitukuProcedure {
 					if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
 							((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 						if (entityiterator instanceof MobEntity) {
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-									_ent.world.getServer().getCommandManager()
-											.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+							if (!(entityiterator == entity)) {
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+										_ent.world.getServer().getCommandManager()
+												.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+									}
 								}
-							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-									_ent.world.getServer().getCommandManager().handleCommand(
-											_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-											"/deta merge entity @s (Health:0)");
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+										_ent.world.getServer().getCommandManager().handleCommand(
+												_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+												"/deta merge entity @s (Health:0)");
+									}
 								}
 							}
 						}
 					} else {
 						if (entityiterator instanceof MobEntity) {
-							entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+							if (!(entityiterator == entity)) {
+								entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+							}
 						}
 					}
 				}
@@ -120,19 +124,21 @@ public class EffectehuekutogaYouXiaoShinoteitukuProcedure {
 					if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
 							((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 						if (entityiterator instanceof MobEntity) {
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-									_ent.world.getServer().getCommandManager()
-											.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+							if (!(entityiterator == entity)) {
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+										_ent.world.getServer().getCommandManager()
+												.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+									}
 								}
-							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-									_ent.world.getServer().getCommandManager().handleCommand(
-											_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-											"/deta merge entity @s (Health:0)");
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+										_ent.world.getServer().getCommandManager().handleCommand(
+												_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+												"/deta merge entity @s (Health:0)");
+									}
 								}
 							}
 						}
@@ -140,9 +146,13 @@ public class EffectehuekutogaYouXiaoShinoteitukuProcedure {
 						if (entityiterator instanceof MobEntity) {
 							if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 									.getItem() == KatanakatanaItem.block) {
-								entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+								if (!(entityiterator == entity)) {
+									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+								}
 							} else {
-								entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+								if (!(entityiterator == entity)) {
+									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+								}
 							}
 						}
 					}

@@ -39,7 +39,7 @@ public class GGuiWindow extends ContainerScreen<GGui.GuiContainerMod> {
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/g.png");
+	private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/screens/g.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -58,13 +58,13 @@ public class GGuiWindow extends ContainerScreen<GGui.GuiContainerMod> {
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/hanma.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/screens/hanma.png"));
 		this.blit(ms, this.guiLeft + 6, this.guiTop + 7, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/yazirusi.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/screens/yazirusi.png"));
 		this.blit(ms, this.guiLeft + 109, this.guiTop + 31, 0, 0, 16, 16, 16, 16);
 
-		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/purasu.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/screens/purasu.png"));
 		this.blit(ms, this.guiLeft + 43, this.guiTop + 31, 0, 0, 16, 16, 16, 16);
 
 		RenderSystem.disableBlend();

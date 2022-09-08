@@ -35,7 +35,7 @@ public class KamanoyoteiRenderer {
 
 	@OnlyIn(Dist.CLIENT)
 	public static class CustomRender extends EntityRenderer<KamanoyoteiItem.ArrowCustomEntity> {
-		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/kuro.png");
+		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/entities/kuro.png");
 
 		public CustomRender(EntityRendererManager renderManager) {
 			super(renderManager);

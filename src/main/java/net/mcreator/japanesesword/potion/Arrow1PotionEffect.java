@@ -31,7 +31,7 @@ public class Arrow1PotionEffect {
 
 	public static class EffectCustom extends Effect {
 		public EffectCustom() {
-			super(EffectType.BENEFICIAL, -1);
+			super(EffectType.BENEFICIAL, -11513776);
 			setRegistryName("arrow_1");
 		}
 

@@ -1,30 +1,26 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "tool",
   "definition": {
     "renderType": 1,
-    "texture": "tubatokazarinoarukatana",
-    "customModelName": "katanalike:default",
-    "name": "飾りのついた刀,二刀流",
+    "texture": "tetunokatana",
+    "customModelName": "katana5:default",
+    "name": "白楼剣",
     "specialInfo": [],
     "creativeTab": {
-      "value": "CUSTOM:Buki"
+      "value": "No creative tab entry"
     },
     "toolType": "Sword",
-    "harvestLevel": 20,
-    "efficiency": 20.0,
+    "harvestLevel": 9,
+    "efficiency": 9.0,
     "attackSpeed": 100.0,
-    "enchantability": 9,
-    "damageVsEntity": 13.0,
+    "enchantability": 0,
+    "damageVsEntity": 8.0,
     "usageCount": 0,
     "blocksAffected": [],
     "hasGlow": false,
-    "repairItems": [
-      {
-        "value": "CUSTOM:Ancientbooks"
-      }
-    ],
-    "immuneToFire": true,
+    "repairItems": [],
+    "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onRightClickedInAir": {
@@ -32,9 +28,6 @@
     },
     "onItemInUseTick": {
       "name": "KatanakatanaturuwoShoudeChituteiruJiannoteituku"
-    },
-    "onStoppedUsing": {
-      "name": "KatanakatanapureiyagaShiYongwoTingZhisitaShi"
     }
   }
 }

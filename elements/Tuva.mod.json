@@ -1,0 +1,33 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "tetunokenn",
+    "customModelName": "tuvuaihenda:default",
+    "name": "ツイヴァイヘンダー",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Buki"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 9,
+    "efficiency": 9.0,
+    "attackSpeed": 0.7,
+    "enchantability": 5,
+    "damageVsEntity": 10.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": true,
+    "onRightClickedInAir": {
+      "name": "TuvaYoukuritukusitatoki"
+    },
+    "onItemInUseTick": {
+      "name": "TuvaturuwoShoudeChituteiruJiannoteituku"
+    }
+  }
+}

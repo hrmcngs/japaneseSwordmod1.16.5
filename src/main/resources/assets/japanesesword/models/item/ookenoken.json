@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/kinn",
+  "textures": {
+    "0": "japanesesword:blocks/kinnnonno",
+    "particle": "japanesesword:items/kinnnokatana"
+  }
+}

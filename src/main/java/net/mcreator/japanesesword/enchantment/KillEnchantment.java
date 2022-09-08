@@ -15,6 +15,7 @@ import net.mcreator.japanesesword.item.NorooinokatanaItem;
 import net.mcreator.japanesesword.item.NoroiItem;
 import net.mcreator.japanesesword.item.NoKamaroiItem;
 import net.mcreator.japanesesword.item.NaihuItem;
+import net.mcreator.japanesesword.item.KogatanaItem;
 import net.mcreator.japanesesword.item.KamaItem;
 import net.mcreator.japanesesword.item.JapaneseSwordItem;
 import net.mcreator.japanesesword.JapaneseswordModElements;
@@ -70,6 +71,8 @@ public class KillEnchantment extends JapaneseswordModElements.ModElement {
 			if (stack.getItem() == NoKamaroiItem.block)
 				return true;
 			if (stack.getItem() == OtachibloodcurseItem.block)
+				return true;
+			if (stack.getItem() == KogatanaItem.block)
 				return true;
 			return false;
 		}

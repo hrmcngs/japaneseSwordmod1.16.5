@@ -1,12 +1,30 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "japanesesword:tubanoatukatana"
-  },
-  "addition": {
-    "item": "minecraft:iron_ingot"
+  "group": "buki",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    "34 ",
+    "67 "
+  ],
+  "key": {
+    "2": {
+      "item": "minecraft:gold_ingot"
+    },
+    "3": {
+      "item": "minecraft:gold_nugget"
+    },
+    "4": {
+      "item": "minecraft:gold_ingot"
+    },
+    "6": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:gold_nugget"
+    }
   },
   "result": {
-    "item": "japanesesword:otachi"
+    "item": "japanesesword:kinnnokatana",
+    "count": 1
   }
 }

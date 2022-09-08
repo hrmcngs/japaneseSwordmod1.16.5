@@ -1,6 +1,9 @@
 package net.mcreator.japanesesword.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
@@ -8,6 +11,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector2f;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.SoundCategory;
@@ -17,33 +21,33 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.Entity;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
+import net.mcreator.japanesesword.potion.TerepotoPotionEffect;
 import net.mcreator.japanesesword.potion.KurutaimunasiPotionEffect;
-import net.mcreator.japanesesword.potion.EffectPotionEffect;
+import net.mcreator.japanesesword.potion.EffectIVPotionEffect;
+import net.mcreator.japanesesword.potion.EffectIIPotionEffect;
+import net.mcreator.japanesesword.item.TokinohonnItem;
 import net.mcreator.japanesesword.item.OtachibloodcurseItem;
 import net.mcreator.japanesesword.item.KatanakatanaItem;
 import net.mcreator.japanesesword.item.BooktokubetuItem;
 import net.mcreator.japanesesword.item.BookbloodItem;
 import net.mcreator.japanesesword.item.BookashItem;
-import net.mcreator.japanesesword.entity.ZanngekimobEntity;
 import net.mcreator.japanesesword.enchantment.KillEnchantment;
 import net.mcreator.japanesesword.JapaneseswordModVariables;
 import net.mcreator.japanesesword.JapaneseswordMod;
 
 import java.util.stream.Collectors;
 import java.util.function.Function;
+import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
@@ -126,180 +130,4295 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 		double angle = 0;
 		double Numerical_value = 0;
 		double yaw = 0;
+		double rad = 0;
+		double rad_now = 0;
+		double degree = 0;
+		double x_pos = 0;
+		double z_pos = 0;
+		double dis = 0;
+		double r = 0;
+		double alpha = 0;
+		double deta = 0;
+		double y1 = 0;
+		double z1 = 0;
+		double x1 = 0;
 		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 				.getItem() == KatanakatanaItem.block) {
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 6) {
 				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-						.getItem() == BookbloodItem.block) {
-					if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-							((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
-						if (entity instanceof LivingEntity) {
-							((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
-						}
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
-						}
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g2")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g2")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
-						}
-						loop = Math.toRadians(entity.rotationYaw - 180);
-						XRadius2 = 3;
-						ZRadius2 = 3;
-						Y_pos = (y + 3);
-						for (int index0 = 0; index0 < (int) (36); index0++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 2), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SOUL, X, (Y + 2), Z, (int) 5, 0.1, 0.1, 0.1, 0.2);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SOUL_FIRE_FLAME, X, (Y + 2), Z, (int) 5, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(X, (Y + 2), Z), Vector2f.ZERO, (ServerWorld) world, 4,
-												"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"particle minecraft:dust 1.000 0.953 0.278 1 ~ ~ ~ 0.2 0.2 0.2 1 10");
-							}
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(X, (Y + 2), Z), Vector2f.ZERO, (ServerWorld) world, 4,
-												"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"particle minecraft:dust 0.965 1.000 0.490 1 ~ ~ ~ 0.2 0.2 0.2 1 10");
-							}
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(X, (Y + 2), Z), Vector2f.ZERO, (ServerWorld) world, 4,
-												"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"particle minecraft:dust 0.965 1.000 0.490 1 ~ ~ ~ 0.2 0.2 0.2 1 10");
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (3 / 2d), (Y + 2) - (3 / 2d),
-										Z - (3 / 2d), X + (3 / 2d), (Y + 2) + (3 / 2d), Z + (3 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-											}
-										}.compareDistOf(X, (Y + 2), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (!(entityiterator == entity)) {
-										if (entityiterator instanceof MobEntity) {
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
-												}
+						.getItem() == BookbloodItem.block
+						|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+								.getItem() == TokinohonnItem.block) {
+					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+							.getItem() == TokinohonnItem.block) {
+						{
+							List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
+									new AxisAlignedBB(x - (30 / 2d), y - (30 / 2d), z - (30 / 2d), x + (30 / 2d), y + (30 / 2d), z + (30 / 2d)), null)
+									.stream().sorted(new Object() {
+										Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+											return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+										}
+									}.compareDistOf(x, y, z)).collect(Collectors.toList());
+							for (Entity entityiterator : _entfound) {
+								if (!(entityiterator == entity)) {
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 60, (int) 255, (false), (false)));
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(Effects.WEAKNESS, (int) 60, (int) 255, (false), (false)));
+									entityiterator.rotationYaw = (float) (0);
+									entity.setRenderYawOffset(entity.rotationYaw);
+									entity.prevRotationYaw = entity.rotationYaw;
+									if (entity instanceof LivingEntity) {
+										((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+										((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+										((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+									}
+									entityiterator.rotationPitch = (float) (75);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
 											}
 										}
-									}
-								}
-							}
-							loop = (loop - Math.toRadians(5));
-							Y_pos = (Y_pos - 0.1666666666666667);
-							entity.setMotion(0, 0, 0);
-						}
-					} else {
-						if (entity instanceof LivingEntity) {
-							((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
-						}
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
-						}
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g2")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g2")),
-									SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
-						}
-						loop = Math.toRadians(entity.rotationYaw - 180);
-						XRadius2 = 3;
-						ZRadius2 = 3;
-						Y_pos = (y + 3);
-						for (int index1 = 0; index1 < (int) (36); index1++) {
-							X = (x + Math.cos(loop) * XRadius2);
-							Y = Y_pos;
-							Z = (z + Math.sin(loop) * ZRadius2);
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, X, (Y + 2), Z, (int) 3, 0.1, 0.1, 0.1, 0);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, X, (Y + 2), Z, (int) 5, 0.1, 0.1, 0.1, 0.2);
-							}
-							if (world instanceof ServerWorld) {
-								((ServerWorld) world).spawnParticle(ParticleTypes.LAVA, X, (Y + 2), Z, (int) 5, 0.1, 0.1, 0.1, 0.2);
-							}
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(X, (Y + 1), Z), Vector2f.ZERO, (ServerWorld) world, 4,
-												"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"particle minecraft:dust 1.000 0.953 0.278 1 ~ ~ ~ 0.2 0.2 0.2 1 10");
-							}
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(X, (Y + 1), Z), Vector2f.ZERO, (ServerWorld) world, 4,
-												"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"particle minecraft:dust 0.965 1.000 0.490 1 ~ ~ ~ 0.2 0.2 0.2 1 10");
-							}
-							if (world instanceof ServerWorld) {
-								((World) world).getServer().getCommandManager().handleCommand(
-										new CommandSource(ICommandSource.DUMMY, new Vector3d(X, (Y + 1), Z), Vector2f.ZERO, (ServerWorld) world, 4,
-												"", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-										"particle minecraft:dust 0.965 1.000 0.490 1 ~ ~ ~ 0.2 0.2 0.2 1 10");
-							}
-							{
-								List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (3 / 2d), (Y + 1) - (3 / 2d),
-										Z - (3 / 2d), X + (3 / 2d), (Y + 1) + (3 / 2d), Z + (3 / 2d)), null).stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator
-														.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
 											}
-										}.compareDistOf(X, (Y + 1), Z)).collect(Collectors.toList());
-								for (Entity entityiterator : _entfound) {
-									if (entityiterator instanceof MobEntity) {
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-										entityiterator.setFire((int) 15);
-									}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 1);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 2);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 3);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 4);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 5);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 6);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 7);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 8);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 9);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 10);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 11);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 12);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 13);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 14);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 15);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 16);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 17);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 18);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 19);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 20);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 21);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 22);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 23);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 24);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 25);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 26);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 27);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 28);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 29);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 30);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 31);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 32);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 33);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 34);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 35);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 36);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 37);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 38);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 39);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 40);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 41);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 42);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 43);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 44);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 45);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 46);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 47);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 48);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 49);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 50);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 51);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 52);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 53);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 54);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 55);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 56);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 57);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 58);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 59);
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
+										}
+
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
+											}
+										}
+
+										private void run() {
+											entityiterator.setMotion(0, 0, 0);
+											{
+												Entity _ent = entityiterator;
+												_ent.setPositionAndUpdate(x, y, z);
+												if (_ent instanceof ServerPlayerEntity) {
+													((ServerPlayerEntity) _ent).connection.setPlayerLocation(x, y, z, _ent.rotationYaw,
+															_ent.rotationPitch, Collections.emptySet());
+												}
+											}
+											entityiterator.rotationYaw = (float) (0);
+											entity.setRenderYawOffset(entity.rotationYaw);
+											entity.prevRotationYaw = entity.rotationYaw;
+											if (entity instanceof LivingEntity) {
+												((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+												((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+												((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+											}
+											entityiterator.rotationPitch = (float) (75);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 60);
 								}
 							}
-							loop = (loop - Math.toRadians(5));
-							Y_pos = (Y_pos - 0.1666666666666667);
-							entity.setMotion(0, 0, 0);
 						}
+					}
+					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+							.getItem() == BookbloodItem.block) {
+						x1 = (entity.getPosX());
+						y1 = (entity.getPosY());
+						z1 = (entity.getPosZ());
+						if (entity instanceof LivingEntity)
+							((LivingEntity) entity)
+									.addPotionEffect(new EffectInstance(TerepotoPotionEffect.potion, (int) 100, (int) 1, (false), (false)));
+						{
+							Entity _ent = entity;
+							_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+									(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+							if (_ent instanceof ServerPlayerEntity) {
+								((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+										(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+										_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+							}
+						}
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 2);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 4);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 6);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 8);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 10);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 12);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 14);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 16);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 18);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 20);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 22);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 24);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 26);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 28);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 30);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 32);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 34);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 36);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 38);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 40);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 42);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 44);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 46);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 48);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 50);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 52);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 54);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 56);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 58);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 60);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 62);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 64);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 66);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 68);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 70);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 72);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 74);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 76);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 78);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 80);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 82);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 84);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 86);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 88);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 90);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 92);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 94);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 96);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 98);
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
+
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
+							}
+
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
+								}
+							}
+
+							private void run() {
+								{
+									Entity _ent = entity;
+									_ent.setPositionAndUpdate((x + MathHelper.nextDouble(new Random(), -3, 3)),
+											(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)));
+									if (_ent instanceof ServerPlayerEntity) {
+										((ServerPlayerEntity) _ent).connection.setPlayerLocation((x + MathHelper.nextDouble(new Random(), -3, 3)),
+												(y + MathHelper.nextDouble(new Random(), -2, 3)), (z + MathHelper.nextDouble(new Random(), -3, 3)),
+												_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+									}
+								}
+								MinecraftForge.EVENT_BUS.unregister(this);
+							}
+						}.start(world, (int) 100);
 					}
 				} else {
 					if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
@@ -329,7 +4448,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 3;
 						ZRadius2 = 3;
 						Y_pos = (y + 3);
-						for (int index2 = 0; index2 < (int) (36); index2++) {
+						for (int index0 = 0; index0 < (int) (36); index0++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -397,7 +4516,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 3;
 						ZRadius2 = 3;
 						Y_pos = (y + 3);
-						for (int index3 = 0; index3 < (int) (36); index3++) {
+						for (int index1 = 0; index1 < (int) (36); index1++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -487,7 +4606,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 3;
 						ZRadius2 = 3;
 						Y_pos = (y + 3);
-						for (int index4 = 0; index4 < (int) (36); index4++) {
+						for (int index2 = 0; index2 < (int) (36); index2++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -546,7 +4665,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 3;
 						ZRadius2 = 3;
 						Y_pos = (y + 3);
-						for (int index5 = 0; index5 < (int) (36); index5++) {
+						for (int index3 = 0; index3 < (int) (36); index3++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -643,16 +4762,70 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 5) {
-				if (world instanceof ServerWorld) {
-					Entity entityToSpawn = new ZanngekimobEntity.CustomEntity(ZanngekimobEntity.entity, (World) world);
-					entityToSpawn.setLocationAndAngles(x, (y + 2), z, (float) (entity.rotationYaw), (float) (entity.rotationPitch));
-					entityToSpawn.setRenderYawOffset((float) (entity.rotationYaw));
-					entityToSpawn.setRotationYawHead((float) (entity.rotationYaw));
-					entityToSpawn.setMotion(0, 0, 0);
-					if (entityToSpawn instanceof MobEntity)
-						((MobEntity) entityToSpawn).onInitialSpawn((ServerWorld) world, world.getDifficultyForLocation(entityToSpawn.getPosition()),
-								SpawnReason.MOB_SUMMONED, (ILivingEntityData) null, (CompoundNBT) null);
-					world.addEntity(entityToSpawn);
+				if (entity instanceof LivingEntity) {
+					((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
+				}
+				r = 1;
+				alpha = (entity.rotationYaw);
+				deta = (entity.rotationPitch);
+				for (int index4 = 0; index4 < (int) (100); index4++) {
+					{
+						List<Entity> _entfound = world
+								.getEntitiesWithinAABB(Entity.class,
+										new AxisAlignedBB((x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))) - (1 / 2d),
+												((y + 1) - r * Math.sin(Math.toRadians(deta))) - (1 / 2d),
+												(z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha))) - (1 / 2d),
+												(x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))) + (1 / 2d),
+												((y + 1) - r * Math.sin(Math.toRadians(deta))) + (1 / 2d),
+												(z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha))) + (1 / 2d)),
+										null)
+								.stream().sorted(new Object() {
+									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+									}
+								}.compareDistOf((x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))),
+										((y + 1) - r * Math.sin(Math.toRadians(deta))),
+										(z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha)))))
+								.collect(Collectors.toList());
+						for (Entity entityiterator : _entfound) {
+							if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
+									((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+								if (entityiterator instanceof MobEntity) {
+									{
+										Entity _ent = entityiterator;
+										if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+											_ent.world.getServer().getCommandManager()
+													.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+										}
+									}
+									{
+										Entity _ent = entityiterator;
+										if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+											_ent.world.getServer().getCommandManager().handleCommand(
+													_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+													"/deta merge entity @s (Health:0)");
+										}
+									}
+								}
+							} else {
+								if (entityiterator instanceof MobEntity) {
+									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+											.getItem() == KatanakatanaItem.block) {
+										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+									} else {
+										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+									}
+								}
+							}
+						}
+					}
+					world.addParticle(ParticleTypes.ENCHANT, (x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))),
+							((y + 1) - r * Math.sin(Math.toRadians(deta))),
+							(z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha))), 0, 0, 0);
+					world.addParticle(ParticleTypes.ASH, (x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))),
+							((y + 1) - r * Math.sin(Math.toRadians(deta))),
+							(z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha))), 0, 0, 0);
+					r = (r + 0.2);
 				}
 				if (!(new Object() {
 					boolean check(Entity _entity) {
@@ -668,22 +4841,6 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 				}.check(entity))) {
 					if (entity instanceof PlayerEntity)
 						((PlayerEntity) entity).getCooldownTracker().setCooldown(OtachibloodcurseItem.block, (int) 20);
-				}
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, (int) 30, (int) 5, (true), (true)));
-				if (!(new Object() {
-					boolean check(Entity _entity) {
-						if (_entity instanceof LivingEntity) {
-							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-							for (EffectInstance effect : effects) {
-								if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
-									return true;
-							}
-						}
-						return false;
-					}
-				}.check(entity))) {
-					entity.attackEntityFrom(DamageSource.GENERIC, (float) 1);
 				}
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -702,7 +4859,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 							Numerical_value = 1;
 							yaw = (entity.rotationYaw);
 							angle = (entity.rotationPitch);
-							for (int index6 = 0; index6 < (int) (100); index6++) {
+							for (int index5 = 0; index5 < (int) (100); index5++) {
 								{
 									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(
 											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))) - (5 / 2d),
@@ -866,7 +5023,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 							Numerical_value = 1;
 							yaw = (entity.rotationYaw);
 							angle = (entity.rotationPitch);
-							for (int index7 = 0; index7 < (int) (100); index7++) {
+							for (int index6 = 0; index6 < (int) (100); index6++) {
 								{
 									List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(
 											(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))) - (5 / 2d),
@@ -1028,7 +5185,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 							loop6 = Math.toRadians(entity.rotationYaw);
 							xRadius6 = 20;
 							zRadius6 = 20;
-							for (int index8 = 0; index8 < (int) (36); index8++) {
+							for (int index7 = 0; index7 < (int) (36); index7++) {
 								X = (x + Math.cos(loop) * xRadius);
 								Y = (y + 1);
 								Z = (z + Math.sin(loop) * zRadius);
@@ -1307,7 +5464,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 							loop6 = Math.toRadians(entity.rotationYaw);
 							xRadius6 = 20;
 							zRadius6 = 20;
-							for (int index9 = 0; index9 < (int) (36); index9++) {
+							for (int index8 = 0; index8 < (int) (36); index8++) {
 								X = (x + Math.cos(loop) * xRadius);
 								Y = (y + 1);
 								Z = (z + Math.sin(loop) * zRadius);
@@ -1511,7 +5668,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 3;
 						ZRadius2 = 3;
 						Y_pos = (y + 1);
-						for (int index10 = 0; index10 < (int) (36); index10++) {
+						for (int index9 = 0; index9 < (int) (36); index9++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -1561,7 +5718,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 6;
 						ZRadius2 = 6;
 						Y_pos = (y + 1);
-						for (int index11 = 0; index11 < (int) (36); index11++) {
+						for (int index10 = 0; index10 < (int) (36); index10++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -1615,7 +5772,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 3;
 						ZRadius2 = 3;
 						Y_pos = (y + 1);
-						for (int index12 = 0; index12 < (int) (36); index12++) {
+						for (int index11 = 0; index11 < (int) (36); index11++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -1656,7 +5813,7 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 						XRadius2 = 6;
 						ZRadius2 = 6;
 						Y_pos = (y + 1);
-						for (int index13 = 0; index13 < (int) (36); index13++) {
+						for (int index12 = 0; index12 < (int) (36); index12++) {
 							X = (x + Math.cos(loop) * XRadius2);
 							Y = Y_pos;
 							Z = (z + Math.sin(loop) * ZRadius2);
@@ -1713,23 +5870,81 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 7) {
-				{
-					List<Entity> _entfound = world
-							.getEntitiesWithinAABB(Entity.class,
-									new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf(x, y, z)).collect(Collectors.toList());
-					for (Entity entityiterator : _entfound) {
-						for (int index14 = 0; index14 < (int) (10); index14++) {
-							if (!(entityiterator == entity)) {
-								if (entity instanceof MobEntity) {
-									if (world instanceof ServerWorld) {
-										((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
-												(entityiterator.getPosY() + 1), (entityiterator.getPosZ()), (int) 5, 0.1, 0.1, 0.1, 0);
+				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == BookbloodItem.block) {
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE, (int) 60, (int) 255, (false), (false)));
+					entity.setMotion((entity.getMotion().getX()), 0.785, (entity.getMotion().getZ()));
+					entity.getPersistentData().putDouble("loop_left", Math.toRadians(entity.rotationYaw));
+					entity.getPersistentData().putDouble("loop_right", Math.toRadians(entity.rotationYaw - 180));
+					entity.getPersistentData().putDouble("X", x);
+					entity.getPersistentData().putDouble("Y", y);
+					entity.getPersistentData().putDouble("Z", z);
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(EffectIVPotionEffect.potion, (int) 20, (int) 1, (false), (false)));
+					new Object() {
+						private int ticks = 0;
+						private float waitTicks;
+						private IWorld world;
+
+						public void start(IWorld world, int waitTicks) {
+							this.waitTicks = waitTicks;
+							MinecraftForge.EVENT_BUS.register(this);
+							this.world = world;
+						}
+
+						@SubscribeEvent
+						public void tick(TickEvent.ServerTickEvent event) {
+							if (event.phase == TickEvent.Phase.END) {
+								this.ticks += 1;
+								if (this.ticks >= this.waitTicks)
+									run();
+							}
+						}
+
+						private void run() {
+							entity.setNoGravity((true));
+							MinecraftForge.EVENT_BUS.unregister(this);
+						}
+					}.start(world, (int) 5);
+					new Object() {
+						private int ticks = 0;
+						private float waitTicks;
+						private IWorld world;
+
+						public void start(IWorld world, int waitTicks) {
+							this.waitTicks = waitTicks;
+							MinecraftForge.EVENT_BUS.register(this);
+							this.world = world;
+						}
+
+						@SubscribeEvent
+						public void tick(TickEvent.ServerTickEvent event) {
+							if (event.phase == TickEvent.Phase.END) {
+								this.ticks += 1;
+								if (this.ticks >= this.waitTicks)
+									run();
+							}
+						}
+
+						private void run() {
+							entity.setNoGravity((false));
+							MinecraftForge.EVENT_BUS.unregister(this);
+						}
+					}.start(world, (int) 40);
+				} else {
+					{
+						List<Entity> _entfound = world
+								.getEntitiesWithinAABB(Entity.class,
+										new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
+								.stream().sorted(new Object() {
+									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 									}
+								}.compareDistOf(x, y, z)).collect(Collectors.toList());
+						for (Entity entityiterator : _entfound) {
+							for (int index13 = 0; index13 < (int) (10); index13++) {
+								if (entityiterator instanceof MobEntity) {
 									if (!(entityiterator == entity)) {
 										if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
 												((entity instanceof LivingEntity)
@@ -1761,37 +5976,38 @@ public class KatanakatanaYoukuritukusitatokiProcedure {
 									}
 								}
 							}
-						}
-						{
-							Entity _ent = entityiterator;
-							_ent.setPositionAndUpdate((entityiterator.getPosX()), (entityiterator.getPosY() + 5), (entityiterator.getPosZ()));
-							if (_ent instanceof ServerPlayerEntity) {
-								((ServerPlayerEntity) _ent).connection.setPlayerLocation((entityiterator.getPosX()), (entityiterator.getPosY() + 5),
-										(entityiterator.getPosZ()), _ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
+							{
+								Entity _ent = entityiterator;
+								_ent.setPositionAndUpdate((entityiterator.getPosX()), (entityiterator.getPosY() + 5), (entityiterator.getPosZ()));
+								if (_ent instanceof ServerPlayerEntity) {
+									((ServerPlayerEntity) _ent).connection.setPlayerLocation((entityiterator.getPosX()),
+											(entityiterator.getPosY() + 5), (entityiterator.getPosZ()), _ent.rotationYaw, _ent.rotationPitch,
+											Collections.emptySet());
+								}
 							}
 						}
 					}
-				}
-				if (!(new Object() {
-					boolean check(Entity _entity) {
-						if (_entity instanceof LivingEntity) {
-							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-							for (EffectInstance effect : effects) {
-								if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
-									return true;
+					if (!(new Object() {
+						boolean check(Entity _entity) {
+							if (_entity instanceof LivingEntity) {
+								Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+								for (EffectInstance effect : effects) {
+									if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
+										return true;
+								}
 							}
+							return false;
 						}
-						return false;
+					}.check(entity))) {
+						if (entity instanceof PlayerEntity)
+							((PlayerEntity) entity).getCooldownTracker().setCooldown(KatanakatanaItem.block, (int) 60);
 					}
-				}.check(entity))) {
-					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).getCooldownTracker().setCooldown(KatanakatanaItem.block, (int) 60);
 				}
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 3) {
 				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(EffectPotionEffect.potion, (int) 100, (int) 1, (true), (true)));
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(EffectIIPotionEffect.potion, (int) 100, (int) 1, (true), (true)));
 				if (!(new Object() {
 					boolean check(Entity _entity) {
 						if (_entity instanceof LivingEntity) {

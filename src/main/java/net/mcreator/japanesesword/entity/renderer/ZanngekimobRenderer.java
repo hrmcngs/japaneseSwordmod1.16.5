@@ -29,7 +29,7 @@ public class ZanngekimobRenderer {
 
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("japanesesword:textures/katanadaisuki.png");
+						return new ResourceLocation("japanesesword:textures/entities/katanadaisuki.png");
 					}
 				};
 			});

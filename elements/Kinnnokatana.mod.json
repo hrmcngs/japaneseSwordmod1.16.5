@@ -1,0 +1,34 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "kinnnokatana",
+    "customModelName": "Normal",
+    "name": "金の刀",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Buki"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 9,
+    "efficiency": 9.0,
+    "attackSpeed": 100.0,
+    "enchantability": 9,
+    "damageVsEntity": 6.0,
+    "usageCount": 150,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "Items.GOLD_INGOT"
+      },
+      {
+        "value": "CUSTOM:Kinnnokatana"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

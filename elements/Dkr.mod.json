@@ -1,20 +1,43 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Smithing",
+    "recipeType": "Crafting",
     "xpReward": 0.0,
     "cookingTime": 200,
     "recipeRetstackSize": 1,
     "group": "buki",
     "recipeShapeless": false,
-    "smithingInputStack": {
-      "value": "Items.STICK"
-    },
-    "smithingInputAdditionStack": {
-      "value": "Items.DIAMOND"
-    },
-    "smithingReturnStack": {
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.DIAMOND"
+      },
+      {
+        "value": "Items.DYE#12"
+      },
+      {
+        "value": "Items.DIAMOND"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Items.STICK"
+      },
+      {
+        "value": "Items.DYE#12"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
       "value": "CUSTOM:Daiakatana"
     },
     "name": "dkr",

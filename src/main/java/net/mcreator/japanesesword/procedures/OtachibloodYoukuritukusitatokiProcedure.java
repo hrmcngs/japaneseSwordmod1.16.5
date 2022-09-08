@@ -8,7 +8,6 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector2f;
-import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.SoundCategory;
@@ -20,6 +19,8 @@ import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.MobEntity;
@@ -30,8 +31,8 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
 import net.mcreator.japanesesword.potion.KurutaimunasiPotionEffect;
+import net.mcreator.japanesesword.potion.EffectPotionEffect;
 import net.mcreator.japanesesword.item.OtachibloodcurseItem;
-import net.mcreator.japanesesword.item.NoroiItem;
 import net.mcreator.japanesesword.item.BooktokubetuItem;
 import net.mcreator.japanesesword.item.BookbloodItem;
 import net.mcreator.japanesesword.item.A1Item;
@@ -41,7 +42,6 @@ import net.mcreator.japanesesword.JapaneseswordMod;
 
 import java.util.stream.Collectors;
 import java.util.function.Function;
-import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
@@ -506,10 +506,24 @@ public class OtachibloodYoukuritukusitatokiProcedure {
 				xRabius = (entity.getPosX());
 				yRabius = (entity.getPosY());
 				zRabius = (entity.getPosZ());
-				if (entity instanceof LivingEntity) {
-					LivingEntity _ent = (LivingEntity) entity;
-					if (!_ent.world.isRemote()) {
-						A1Item.shoot(_ent.world, _ent, new Random(), (float) 1.5, 10, 2);
+				{
+					Entity _shootFrom = entity;
+					World projectileLevel = _shootFrom.world;
+					if (!projectileLevel.isRemote()) {
+						ProjectileEntity _entityToSpawn = new Object() {
+							public ProjectileEntity getArrow(World world, Entity shooter, float damage, int knockback) {
+								AbstractArrowEntity entityToSpawn = new A1Item.ArrowCustomEntity(A1Item.arrow, world);
+								entityToSpawn.setShooter(shooter);
+								entityToSpawn.setDamage(damage);
+								entityToSpawn.setKnockbackStrength(knockback);
+								entityToSpawn.setSilent(true);
+
+								return entityToSpawn;
+							}
+						}.getArrow(projectileLevel, entity, 10, 2);
+						_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1, _shootFrom.getPosZ());
+						_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y, _shootFrom.getLookVec().z, (float) 1.5, 0);
+						projectileLevel.addEntity(_entityToSpawn);
 					}
 				}
 				{
@@ -1221,111 +1235,8 @@ public class OtachibloodYoukuritukusitatokiProcedure {
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 3) {
-				entity.setMotion(
-						(entity.world
-								.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity))
-								.getPos().getX()
-								- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
-						(entity.world
-								.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity))
-								.getPos().getY()
-								- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
-						(entity.world
-								.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity))
-								.getPos().getZ()
-								- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-				entity.setMotion(
-						(entity.world
-								.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity))
-								.getPos().getX()
-								- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
-						(entity.world
-								.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity))
-								.getPos().getY()
-								- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
-						(entity.world
-								.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity))
-								.getPos().getZ()
-								- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
-				entity.fallDistance = (float) (0);
-				if (world instanceof ServerWorld) {
-					((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, (entity.getPosX()), (entity.getPosY() + 1), (entity.getPosZ()),
-							(int) 1, 0.1, 0.1, 0.1, 0);
-				}
-				for (int index17 = 0; index17 < (int) (20); index17++) {
-					for (int index18 = 0; index18 < (int) (20); index18++) {
-						{
-							List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
-									new AxisAlignedBB(x - (3 / 2d), y - (3 / 2d), z - (3 / 2d), x + (3 / 2d), y + (3 / 2d), z + (3 / 2d)), null)
-									.stream().sorted(new Object() {
-										Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-											return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-										}
-									}.compareDistOf(x, y, z)).collect(Collectors.toList());
-							for (Entity entityiterator : _entfound) {
-								if (!(entityiterator == entity)) {
-									if (entity instanceof MobEntity) {
-										if (!(entityiterator == entity)) {
-											if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-													((entity instanceof LivingEntity)
-															? ((LivingEntity) entity).getHeldItemMainhand()
-															: ItemStack.EMPTY)) != 0)) {
-												{
-													Entity _ent = entityiterator;
-													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-														_ent.world.getServer().getCommandManager().handleCommand(
-																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
-													}
-												}
-												{
-													Entity _ent = entityiterator;
-													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-														_ent.world.getServer().getCommandManager().handleCommand(
-																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-																"/deta merge entity @s (Health:0)");
-													}
-												}
-											} else {
-												if (((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemOffhand()
-														: ItemStack.EMPTY).getItem() == NoroiItem.block) {
-													entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-												} else {
-													entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-						entity.fallDistance = (float) (0);
-					}
-				}
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(EffectPotionEffect.potion, (int) 100, (int) 1, (true), (true)));
 				if (!(new Object() {
 					boolean check(Entity _entity) {
 						if (_entity instanceof LivingEntity) {

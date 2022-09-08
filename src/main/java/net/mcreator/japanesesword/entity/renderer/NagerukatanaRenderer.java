@@ -35,7 +35,7 @@ public class NagerukatanaRenderer {
 
 	@OnlyIn(Dist.CLIENT)
 	public static class CustomRender extends EntityRenderer<NagerukatanaItem.ArrowCustomEntity> {
-		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/katanadaisuki.png");
+		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/entities/katanadaisuki.png");
 
 		public CustomRender(EntityRendererManager renderManager) {
 			super(renderManager);

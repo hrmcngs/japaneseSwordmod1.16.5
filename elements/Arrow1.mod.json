@@ -1,11 +1,11 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "potioneffect",
   "definition": {
     "effectName": "矢無効",
     "icon": "arrow1.png",
     "color": {
-      "value": -1,
+      "value": -11513776,
       "falpha": 0.0
     },
     "isInstant": false,

@@ -39,7 +39,7 @@ public class KunoyoumuGuiWindow extends ContainerScreen<KunoyoumuGui.GuiContaine
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/kunoyoumu.png");
+	private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/screens/kunoyoumu.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

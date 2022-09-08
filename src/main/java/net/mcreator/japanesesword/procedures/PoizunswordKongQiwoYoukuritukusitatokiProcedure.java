@@ -1,6 +1,7 @@
 package net.mcreator.japanesesword.procedures;
 
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.Hand;
@@ -9,11 +10,13 @@ import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Entity;
 import net.minecraft.enchantment.EnchantmentHelper;
 
@@ -140,14 +143,23 @@ public class PoizunswordKongQiwoYoukuritukusitatokiProcedure {
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 5) {
 				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 						.getItem() == PoizunswordItem.block) {
-					if (entity instanceof LivingEntity) {
-						LivingEntity _ent = (LivingEntity) entity;
-						if (!_ent.world.isRemote()) {
-							AbstractArrowEntity entityToSpawn = new ArrowEntity(_ent.world, _ent);
-							entityToSpawn.shoot(_ent.getLookVec().x, _ent.getLookVec().y, _ent.getLookVec().z, 5, 0);
-							entityToSpawn.setDamage(2);
-							entityToSpawn.setKnockbackStrength(1);
-							_ent.world.addEntity(entityToSpawn);
+					{
+						Entity _shootFrom = entity;
+						World projectileLevel = _shootFrom.world;
+						if (!projectileLevel.isRemote()) {
+							ProjectileEntity _entityToSpawn = new Object() {
+								public ProjectileEntity getArrow(World world, Entity shooter, float damage, int knockback) {
+									AbstractArrowEntity entityToSpawn = new ArrowEntity(EntityType.ARROW, world);
+									entityToSpawn.setShooter(shooter);
+									entityToSpawn.setDamage(damage);
+									entityToSpawn.setKnockbackStrength(knockback);
+
+									return entityToSpawn;
+								}
+							}.getArrow(projectileLevel, entity, 2, 1);
+							_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1, _shootFrom.getPosZ());
+							_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y, _shootFrom.getLookVec().z, 5, 0);
+							projectileLevel.addEntity(_entityToSpawn);
 						}
 					}
 				}

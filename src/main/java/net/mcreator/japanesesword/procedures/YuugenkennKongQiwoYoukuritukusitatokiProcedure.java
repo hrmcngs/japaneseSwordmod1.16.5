@@ -1,6 +1,7 @@
 package net.mcreator.japanesesword.procedures;
 
 import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.Hand;
@@ -9,8 +10,11 @@ import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -18,14 +22,12 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.mcreator.japanesesword.potion.KurutaimunasiPotionEffect;
 import net.mcreator.japanesesword.item.YuugenkennItem;
 import net.mcreator.japanesesword.item.NaihuItem;
-import net.mcreator.japanesesword.entity.HuranEntity;
 import net.mcreator.japanesesword.enchantment.KillEnchantment;
 import net.mcreator.japanesesword.JapaneseswordModVariables;
 import net.mcreator.japanesesword.JapaneseswordMod;
 
 import java.util.stream.Collectors;
 import java.util.function.Function;
-import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
@@ -81,7 +83,7 @@ public class YuugenkennKongQiwoYoukuritukusitatokiProcedure {
 							}.compareDistOf(x, y, z)).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
-							if (entity instanceof LivingEntity) {
+							if (entity instanceof MobEntity) {
 								if (!(entityiterator == entity)) {
 									if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
 											((entity instanceof LivingEntity)
@@ -160,10 +162,24 @@ public class YuugenkennKongQiwoYoukuritukusitatokiProcedure {
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 5) {
 				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 						.getItem() == YuugenkennItem.block) {
-					if (entity instanceof LivingEntity) {
-						LivingEntity _ent = (LivingEntity) entity;
-						if (!_ent.world.isRemote()) {
-							NaihuItem.shoot(_ent.world, _ent, new Random(), 5, 2, 1);
+					{
+						Entity _shootFrom = entity;
+						World projectileLevel = _shootFrom.world;
+						if (!projectileLevel.isRemote()) {
+							ProjectileEntity _entityToSpawn = new Object() {
+								public ProjectileEntity getArrow(World world, Entity shooter, float damage, int knockback) {
+									AbstractArrowEntity entityToSpawn = new NaihuItem.ArrowCustomEntity(NaihuItem.arrow, world);
+									entityToSpawn.setShooter(shooter);
+									entityToSpawn.setDamage(damage);
+									entityToSpawn.setKnockbackStrength(knockback);
+									entityToSpawn.setSilent(true);
+
+									return entityToSpawn;
+								}
+							}.getArrow(projectileLevel, entity, 2, 1);
+							_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1, _shootFrom.getPosZ());
+							_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y, _shootFrom.getLookVec().z, 5, 0);
+							projectileLevel.addEntity(_entityToSpawn);
 						}
 					}
 				}
@@ -199,13 +215,13 @@ public class YuugenkennKongQiwoYoukuritukusitatokiProcedure {
 							}.compareDistOf(x, y, z)).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
-							if (entity instanceof LivingEntity) {
+							if (entity instanceof MobEntity) {
 								if (world instanceof ServerWorld) {
 									((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 											(entityiterator.getPosY() + 1), (entityiterator.getPosZ()), (int) 5, 0.1, 0.1, 0.1, 0);
 								}
 								if (!(entityiterator == entity)) {
-									if (entity instanceof LivingEntity) {
+									if (entity instanceof MobEntity) {
 										if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
 												((entity instanceof LivingEntity)
 														? ((LivingEntity) entity).getHeldItemMainhand()
@@ -261,13 +277,13 @@ public class YuugenkennKongQiwoYoukuritukusitatokiProcedure {
 					for (Entity entityiterator : _entfound) {
 						for (int index0 = 0; index0 < (int) (10); index0++) {
 							if (!(entityiterator == entity)) {
-								if (entity instanceof HuranEntity.CustomEntity) {
+								if (entity instanceof MobEntity) {
 									if (world instanceof ServerWorld) {
 										((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + 1), (entityiterator.getPosZ()), (int) 5, 0.1, 0.1, 0.1, 0);
 									}
 									if (!(entityiterator == entity)) {
-										if (entity instanceof LivingEntity) {
+										if (entity instanceof MobEntity) {
 											if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
 													((entity instanceof LivingEntity)
 															? ((LivingEntity) entity).getHeldItemMainhand()

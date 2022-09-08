@@ -1,0 +1,30 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "kinnnokatana",
+    "customModelName": "kinn:default",
+    "name": "王の刀",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Buki"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 9,
+    "efficiency": 9.0,
+    "attackSpeed": 9.0,
+    "enchantability": 9,
+    "damageVsEntity": 13.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInUseTick": {
+      "name": "OokenokenturuwoShoudeChituteiruJiannoteituku"
+    }
+  }
+}

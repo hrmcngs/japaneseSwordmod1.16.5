@@ -39,7 +39,7 @@ public class NoGuiWindow extends ContainerScreen<NoGui.GuiContainerMod> {
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/no.png");
+	private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/screens/no.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

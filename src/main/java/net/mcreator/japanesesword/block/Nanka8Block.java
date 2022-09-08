@@ -90,9 +90,7 @@ public class Nanka8Block extends JapaneseswordModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(0, 2, 0, 16, 16, 16)
-
-			)
+			return VoxelShapes.or(makeCuboidShape(0, 2, 0, 16, 16, 16))
 
 					.withOffset(offset.x, offset.y, offset.z);
 		}

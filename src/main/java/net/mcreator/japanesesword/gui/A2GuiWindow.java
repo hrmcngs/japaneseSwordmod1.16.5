@@ -39,7 +39,7 @@ public class A2GuiWindow extends ContainerScreen<A2Gui.GuiContainerMod> {
 		this.ySize = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/a_2.png");
+	private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/screens/a_2.png");
 
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {

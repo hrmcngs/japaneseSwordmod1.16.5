@@ -1,12 +1,30 @@
 {
-  "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:stick"
-  },
-  "addition": {
-    "item": "minecraft:diamond"
+  "group": "buki",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    "34 ",
+    "67 "
+  ],
+  "key": {
+    "2": {
+      "item": "minecraft:diamond"
+    },
+    "3": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "4": {
+      "item": "minecraft:diamond"
+    },
+    "6": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:light_blue_dye"
+    }
   },
   "result": {
-    "item": "japanesesword:daiakatana"
+    "item": "japanesesword:daiakatana",
+    "count": 1
   }
 }

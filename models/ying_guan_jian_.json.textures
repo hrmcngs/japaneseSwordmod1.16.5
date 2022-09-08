@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "ying_guan_jian__bing_",
+        "1": "ying_guan_jian_"
+      },
+      "name": "default"
+    }
+  }
+}
