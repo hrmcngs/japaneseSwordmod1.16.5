@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "japanesesword:ginnburokku"
+    },
+    "1": {
+      "item": "japanesesword:ginnburokku"
+    },
+    "2": {
+      "item": "japanesesword:ginnburokku"
+    },
+    "3": {
+      "item": "japanesesword:ginnburokku"
+    },
+    "4": {
+      "item": "minecraft:barrel"
+    },
+    "5": {
+      "item": "japanesesword:ginnburokku"
+    },
+    "6": {
+      "item": "japanesesword:ginnburokku"
+    },
+    "7": {
+      "item": "japanesesword:ginnburokku"
+    },
+    "8": {
+      "item": "japanesesword:ginnburokku"
+    }
+  },
+  "result": {
+    "item": "japanesesword:naka",
+    "count": 1
+  }
+}
