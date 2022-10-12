@@ -6,6 +6,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.japanesesword.entity.KuroimobEntity;
@@ -42,15 +43,15 @@ public class MobbbProcedure {
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		return !(((((Entity) world
-				.getEntitiesWithinAABB(KuroimobEntity.CustomEntity.class,
+		return (((((Entity) world
+				.getEntitiesWithinAABB(PlayerEntity.class,
 						new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null)
 				.stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 					}
 				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof ServerPlayerEntity)
-				&& (((Entity) world.getEntitiesWithinAABB(KuroimobEntity.CustomEntity.class,
+				&& (((Entity) world.getEntitiesWithinAABB(PlayerEntity.class,
 						new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null)
 						.stream().sorted(new Object() {
 							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -58,6 +59,46 @@ public class MobbbProcedure {
 							}
 						}.compareDistOf(x, y, z)).findFirst().orElse(
 								null)).world instanceof ServerWorld))
+										? ((ServerPlayerEntity) ((Entity) world
+												.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d),
+														z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null)
+												.stream().sorted(new Object() {
+													Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+														return Comparator
+																.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+													}
+												}.compareDistOf(x, y, z)).findFirst().orElse(null))).getAdvancements()
+												.getProgress(
+														((MinecraftServer) ((ServerPlayerEntity) ((Entity) world
+																.getEntitiesWithinAABB(PlayerEntity.class,
+																		new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d),
+																				x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)),
+																		null)
+																.stream().sorted(new Object() {
+																	Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+																		return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd
+																				.getDistanceSq(_x, _y, _z)));
+																	}
+																}.compareDistOf(x, y, z)).findFirst().orElse(null))).server).getAdvancementManager()
+																.getAdvancement(new ResourceLocation("japanesesword:kennkaku")))
+												.isDone()
+										: false)
+				|| (((((Entity) world.getEntitiesWithinAABB(KuroimobEntity.CustomEntity.class,
+						new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null)
+						.stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+							}
+						}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof ServerPlayerEntity)
+						&& (((Entity) world.getEntitiesWithinAABB(KuroimobEntity.CustomEntity.class,
+								new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)),
+								null).stream().sorted(new Object() {
+									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+									}
+								}.compareDistOf(x, y,
+										z))
+								.findFirst().orElse(null)).world instanceof ServerWorld))
 										? ((ServerPlayerEntity) ((Entity) world
 												.getEntitiesWithinAABB(KuroimobEntity.CustomEntity.class, new AxisAlignedBB(x - (100 / 2d),
 														y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null)

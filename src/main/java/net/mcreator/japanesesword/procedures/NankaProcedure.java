@@ -33,7 +33,7 @@ public class NankaProcedure {
 		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 2) {
 			{
-				String _setval = "\u65AC\u6483";
+				String _setval = "\u65AC\u6483(\u5370)";
 				entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.nanndarou = _setval;
 					capability.syncPlayerVariables(entity);
@@ -164,16 +164,9 @@ public class NankaProcedure {
 		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 8) {
 			{
-				String _setval = "\u65AC\u6483 ";
+				String _setval = "\u65AC\u6483(\u5C01) ";
 				entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.nanndarou = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = 2;
-				entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.kaunnto = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}

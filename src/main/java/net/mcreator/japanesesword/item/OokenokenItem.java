@@ -4,14 +4,18 @@ package net.mcreator.japanesesword.item;
 import net.minecraftforge.registries.ObjectHolder;
 
 import net.minecraft.world.World;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResult;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.japanesesword.procedures.OokenokenturuwoShoudeChituteiruJiannoteitukuProcedure;
+import net.mcreator.japanesesword.procedures.OokenokenYoukuritukusitatokiProcedure;
 import net.mcreator.japanesesword.itemgroup.BukiItemGroup;
 import net.mcreator.japanesesword.JapaneseswordModElements;
 
@@ -56,6 +60,19 @@ public class OokenokenItem extends JapaneseswordModElements.ModElement {
 				return Ingredient.EMPTY;
 			}
 		}, 3, 5f, new Item.Properties().group(BukiItemGroup.tab)) {
+			@Override
+			public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
+				ActionResult<ItemStack> retval = super.onItemRightClick(world, entity, hand);
+				ItemStack itemstack = retval.getResult();
+				double x = entity.getPosX();
+				double y = entity.getPosY();
+				double z = entity.getPosZ();
+
+				OokenokenYoukuritukusitatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				return retval;
+			}
+
 			@Override
 			public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
 				super.inventoryTick(itemstack, world, entity, slot, selected);
