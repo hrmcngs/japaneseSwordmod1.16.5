@@ -47,16 +47,16 @@ public class JapaneseswordModElements {
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
 
 	public JapaneseswordModElements() {
-		sounds.put(new ResourceLocation("japanesesword", "un"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "un")));
-		sounds.put(new ResourceLocation("japanesesword", "ne"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "ne")));
-		sounds.put(new ResourceLocation("japanesesword", "ka"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "ka")));
-		sounds.put(new ResourceLocation("japanesesword", "tu"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "tu")));
-		sounds.put(new ResourceLocation("japanesesword", "ti"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "ti")));
 		sounds.put(new ResourceLocation("japanesesword", "g"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "g")));
-		sounds.put(new ResourceLocation("japanesesword", "na"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "na")));
-		sounds.put(new ResourceLocation("japanesesword", "g2"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "g2")));
+		sounds.put(new ResourceLocation("japanesesword", "ne"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "ne")));
+		sounds.put(new ResourceLocation("japanesesword", "un"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "un")));
 		sounds.put(new ResourceLocation("japanesesword", "ko"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "ko")));
 		sounds.put(new ResourceLocation("japanesesword", "noiz"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "noiz")));
+		sounds.put(new ResourceLocation("japanesesword", "g2"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "g2")));
+		sounds.put(new ResourceLocation("japanesesword", "na"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "na")));
+		sounds.put(new ResourceLocation("japanesesword", "ka"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "ka")));
+		sounds.put(new ResourceLocation("japanesesword", "ti"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "ti")));
+		sounds.put(new ResourceLocation("japanesesword", "tu"), new net.minecraft.util.SoundEvent(new ResourceLocation("japanesesword", "tu")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("japanesesword").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

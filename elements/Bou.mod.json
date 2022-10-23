@@ -23,15 +23,15 @@
     "animation": "bow",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "bulletPower": 3.0,
+    "bulletPower": 2.0,
     "bulletDamage": 5.0,
     "bulletKnockback": 1,
-    "bulletParticles": true,
+    "bulletParticles": false,
     "bulletIgnitesFire": false,
     "bulletItemTexture": {
-      "value": "CUSTOM:Nannka"
+      "value": "Blocks.AIR"
     },
-    "bulletModel": "Default",
-    "customBulletModelTexture": "g.png"
+    "bulletModel": "Modelorizinaruaroow",
+    "customBulletModelTexture": "aroow10.png"
   }
 }

@@ -6,7 +6,7 @@
     "xpReward": 0.0,
     "cookingTime": 200,
     "recipeRetstackSize": 1,
-    "group": "buki",
+    "group": "",
     "recipeShapeless": false,
     "recipeSlots": [
       {
@@ -16,19 +16,19 @@
         "value": ""
       },
       {
-        "value": "Blocks.PLANKS"
+        "value": "Blocks.COBBLESTONE"
       },
       {
         "value": ""
       },
       {
-        "value": "Blocks.PLANKS"
+        "value": "Blocks.COBBLESTONE"
       },
       {
         "value": ""
       },
       {
-        "value": "Items.WOODEN_PICKAXE"
+        "value": "Items.STONE_PICKAXE"
       },
       {
         "value": ""
@@ -38,9 +38,9 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Bokutou"
+      "value": "CUSTOM:Stonekatana"
     },
-    "name": "bokutouresipu",
+    "name": "stonekatanaresipi",
     "namespace": "mod"
   }
 }

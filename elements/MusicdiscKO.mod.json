@@ -3,13 +3,13 @@
   "_type": "musicdisc",
   "definition": {
     "texture": "disc",
-    "name": "U.N.オーエンは彼女なのか?",
-    "description": "U.N.オーエンは彼女なのか?",
+    "name": "広有射怪鳥事",
+    "description": "広有射怪鳥事",
     "creativeTab": {
       "value": "No creative tab entry"
     },
     "music": {
-      "value": "CUSTOM:un"
+      "value": "CUSTOM:ko"
     },
     "specialInfo": [],
     "hasGlow": true

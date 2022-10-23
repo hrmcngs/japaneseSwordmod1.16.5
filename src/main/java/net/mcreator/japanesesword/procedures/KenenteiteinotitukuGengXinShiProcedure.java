@@ -63,7 +63,6 @@ public class KenenteiteinotitukuGengXinShiProcedure {
 							}
 						}.compareDistOf(x, y, z)).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 					if (!(entity == entityiterator) && !(entityiterator.getUniqueID().toString()).equals(entity.getPersistentData().getString("UUID"))
 							&& entityiterator instanceof MobEntity) {
 						entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
@@ -82,7 +81,6 @@ public class KenenteiteinotitukuGengXinShiProcedure {
 							}
 						}.compareDistOf(x, y, z)).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
 					if (!(entity == entityiterator) && !(entityiterator.getUniqueID().toString()).equals(entity.getPersistentData().getString("UUID"))
 							&& entityiterator instanceof MobEntity) {
 						{
@@ -103,17 +101,17 @@ public class KenenteiteinotitukuGengXinShiProcedure {
 				}
 			}
 		}
-		world.destroyBlock(new BlockPos(x, y, z), false);
-		world.destroyBlock(new BlockPos(x, y + 1, z), false);
-		world.destroyBlock(new BlockPos(x, y + 2, z), false);
+		world.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y + 1, z), Blocks.AIR.getDefaultState(), 3);
+		world.setBlockState(new BlockPos(x, y + 2, z), Blocks.AIR.getDefaultState(), 3);
 		Y = 0;
 		for (int index0 = 0; index0 < (int) (3); index0++) {
-			world.destroyBlock(new BlockPos(x + 1, y + Y, z), false);
-			world.destroyBlock(new BlockPos(x - 1, y + Y, z), false);
-			world.destroyBlock(new BlockPos(x, y + Y, z + 1), false);
-			world.destroyBlock(new BlockPos(x, y + Y, z - 1), false);
-			world.destroyBlock(new BlockPos(x - 1, y + Y, z + 1), false);
-			world.destroyBlock(new BlockPos(x + 1, y + Y, z - 1), false);
+			world.setBlockState(new BlockPos(x + 1, y + Y, z), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x - 1, y + Y, z), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x, y + Y, z + 1), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x, y + Y, z - 1), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x + 1, y + Y, z - 1), Blocks.AIR.getDefaultState(), 3);
+			world.setBlockState(new BlockPos(x - 1, y + Y, z + 1), Blocks.AIR.getDefaultState(), 3);
 			Y = (Y + 1);
 		}
 	}

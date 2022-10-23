@@ -101,7 +101,7 @@ public class EffectIIehuekutogaYouXiaoShinoteitukuProcedure {
 				((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
 			}
 			entity.getPersistentData().putDouble("yaw",
-					Math.toRadians(entity.rotationYaw + (new Random()).nextInt((int) 200 + 1) - (new Random()).nextInt((int) 120 + 1)));
+					Math.toRadians(entity.rotationYaw + new Random().nextInt(200 + 1) - new Random().nextInt(120 + 1)));
 			entity.getPersistentData().putDouble("yaw2", (Math.random() * 360));
 			dis = 1;
 			for (int index0 = 0; index0 < (int) (7); index0++) {

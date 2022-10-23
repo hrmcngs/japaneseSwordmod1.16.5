@@ -1,0 +1,17 @@
+{
+  "_fv": 33,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "disc",
+    "name": "ナイト・オブ・ナイト",
+    "description": "ナイト・オブ・ナイト",
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "music": {
+      "value": "CUSTOM:na"
+    },
+    "specialInfo": [],
+    "hasGlow": true
+  }
+}

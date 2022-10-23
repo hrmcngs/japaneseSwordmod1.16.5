@@ -52,7 +52,7 @@ public class A4Procedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof WitherSkeletonEntity) {
-			if ((new Random()).nextInt((int) 9 + 1) == 1) {
+			if (new Random().nextInt(9 + 1) == 1) {
 				if (entity instanceof LivingEntity) {
 					ItemStack _setstack = new ItemStack(KyoukanezaraitonokatanaItem.block);
 					_setstack.setCount((int) 1);

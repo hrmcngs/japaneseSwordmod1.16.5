@@ -137,7 +137,7 @@ public class NgskYoukuritukusitatokiProcedure {
 				loop = Math.toRadians(entity.rotationYaw);
 				XRadius2 = 3;
 				ZRadius2 = 3;
-				Y_pos = (y + 1);
+				Y_pos = (y + 2);
 				for (int index0 = 0; index0 < (int) (36); index0++) {
 					X = (x + Math.cos(loop) * XRadius2);
 					Y = Y_pos;

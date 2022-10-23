@@ -51,7 +51,7 @@ public class KenwProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		double kakuritu = 0;
 		if (entity instanceof WitherSkeletonEntity || entity instanceof SkeletonEntity) {
-			kakuritu = ((new Random()).nextInt((int) 10 + 1));
+			kakuritu = (new Random().nextInt(10 + 1));
 			if (kakuritu == 4) {
 				if (entity instanceof LivingEntity) {
 					ItemStack _setstack = new ItemStack(Katana1Item.block);

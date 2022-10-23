@@ -1,0 +1,17 @@
+{
+  "_fv": 33,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "disc",
+    "name": "神々が恋した幻想郷",
+    "description": "神々が恋した幻想郷",
+    "creativeTab": {
+      "value": "No creative tab entry"
+    },
+    "music": {
+      "value": "CUSTOM:ka"
+    },
+    "specialInfo": [],
+    "hasGlow": true
+  }
+}

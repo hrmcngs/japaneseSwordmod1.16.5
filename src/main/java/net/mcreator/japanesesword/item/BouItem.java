@@ -30,6 +30,7 @@ import net.minecraft.entity.IRendersAsItem;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.japanesesword.itemgroup.BukiItemGroup;
 import net.mcreator.japanesesword.entity.renderer.BouRenderer;
@@ -97,7 +98,7 @@ public class BouItem extends JapaneseswordModElements.ModElement {
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 3f, 5, 1);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 2f, 5, 1);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
@@ -147,7 +148,7 @@ public class BouItem extends JapaneseswordModElements.ModElement {
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack getItem() {
-			return new ItemStack(NannkaItem.block);
+			return new ItemStack(Blocks.AIR);
 		}
 
 		@Override
@@ -179,7 +180,7 @@ public class BouItem extends JapaneseswordModElements.ModElement {
 		ArrowCustomEntity entityarrow = new ArrowCustomEntity(arrow, entity, world);
 		entityarrow.shoot(entity.getLook(1).x, entity.getLook(1).y, entity.getLook(1).z, power * 2, 0);
 		entityarrow.setSilent(true);
-		entityarrow.setIsCritical(true);
+		entityarrow.setIsCritical(false);
 		entityarrow.setDamage(damage);
 		entityarrow.setKnockbackStrength(knockback);
 		world.addEntity(entityarrow);
@@ -197,11 +198,11 @@ public class BouItem extends JapaneseswordModElements.ModElement {
 		double d0 = target.getPosY() + (double) target.getEyeHeight() - 1.1;
 		double d1 = target.getPosX() - entity.getPosX();
 		double d3 = target.getPosZ() - entity.getPosZ();
-		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 3f * 2, 12.0F);
+		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 2f * 2, 12.0F);
 		entityarrow.setSilent(true);
 		entityarrow.setDamage(5);
 		entityarrow.setKnockbackStrength(1);
-		entityarrow.setIsCritical(true);
+		entityarrow.setIsCritical(false);
 		entity.world.addEntity(entityarrow);
 		double x = entity.getPosX();
 		double y = entity.getPosY();

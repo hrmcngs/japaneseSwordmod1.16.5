@@ -1,5 +1,4 @@
 {
-  "group": "buki",
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "  2",
@@ -8,17 +7,17 @@
   ],
   "key": {
     "2": {
-      "tag": "minecraft:planks"
+      "item": "minecraft:cobblestone"
     },
     "4": {
-      "tag": "minecraft:planks"
+      "item": "minecraft:cobblestone"
     },
     "6": {
-      "item": "minecraft:wooden_pickaxe"
+      "item": "minecraft:stone_pickaxe"
     }
   },
   "result": {
-    "item": "japanesesword:bokutou",
+    "item": "japanesesword:stonekatana",
     "count": 1
   }
 }

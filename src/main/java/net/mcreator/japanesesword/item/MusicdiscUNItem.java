@@ -14,12 +14,12 @@ import net.minecraft.item.Item;
 import net.mcreator.japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
-public class MusucdiscUNItem extends JapaneseswordModElements.ModElement {
-	@ObjectHolder("japanesesword:musucdisc_un")
+public class MusicdiscUNItem extends JapaneseswordModElements.ModElement {
+	@ObjectHolder("japanesesword:musicdisc_un")
 	public static final Item block = null;
 
-	public MusucdiscUNItem(JapaneseswordModElements instance) {
-		super(instance, 180);
+	public MusicdiscUNItem(JapaneseswordModElements instance) {
+		super(instance, 332);
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class MusucdiscUNItem extends JapaneseswordModElements.ModElement {
 		public MusicDiscItemCustom() {
 			super(0, JapaneseswordModElements.sounds.get(new ResourceLocation("japanesesword:un")),
 					new Item.Properties().group(null).maxStackSize(1).rarity(Rarity.RARE));
-			setRegistryName("musucdisc_un");
+			setRegistryName("musicdisc_un");
 		}
 
 		@Override
