@@ -3,12 +3,12 @@
   "_type": "rangeditem",
   "definition": {
     "renderType": 0,
-    "texture": "takebow",
+    "texture": "take",
     "customModelName": "Normal",
     "name": "竹の弓",
     "specialInfo": [],
     "creativeTab": {
-      "value": "CUSTOM:Buki"
+      "value": "No creative tab entry"
     },
     "stackSize": 1,
     "ammoItem": {

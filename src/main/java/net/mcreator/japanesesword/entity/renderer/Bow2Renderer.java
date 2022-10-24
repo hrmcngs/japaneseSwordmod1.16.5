@@ -18,23 +18,23 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 
-import net.mcreator.japanesesword.item.BouItem;
+import net.mcreator.japanesesword.item.Bow2Item;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class BouRenderer {
+public class Bow2Renderer {
 	public static class ModelRegisterHandler {
 		@SubscribeEvent
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
-			RenderingRegistry.registerEntityRenderingHandler(BouItem.arrow, renderManager -> new CustomRender(renderManager));
+			RenderingRegistry.registerEntityRenderingHandler(Bow2Item.arrow, renderManager -> new CustomRender(renderManager));
 		}
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public static class CustomRender extends EntityRenderer<BouItem.ArrowCustomEntity> {
+	public static class CustomRender extends EntityRenderer<Bow2Item.ArrowCustomEntity> {
 		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/entities/aroow12.png");
 
 		public CustomRender(EntityRendererManager renderManager) {
@@ -42,7 +42,7 @@ public class BouRenderer {
 		}
 
 		@Override
-		public void render(BouItem.ArrowCustomEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn,
+		public void render(Bow2Item.ArrowCustomEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn,
 				IRenderTypeBuffer bufferIn, int packedLightIn) {
 			IVertexBuilder vb = bufferIn.getBuffer(RenderType.getEntityCutout(this.getEntityTexture(entityIn)));
 			matrixStackIn.push();
@@ -55,7 +55,7 @@ public class BouRenderer {
 		}
 
 		@Override
-		public ResourceLocation getEntityTexture(BouItem.ArrowCustomEntity entity) {
+		public ResourceLocation getEntityTexture(Bow2Item.ArrowCustomEntity entity) {
 			return texture;
 		}
 	}

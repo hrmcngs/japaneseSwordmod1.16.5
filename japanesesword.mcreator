@@ -4600,6 +4600,62 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "musicdisc_na"
+    },
+    {
+      "name": "Bow1",
+      "type": "rangeditem",
+      "sortid": 338,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bow_1"
+    },
+    {
+      "name": "Bow2",
+      "type": "rangeditem",
+      "sortid": 339,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bow_2"
+    },
+    {
+      "name": "TpehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 340,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tpehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tp",
+      "type": "potioneffect",
+      "sortid": 340,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tp"
     }
   ],
   "variable_elements": [
@@ -4774,6 +4830,7 @@
       "item.japanesesword.kama": "Kama",
       "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "key.japanesesword.r": "R",
+      "item.japanesesword.bow_1": "竹の弓",
       "item.japanesesword.sukop": "Sukop",
       "effect.tomare": " tomare",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
@@ -4784,6 +4841,7 @@
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "subtitles.g2": "",
+      "item.japanesesword.bow_2": "竹の弓",
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
@@ -4818,8 +4876,8 @@
       "entity.japanesesword.yaa": "Yaa",
       "item.minecraft.tipped_arrow.effect.doku_3": "毒2の矢",
       "enchantment.japanesesword.bakudan": "explosion",
-      "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
+      "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
       "item.minecraft.lingering_potion.effect.doku_3": "毒2残留",
       "item.japanesesword.japanese_sword": "日本刀",
       "item.japanesesword.tuva": "ツイヴァイヘンダー",
@@ -4920,6 +4978,7 @@
       "item.japanesesword.stonekatana": "Stonekatana",
       "item.japanesesword.tetunokatana": "Tetunokatana",
       "item.japanesesword.musicdisc_na": "ナイト・オブ・ナイト",
+      "effect.tp": "tp",
       "item.japanesesword.ti": "血",
       "effect.kill_2": "kill",
       "item.japanesesword.nannk": "Nannk",
@@ -4981,6 +5040,7 @@
       "item.japanesesword.kama": "Kama",
       "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "key.japanesesword.r": "R",
+      "item.japanesesword.bow_1": "竹の弓",
       "item.japanesesword.sukop": "Sukop",
       "effect.tomare": " tomare",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
@@ -4991,6 +5051,7 @@
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "subtitles.g2": "",
+      "item.japanesesword.bow_2": "竹の弓",
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
@@ -5025,8 +5086,8 @@
       "entity.japanesesword.yaa": "Yaa",
       "item.minecraft.tipped_arrow.effect.doku_3": "毒2の矢",
       "enchantment.japanesesword.bakudan": "Bakudan",
-      "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
+      "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
       "item.minecraft.lingering_potion.effect.doku_3": "毒2残留",
       "item.japanesesword.japanese_sword": "日本刀",
       "item.japanesesword.tuva": "ツイヴァイヘンダー",
@@ -5127,6 +5188,7 @@
       "item.japanesesword.stonekatana": "Stonekatana",
       "item.japanesesword.tetunokatana": "Tetunokatana",
       "item.japanesesword.musicdisc_na": "ナイト・オブ・ナイト",
+      "effect.tp": "tp",
       "item.japanesesword.ti": "血",
       "effect.kill_2": "kill",
       "item.japanesesword.nannk": "Nannk",
