@@ -43,6 +43,7 @@ import net.mcreator.japanesesword.item.BookbloodItem;
 import net.mcreator.japanesesword.entity.KenEntity;
 import net.mcreator.japanesesword.entity.Ken2Entity;
 import net.mcreator.japanesesword.enchantment.KillEnchantment;
+import net.mcreator.japanesesword.enchantment.DemonizedEnchantment;
 import net.mcreator.japanesesword.JapaneseswordModVariables;
 import net.mcreator.japanesesword.JapaneseswordMod;
 
@@ -192,6 +193,18 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == BookbloodItem.block) {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												{
 													Entity _ent = entityiterator;
@@ -213,8 +226,21 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == PoisonbookItem.block) {
 											if (entityiterator instanceof MobEntity) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.setFire((int) 15);
 												{
 													Entity _ent = entityiterator;
@@ -235,6 +261,18 @@ public class NgskYoukuritukusitatokiProcedure {
 										}
 									} else {
 										if (entityiterator instanceof MobEntity) {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											{
 												Entity _ent = entityiterator;
 												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -256,19 +294,68 @@ public class NgskYoukuritukusitatokiProcedure {
 									if (entityiterator instanceof MobEntity) {
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == NgskItem.block) {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 										} else {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == BookbloodItem.block) {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											entityiterator.setFire((int) 15);
 											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == PoisonbookItem.block) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
+											if (entityiterator instanceof LivingEntity)
+												((LivingEntity) entityiterator)
+														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
 									}
@@ -673,6 +760,19 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
 												if (entityiterator instanceof MobEntity) {
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
 													entityiterator.setFire((int) 15);
 													{
 														Entity _ent = entityiterator;
@@ -695,8 +795,21 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
 												if (entityiterator instanceof MobEntity) {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity)
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
 																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 													entityiterator.setFire((int) 15);
 													{
@@ -719,6 +832,18 @@ public class NgskYoukuritukusitatokiProcedure {
 											}
 										} else {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -740,19 +865,68 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == NgskItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 											} else {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 										}
@@ -781,6 +955,19 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
 												if (entityiterator instanceof MobEntity) {
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
 													entityiterator.setFire((int) 15);
 													{
 														Entity _ent = entityiterator;
@@ -803,8 +990,21 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
 												if (entityiterator instanceof MobEntity) {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity)
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
 																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 													entityiterator.setFire((int) 15);
 													{
@@ -827,6 +1027,18 @@ public class NgskYoukuritukusitatokiProcedure {
 											}
 										} else {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -848,19 +1060,68 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == NgskItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 											} else {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 										}
@@ -889,6 +1150,19 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
 												if (entityiterator instanceof MobEntity) {
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
 													entityiterator.setFire((int) 15);
 													{
 														Entity _ent = entityiterator;
@@ -911,8 +1185,21 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
 												if (entityiterator instanceof MobEntity) {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity)
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
 																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 													entityiterator.setFire((int) 15);
 													{
@@ -935,6 +1222,18 @@ public class NgskYoukuritukusitatokiProcedure {
 											}
 										} else {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -956,19 +1255,68 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == NgskItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 											} else {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 										}
@@ -997,6 +1345,19 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
 												if (entityiterator instanceof MobEntity) {
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
 													entityiterator.setFire((int) 15);
 													{
 														Entity _ent = entityiterator;
@@ -1019,8 +1380,21 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
 												if (entityiterator instanceof MobEntity) {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity)
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
 																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 													entityiterator.setFire((int) 15);
 													{
@@ -1043,6 +1417,18 @@ public class NgskYoukuritukusitatokiProcedure {
 											}
 										} else {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -1064,19 +1450,68 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == NgskItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 											} else {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 										}
@@ -1105,6 +1540,19 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
 												if (entityiterator instanceof MobEntity) {
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
 													entityiterator.setFire((int) 15);
 													{
 														Entity _ent = entityiterator;
@@ -1127,8 +1575,21 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
 												if (entityiterator instanceof MobEntity) {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity)
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
 																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 													entityiterator.setFire((int) 15);
 													{
@@ -1151,6 +1612,18 @@ public class NgskYoukuritukusitatokiProcedure {
 											}
 										} else {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -1172,19 +1645,68 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == NgskItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 											} else {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 										}
@@ -1213,6 +1735,19 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
 												if (entityiterator instanceof MobEntity) {
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
 													entityiterator.setFire((int) 15);
 													{
 														Entity _ent = entityiterator;
@@ -1235,8 +1770,21 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
 												if (entityiterator instanceof MobEntity) {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity)
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
 																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 													entityiterator.setFire((int) 15);
 													{
@@ -1259,6 +1807,18 @@ public class NgskYoukuritukusitatokiProcedure {
 											}
 										} else {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -1280,19 +1840,68 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == NgskItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 											} else {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 										}
@@ -1401,6 +2010,19 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
 												if (entityiterator instanceof MobEntity) {
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
 													entityiterator.setFire((int) 15);
 													{
 														Entity _ent = entityiterator;
@@ -1423,8 +2045,21 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
 												if (entityiterator instanceof MobEntity) {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity)
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
 																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 													entityiterator.setFire((int) 15);
 													{
@@ -1447,6 +2082,18 @@ public class NgskYoukuritukusitatokiProcedure {
 											}
 										} else {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -1468,19 +2115,68 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == NgskItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 											} else {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 										}
@@ -1566,6 +2262,19 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
 												if (entityiterator instanceof MobEntity) {
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
 													entityiterator.setFire((int) 15);
 													{
 														Entity _ent = entityiterator;
@@ -1588,8 +2297,21 @@ public class NgskYoukuritukusitatokiProcedure {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
 												if (entityiterator instanceof MobEntity) {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity)
+													if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+															((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHeldItemMainhand()
+																	: ItemStack.EMPTY)) > 0) {
+														if (entity instanceof LivingEntity)
+															((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity)
+																	? ((LivingEntity) entity).getHealth()
+																	: -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+													}
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
 																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 													entityiterator.setFire((int) 15);
 													{
@@ -1612,6 +2334,18 @@ public class NgskYoukuritukusitatokiProcedure {
 											}
 										} else {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -1633,19 +2367,68 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == NgskItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 											} else {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == BookbloodItem.block) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 													.getItem() == PoisonbookItem.block) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 											}
 										}
@@ -1697,10 +2480,19 @@ public class NgskYoukuritukusitatokiProcedure {
 												.getItem() == PoisonbookItem.block) {
 									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 											.getItem() == BookbloodItem.block) {
-										if (world instanceof ServerWorld) {
-											((ServerWorld) world).spawnParticle(ParticleTypes.SOUL_FIRE_FLAME, x, y, z, (int) 5, 3, 3, 3, 1);
-										}
 										if (entityiterator instanceof MobEntity) {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											if (entityiterator instanceof LivingEntity)
 												((LivingEntity) entityiterator).addPotionEffect(
 														new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
@@ -1724,15 +2516,25 @@ public class NgskYoukuritukusitatokiProcedure {
 									}
 									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 											.getItem() == PoisonbookItem.block) {
-										if (world instanceof ServerWorld) {
-											((ServerWorld) world).spawnParticle(ParticleTypes.SOUL_FIRE_FLAME, x, y, z, (int) 5, 3, 3, 3, 1);
-										}
 										if (entityiterator instanceof MobEntity) {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											if (entityiterator instanceof LivingEntity)
 												((LivingEntity) entityiterator).addPotionEffect(
 														new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+											if (entityiterator instanceof LivingEntity)
+												((LivingEntity) entityiterator)
+														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 											entityiterator.setFire((int) 15);
 											{
 												Entity _ent = entityiterator;
@@ -1753,6 +2555,18 @@ public class NgskYoukuritukusitatokiProcedure {
 									}
 								} else {
 									if (entityiterator instanceof MobEntity) {
+										if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+												((entity instanceof LivingEntity)
+														? ((LivingEntity) entity).getHeldItemMainhand()
+														: ItemStack.EMPTY)) > 0) {
+											if (entity instanceof LivingEntity)
+												((LivingEntity) entity).setHealth(
+														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																		((entity instanceof LivingEntity)
+																				? ((LivingEntity) entity).getHeldItemMainhand()
+																				: ItemStack.EMPTY))));
+										}
 										if (entityiterator instanceof LivingEntity)
 											((LivingEntity) entityiterator).addPotionEffect(
 													new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
@@ -1777,20 +2591,50 @@ public class NgskYoukuritukusitatokiProcedure {
 								if (entityiterator instanceof MobEntity) {
 									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 											.getItem() == NgskItem.block) {
+										if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+												((entity instanceof LivingEntity)
+														? ((LivingEntity) entity).getHeldItemMainhand()
+														: ItemStack.EMPTY)) > 0) {
+											if (entity instanceof LivingEntity)
+												((LivingEntity) entity).setHealth(
+														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																		((entity instanceof LivingEntity)
+																				? ((LivingEntity) entity).getHeldItemMainhand()
+																				: ItemStack.EMPTY))));
+										}
 										if (entityiterator instanceof LivingEntity)
 											((LivingEntity) entityiterator).addPotionEffect(
 													new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
 										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 									} else {
-										if (entityiterator instanceof LivingEntity)
-											((LivingEntity) entityiterator).addPotionEffect(
-													new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
+										if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+												((entity instanceof LivingEntity)
+														? ((LivingEntity) entity).getHeldItemMainhand()
+														: ItemStack.EMPTY)) > 0) {
+											if (entity instanceof LivingEntity)
+												((LivingEntity) entity).setHealth(
+														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																		((entity instanceof LivingEntity)
+																				? ((LivingEntity) entity).getHeldItemMainhand()
+																				: ItemStack.EMPTY))));
+										}
 										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 									}
 									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 											.getItem() == BookbloodItem.block) {
-										if (world instanceof ServerWorld) {
-											((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, x, y, z, (int) 5, 3, 3, 3, 1);
+										if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+												((entity instanceof LivingEntity)
+														? ((LivingEntity) entity).getHeldItemMainhand()
+														: ItemStack.EMPTY)) > 0) {
+											if (entity instanceof LivingEntity)
+												((LivingEntity) entity).setHealth(
+														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																		((entity instanceof LivingEntity)
+																				? ((LivingEntity) entity).getHeldItemMainhand()
+																				: ItemStack.EMPTY))));
 										}
 										if (entityiterator instanceof LivingEntity)
 											((LivingEntity) entityiterator).addPotionEffect(
@@ -1800,14 +2644,23 @@ public class NgskYoukuritukusitatokiProcedure {
 									}
 									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 											.getItem() == PoisonbookItem.block) {
-										if (world instanceof ServerWorld) {
-											((ServerWorld) world).spawnParticle(DokuroParticle.particle, x, y, z, (int) 5, 3, 3, 3, 1);
+										if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+												((entity instanceof LivingEntity)
+														? ((LivingEntity) entity).getHeldItemMainhand()
+														: ItemStack.EMPTY)) > 0) {
+											if (entity instanceof LivingEntity)
+												((LivingEntity) entity).setHealth(
+														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																		((entity instanceof LivingEntity)
+																				? ((LivingEntity) entity).getHeldItemMainhand()
+																				: ItemStack.EMPTY))));
 										}
 										if (entityiterator instanceof LivingEntity)
 											((LivingEntity) entityiterator).addPotionEffect(
 													new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
-										if (entity instanceof LivingEntity)
-											((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+										if (entityiterator instanceof LivingEntity)
+											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 									}
 								}
@@ -1867,6 +2720,18 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == BookbloodItem.block) {
 											if (entityiterator instanceof MobEntity) {
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
 												entityiterator.setFire((int) 15);
 												{
 													Entity _ent = entityiterator;
@@ -1888,8 +2753,21 @@ public class NgskYoukuritukusitatokiProcedure {
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == PoisonbookItem.block) {
 											if (entityiterator instanceof MobEntity) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) > 0) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 												entityiterator.setFire((int) 15);
 												{
 													Entity _ent = entityiterator;
@@ -1910,6 +2788,18 @@ public class NgskYoukuritukusitatokiProcedure {
 										}
 									} else {
 										if (entityiterator instanceof MobEntity) {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											{
 												Entity _ent = entityiterator;
 												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -1931,19 +2821,68 @@ public class NgskYoukuritukusitatokiProcedure {
 									if (entityiterator instanceof MobEntity) {
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == NgskItem.block) {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 										} else {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == BookbloodItem.block) {
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
 											entityiterator.setFire((int) 15);
 											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == PoisonbookItem.block) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+											if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) > 0) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
+											if (entityiterator instanceof LivingEntity)
+												((LivingEntity) entityiterator)
+														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
 											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
 									}
@@ -2093,6 +3032,37 @@ public class NgskYoukuritukusitatokiProcedure {
 								((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
 								(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))), (int) 15, 0.01, 0.01, 0.01,
 								0.75);
+					}
+					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+							.getItem() == PoisonbookItem.block) {
+						if (world instanceof ServerWorld) {
+							((ServerWorld) world).spawnParticle(DokuroParticle.particle,
+									(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+									((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+									(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))), (int) 15, 0.01, 0.01,
+									0.01, 0.75);
+						}
+					}
+					if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+							.getItem() == BookbloodItem.block) {
+						if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
+								((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
+							if (world instanceof ServerWorld) {
+								((ServerWorld) world).spawnParticle(DokuroParticle.particle,
+										(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+										((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+										(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))), (int) 15, 0.01, 0.01,
+										0.01, 0.75);
+							}
+						} else {
+							if (world instanceof ServerWorld) {
+								((ServerWorld) world).spawnParticle(ParticleTypes.FLAME,
+										(x - Numerical_value * Math.cos(Math.toRadians(angle)) * Math.sin(Math.toRadians(yaw))),
+										((y + 1) - Numerical_value * Math.sin(Math.toRadians(angle))),
+										(z + Numerical_value * Math.cos(Math.toRadians(angle)) * Math.cos(Math.toRadians(yaw))), (int) 15, 0.01, 0.01,
+										0.01, 0.75);
+							}
+						}
 					}
 					Numerical_value = (Numerical_value + 0.2);
 				}

@@ -2,7 +2,7 @@
 // Exported for Minecraft version 1.15 - 1.16 with MCP mappings
 // Paste this class into your mod and generate all required imports
 
-public static class Modelkusaniisounaskelton extends EntityModel<Entity> {
+public static class Modelskelton2 extends EntityModel<Entity> {
 	private final ModelRenderer waist;
 	private final ModelRenderer Body;
 	private final ModelRenderer head;
@@ -13,7 +13,7 @@ public static class Modelkusaniisounaskelton extends EntityModel<Entity> {
 	private final ModelRenderer RightLeg;
 	private final ModelRenderer LeftLeg;
 
-	public Modelkusaniisounaskelton() {
+	public Modelskelton2() {
 		textureWidth = 64;
 		textureHeight = 32;
 
@@ -56,12 +56,6 @@ public static class Modelkusaniisounaskelton extends EntityModel<Entity> {
 	}
 
 	@Override
-	public void setRotationAngles(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
-			float netHeadYaw, float headPitch) {
-		// previously the render function, render code was moved to a method below
-	}
-
-	@Override
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red,
 			float green, float blue, float alpha) {
 		waist.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
@@ -76,5 +70,14 @@ public static class Modelkusaniisounaskelton extends EntityModel<Entity> {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
+	}
+
+	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
+		this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
+		this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
+		this.RightArm.rotateAngleX = MathHelper.cos(f * 0.6662F + (float) Math.PI) * f1;
+		this.LeftLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
+		this.LeftArm.rotateAngleX = MathHelper.cos(f * 0.6662F) * f1;
+		this.RightLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 	}
 }
