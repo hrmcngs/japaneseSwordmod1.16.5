@@ -24,7 +24,10 @@
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onRightClickedInAir": {
-      "name": "NaginataYoukuritukusitatoki"
+      "name": "PoisonnaginataYoukuritukusitatoki"
+    },
+    "onEntityHitWith": {
+      "name": "PoisonnaginatamobugaturudeGongJisaretatoki"
     },
     "onItemInUseTick": {
       "name": "NaginataturuwoShoudeChituteiruJiannoteituku"

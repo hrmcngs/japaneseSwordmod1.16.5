@@ -7,8 +7,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.enchantment.EnchantmentHelper;
 
+import net.mcreator.japanesesword.potion.Arrow1PotionEffect;
+import net.mcreator.japanesesword.item.PoisonnaginataItem;
 import net.mcreator.japanesesword.item.NaginataItem;
+import net.mcreator.japanesesword.enchantment.YawoEnchantment;
 import net.mcreator.japanesesword.enchantment.HasiruEnchantment;
+import net.mcreator.japanesesword.enchantment.AnsiEnchantment;
 import net.mcreator.japanesesword.JapaneseswordMod;
 
 import java.util.Map;
@@ -23,15 +27,44 @@ public class NaginataturuwoShoudeChituteiruJiannoteitukuProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == NaginataItem.block) {
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 240, (int) 255, (true), (true)));
 			if ((EnchantmentHelper.getEnchantmentLevel(HasiruEnchantment.enchantment,
 					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 9, (true), (true)));
 			} else {
 				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 4, (true), (true)));
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 1, (int) 1, (true), (true)));
+			}
+			if ((EnchantmentHelper.getEnchantmentLevel(AnsiEnchantment.enchantment,
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 600, (int) 255, (true), (true)));
+			}
+			if ((EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment,
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, (true), (true)));
+			}
+		}
+		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == PoisonnaginataItem.block) {
+			if ((EnchantmentHelper.getEnchantmentLevel(HasiruEnchantment.enchantment,
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 9, (true), (true)));
+			} else {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 1, (int) 1, (true), (true)));
+			}
+			if ((EnchantmentHelper.getEnchantmentLevel(AnsiEnchantment.enchantment,
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 600, (int) 255, (true), (true)));
+			}
+			if ((EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment,
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, (true), (true)));
 			}
 		}
 	}

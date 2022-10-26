@@ -14,6 +14,8 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Hand;
 import net.minecraft.util.DamageSource;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
@@ -23,7 +25,10 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
 import net.mcreator.japanesesword.item.TuvaItem;
+import net.mcreator.japanesesword.item.PoisonnaginataItem;
+import net.mcreator.japanesesword.item.PoisonbookItem;
 import net.mcreator.japanesesword.item.NaginataItem;
+import net.mcreator.japanesesword.item.Katana1Item;
 import net.mcreator.japanesesword.item.BookbloodItem;
 import net.mcreator.japanesesword.enchantment.KillEnchantment;
 import net.mcreator.japanesesword.JapaneseswordMod;
@@ -78,10 +83,14 @@ public class EffectVIehuekutogaYouXiaoShinoteitukuProcedure {
 		double z_pos = 0;
 		double xPos = 0;
 		double dis = 0;
-		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == NaginataItem.block
-				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem() == NaginataItem.block
+		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == Katana1Item.block
+				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem() == Katana1Item.block
 				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == TuvaItem.block
-				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem() == TuvaItem.block) {
+				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem() == TuvaItem.block
+				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == PoisonnaginataItem.block
+				|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.getItem() == PoisonnaginataItem.block) {
 			if (world instanceof World && !world.isRemote()) {
 				((World) world).playSound(null, new BlockPos(x, y, z),
 						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.sweep")),
@@ -143,14 +152,25 @@ public class EffectVIehuekutogaYouXiaoShinoteitukuProcedure {
 								}.compareDistOf(x_pos, y_pos, z_pos)).collect(Collectors.toList());
 						for (Entity entityiterator : _entfound) {
 							if (!(entityiterator == entity)) {
-								if (entityiterator instanceof MobEntity) {
-									if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-											((entity instanceof LivingEntity)
-													? ((LivingEntity) entity).getHeldItemMainhand()
-													: ItemStack.EMPTY)) != 0)) {
+								if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
+										((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+											.getItem() == BookbloodItem.block
+											|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == PoisonbookItem.block) {
 										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
 												.getItem() == BookbloodItem.block) {
-											if (!(entityiterator == entity)) {
+											if (entityiterator instanceof MobEntity) {
+												if (((entity instanceof LivingEntity)
+														? ((LivingEntity) entity).getHeldItemOffhand()
+														: ItemStack.EMPTY).getItem() == PoisonnaginataItem.block
+														&& ((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY).getItem() == PoisonnaginataItem.block) {
+													if (entityiterator instanceof LivingEntity)
+														((LivingEntity) entityiterator)
+																.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1));
+												}
 												entityiterator.setFire((int) 15);
 												{
 													Entity _ent = entityiterator;
@@ -168,8 +188,14 @@ public class EffectVIehuekutogaYouXiaoShinoteitukuProcedure {
 													}
 												}
 											}
-										} else {
-											if (!(entityiterator == entity)) {
+										}
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == PoisonbookItem.block) {
+											if (entityiterator instanceof MobEntity) {
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												entityiterator.setFire((int) 15);
 												{
 													Entity _ent = entityiterator;
 													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -188,26 +214,92 @@ public class EffectVIehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
-										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == BookbloodItem.block) {
-											if (!(entityiterator == entity)) {
-												entityiterator.setFire((int) 15);
-												entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 4);
-											}
-										} else {
+										if (entityiterator instanceof MobEntity) {
 											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-													.getItem() == NaginataItem.block
+													.getItem() == PoisonnaginataItem.block
 													&& ((entity instanceof LivingEntity)
 															? ((LivingEntity) entity).getHeldItemMainhand()
-															: ItemStack.EMPTY).getItem() == NaginataItem.block) {
-												if (!(entityiterator == entity)) {
-													entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 6);
-												}
-											} else {
-												if (!(entityiterator == entity)) {
-													entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 3);
+															: ItemStack.EMPTY).getItem() == PoisonnaginataItem.block) {
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1));
+											}
+											{
+												Entity _ent = entityiterator;
+												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+													_ent.world.getServer().getCommandManager().handleCommand(
+															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
 												}
 											}
+											{
+												Entity _ent = entityiterator;
+												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+													_ent.world.getServer().getCommandManager().handleCommand(
+															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+															"/deta merge entity @s (Health:0)");
+												}
+											}
+										}
+									}
+								} else {
+									if (entityiterator instanceof MobEntity) {
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == NaginataItem.block
+												&& ((entity instanceof LivingEntity)
+														? ((LivingEntity) entity).getHeldItemMainhand()
+														: ItemStack.EMPTY).getItem() == NaginataItem.block
+												|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+														.getItem() == Katana1Item.block
+														&& ((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY).getItem() == Katana1Item.block
+												|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+														.getItem() == PoisonnaginataItem.block
+														&& ((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY).getItem() == PoisonnaginataItem.block) {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == PoisonnaginataItem.block
+													&& ((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY).getItem() == PoisonnaginataItem.block) {
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1));
+											}
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+										} else {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == PoisonnaginataItem.block
+													&& ((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY).getItem() == PoisonnaginataItem.block) {
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1));
+											}
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+										}
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == BookbloodItem.block) {
+											if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == PoisonnaginataItem.block
+													&& ((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY).getItem() == PoisonnaginataItem.block) {
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1));
+											}
+											entityiterator.setFire((int) 15);
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+										}
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == PoisonbookItem.block) {
+											if (entityiterator instanceof LivingEntity)
+												((LivingEntity) entityiterator)
+														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
 									}
 								}

@@ -19,11 +19,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.entity.projectile.PotionEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
@@ -39,8 +39,10 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AreaEffectCloudEntity;
 
-import net.mcreator.japanesesword.item.BouItem;
+import net.mcreator.japanesesword.item.PoisonnaginataItem;
+import net.mcreator.japanesesword.item.PoisonbookItem;
 import net.mcreator.japanesesword.entity.renderer.DokunosukeltonRenderer;
 import net.mcreator.japanesesword.JapaneseswordModElements;
 
@@ -66,6 +68,11 @@ public class DokunosukeltonEntity extends JapaneseswordModElements.ModElement {
 
 	@SubscribeEvent
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
+		boolean biomeCriteria = false;
+		if (new ResourceLocation("swamp").equals(event.getName()))
+			biomeCriteria = true;
+		if (!biomeCriteria)
+			return;
 		event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(entity, 20, 2, 3));
 	}
 
@@ -98,7 +105,8 @@ public class DokunosukeltonEntity extends JapaneseswordModElements.ModElement {
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(BouItem.block));
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(PoisonnaginataItem.block));
+			this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(PoisonbookItem.block));
 		}
 
 		@Override
@@ -128,7 +136,7 @@ public class DokunosukeltonEntity extends JapaneseswordModElements.ModElement {
 
 		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
 			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(Items.BONE));
+			this.entityDropItem(new ItemStack(PoisonbookItem.block));
 		}
 
 		@Override
@@ -148,6 +156,8 @@ public class DokunosukeltonEntity extends JapaneseswordModElements.ModElement {
 
 		@Override
 		public boolean attackEntityFrom(DamageSource source, float amount) {
+			if (source.getImmediateSource() instanceof PotionEntity || source.getImmediateSource() instanceof AreaEffectCloudEntity)
+				return false;
 			if (source == DamageSource.DROWN)
 				return false;
 			if (source == DamageSource.WITHER)

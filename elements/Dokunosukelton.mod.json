@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "毒を使うスケルトン",
     "mobLabel": "",
-    "mobModelName": "Biped",
+    "mobModelName": "Modelkusaniisounaskelton",
     "mobModelTexture": "unnamed.png",
     "mobModelGlowTexture": "",
     "modelWidth": 0.6,
@@ -27,10 +27,10 @@
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
-      "value": "CUSTOM:Bou"
+      "value": "CUSTOM:Poisonnaginata"
     },
     "equipmentOffHand": {
-      "value": ""
+      "value": "CUSTOM:Poisonbook"
     },
     "equipmentHelmet": {
       "value": ""
@@ -70,7 +70,7 @@
     "immuneToCactus": false,
     "immuneToDrowning": true,
     "immuneToLightning": false,
-    "immuneToPotions": false,
+    "immuneToPotions": true,
     "immuneToPlayer": false,
     "immuneToExplosion": false,
     "immuneToTrident": false,
@@ -78,7 +78,7 @@
     "immuneToWither": true,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "Items.BONE"
+      "value": "CUSTOM:Poisonbook"
     },
     "livingSound": {
       "value": "entity.skeleton.ambient"
@@ -107,7 +107,7 @@
     "breedTriggerItems": [],
     "ranged": false,
     "rangedAttackItem": {
-      "value": "CUSTOM:Bou"
+      "value": "Items.BOW"
     },
     "rangedItemType": "Default item",
     "spawnThisMob": true,
@@ -116,7 +116,11 @@
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 2,
     "maxNumberOfMobsPerGroup": 3,
-    "restrictionBiomes": [],
+    "restrictionBiomes": [
+      {
+        "value": "swamp"
+      }
+    ],
     "spawnInDungeons": true
   }
 }

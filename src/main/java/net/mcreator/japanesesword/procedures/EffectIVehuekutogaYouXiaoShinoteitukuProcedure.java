@@ -8,6 +8,8 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
+import net.minecraft.potion.Effects;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.MobEntity;
@@ -17,6 +19,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
+import net.mcreator.japanesesword.item.PoisonnaginataItem;
 import net.mcreator.japanesesword.item.NaginataItem;
 import net.mcreator.japanesesword.item.KatanakatanaItem;
 import net.mcreator.japanesesword.enchantment.KillEnchantment;
@@ -132,6 +135,20 @@ public class EffectIVehuekutogaYouXiaoShinoteitukuProcedure {
 									entityiterator.setFire((int) 15);
 									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 								}
+								if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getItem() == PoisonnaginataItem.block) {
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1, (false), (false)));
+									entityiterator.setFire((int) 15);
+									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 20);
+								} else {
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1, (false), (false)));
+									entityiterator.setFire((int) 15);
+									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+								}
 							}
 						}
 					}
@@ -215,6 +232,20 @@ public class EffectIVehuekutogaYouXiaoShinoteitukuProcedure {
 									entityiterator.setFire((int) 15);
 									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 20);
 								} else {
+									entityiterator.setFire((int) 15);
+									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+								}
+								if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getItem() == PoisonnaginataItem.block) {
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1, (false), (false)));
+									entityiterator.setFire((int) 15);
+									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 20);
+								} else {
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1, (false), (false)));
 									entityiterator.setFire((int) 15);
 									entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 								}

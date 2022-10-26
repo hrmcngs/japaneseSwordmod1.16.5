@@ -15,9 +15,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.japanesesword.procedures.PoisonnaginatamobugaturudeGongJisaretatokiProcedure;
+import net.mcreator.japanesesword.procedures.PoisonnaginataYoukuritukusitatokiProcedure;
 import net.mcreator.japanesesword.procedures.NaginataturuwoShoudeChituteiruJiannoteitukuProcedure;
 import net.mcreator.japanesesword.procedures.NaginataenteiteigaaitemuwoZhentutaShiProcedure;
-import net.mcreator.japanesesword.procedures.NaginataYoukuritukusitatokiProcedure;
 import net.mcreator.japanesesword.itemgroup.BukiItemGroup;
 import net.mcreator.japanesesword.JapaneseswordModElements;
 
@@ -70,11 +71,25 @@ public class PoisonnaginataItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				NaginataYoukuritukusitatokiProcedure.executeProcedure(Stream
+				PoisonnaginataYoukuritukusitatokiProcedure.executeProcedure(Stream
 						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
 								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
 								new AbstractMap.SimpleEntry<>("entity", entity))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				return retval;
+			}
+
+			@Override
+			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+				boolean retval = super.hitEntity(itemstack, entity, sourceentity);
+				double x = entity.getPosX();
+				double y = entity.getPosY();
+				double z = entity.getPosZ();
+				World world = entity.world;
+
+				PoisonnaginatamobugaturudeGongJisaretatokiProcedure
+						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("sourceentity", sourceentity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
