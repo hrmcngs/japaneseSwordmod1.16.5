@@ -2,13 +2,13 @@
   "_fv": 33,
   "_type": "armor",
   "definition": {
-    "enableHelmet": true,
+    "enableHelmet": false,
     "textureHelmet": "tekitou_head",
     "enableBody": true,
     "textureBody": "hannyou",
-    "enableLeggings": true,
+    "enableLeggings": false,
     "textureLeggings": "tekitou_leggings",
-    "enableBoots": true,
+    "enableBoots": false,
     "textureBoots": "tekitou_boots",
     "creativeTab": {
       "value": "CUSTOM:Buki"

@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/naginata2",
+  "textures": {
+    "0": "japanesesword:blocks/naginata2",
+    "particle": "japanesesword:items/poison"
+  }
+}
