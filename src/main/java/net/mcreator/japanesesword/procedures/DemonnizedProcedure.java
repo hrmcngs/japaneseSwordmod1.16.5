@@ -19,8 +19,8 @@ public class DemonnizedProcedure {
 			return;
 		}
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
-		if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-				((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) > 0) {
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+				((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (sourceentity instanceof LivingEntity)
 				((LivingEntity) sourceentity).setHealth((float) (((sourceentity instanceof LivingEntity)
 						? ((LivingEntity) sourceentity).getHealth()
