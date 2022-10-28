@@ -6,7 +6,7 @@
     "type": "BREAKABLE",
     "rarity": "COMMON",
     "minLevel": 1,
-    "maxLevel": 1,
+    "maxLevel": 10,
     "damageModifier": 0,
     "compatibleEnchantments": [],
     "compatibleItems": [],
