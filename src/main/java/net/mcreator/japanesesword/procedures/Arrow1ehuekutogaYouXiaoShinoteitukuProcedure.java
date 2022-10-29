@@ -75,6 +75,8 @@ public class Arrow1ehuekutogaYouXiaoShinoteitukuProcedure {
 		double dis5 = 0;
 		double count = 0;
 		double count2 = 0;
+		double count3 = 0;
+		double count4 = 0;
 		if ((EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment,
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			count = (EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment,
@@ -591,7 +593,7 @@ public class Arrow1ehuekutogaYouXiaoShinoteitukuProcedure {
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
 			count2 = (EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment,
 					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)));
-			if (MathHelper.nextDouble(new Random(), 1, 20) - count == 1) {
+			if (MathHelper.nextDouble(new Random(), 1, 20) - count2 == 1) {
 				{
 					List<Entity> _entfound = world
 							.getEntitiesWithinAABB(Entity.class,
@@ -1101,6 +1103,514 @@ public class Arrow1ehuekutogaYouXiaoShinoteitukuProcedure {
 		}
 		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+			{
+				List<Entity> _entfound = world
+						.getEntitiesWithinAABB(Entity.class,
+								new AxisAlignedBB(x - (1 / 2d), y - (1 / 2d), z - (1 / 2d), x + (1 / 2d), y + (1 / 2d), z + (1 / 2d)), null)
+						.stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+							}
+						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
+							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
+							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
+							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
+							|| entityiterator instanceof KenEntity.CustomEntity) {
+						if (world instanceof World && !world.isRemote()) {
+							((World) world).playSound(null, new BlockPos(x, y, z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1);
+						} else {
+							((World) world).playSound(x, y, z,
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
+						}
+						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
+							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
+								entityiterator.getPersistentData().putBoolean("Check", (true));
+								dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4)
+										+ Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4)
+										+ Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
+								if (dis1 <= 0.4) {
+									entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								} else {
+									entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								}
+								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false
+										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
+										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									} else {
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			{
+				List<Entity> _entfound = world
+						.getEntitiesWithinAABB(Entity.class,
+								new AxisAlignedBB(x - (2 / 2d), y - (2 / 2d), z - (2 / 2d), x + (2 / 2d), y + (2 / 2d), z + (2 / 2d)), null)
+						.stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+							}
+						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
+							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
+							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
+							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
+							|| entityiterator instanceof KenEntity.CustomEntity) {
+						if (world instanceof World && !world.isRemote()) {
+							((World) world).playSound(null, new BlockPos(x, y, z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1);
+						} else {
+							((World) world).playSound(x, y, z,
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
+						}
+						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
+							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
+								entityiterator.getPersistentData().putBoolean("Check", (true));
+								dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4)
+										+ Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4)
+										+ Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
+								if (dis1 <= 0.8) {
+									entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								} else {
+									entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								}
+								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false
+										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
+										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									} else {
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			{
+				List<Entity> _entfound = world
+						.getEntitiesWithinAABB(Entity.class,
+								new AxisAlignedBB(x - (3 / 2d), y - (3 / 2d), z - (3 / 2d), x + (3 / 2d), y + (3 / 2d), z + (3 / 2d)), null)
+						.stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+							}
+						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
+							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
+							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
+							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
+							|| entityiterator instanceof KenEntity.CustomEntity) {
+						if (world instanceof World && !world.isRemote()) {
+							((World) world).playSound(null, new BlockPos(x, y, z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1);
+						} else {
+							((World) world).playSound(x, y, z,
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
+						}
+						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
+							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
+								entityiterator.getPersistentData().putBoolean("Check", (true));
+								dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4)
+										+ Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4)
+										+ Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
+								if (dis1 <= 1.2) {
+									entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								} else {
+									entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								}
+								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false
+										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
+										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									} else {
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			{
+				List<Entity> _entfound = world
+						.getEntitiesWithinAABB(Entity.class,
+								new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
+						.stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+							}
+						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
+							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
+							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
+							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
+							|| entityiterator instanceof KenEntity.CustomEntity) {
+						if (world instanceof World && !world.isRemote()) {
+							((World) world).playSound(null, new BlockPos(x, y, z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1);
+						} else {
+							((World) world).playSound(x, y, z,
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
+						}
+						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
+							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
+								entityiterator.getPersistentData().putBoolean("Check", (true));
+								dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4)
+										+ Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4)
+										+ Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
+								if (dis1 <= 1.6) {
+									entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								} else {
+									entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								}
+								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false
+										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
+										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									} else {
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			{
+				List<Entity> _entfound = world
+						.getEntitiesWithinAABB(Entity.class,
+								new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
+						.stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+							}
+						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
+							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
+							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
+							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
+							|| entityiterator instanceof KenEntity.CustomEntity) {
+						if (world instanceof World && !world.isRemote()) {
+							((World) world).playSound(null, new BlockPos(x, y, z),
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1);
+						} else {
+							((World) world).playSound(x, y, z,
+									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+											.getValue(new ResourceLocation("entity.player.attack.sweep")),
+									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
+						}
+						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
+							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
+								entityiterator.getPersistentData().putBoolean("Check", (true));
+								dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4)
+										+ Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4)
+										+ Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
+								if (dis1 <= 2) {
+									entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								} else {
+									entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								}
+								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false
+										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
+										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									} else {
+										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
+												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
+												(entityiterator.getPosZ()), 0, 1, 0);
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/particle dust 0.639 0.169 0.169 1 ~ ~0.5 ~ 0.3 0.1 0.3 0.1 10 force");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+											}
+										}
+										{
+											Entity _ent = entityiterator;
+											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+												_ent.world.getServer().getCommandManager().handleCommand(
+														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+														"/deta merge entity @s (Health:0)");
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
 			{
 				List<Entity> _entfound = world
 						.getEntitiesWithinAABB(Entity.class,
