@@ -22,8 +22,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.enchantment.EnchantmentHelper;
 
-import net.mcreator.japanesesword.entity.KenEntity;
-import net.mcreator.japanesesword.entity.Ken2Entity;
 import net.mcreator.japanesesword.enchantment.DemonizedEnchantment;
 import net.mcreator.japanesesword.JapaneseswordMod;
 
@@ -83,8 +81,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -184,8 +181,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -285,8 +281,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -386,8 +381,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -487,8 +481,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -591,8 +584,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -692,8 +684,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -793,8 +784,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -894,8 +884,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
@@ -995,8 +984,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity || entityiterator instanceof Ken2Entity.CustomEntity
-							|| entityiterator instanceof KenEntity.CustomEntity) {
+							|| entityiterator instanceof EggEntity) {
 						if (world instanceof World && !world.isRemote()) {
 							((World) world).playSound(null, new BlockPos(x, y, z),
 									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
