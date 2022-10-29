@@ -35,7 +35,7 @@ public class YawoEnchantment extends JapaneseswordModElements.ModElement {
 
 		@Override
 		public int getMaxLevel() {
-			return 10;
+			return 5;
 		}
 
 		@Override

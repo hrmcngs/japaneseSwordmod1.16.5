@@ -6,7 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.enchantment.EnchantmentHelper;
 
-import net.mcreator.japanesesword.potion.Arrow1PotionEffect;
+import net.mcreator.japanesesword.potion.Arrow2PotionEffect;
 import net.mcreator.japanesesword.enchantment.DemonizedEnchantment;
 import net.mcreator.japanesesword.JapaneseswordMod;
 
@@ -24,12 +24,12 @@ public class Demonized1Procedure {
 		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow2PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
 		}
 		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow2PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
 		}
 	}
 }

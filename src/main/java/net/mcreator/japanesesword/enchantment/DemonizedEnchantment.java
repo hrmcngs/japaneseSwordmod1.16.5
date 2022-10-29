@@ -35,7 +35,7 @@ public class DemonizedEnchantment extends JapaneseswordModElements.ModElement {
 
 		@Override
 		public int getMaxLevel() {
-			return 5;
+			return 1;
 		}
 
 		@Override
