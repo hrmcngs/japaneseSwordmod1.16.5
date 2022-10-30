@@ -1,5 +1,6 @@
 package net.mcreator.japanesesword.procedures;
 
+import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.LivingEntity;
@@ -30,6 +31,16 @@ public class Demonized1Procedure {
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow2PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+		}
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HUNGER, (int) 1, (int) 4, (true), (false)));
+		}
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HUNGER, (int) 1, (int) 1, (true), (false)));
 		}
 	}
 }

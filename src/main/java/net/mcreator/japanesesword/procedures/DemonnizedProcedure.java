@@ -55,9 +55,7 @@ public class DemonnizedProcedure {
 		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-						+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-								((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY))));
+				((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1) + 1));
 		}
 	}
 }
