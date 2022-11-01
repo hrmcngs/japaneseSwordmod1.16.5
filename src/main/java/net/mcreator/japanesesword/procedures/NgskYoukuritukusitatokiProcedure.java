@@ -37,6 +37,7 @@ import net.mcreator.japanesesword.potion.KurutaimunasiPotionEffect;
 import net.mcreator.japanesesword.particle.DokuroParticle;
 import net.mcreator.japanesesword.item.TossinItem;
 import net.mcreator.japanesesword.item.PoisonbookItem;
+import net.mcreator.japanesesword.item.NgsoItem;
 import net.mcreator.japanesesword.item.NgskItem;
 import net.mcreator.japanesesword.item.BooktokubetuItem;
 import net.mcreator.japanesesword.item.BookbloodItem;
@@ -384,193 +385,205 @@ public class NgskYoukuritukusitatokiProcedure {
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 3) {
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity).addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private IWorld world;
-
-					public void start(IWorld world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
+				if (NgsoItem.block == ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem()) {
+					{
+						Entity _ent = entity;
+						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+							_ent.world.getServer().getCommandManager().handleCommand(
+									_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+									"/attribute @s minecraft:generic.attack_damage base set 0");
 						}
 					}
+				} else {
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
+					new Object() {
+						private int ticks = 0;
+						private float waitTicks;
+						private IWorld world;
 
-					private void run() {
-						if (entity instanceof LivingEntity)
-							((LivingEntity) entity).addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-						if (entity instanceof LivingEntity)
-							((LivingEntity) entity)
-									.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
-						new Object() {
-							private int ticks = 0;
-							private float waitTicks;
-							private IWorld world;
+						public void start(IWorld world, int waitTicks) {
+							this.waitTicks = waitTicks;
+							MinecraftForge.EVENT_BUS.register(this);
+							this.world = world;
+						}
 
-							public void start(IWorld world, int waitTicks) {
-								this.waitTicks = waitTicks;
-								MinecraftForge.EVENT_BUS.register(this);
-								this.world = world;
+						@SubscribeEvent
+						public void tick(TickEvent.ServerTickEvent event) {
+							if (event.phase == TickEvent.Phase.END) {
+								this.ticks += 1;
+								if (this.ticks >= this.waitTicks)
+									run();
 							}
+						}
 
-							@SubscribeEvent
-							public void tick(TickEvent.ServerTickEvent event) {
-								if (event.phase == TickEvent.Phase.END) {
-									this.ticks += 1;
-									if (this.ticks >= this.waitTicks)
-										run();
+						private void run() {
+							if (entity instanceof LivingEntity)
+								((LivingEntity) entity)
+										.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+							if (entity instanceof LivingEntity)
+								((LivingEntity) entity)
+										.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
+							new Object() {
+								private int ticks = 0;
+								private float waitTicks;
+								private IWorld world;
+
+								public void start(IWorld world, int waitTicks) {
+									this.waitTicks = waitTicks;
+									MinecraftForge.EVENT_BUS.register(this);
+									this.world = world;
 								}
-							}
 
-							private void run() {
-								if (entity instanceof LivingEntity)
-									((LivingEntity) entity)
-											.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-								if (entity instanceof LivingEntity)
-									((LivingEntity) entity)
-											.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-								new Object() {
-									private int ticks = 0;
-									private float waitTicks;
-									private IWorld world;
-
-									public void start(IWorld world, int waitTicks) {
-										this.waitTicks = waitTicks;
-										MinecraftForge.EVENT_BUS.register(this);
-										this.world = world;
+								@SubscribeEvent
+								public void tick(TickEvent.ServerTickEvent event) {
+									if (event.phase == TickEvent.Phase.END) {
+										this.ticks += 1;
+										if (this.ticks >= this.waitTicks)
+											run();
 									}
+								}
 
-									@SubscribeEvent
-									public void tick(TickEvent.ServerTickEvent event) {
-										if (event.phase == TickEvent.Phase.END) {
-											this.ticks += 1;
-											if (this.ticks >= this.waitTicks)
-												run();
+								private void run() {
+									if (entity instanceof LivingEntity)
+										((LivingEntity) entity)
+												.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+									if (entity instanceof LivingEntity)
+										((LivingEntity) entity)
+												.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
+									new Object() {
+										private int ticks = 0;
+										private float waitTicks;
+										private IWorld world;
+
+										public void start(IWorld world, int waitTicks) {
+											this.waitTicks = waitTicks;
+											MinecraftForge.EVENT_BUS.register(this);
+											this.world = world;
 										}
-									}
 
-									private void run() {
-										if (entity instanceof LivingEntity)
-											((LivingEntity) entity)
-													.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-										if (entity instanceof LivingEntity)
-											((LivingEntity) entity).addPotionEffect(
-													new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-										new Object() {
-											private int ticks = 0;
-											private float waitTicks;
-											private IWorld world;
-
-											public void start(IWorld world, int waitTicks) {
-												this.waitTicks = waitTicks;
-												MinecraftForge.EVENT_BUS.register(this);
-												this.world = world;
+										@SubscribeEvent
+										public void tick(TickEvent.ServerTickEvent event) {
+											if (event.phase == TickEvent.Phase.END) {
+												this.ticks += 1;
+												if (this.ticks >= this.waitTicks)
+													run();
 											}
+										}
 
-											@SubscribeEvent
-											public void tick(TickEvent.ServerTickEvent event) {
-												if (event.phase == TickEvent.Phase.END) {
-													this.ticks += 1;
-													if (this.ticks >= this.waitTicks)
-														run();
+										private void run() {
+											if (entity instanceof LivingEntity)
+												((LivingEntity) entity).addPotionEffect(
+														new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+											if (entity instanceof LivingEntity)
+												((LivingEntity) entity).addPotionEffect(
+														new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
+											new Object() {
+												private int ticks = 0;
+												private float waitTicks;
+												private IWorld world;
+
+												public void start(IWorld world, int waitTicks) {
+													this.waitTicks = waitTicks;
+													MinecraftForge.EVENT_BUS.register(this);
+													this.world = world;
 												}
-											}
 
-											private void run() {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(
-															new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).addPotionEffect(
-															new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-												new Object() {
-													private int ticks = 0;
-													private float waitTicks;
-													private IWorld world;
-
-													public void start(IWorld world, int waitTicks) {
-														this.waitTicks = waitTicks;
-														MinecraftForge.EVENT_BUS.register(this);
-														this.world = world;
+												@SubscribeEvent
+												public void tick(TickEvent.ServerTickEvent event) {
+													if (event.phase == TickEvent.Phase.END) {
+														this.ticks += 1;
+														if (this.ticks >= this.waitTicks)
+															run();
 													}
+												}
 
-													@SubscribeEvent
-													public void tick(TickEvent.ServerTickEvent event) {
-														if (event.phase == TickEvent.Phase.END) {
-															this.ticks += 1;
-															if (this.ticks >= this.waitTicks)
-																run();
+												private void run() {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).addPotionEffect(
+																new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).addPotionEffect(
+																new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
+													new Object() {
+														private int ticks = 0;
+														private float waitTicks;
+														private IWorld world;
+
+														public void start(IWorld world, int waitTicks) {
+															this.waitTicks = waitTicks;
+															MinecraftForge.EVENT_BUS.register(this);
+															this.world = world;
 														}
-													}
 
-													private void run() {
-														entity.setMotion(0, 0, 0);
-														{
-															Entity _shootFrom = entity;
-															World projectileLevel = _shootFrom.world;
-															if (!projectileLevel.isRemote()) {
-																ProjectileEntity _entityToSpawn = new Object() {
-																	public ProjectileEntity getArrow(World world, Entity shooter, float damage,
-																			int knockback, byte piercing) {
-																		AbstractArrowEntity entityToSpawn = new TossinItem.ArrowCustomEntity(
-																				TossinItem.arrow, world);
-																		entityToSpawn.setShooter(shooter);
-																		entityToSpawn.setDamage(damage);
-																		entityToSpawn.setKnockbackStrength(knockback);
-																		entityToSpawn.setSilent(true);
-																		entityToSpawn.setPierceLevel(piercing);
-
-																		return entityToSpawn;
-																	}
-																}.getArrow(projectileLevel, entity, 0, 0, (byte) 10);
-																_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1,
-																		_shootFrom.getPosZ());
-																_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y,
-																		_shootFrom.getLookVec().z, 1, 0);
-																projectileLevel.addEntity(_entityToSpawn);
+														@SubscribeEvent
+														public void tick(TickEvent.ServerTickEvent event) {
+															if (event.phase == TickEvent.Phase.END) {
+																this.ticks += 1;
+																if (this.ticks >= this.waitTicks)
+																	run();
 															}
 														}
-														MinecraftForge.EVENT_BUS.unregister(this);
-													}
-												}.start(world, (int) 5);
-												MinecraftForge.EVENT_BUS.unregister(this);
-											}
-										}.start(world, (int) 10);
-										MinecraftForge.EVENT_BUS.unregister(this);
-									}
-								}.start(world, (int) 10);
-								MinecraftForge.EVENT_BUS.unregister(this);
-							}
-						}.start(world, (int) 10);
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, (int) 20);
-				if (!(new Object() {
-					boolean check(Entity _entity) {
-						if (_entity instanceof LivingEntity) {
-							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-							for (EffectInstance effect : effects) {
-								if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
-									return true;
-							}
+
+														private void run() {
+															entity.setMotion(0, 0, 0);
+															{
+																Entity _shootFrom = entity;
+																World projectileLevel = _shootFrom.world;
+																if (!projectileLevel.isRemote()) {
+																	ProjectileEntity _entityToSpawn = new Object() {
+																		public ProjectileEntity getArrow(World world, Entity shooter, float damage,
+																				int knockback, byte piercing) {
+																			AbstractArrowEntity entityToSpawn = new TossinItem.ArrowCustomEntity(
+																					TossinItem.arrow, world);
+																			entityToSpawn.setShooter(shooter);
+																			entityToSpawn.setDamage(damage);
+																			entityToSpawn.setKnockbackStrength(knockback);
+																			entityToSpawn.setSilent(true);
+																			entityToSpawn.setPierceLevel(piercing);
+
+																			return entityToSpawn;
+																		}
+																	}.getArrow(projectileLevel, entity, 0, 0, (byte) 10);
+																	_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1,
+																			_shootFrom.getPosZ());
+																	_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y,
+																			_shootFrom.getLookVec().z, 1, 0);
+																	projectileLevel.addEntity(_entityToSpawn);
+																}
+															}
+															MinecraftForge.EVENT_BUS.unregister(this);
+														}
+													}.start(world, (int) 5);
+													MinecraftForge.EVENT_BUS.unregister(this);
+												}
+											}.start(world, (int) 10);
+											MinecraftForge.EVENT_BUS.unregister(this);
+										}
+									}.start(world, (int) 10);
+									MinecraftForge.EVENT_BUS.unregister(this);
+								}
+							}.start(world, (int) 10);
+							MinecraftForge.EVENT_BUS.unregister(this);
 						}
-						return false;
+					}.start(world, (int) 20);
+					if (!(new Object() {
+						boolean check(Entity _entity) {
+							if (_entity instanceof LivingEntity) {
+								Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+								for (EffectInstance effect : effects) {
+									if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
+										return true;
+								}
+							}
+							return false;
+						}
+					}.check(entity))) {
+						if (entity instanceof PlayerEntity)
+							((PlayerEntity) entity).getCooldownTracker().setCooldown(NgskItem.block, (int) 70);
 					}
-				}.check(entity))) {
-					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).getCooldownTracker().setCooldown(NgskItem.block, (int) 70);
 				}
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
