@@ -4820,6 +4820,22 @@
           }
         ]
       }
+    },
+    {
+      "name": "NgsoturuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 350,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ngsoturuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
