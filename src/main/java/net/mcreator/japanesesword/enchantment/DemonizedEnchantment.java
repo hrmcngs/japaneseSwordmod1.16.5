@@ -3,10 +3,18 @@ package net.mcreator.japanesesword.enchantment;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.item.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.enchantment.Enchantment;
 
+import net.mcreator.japanesesword.item.TubanoatukatanaItem;
+import net.mcreator.japanesesword.item.TantouItem;
+import net.mcreator.japanesesword.item.NgsoItem;
+import net.mcreator.japanesesword.item.NgskItem;
+import net.mcreator.japanesesword.item.KazarinoarukatabaItem;
+import net.mcreator.japanesesword.item.GoukinntouItem;
 import net.mcreator.japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
@@ -36,6 +44,33 @@ public class DemonizedEnchantment extends JapaneseswordModElements.ModElement {
 		@Override
 		public int getMaxLevel() {
 			return 1;
+		}
+
+		@Override
+		public boolean canApplyAtEnchantingTable(ItemStack stack) {
+			if (stack.getItem() == NgsoItem.block)
+				return true;
+			if (stack.getItem() == NgskItem.block)
+				return true;
+			if (stack.getItem() == Items.WOODEN_SWORD)
+				return true;
+			if (stack.getItem() == Items.STONE_SWORD)
+				return true;
+			if (stack.getItem() == Items.IRON_SWORD)
+				return true;
+			if (stack.getItem() == Items.GOLDEN_SWORD)
+				return true;
+			if (stack.getItem() == Items.DIAMOND_SWORD)
+				return true;
+			if (stack.getItem() == TantouItem.block)
+				return true;
+			if (stack.getItem() == TubanoatukatanaItem.block)
+				return true;
+			if (stack.getItem() == GoukinntouItem.block)
+				return true;
+			if (stack.getItem() == KazarinoarukatabaItem.block)
+				return true;
+			return false;
 		}
 
 		@Override

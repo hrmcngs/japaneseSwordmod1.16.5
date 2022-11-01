@@ -9,7 +9,41 @@
     "maxLevel": 1,
     "damageModifier": 0,
     "compatibleEnchantments": [],
-    "compatibleItems": [],
+    "compatibleItems": [
+      {
+        "value": "CUSTOM:Ngso"
+      },
+      {
+        "value": "CUSTOM:Ngsk"
+      },
+      {
+        "value": "Items.WOODEN_SWORD"
+      },
+      {
+        "value": "Items.STONE_SWORD"
+      },
+      {
+        "value": "Items.IRON_SWORD"
+      },
+      {
+        "value": "Items.GOLDEN_SWORD"
+      },
+      {
+        "value": "Items.DIAMOND_SWORD"
+      },
+      {
+        "value": "CUSTOM:Tantou"
+      },
+      {
+        "value": "CUSTOM:Tubanoatukatana"
+      },
+      {
+        "value": "CUSTOM:Goukinntou"
+      },
+      {
+        "value": "CUSTOM:Kazarinoarukataba"
+      }
+    ],
     "isTreasureEnchantment": false,
     "isCurse": false,
     "isAllowedOnBooks": true,

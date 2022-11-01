@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/otachiblood0526ngs",
+  "textures": {
+    "0": "japanesesword:blocks/0526ngsoo",
+    "particle": "japanesesword:items/suton"
+  }
+}

@@ -3,13 +3,10 @@ package net.mcreator.japanesesword.enchantment;
 
 import net.minecraftforge.registries.ObjectHolder;
 
-import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.enchantment.Enchantment;
 
-import net.mcreator.japanesesword.item.NaginataItem;
-import net.mcreator.japanesesword.item.KatanakatanaItem;
 import net.mcreator.japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
@@ -38,16 +35,7 @@ public class HasiruEnchantment extends JapaneseswordModElements.ModElement {
 
 		@Override
 		public int getMaxLevel() {
-			return 1;
-		}
-
-		@Override
-		public boolean canApplyAtEnchantingTable(ItemStack stack) {
-			if (stack.getItem() == NaginataItem.block)
-				return true;
-			if (stack.getItem() == KatanakatanaItem.block)
-				return true;
-			return false;
+			return 10;
 		}
 
 		@Override

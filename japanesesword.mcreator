@@ -4780,6 +4780,46 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "arrow_2"
+    },
+    {
+      "name": "Ngso",
+      "type": "tool",
+      "sortid": 348,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ngso"
+    },
+    {
+      "name": "NgsoYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 349,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ngso_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -5081,7 +5121,7 @@
       "advancements.tidaisuki.title": "吸血鬼の仲間入り",
       "item.japanesesword.nannka": "Nannka",
       "key.japanesesword.waza": "クールタイムとかを無しにする",
-      "enchantment.japanesesword.hasiru": "走りながら",
+      "enchantment.japanesesword.hasiru": "speed",
       "enchantment.japanesesword.nannnnnka": "ダメージ防止",
       "effect.damezinasi": "反動なし",
       "advancements.kennkaku.title": "剣士",
@@ -5125,6 +5165,7 @@
       "advancements.naihunage.descr": "投げナイフを持つ",
       "item.japanesesword.musicdisc_na.desc": "ナイト・オブ・ナイト",
       "item.japanesesword.mint_chestplate": "Mint 個の胴着",
+      "item.japanesesword.ngso": "0526ngsの大太刀",
       "effect.otirutokidamenai": "落ちる時のダメージがない",
       "item.japanesesword.mcsucdesicna": "ナイト・オブザ・ナイツ",
       "item.japanesesword.kamanoyotei": "Kamanoyotei",
@@ -5338,6 +5379,7 @@
       "advancements.naihunage.descr": "投げナイフを持つ",
       "item.japanesesword.musicdisc_na.desc": "ナイト・オブ・ナイト",
       "item.japanesesword.mint_chestplate": "Mint 個の胴着",
+      "item.japanesesword.ngso": "0526ngsの大太刀",
       "effect.otirutokidamenai": "落ちる時のダメージがない",
       "item.japanesesword.mcsucdesicna": "ナイト・オブザ・ナイツ",
       "item.japanesesword.kamanoyotei": "Kamanoyotei",

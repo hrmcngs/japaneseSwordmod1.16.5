@@ -1,0 +1,33 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "suton",
+    "customModelName": "otachiblood0526ngs:default",
+    "name": "0526ngsの大太刀",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Buki"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 9,
+    "efficiency": 9.0,
+    "attackSpeed": 1.5,
+    "enchantability": 9,
+    "damageVsEntity": 13.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "NgsoYoukuritukusitatoki"
+    },
+    "onItemInUseTick": {
+      "name": "NgsoturuwoShoudeChituteiruJiannoteituku"
+    }
+  }
+}
