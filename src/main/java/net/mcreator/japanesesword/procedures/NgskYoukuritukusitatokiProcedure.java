@@ -34,10 +34,11 @@ import net.mcreator.japanesesword.potion.UgokasuPotionEffect;
 import net.mcreator.japanesesword.potion.TomarePotionEffect;
 import net.mcreator.japanesesword.potion.MatuPotionEffect;
 import net.mcreator.japanesesword.potion.KurutaimunasiPotionEffect;
+import net.mcreator.japanesesword.potion.Effect10PotionEffect;
 import net.mcreator.japanesesword.particle.DokuroParticle;
 import net.mcreator.japanesesword.item.TossinItem;
+import net.mcreator.japanesesword.item.TokinohonnItem;
 import net.mcreator.japanesesword.item.PoisonbookItem;
-import net.mcreator.japanesesword.item.NgsoItem;
 import net.mcreator.japanesesword.item.NgskItem;
 import net.mcreator.japanesesword.item.BooktokubetuItem;
 import net.mcreator.japanesesword.item.BookbloodItem;
@@ -385,205 +386,193 @@ public class NgskYoukuritukusitatokiProcedure {
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 3) {
-				if (NgsoItem.block == ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem()) {
-					{
-						Entity _ent = entity;
-						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-							_ent.world.getServer().getCommandManager().handleCommand(
-									_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-									"/attribute @s minecraft:generic.attack_damage base set 0");
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
+				new Object() {
+					private int ticks = 0;
+					private float waitTicks;
+					private IWorld world;
+
+					public void start(IWorld world, int waitTicks) {
+						this.waitTicks = waitTicks;
+						MinecraftForge.EVENT_BUS.register(this);
+						this.world = world;
+					}
+
+					@SubscribeEvent
+					public void tick(TickEvent.ServerTickEvent event) {
+						if (event.phase == TickEvent.Phase.END) {
+							this.ticks += 1;
+							if (this.ticks >= this.waitTicks)
+								run();
 						}
 					}
-				} else {
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private IWorld world;
 
-						public void start(IWorld world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
+					private void run() {
+						if (entity instanceof LivingEntity)
+							((LivingEntity) entity).addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+						if (entity instanceof LivingEntity)
+							((LivingEntity) entity)
+									.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
+						new Object() {
+							private int ticks = 0;
+							private float waitTicks;
+							private IWorld world;
 
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
+							public void start(IWorld world, int waitTicks) {
+								this.waitTicks = waitTicks;
+								MinecraftForge.EVENT_BUS.register(this);
+								this.world = world;
 							}
-						}
 
-						private void run() {
-							if (entity instanceof LivingEntity)
-								((LivingEntity) entity)
-										.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-							if (entity instanceof LivingEntity)
-								((LivingEntity) entity)
-										.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
-							new Object() {
-								private int ticks = 0;
-								private float waitTicks;
-								private IWorld world;
-
-								public void start(IWorld world, int waitTicks) {
-									this.waitTicks = waitTicks;
-									MinecraftForge.EVENT_BUS.register(this);
-									this.world = world;
+							@SubscribeEvent
+							public void tick(TickEvent.ServerTickEvent event) {
+								if (event.phase == TickEvent.Phase.END) {
+									this.ticks += 1;
+									if (this.ticks >= this.waitTicks)
+										run();
 								}
+							}
 
-								@SubscribeEvent
-								public void tick(TickEvent.ServerTickEvent event) {
-									if (event.phase == TickEvent.Phase.END) {
-										this.ticks += 1;
-										if (this.ticks >= this.waitTicks)
-											run();
+							private void run() {
+								if (entity instanceof LivingEntity)
+									((LivingEntity) entity)
+											.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+								if (entity instanceof LivingEntity)
+									((LivingEntity) entity)
+											.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
+								new Object() {
+									private int ticks = 0;
+									private float waitTicks;
+									private IWorld world;
+
+									public void start(IWorld world, int waitTicks) {
+										this.waitTicks = waitTicks;
+										MinecraftForge.EVENT_BUS.register(this);
+										this.world = world;
 									}
-								}
 
-								private void run() {
-									if (entity instanceof LivingEntity)
-										((LivingEntity) entity)
-												.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-									if (entity instanceof LivingEntity)
-										((LivingEntity) entity)
-												.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-									new Object() {
-										private int ticks = 0;
-										private float waitTicks;
-										private IWorld world;
-
-										public void start(IWorld world, int waitTicks) {
-											this.waitTicks = waitTicks;
-											MinecraftForge.EVENT_BUS.register(this);
-											this.world = world;
+									@SubscribeEvent
+									public void tick(TickEvent.ServerTickEvent event) {
+										if (event.phase == TickEvent.Phase.END) {
+											this.ticks += 1;
+											if (this.ticks >= this.waitTicks)
+												run();
 										}
+									}
 
-										@SubscribeEvent
-										public void tick(TickEvent.ServerTickEvent event) {
-											if (event.phase == TickEvent.Phase.END) {
-												this.ticks += 1;
-												if (this.ticks >= this.waitTicks)
-													run();
+									private void run() {
+										if (entity instanceof LivingEntity)
+											((LivingEntity) entity)
+													.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+										if (entity instanceof LivingEntity)
+											((LivingEntity) entity).addPotionEffect(
+													new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
+										new Object() {
+											private int ticks = 0;
+											private float waitTicks;
+											private IWorld world;
+
+											public void start(IWorld world, int waitTicks) {
+												this.waitTicks = waitTicks;
+												MinecraftForge.EVENT_BUS.register(this);
+												this.world = world;
 											}
-										}
 
-										private void run() {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).addPotionEffect(
-														new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).addPotionEffect(
-														new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-											new Object() {
-												private int ticks = 0;
-												private float waitTicks;
-												private IWorld world;
-
-												public void start(IWorld world, int waitTicks) {
-													this.waitTicks = waitTicks;
-													MinecraftForge.EVENT_BUS.register(this);
-													this.world = world;
+											@SubscribeEvent
+											public void tick(TickEvent.ServerTickEvent event) {
+												if (event.phase == TickEvent.Phase.END) {
+													this.ticks += 1;
+													if (this.ticks >= this.waitTicks)
+														run();
 												}
+											}
 
-												@SubscribeEvent
-												public void tick(TickEvent.ServerTickEvent event) {
-													if (event.phase == TickEvent.Phase.END) {
-														this.ticks += 1;
-														if (this.ticks >= this.waitTicks)
-															run();
+											private void run() {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).addPotionEffect(
+															new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).addPotionEffect(
+															new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
+												new Object() {
+													private int ticks = 0;
+													private float waitTicks;
+													private IWorld world;
+
+													public void start(IWorld world, int waitTicks) {
+														this.waitTicks = waitTicks;
+														MinecraftForge.EVENT_BUS.register(this);
+														this.world = world;
 													}
-												}
 
-												private void run() {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity).addPotionEffect(
-																new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity).addPotionEffect(
-																new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-													new Object() {
-														private int ticks = 0;
-														private float waitTicks;
-														private IWorld world;
-
-														public void start(IWorld world, int waitTicks) {
-															this.waitTicks = waitTicks;
-															MinecraftForge.EVENT_BUS.register(this);
-															this.world = world;
+													@SubscribeEvent
+													public void tick(TickEvent.ServerTickEvent event) {
+														if (event.phase == TickEvent.Phase.END) {
+															this.ticks += 1;
+															if (this.ticks >= this.waitTicks)
+																run();
 														}
+													}
 
-														@SubscribeEvent
-														public void tick(TickEvent.ServerTickEvent event) {
-															if (event.phase == TickEvent.Phase.END) {
-																this.ticks += 1;
-																if (this.ticks >= this.waitTicks)
-																	run();
+													private void run() {
+														entity.setMotion(0, 0, 0);
+														{
+															Entity _shootFrom = entity;
+															World projectileLevel = _shootFrom.world;
+															if (!projectileLevel.isRemote()) {
+																ProjectileEntity _entityToSpawn = new Object() {
+																	public ProjectileEntity getArrow(World world, Entity shooter, float damage,
+																			int knockback, byte piercing) {
+																		AbstractArrowEntity entityToSpawn = new TossinItem.ArrowCustomEntity(
+																				TossinItem.arrow, world);
+																		entityToSpawn.setShooter(shooter);
+																		entityToSpawn.setDamage(damage);
+																		entityToSpawn.setKnockbackStrength(knockback);
+																		entityToSpawn.setSilent(true);
+																		entityToSpawn.setPierceLevel(piercing);
+
+																		return entityToSpawn;
+																	}
+																}.getArrow(projectileLevel, entity, 0, 0, (byte) 10);
+																_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1,
+																		_shootFrom.getPosZ());
+																_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y,
+																		_shootFrom.getLookVec().z, 1, 0);
+																projectileLevel.addEntity(_entityToSpawn);
 															}
 														}
-
-														private void run() {
-															entity.setMotion(0, 0, 0);
-															{
-																Entity _shootFrom = entity;
-																World projectileLevel = _shootFrom.world;
-																if (!projectileLevel.isRemote()) {
-																	ProjectileEntity _entityToSpawn = new Object() {
-																		public ProjectileEntity getArrow(World world, Entity shooter, float damage,
-																				int knockback, byte piercing) {
-																			AbstractArrowEntity entityToSpawn = new TossinItem.ArrowCustomEntity(
-																					TossinItem.arrow, world);
-																			entityToSpawn.setShooter(shooter);
-																			entityToSpawn.setDamage(damage);
-																			entityToSpawn.setKnockbackStrength(knockback);
-																			entityToSpawn.setSilent(true);
-																			entityToSpawn.setPierceLevel(piercing);
-
-																			return entityToSpawn;
-																		}
-																	}.getArrow(projectileLevel, entity, 0, 0, (byte) 10);
-																	_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1,
-																			_shootFrom.getPosZ());
-																	_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y,
-																			_shootFrom.getLookVec().z, 1, 0);
-																	projectileLevel.addEntity(_entityToSpawn);
-																}
-															}
-															MinecraftForge.EVENT_BUS.unregister(this);
-														}
-													}.start(world, (int) 5);
-													MinecraftForge.EVENT_BUS.unregister(this);
-												}
-											}.start(world, (int) 10);
-											MinecraftForge.EVENT_BUS.unregister(this);
-										}
-									}.start(world, (int) 10);
-									MinecraftForge.EVENT_BUS.unregister(this);
-								}
-							}.start(world, (int) 10);
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, (int) 20);
-					if (!(new Object() {
-						boolean check(Entity _entity) {
-							if (_entity instanceof LivingEntity) {
-								Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-								for (EffectInstance effect : effects) {
-									if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
-										return true;
-								}
+														MinecraftForge.EVENT_BUS.unregister(this);
+													}
+												}.start(world, (int) 5);
+												MinecraftForge.EVENT_BUS.unregister(this);
+											}
+										}.start(world, (int) 10);
+										MinecraftForge.EVENT_BUS.unregister(this);
+									}
+								}.start(world, (int) 10);
+								MinecraftForge.EVENT_BUS.unregister(this);
 							}
-							return false;
-						}
-					}.check(entity))) {
-						if (entity instanceof PlayerEntity)
-							((PlayerEntity) entity).getCooldownTracker().setCooldown(NgskItem.block, (int) 70);
+						}.start(world, (int) 10);
+						MinecraftForge.EVENT_BUS.unregister(this);
 					}
+				}.start(world, (int) 20);
+				if (!(new Object() {
+					boolean check(Entity _entity) {
+						if (_entity instanceof LivingEntity) {
+							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+							for (EffectInstance effect : effects) {
+								if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
+									return true;
+							}
+						}
+						return false;
+					}
+				}.check(entity))) {
+					if (entity instanceof PlayerEntity)
+						((PlayerEntity) entity).getCooldownTracker().setCooldown(NgskItem.block, (int) 70);
 				}
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -2471,66 +2460,106 @@ public class NgskYoukuritukusitatokiProcedure {
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 7) {
-				{
-					List<Entity> _entfound = world
-							.getEntitiesWithinAABB(Entity.class,
-									new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf(x, y, z)).collect(Collectors.toList());
-					for (Entity entityiterator : _entfound) {
-						if (world instanceof ServerWorld) {
-							((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, x, y, z, (int) 5, 3, 3, 3, 1);
-						}
-						if (!(entityiterator == entity)) {
-							if (entityiterator instanceof MobEntity) {
-								if (entityiterator instanceof LivingEntity)
-									((LivingEntity) entityiterator)
-											.addPotionEffect(new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
+				if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == TokinohonnItem.block) {
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effect10PotionEffect.potion, (int) 60, (int) 1, (true), (false)));
+				} else {
+					{
+						List<Entity> _entfound = world
+								.getEntitiesWithinAABB(Entity.class,
+										new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
+								.stream().sorted(new Object() {
+									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+									}
+								}.compareDistOf(x, y, z)).collect(Collectors.toList());
+						for (Entity entityiterator : _entfound) {
+							if (world instanceof ServerWorld) {
+								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, x, y, z, (int) 5, 3, 3, 3, 1);
 							}
-							if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-									((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
-								if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-										.getItem() == BookbloodItem.block
-										|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == PoisonbookItem.block) {
+							if (!(entityiterator == entity)) {
+								if (entityiterator instanceof MobEntity) {
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
+								}
+								if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
+										((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == BookbloodItem.block) {
-										if (entityiterator instanceof MobEntity) {
-											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-													((entity instanceof LivingEntity)
-															? ((LivingEntity) entity).getHeldItemMainhand()
-															: ItemStack.EMPTY)) != 0)) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).setHealth(
-															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																			((entity instanceof LivingEntity)
-																					? ((LivingEntity) entity).getHeldItemMainhand()
-																					: ItemStack.EMPTY))));
-											}
-											entityiterator.setFire((int) 15);
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+											.getItem() == BookbloodItem.block
+											|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == PoisonbookItem.block) {
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == BookbloodItem.block) {
+											if (entityiterator instanceof MobEntity) {
+												if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) != 0)) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
 												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
+												entityiterator.setFire((int) 15);
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
 												}
 											}
 										}
-									}
-									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == PoisonbookItem.block) {
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == PoisonbookItem.block) {
+											if (entityiterator instanceof MobEntity) {
+												if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) != 0)) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												entityiterator.setFire((int) 15);
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
+												}
+											}
+										}
+									} else {
 										if (entityiterator instanceof MobEntity) {
 											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 													((entity instanceof LivingEntity)
@@ -2544,10 +2573,6 @@ public class NgskYoukuritukusitatokiProcedure {
 																					? ((LivingEntity) entity).getHeldItemMainhand()
 																					: ItemStack.EMPTY))));
 											}
-											if (entityiterator instanceof LivingEntity)
-												((LivingEntity) entityiterator)
-														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
-											entityiterator.setFire((int) 15);
 											{
 												Entity _ent = entityiterator;
 												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -2567,121 +2592,92 @@ public class NgskYoukuritukusitatokiProcedure {
 									}
 								} else {
 									if (entityiterator instanceof MobEntity) {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
-										}
-										{
-											Entity _ent = entityiterator;
-											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == NgskItem.block) {
+											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) != 0)) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
 											}
-										}
-										{
-											Entity _ent = entityiterator;
-											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-														"/deta merge entity @s (Health:0)");
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+										} else {
+											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) != 0)) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
 											}
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
-									}
-								}
-							} else {
-								if (entityiterator instanceof MobEntity) {
-									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == NgskItem.block) {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == BookbloodItem.block) {
+											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) != 0)) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
+											entityiterator.setFire((int) 15);
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-									} else {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == PoisonbookItem.block) {
+											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) != 0)) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
+											if (entityiterator instanceof LivingEntity)
+												((LivingEntity) entityiterator)
+														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-									}
-									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == BookbloodItem.block) {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
-										}
-										entityiterator.setFire((int) 15);
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-									}
-									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == PoisonbookItem.block) {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
-										}
-										if (entityiterator instanceof LivingEntity)
-											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 									}
 								}
 							}
 						}
 					}
-				}
-				if (!(new Object() {
-					boolean check(Entity _entity) {
-						if (_entity instanceof LivingEntity) {
-							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-							for (EffectInstance effect : effects) {
-								if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
-									return true;
+					if (!(new Object() {
+						boolean check(Entity _entity) {
+							if (_entity instanceof LivingEntity) {
+								Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+								for (EffectInstance effect : effects) {
+									if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
+										return true;
+								}
 							}
+							return false;
 						}
-						return false;
+					}.check(entity))) {
+						if (entity instanceof PlayerEntity)
+							((PlayerEntity) entity).getCooldownTracker().setCooldown(NgskItem.block, (int) 10);
 					}
-				}.check(entity))) {
-					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).getCooldownTracker().setCooldown(NgskItem.block, (int) 10);
 				}
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)

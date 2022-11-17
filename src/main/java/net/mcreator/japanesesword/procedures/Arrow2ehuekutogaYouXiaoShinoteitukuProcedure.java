@@ -82,17 +82,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -108,6 +97,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -122,8 +135,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -135,6 +148,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -149,8 +186,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -182,17 +219,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -208,6 +234,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -222,8 +272,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -235,6 +285,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -249,8 +323,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -282,17 +356,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -308,6 +371,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -322,8 +409,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -335,6 +422,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -349,8 +460,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -382,17 +493,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -408,6 +508,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -422,8 +546,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -435,6 +559,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -482,17 +630,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -508,6 +645,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -522,8 +683,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -535,6 +696,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -549,8 +734,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -585,17 +770,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -611,6 +785,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -625,8 +823,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -638,6 +836,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -652,8 +874,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -685,17 +907,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -711,6 +922,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -725,8 +960,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -738,6 +973,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -752,8 +1011,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -785,17 +1044,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -811,6 +1059,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -825,8 +1097,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -838,6 +1110,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -852,8 +1148,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -885,17 +1181,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -911,6 +1196,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -925,8 +1234,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -938,6 +1247,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -985,17 +1318,6 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
 							|| entityiterator instanceof EggEntity) {
-						if (world instanceof World && !world.isRemote()) {
-							((World) world).playSound(null, new BlockPos(x, y, z),
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1);
-						} else {
-							((World) world).playSound(x, y, z,
-									(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-											.getValue(new ResourceLocation("entity.player.attack.sweep")),
-									SoundCategory.PLAYERS, (float) 1, (float) 1, false);
-						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -1011,6 +1333,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										&& entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -1025,8 +1371,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{
@@ -1038,6 +1384,30 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 											}
 										}
 									} else {
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null,
+													new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()),
+													(entityiterator.getPosZ()),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("block.anvil.land")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
+										if (world instanceof World && !world.isRemote()) {
+											((World) world).playSound(null, new BlockPos(x, y, z),
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1);
+										} else {
+											((World) world).playSound(x, y, z,
+													(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+															.getValue(new ResourceLocation("entity.drowned.shoot")),
+													SoundCategory.VOICE, (float) 1, (float) 1, false);
+										}
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
 												(entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)),
 												(entityiterator.getPosZ()), 0, 1, 0);
@@ -1052,8 +1422,8 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
+												_ent.world.getServer().getCommandManager()
+														.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill");
 											}
 										}
 										{

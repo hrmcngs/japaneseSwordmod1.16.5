@@ -1910,6 +1910,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "immediatesourceentity",
             "type": "entity"
           },
@@ -3962,7 +3966,7 @@
       "locked_code": false,
       "registry_name": "hannyou",
       "metadata": {
-        "eh": false,
+        "eh": true,
         "el": false,
         "eb": false,
         "ec": true
@@ -4856,6 +4860,208 @@
           }
         ]
       }
+    },
+    {
+      "name": "Event",
+      "type": "tab",
+      "sortid": 353,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "event"
+    },
+    {
+      "name": "Halloween20221031",
+      "type": "armor",
+      "sortid": 354,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "halloween_20221031",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "Halloween",
+      "type": "procedure",
+      "sortid": 354,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "halloween",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Halloween20221031kama",
+      "type": "tool",
+      "sortid": 355,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "halloween_20221031kama"
+    },
+    {
+      "name": "Halloween20221031kamaYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 355,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "halloween_20221031kama_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TossinFeibiDaoJugapureiyaniDangtatutatoki",
+      "type": "procedure",
+      "sortid": 359,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tossin_feibi_dao_jugapureiyani_dangtatutatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "QkigaLisaretatoki",
+      "type": "procedure",
+      "sortid": 360,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "qkiga_lisaretatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Zidoukougekio",
+      "type": "procedure",
+      "sortid": 361,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zidoukougekio",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hanyou",
+      "type": "armor",
+      "sortid": 362,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hanyou",
+      "metadata": {
+        "eh": true,
+        "el": false,
+        "eb": false,
+        "ec": true
+      }
+    },
+    {
+      "name": "Effect10ehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 363,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "effect_10ehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Effect10posiyonXiaoGuogaQieretaShi",
+      "type": "procedure",
+      "sortid": 364,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "effect_10posiyon_xiao_guoga_qiereta_shi",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Effect10",
+      "type": "potioneffect",
+      "sortid": 363,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "effect_10"
     }
   ],
   "variable_elements": [
@@ -4936,6 +5142,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "1.0"
+    },
+    {
+      "name": "XYZ",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "XYZ2",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "XYZ3",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -5024,17 +5248,19 @@
     "en_us": {
       "entity.japanesesword.ken_2": "Ken",
       "advancements.naihunage.title": "ナイフ投げを始める",
-      "item.japanesesword.airbougu_boots": "Airブーツ",
+      "item.japanesesword.halloween_20221031kama": "§6§l§nHalloween 2022 10/31の鎌",
       "block.japanesesword.doku": "Doku",
+      "item.japanesesword.airbougu_boots": "Airブーツ",
       "item.japanesesword.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.kama": "Kama",
-      "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "item.japanesesword.poisonnaginata": "毒がついた薙刀",
+      "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "key.japanesesword.r": "R",
-      "item.japanesesword.sukop": "Sukop",
       "effect.tomare": " tomare",
+      "item.japanesesword.sukop": "Sukop",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
+      "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.effect": "effect",
@@ -5045,8 +5271,8 @@
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
-      "effect.kurutaimunasi": "クールタイムを無くす",
       "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
+      "effect.kurutaimunasi": "クールタイムを無くす",
       "item.japanesesword.musucdiscne_ne.desc": "ネガティブフィイス",
       "item.japanesesword.nagenaihu": "投げナイフ",
       "key.japanesesword.a": "落下ダメージ防止",
@@ -5055,6 +5281,7 @@
       "item.japanesesword.katanakatana": "白楼剣",
       "item.japanesesword.daiakatana": "ダイアモンドの刀",
       "item.japanesesword.musicdisc_ka.desc": "神々が恋した幻想郷",
+      "item.japanesesword.halloween_20221031_leggings": "§6§l§n§oHalloween 2022 10/31のレギンス",
       "item.japanesesword.nezarazyouigokan_boots": "Nezarazyouigokan 個のブーツ",
       "effect.tesut": "tesut",
       "effect.effect_7": "effectⅦ",
@@ -5062,15 +5289,16 @@
       "item.japanesesword.hannyou_boots": "Hannyou 個のブーツ",
       "enchantment.japanesesword.flame": "Flame defense",
       "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
-      "item.japanesesword.kogatana": "小刀",
       "item.japanesesword.honn": "本",
+      "item.japanesesword.kogatana": "小刀",
       "item.japanesesword.a_5": "A5",
       "entity.japanesesword.ken": "Ken",
       "item.japanesesword.a_1": "A 1",
       "block.japanesesword.ginnburokku": "銀ブロック",
-      "advancements.bukinanigasuki.descr": "竹の弓を持つ",
-      "item.japanesesword.gin": "銀インゴット",
       "block.japanesesword.nezarazyoiyi": "ネザーライトブロック上位",
+      "item.japanesesword.gin": "銀インゴット",
+      "advancements.bukinanigasuki.descr": "竹の弓を持つ",
+      "effect.effect_10": "エフェクト",
       "item.japanesesword.bou": "竹の弓",
       "item.japanesesword.katana_1": "桜観剣",
       "entity.japanesesword.yaa": "Yaa",
@@ -5084,8 +5312,8 @@
       "item.japanesesword.tekitou_boots": "Tekitou 個のブーツ",
       "item.japanesesword.booktokubetu": "book rare",
       "item.japanesesword.ken_2_spawn_egg": "Ken Spawn Egg",
-      "item.japanesesword.ginyade_leggings": "Ginyade レギンス",
       "effect.ugokasu": "動かす",
+      "item.japanesesword.ginyade_leggings": "Ginyade レギンス",
       "item.japanesesword.otachibloodcurse": "§4§k守血刀",
       "item.japanesesword.nagerukatana": "Nagerukatana",
       "advancements.syodan.title": "初段",
@@ -5094,6 +5322,7 @@
       "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "effect.supuidokyouka": "スピード強化版",
       "effect.terepoto": "flamsword",
+      "item.japanesesword.halloween_20221031_boots": "§6§l§n§oHalloween 2022 10/31のブーツ",
       "item.japanesesword.tokinohonn": "時の本",
       "item.japanesesword.goukinntou": "合金刀",
       "item.japanesesword.musicdisc_tu.desc": "月まで届け、不死の煙",
@@ -5117,6 +5346,7 @@
       "subtitles.ka": "神々が恋した幻想郷",
       "item.japanesesword.musicdisc_tu": "月まで届け、不死の煙",
       "advancements.tyudan.descr": "中段",
+      "item.japanesesword.hanyou_chestplate": "Hannyou 個の胴着",
       "item.japanesesword.ookenoken": "王の刀",
       "entity.japanesesword.kuroimob": "生贄",
       "effect.effect_vi": "effectⅥ",
@@ -5146,6 +5376,7 @@
       "item.japanesesword.noroi": "§4§k好きな人いない",
       "item.japanesesword.motonokatana": "刀(封)",
       "item.japanesesword.hon_3": "本",
+      "item.japanesesword.halloween_20221031_chestplate": "§6§l§n§oHalloween 2022 10/31の胴着",
       "item.japanesesword.hon_4": "本",
       "item.japanesesword.turuhasi_1": "Turuhasi 1",
       "item.japanesesword.hannmaa": "牛蒡刀",
@@ -5153,6 +5384,7 @@
       "item.japanesesword.bookblood": "Book blood",
       "item.japanesesword.tantou": "短刀",
       "item.japanesesword.no_kamaroi": "§4§k刀と鎌大好き",
+      "itemGroup.tabevent": "Event",
       "item.japanesesword.yaa_spawn_egg": "Yaa Spawn Egg",
       "advancements.tidaisuki.title": "吸血鬼の仲間入り",
       "item.japanesesword.nannka": "Nannka",
@@ -5173,6 +5405,7 @@
       "effect.effect_iv": "effectⅣ",
       "subtitles.sword": "",
       "advancements.syodan.descr": "初段",
+      "item.japanesesword.hanyou_helmet": "Hannyou ヘルメット",
       "effect.effect_iii": "effectⅢ",
       "item.japanesesword.tetotokin": "鉄と金",
       "advancements.bukinanigasuki.title": "こんな武器一々作るか普通",
@@ -5218,6 +5451,7 @@
       "item.japanesesword.hannyou_chestplate": "Hannyou 個の胴着",
       "effect.arrow_2": "arrow",
       "block.japanesesword.nanka_8": "銀鉱石",
+      "item.japanesesword.hanyou_leggings": "Hannyou 個のレギンス",
       "item.japanesesword.ken_spawn_egg": "Ken Spawn Egg",
       "item.japanesesword.otachi": "大太刀",
       "item.japanesesword.axekatana": "強化ダイヤモンドの斧",
@@ -5227,6 +5461,7 @@
       "item.japanesesword.kazarinoarukataba": "飾りのある刀",
       "item.japanesesword.musicdisc_ko": "広有射怪鳥事",
       "item.japanesesword.hannyou_helmet": "Hannyou ヘルメット",
+      "item.japanesesword.halloween_20221031_helmet": "§6§l§n§oHalloween 2022 10/31のヘルメット",
       "item.japanesesword.bokutou": "木刀",
       "item.japanesesword.airbougu_chestplate": "Air胴着",
       "item.japanesesword.mint_boots": "Mint 個のブーツ",
@@ -5238,17 +5473,19 @@
     "ja_jp": {
       "entity.japanesesword.ken_2": "Ken",
       "advancements.naihunage.title": "ナイフ投げを始める",
-      "item.japanesesword.airbougu_boots": "Airブーツ",
+      "item.japanesesword.halloween_20221031kama": "§6§l§nHalloween 2022 10/31の鎌",
       "block.japanesesword.doku": "Doku",
+      "item.japanesesword.airbougu_boots": "Airブーツ",
       "item.japanesesword.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.kama": "Kama",
-      "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "item.japanesesword.poisonnaginata": "薙刀",
+      "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "key.japanesesword.r": "R",
-      "item.japanesesword.sukop": "Sukop",
       "effect.tomare": " tomare",
+      "item.japanesesword.sukop": "Sukop",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
+      "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.effect": "effect",
@@ -5259,8 +5496,8 @@
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
-      "effect.kurutaimunasi": "クールタイムを無くす",
       "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
+      "effect.kurutaimunasi": "クールタイムを無くす",
       "item.japanesesword.musucdiscne_ne.desc": "ネガティブフィイス",
       "item.japanesesword.nagenaihu": "投げナイフ",
       "key.japanesesword.a": "落下ダメージ防止",
@@ -5269,6 +5506,7 @@
       "item.japanesesword.katanakatana": "白楼剣",
       "item.japanesesword.daiakatana": "ダイアモンドの刀",
       "item.japanesesword.musicdisc_ka.desc": "神々が恋した幻想郷",
+      "item.japanesesword.halloween_20221031_leggings": "§6§l§n§oHalloween 2022 10/31のレギンス",
       "item.japanesesword.nezarazyouigokan_boots": "Nezarazyouigokan 個のブーツ",
       "effect.tesut": "tesut",
       "effect.effect_7": "effectⅦ",
@@ -5276,15 +5514,16 @@
       "item.japanesesword.hannyou_boots": "Hannyou 個のブーツ",
       "enchantment.japanesesword.flame": "Flame defense",
       "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
-      "item.japanesesword.kogatana": "小刀",
       "item.japanesesword.honn": "Honn",
+      "item.japanesesword.kogatana": "小刀",
       "item.japanesesword.a_5": "A 5",
       "entity.japanesesword.ken": "Ken",
       "item.japanesesword.a_1": "A 1",
       "block.japanesesword.ginnburokku": "Ginnburokku",
-      "advancements.bukinanigasuki.descr": "killエンチャント使う",
-      "item.japanesesword.gin": "銀インゴット",
       "block.japanesesword.nezarazyoiyi": "ネザーライト上位",
+      "item.japanesesword.gin": "銀インゴット",
+      "advancements.bukinanigasuki.descr": "killエンチャント使う",
+      "effect.effect_10": "エフェクト",
       "item.japanesesword.bou": "竹の弓",
       "item.japanesesword.katana_1": "桜観剣",
       "entity.japanesesword.yaa": "Yaa",
@@ -5298,8 +5537,8 @@
       "item.japanesesword.tekitou_boots": "Tekitou 個のブーツ",
       "item.japanesesword.booktokubetu": "レアな本",
       "item.japanesesword.ken_2_spawn_egg": "Ken Spawn Egg",
-      "item.japanesesword.ginyade_leggings": "Ginyade 個のレギンス",
       "effect.ugokasu": "動かす",
+      "item.japanesesword.ginyade_leggings": "Ginyade 個のレギンス",
       "item.japanesesword.otachibloodcurse": "§4§k守血刀",
       "item.japanesesword.nagerukatana": "Nagerukatana",
       "advancements.syodan.title": "初段",
@@ -5308,6 +5547,7 @@
       "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "effect.supuidokyouka": "スピード強化版",
       "effect.terepoto": "flamsword",
+      "item.japanesesword.halloween_20221031_boots": "§6§l§n§oHalloween 2022 10/31のブーツ",
       "item.japanesesword.tokinohonn": "時の本",
       "item.japanesesword.goukinntou": "合金刀",
       "item.japanesesword.musicdisc_tu.desc": "月まで届け、不死の煙",
@@ -5331,6 +5571,7 @@
       "subtitles.ka": "神々が恋した幻想郷",
       "item.japanesesword.musicdisc_tu": "月まで届け、不死の煙",
       "advancements.tyudan.descr": "中段",
+      "item.japanesesword.hanyou_chestplate": "Hannyou 個の胴着",
       "item.japanesesword.ookenoken": "Ookenoken",
       "entity.japanesesword.kuroimob": "生贄",
       "effect.effect_vi": "effectⅥ",
@@ -5360,6 +5601,7 @@
       "item.japanesesword.noroi": "§4§k好きな人いない",
       "item.japanesesword.motonokatana": "元の刀",
       "item.japanesesword.hon_3": "本",
+      "item.japanesesword.halloween_20221031_chestplate": "§6§l§n§oHalloween 2022 10/31の胴着",
       "item.japanesesword.hon_4": "本",
       "item.japanesesword.turuhasi_1": "Turuhasi 1",
       "item.japanesesword.hannmaa": "牛蒡刀",
@@ -5367,6 +5609,7 @@
       "item.japanesesword.bookblood": "Book blood",
       "item.japanesesword.tantou": "短刀",
       "item.japanesesword.no_kamaroi": "§4§k刀と鎌大好き",
+      "itemGroup.tabevent": "Event",
       "item.japanesesword.yaa_spawn_egg": "Yaa Spawn Egg",
       "advancements.tidaisuki.title": "吸血鬼の仲間入り",
       "item.japanesesword.nannka": "Nannka",
@@ -5387,6 +5630,7 @@
       "effect.effect_iv": "effectⅣ",
       "subtitles.sword": "",
       "advancements.syodan.descr": "　",
+      "item.japanesesword.hanyou_helmet": "Hannyou ヘルメット",
       "effect.effect_iii": "effectⅢ",
       "item.japanesesword.tetotokin": "鉄と金",
       "advancements.bukinanigasuki.title": "武器は何が好き？",
@@ -5432,6 +5676,7 @@
       "item.japanesesword.hannyou_chestplate": "Hannyou 個の胴着",
       "effect.arrow_2": "arrow",
       "block.japanesesword.nanka_8": "Nanka 8",
+      "item.japanesesword.hanyou_leggings": "Hannyou 個のレギンス",
       "item.japanesesword.ken_spawn_egg": "Ken Spawn Egg",
       "item.japanesesword.otachi": "大太刀",
       "item.japanesesword.axekatana": "Axekatana",
@@ -5441,6 +5686,7 @@
       "item.japanesesword.kazarinoarukataba": "飾りのある刀",
       "item.japanesesword.musicdisc_ko": "広有射怪鳥事",
       "item.japanesesword.hannyou_helmet": "Hannyou ヘルメット",
+      "item.japanesesword.halloween_20221031_helmet": "§6§l§n§oHalloween 2022 10/31のヘルメット",
       "item.japanesesword.bokutou": "木刀",
       "item.japanesesword.airbougu_chestplate": "Air胴着",
       "item.japanesesword.mint_boots": "Mint 個のブーツ",

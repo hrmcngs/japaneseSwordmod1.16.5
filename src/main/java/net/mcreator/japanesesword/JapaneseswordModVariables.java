@@ -111,6 +111,9 @@ public class JapaneseswordModVariables {
 		public double nanka1 = 0;
 		public double nanka2 = 0.0;
 		public double a = 0;
+		public double XYZ = 0;
+		public double XYZ2 = 0;
+		public double XYZ3 = 0;
 
 		public MapVariables() {
 			super(DATA_NAME);
@@ -125,6 +128,9 @@ public class JapaneseswordModVariables {
 			nanka1 = nbt.getDouble("nanka1");
 			nanka2 = nbt.getDouble("nanka2");
 			a = nbt.getDouble("a");
+			XYZ = nbt.getDouble("XYZ");
+			XYZ2 = nbt.getDouble("XYZ2");
+			XYZ3 = nbt.getDouble("XYZ3");
 		}
 
 		@Override
@@ -132,6 +138,9 @@ public class JapaneseswordModVariables {
 			nbt.putDouble("nanka1", nanka1);
 			nbt.putDouble("nanka2", nanka2);
 			nbt.putDouble("a", a);
+			nbt.putDouble("XYZ", XYZ);
+			nbt.putDouble("XYZ2", XYZ2);
+			nbt.putDouble("XYZ3", XYZ3);
 			return nbt;
 		}
 

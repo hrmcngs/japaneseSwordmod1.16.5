@@ -10,6 +10,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.mcreator.japanesesword.potion.Arrow2PotionEffect;
 import net.mcreator.japanesesword.potion.Arrow1PotionEffect;
 import net.mcreator.japanesesword.enchantment.YawoEnchantment;
+import net.mcreator.japanesesword.enchantment.HasiruEnchantment;
 import net.mcreator.japanesesword.enchantment.DemonizedEnchantment;
 import net.mcreator.japanesesword.enchantment.AnsiEnchantment;
 import net.mcreator.japanesesword.JapaneseswordMod;
@@ -33,7 +34,20 @@ public class NgskturuwoShoudeChituteiruJiannoteitukuProcedure {
 		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HUNGER, (int) 1, (int) 4, (true), (false)));
+		}
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow2PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+		}
+		if ((EnchantmentHelper.getEnchantmentLevel(HasiruEnchantment.enchantment,
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1,
+						(int) (EnchantmentHelper.getEnchantmentLevel(HasiruEnchantment.enchantment,
+								((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY))),
+						(true), (false)));
 		}
 		if ((EnchantmentHelper.getEnchantmentLevel(AnsiEnchantment.enchantment,
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {

@@ -1,0 +1,65 @@
+{
+  "_fv": 33,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "hallo_head",
+    "enableBody": true,
+    "textureBody": "hallo_leggings",
+    "enableLeggings": true,
+    "textureLeggings": "hallo_leggings",
+    "enableBoots": true,
+    "textureBoots": "hallo_leggings",
+    "creativeTab": {
+      "value": "CUSTOM:Event"
+    },
+    "armorTextureFile": "hallo",
+    "helmetName": "§6§l§n§oHalloween 2022 10/31のヘルメット",
+    "bodyName": "§6§l§n§oHalloween 2022 10/31の胴着",
+    "leggingsName": "§6§l§n§oHalloween 2022 10/31のレギンス",
+    "bootsName": "§6§l§n§oHalloween 2022 10/31のブーツ",
+    "helmetSpecialInfo": [],
+    "bodySpecialInfo": [],
+    "leggingsSpecialInfo": [],
+    "bootsSpecialInfo": [],
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "maxDamage": 0,
+    "damageValueHelmet": 20,
+    "damageValueBody": 20,
+    "damageValueLeggings": 20,
+    "damageValueBoots": 20,
+    "enchantability": 9,
+    "toughness": 2.0,
+    "knockbackResistance": 0.1,
+    "equipSound": {
+      "value": "block.pumpkin.carve"
+    },
+    "repairItems": [
+      {
+        "value": "Blocks.PUMPKIN"
+      },
+      {
+        "value": "Items.DYE#19"
+      }
+    ]
+  }
+}

@@ -34,6 +34,7 @@ import net.mcreator.japanesesword.potion.UgokasuPotionEffect;
 import net.mcreator.japanesesword.potion.TomarePotionEffect;
 import net.mcreator.japanesesword.potion.MatuPotionEffect;
 import net.mcreator.japanesesword.potion.KurutaimunasiPotionEffect;
+import net.mcreator.japanesesword.potion.Effect10PotionEffect;
 import net.mcreator.japanesesword.particle.DokuroParticle;
 import net.mcreator.japanesesword.item.TossinItem;
 import net.mcreator.japanesesword.item.TokinohonnItem;
@@ -1510,6 +1511,21 @@ public class NgsoYoukuritukusitatokiProcedure {
 					}
 					loop = (loop + Math.toRadians(5));
 					Y_pos = (Y_pos - 0.0555555555555556);
+				}
+				if (!(new Object() {
+					boolean check(Entity _entity) {
+						if (_entity instanceof LivingEntity) {
+							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+							for (EffectInstance effect : effects) {
+								if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
+									return true;
+							}
+						}
+						return false;
+					}
+				}.check(entity))) {
+					if (entity instanceof PlayerEntity)
+						((PlayerEntity) entity).getCooldownTracker().setCooldown(NgsoItem.block, (int) 20);
 				}
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
@@ -5378,66 +5394,106 @@ public class NgsoYoukuritukusitatokiProcedure {
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 7) {
-				{
-					List<Entity> _entfound = world
-							.getEntitiesWithinAABB(Entity.class,
-									new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf(x, y, z)).collect(Collectors.toList());
-					for (Entity entityiterator : _entfound) {
-						if (world instanceof ServerWorld) {
-							((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, x, y, z, (int) 5, 3, 3, 3, 1);
-						}
-						if (!(entityiterator == entity)) {
-							if (entityiterator instanceof MobEntity) {
-								if (entityiterator instanceof LivingEntity)
-									((LivingEntity) entityiterator)
-											.addPotionEffect(new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
+				if (TokinohonnItem.block == ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem()) {
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effect10PotionEffect.potion, (int) 60, (int) 1, (true), (false)));
+				} else {
+					{
+						List<Entity> _entfound = world
+								.getEntitiesWithinAABB(Entity.class,
+										new AxisAlignedBB(x - (5 / 2d), y - (5 / 2d), z - (5 / 2d), x + (5 / 2d), y + (5 / 2d), z + (5 / 2d)), null)
+								.stream().sorted(new Object() {
+									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+									}
+								}.compareDistOf(x, y, z)).collect(Collectors.toList());
+						for (Entity entityiterator : _entfound) {
+							if (world instanceof ServerWorld) {
+								((ServerWorld) world).spawnParticle(ParticleTypes.CLOUD, x, y, z, (int) 5, 3, 3, 3, 1);
 							}
-							if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-									((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
-								if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-										.getItem() == BookbloodItem.block
-										|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-												.getItem() == PoisonbookItem.block) {
+							if (!(entityiterator == entity)) {
+								if (entityiterator instanceof MobEntity) {
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(UgokasuPotionEffect.potion, (int) 240, (int) 1, (true), (false)));
+								}
+								if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
+										((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == BookbloodItem.block) {
-										if (entityiterator instanceof MobEntity) {
-											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-													((entity instanceof LivingEntity)
-															? ((LivingEntity) entity).getHeldItemMainhand()
-															: ItemStack.EMPTY)) != 0)) {
-												if (entity instanceof LivingEntity)
-													((LivingEntity) entity).setHealth(
-															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																			((entity instanceof LivingEntity)
-																					? ((LivingEntity) entity).getHeldItemMainhand()
-																					: ItemStack.EMPTY))));
-											}
-											entityiterator.setFire((int) 15);
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+											.getItem() == BookbloodItem.block
+											|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+													.getItem() == PoisonbookItem.block) {
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == BookbloodItem.block) {
+											if (entityiterator instanceof MobEntity) {
+												if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) != 0)) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
 												}
-											}
-											{
-												Entity _ent = entityiterator;
-												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-													_ent.world.getServer().getCommandManager().handleCommand(
-															_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-															"/deta merge entity @s (Health:0)");
+												entityiterator.setFire((int) 15);
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
 												}
 											}
 										}
-									}
-									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == PoisonbookItem.block) {
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == PoisonbookItem.block) {
+											if (entityiterator instanceof MobEntity) {
+												if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+														((entity instanceof LivingEntity)
+																? ((LivingEntity) entity).getHeldItemMainhand()
+																: ItemStack.EMPTY)) != 0)) {
+													if (entity instanceof LivingEntity)
+														((LivingEntity) entity).setHealth(
+																(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																		+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																				((entity instanceof LivingEntity)
+																						? ((LivingEntity) entity).getHeldItemMainhand()
+																						: ItemStack.EMPTY))));
+												}
+												if (entityiterator instanceof LivingEntity)
+													((LivingEntity) entityiterator)
+															.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+												entityiterator.setFire((int) 15);
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+													}
+												}
+												{
+													Entity _ent = entityiterator;
+													if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+														_ent.world.getServer().getCommandManager().handleCommand(
+																_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+																"/deta merge entity @s (Health:0)");
+													}
+												}
+											}
+										}
+									} else {
 										if (entityiterator instanceof MobEntity) {
 											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 													((entity instanceof LivingEntity)
@@ -5451,10 +5507,6 @@ public class NgsoYoukuritukusitatokiProcedure {
 																					? ((LivingEntity) entity).getHeldItemMainhand()
 																					: ItemStack.EMPTY))));
 											}
-											if (entityiterator instanceof LivingEntity)
-												((LivingEntity) entityiterator)
-														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
-											entityiterator.setFire((int) 15);
 											{
 												Entity _ent = entityiterator;
 												if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -5474,121 +5526,92 @@ public class NgsoYoukuritukusitatokiProcedure {
 									}
 								} else {
 									if (entityiterator instanceof MobEntity) {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
-										}
-										{
-											Entity _ent = entityiterator;
-											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == NgsoItem.block) {
+											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) != 0)) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
 											}
-										}
-										{
-											Entity _ent = entityiterator;
-											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-														"/deta merge entity @s (Health:0)");
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+										} else {
+											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) != 0)) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
 											}
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
-									}
-								}
-							} else {
-								if (entityiterator instanceof MobEntity) {
-									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == NgsoItem.block) {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == BookbloodItem.block) {
+											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) != 0)) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
+											entityiterator.setFire((int) 15);
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
-									} else {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
+										if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+												.getItem() == PoisonbookItem.block) {
+											if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+													((entity instanceof LivingEntity)
+															? ((LivingEntity) entity).getHeldItemMainhand()
+															: ItemStack.EMPTY)) != 0)) {
+												if (entity instanceof LivingEntity)
+													((LivingEntity) entity).setHealth(
+															(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
+																	+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+																			((entity instanceof LivingEntity)
+																					? ((LivingEntity) entity).getHeldItemMainhand()
+																					: ItemStack.EMPTY))));
+											}
+											if (entityiterator instanceof LivingEntity)
+												((LivingEntity) entityiterator)
+														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
+											entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 										}
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-									}
-									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == BookbloodItem.block) {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
-										}
-										entityiterator.setFire((int) 15);
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
-									}
-									if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-											.getItem() == PoisonbookItem.block) {
-										if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-												((entity instanceof LivingEntity)
-														? ((LivingEntity) entity).getHeldItemMainhand()
-														: ItemStack.EMPTY)) != 0)) {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).setHealth(
-														(float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1)
-																+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-																		((entity instanceof LivingEntity)
-																				? ((LivingEntity) entity).getHeldItemMainhand()
-																				: ItemStack.EMPTY))));
-										}
-										if (entityiterator instanceof LivingEntity)
-											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
-										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 5);
 									}
 								}
 							}
 						}
 					}
-				}
-				if (!(new Object() {
-					boolean check(Entity _entity) {
-						if (_entity instanceof LivingEntity) {
-							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-							for (EffectInstance effect : effects) {
-								if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
-									return true;
+					if (!(new Object() {
+						boolean check(Entity _entity) {
+							if (_entity instanceof LivingEntity) {
+								Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+								for (EffectInstance effect : effects) {
+									if (effect.getPotion() == KurutaimunasiPotionEffect.potion)
+										return true;
+								}
 							}
+							return false;
 						}
-						return false;
+					}.check(entity))) {
+						if (entity instanceof PlayerEntity)
+							((PlayerEntity) entity).getCooldownTracker().setCooldown(NgsoItem.block, (int) 10);
 					}
-				}.check(entity))) {
-					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).getCooldownTracker().setCooldown(NgsoItem.block, (int) 10);
 				}
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)

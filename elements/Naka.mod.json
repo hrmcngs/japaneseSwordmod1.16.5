@@ -108,7 +108,7 @@
     "particleAmount": 4,
     "hasInventory": true,
     "guiBoundTo": "Nakami",
-    "openGUIOnRightClick": false,
+    "openGUIOnRightClick": true,
     "inventorySize": 16,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,

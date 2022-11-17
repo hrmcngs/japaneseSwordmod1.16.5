@@ -32,6 +32,7 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.japanesesword.procedures.TossinFeibiDaoJugapureiyaniDangtatutatokiProcedure;
 import net.mcreator.japanesesword.procedures.TossinFeibiDaoJugaenteiteiniDangtatutatokiProcedure;
 import net.mcreator.japanesesword.procedures.TossinFeibiDaoJugaburotukuniDangtatutatokiProcedure;
 import net.mcreator.japanesesword.procedures.TossinFeibiDaoJugaFeindeiruJianProcedure;
@@ -139,6 +140,21 @@ public class TossinItem extends JapaneseswordModElements.ModElement {
 		protected void arrowHit(LivingEntity entity) {
 			super.arrowHit(entity);
 			entity.setArrowCountInEntity(entity.getArrowCountInEntity() - 1);
+		}
+
+		@Override
+		public void onCollideWithPlayer(PlayerEntity entity) {
+			super.onCollideWithPlayer(entity);
+			Entity sourceentity = this.func_234616_v_();
+			Entity immediatesourceentity = this;
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			World world = this.world;
+
+			TossinFeibiDaoJugapureiyaniDangtatutatokiProcedure
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new,
+							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

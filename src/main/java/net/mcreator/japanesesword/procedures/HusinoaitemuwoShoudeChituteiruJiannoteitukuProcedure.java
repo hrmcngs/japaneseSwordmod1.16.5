@@ -49,7 +49,7 @@ public class HusinoaitemuwoShoudeChituteiruJiannoteitukuProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1) == 1) {
+		if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1) < 2) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 120, (int) 3, (true), (false)));
 			if (entity instanceof LivingEntity)

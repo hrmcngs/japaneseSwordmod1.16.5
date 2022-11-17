@@ -36,6 +36,9 @@
     "onBulletHitsBlock": {
       "name": "TossinFeibiDaoJugaburotukuniDangtatutatoki"
     },
+    "onBulletHitsPlayer": {
+      "name": "TossinFeibiDaoJugapureiyaniDangtatutatoki"
+    },
     "onBulletHitsEntity": {
       "name": "TossinFeibiDaoJugaenteiteiniDangtatutatoki"
     },

@@ -1,0 +1,33 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "kamaa",
+    "customModelName": "halloweenkama:default",
+    "name": "§6§l§nHalloween 2022 10/31の鎌",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Event"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 9,
+    "efficiency": 9.0,
+    "attackSpeed": 2.5,
+    "enchantability": 9,
+    "damageVsEntity": 10.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "Halloween20221031kamaYoukuritukusitatoki"
+    },
+    "onItemInUseTick": {
+      "name": "NgsoturuwoShoudeChituteiruJiannoteituku"
+    }
+  }
+}

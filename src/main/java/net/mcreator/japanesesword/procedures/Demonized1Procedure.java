@@ -40,7 +40,7 @@ public class Demonized1Procedure {
 		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HUNGER, (int) 1, (int) 1, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HUNGER, (int) 1, (int) 4, (true), (false)));
 		}
 	}
 }

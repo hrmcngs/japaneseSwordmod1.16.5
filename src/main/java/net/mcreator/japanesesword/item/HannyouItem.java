@@ -43,7 +43,7 @@ public class HannyouItem extends JapaneseswordModElements.ModElement {
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{1024, 1024, 1024, 1024}[slot.getIndex()];
+				return new int[]{456, 456, 456, 456}[slot.getIndex()];
 			}
 
 			@Override
@@ -77,6 +77,12 @@ public class HannyouItem extends JapaneseswordModElements.ModElement {
 				return 5f;
 			}
 		};
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(BukiItemGroup.tab)) {
+			@Override
+			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+				return "japanesesword:textures/models/armor/aaaaaaaaaae_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+			}
+		}.setRegistryName("hannyou_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(BukiItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
