@@ -5,11 +5,14 @@ license="Academic Free License v3.0"
 [[mods]]
 modId="japanesesword"
 version="1.0.0"
-displayName="katana"
+displayName="0526ngskatana"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
+displayURL="https://onl.sc/FfZMpbi"
 logoFile="logo.png"
-authors="hiromichinagase, MCreator"
+authors="0526ngs"
+description='''
+お腹減りました
+'''
 
 [[dependencies.japanesesword]]
     modId="minecraft"
