@@ -240,6 +240,7 @@ public class JapaneseswordModVariables {
 			nbt.putDouble("f", instance.f);
 			nbt.putDouble("k", instance.k);
 			nbt.putDouble("mana", instance.mana);
+			nbt.putDouble("counnt", instance.counnt);
 			return nbt;
 		}
 
@@ -256,6 +257,7 @@ public class JapaneseswordModVariables {
 			instance.f = nbt.getDouble("f");
 			instance.k = nbt.getDouble("k");
 			instance.mana = nbt.getDouble("mana");
+			instance.counnt = nbt.getDouble("counnt");
 		}
 	}
 
@@ -270,6 +272,7 @@ public class JapaneseswordModVariables {
 		public double f = 0;
 		public double k = 0;
 		public double mana = 1.0;
+		public double counnt = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -314,6 +317,7 @@ public class JapaneseswordModVariables {
 		clone.f = original.f;
 		clone.k = original.k;
 		clone.mana = original.mana;
+		clone.counnt = original.counnt;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -350,6 +354,7 @@ public class JapaneseswordModVariables {
 					variables.f = message.data.f;
 					variables.k = message.data.k;
 					variables.mana = message.data.mana;
+					variables.counnt = message.data.counnt;
 				}
 			});
 			context.setPacketHandled(true);

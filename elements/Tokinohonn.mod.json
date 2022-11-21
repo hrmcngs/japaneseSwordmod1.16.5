@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "download",
+    "texture": "book",
     "customModelName": "Normal",
     "name": "時の本",
     "rarity": "EPIC",

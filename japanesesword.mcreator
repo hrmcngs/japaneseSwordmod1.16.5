@@ -1690,14 +1690,6 @@
       "registry_name": "zyoudan"
     },
     {
-      "name": "Ti",
-      "type": "item",
-      "sortid": 170,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ti"
-    },
-    {
       "name": "Yabaiaitemu",
       "type": "fluid",
       "sortid": 171,
@@ -5062,6 +5054,54 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "effect_10"
+    },
+    {
+      "name": "Ti",
+      "type": "item",
+      "sortid": 170,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ti"
+    },
+    {
+      "name": "Guhahahaha",
+      "type": "procedure",
+      "sortid": 365,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guhahahaha",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tokubetuno",
+      "type": "tool",
+      "sortid": 366,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tokubetuno"
     }
   ],
   "variable_elements": [
@@ -5159,6 +5199,12 @@
       "name": "XYZ3",
       "type": "number",
       "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "counnt",
+      "type": "number",
+      "scope": "player_persistent",
       "value": "0"
     }
   ],
@@ -5390,6 +5436,7 @@
       "item.japanesesword.nannka": "Nannka",
       "key.japanesesword.waza": "クールタイムとかを無しにする",
       "enchantment.japanesesword.hasiru": "speed",
+      "item.japanesesword.tokubetuno": "金の刀",
       "enchantment.japanesesword.nannnnnka": "ダメージ防止",
       "effect.damezinasi": "反動なし",
       "advancements.kennkaku.title": "剣士",
@@ -5615,6 +5662,7 @@
       "item.japanesesword.nannka": "Nannka",
       "key.japanesesword.waza": "クールタイムを無しにする",
       "enchantment.japanesesword.hasiru": "走りながら",
+      "item.japanesesword.tokubetuno": "金の刀",
       "enchantment.japanesesword.nannnnnka": "ダメージ防止",
       "effect.damezinasi": "反動なし",
       "advancements.kennkaku.title": "剣士",

@@ -13,6 +13,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -71,11 +72,19 @@ public class Effect10ehuekutogaYouXiaoShinoteitukuProcedure {
 		double loop = 0;
 		double zRadius = 0;
 		double particleAmount = 0;
+		if (entity instanceof PlayerEntity)
+			((PlayerEntity) entity).getCooldownTracker().setCooldown(
+					((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem(), (int) 100);
 		loop = 0;
-		particleAmount = 20;
-		xRadius = 2;
-		zRadius = 2;
+		particleAmount = 10;
+		xRadius = 4;
+		zRadius = 4;
 		while (loop < particleAmount) {
+			if (world instanceof ServerWorld) {
+				((ServerWorld) world).spawnParticle(ParticleTypes.ASH, (x + Math.cos(((Math.PI * 2) / particleAmount) * loop) * xRadius),
+						(y + entity.getPersistentData().getDouble("Y")), (z + Math.sin(((Math.PI * 2) / particleAmount) * loop) * zRadius), (int) 5,
+						0.1, 0.1, 0.1, 0);
+			}
 			if (world instanceof ServerWorld) {
 				((ServerWorld) world).spawnParticle(ParticleTypes.SPIT, (x + Math.cos(((Math.PI * 2) / particleAmount) * loop) * xRadius),
 						(y + entity.getPersistentData().getDouble("Y")), (z + Math.sin(((Math.PI * 2) / particleAmount) * loop) * zRadius), (int) 5,
@@ -295,7 +304,7 @@ public class Effect10ehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 					}
 				}
-				loop = (loop + 5);
+				loop = (loop + 1);
 				entity.getPersistentData().putDouble("Y", (entity.getPersistentData().getDouble("Y") + 0.2));
 			} else {
 				{
@@ -509,7 +518,7 @@ public class Effect10ehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 					}
 				}
-				loop = (loop + 5);
+				loop = (loop + 1);
 				entity.getPersistentData().putDouble("Y", (entity.getPersistentData().getDouble("Y") + 0.2));
 			}
 		}

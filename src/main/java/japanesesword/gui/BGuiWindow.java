@@ -60,7 +60,7 @@ public class BGuiWindow extends ContainerScreen<BGui.GuiContainerMod> {
 
 		Minecraft.getInstance().getTextureManager()
 				.bindTexture(new ResourceLocation("japanesesword:textures/screens/sukurinsiyotuto_2022-05-08_16.41.14.png"));
-		this.blit(ms, this.guiLeft + 16, this.guiTop + 15, 0, 0, 34, 34, 34, 34);
+		this.blit(ms, this.guiLeft + 23, this.guiTop + 14, 0, 0, 34, 34, 34, 34);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/screens/abc.png"));
 		this.blit(ms, this.guiLeft + 101, this.guiTop + 14, 0, 0, 40, 37, 40, 37);
@@ -114,7 +114,7 @@ public class BGuiWindow extends ContainerScreen<BGui.GuiContainerMod> {
 				BGui.handleButtonAction(entity, 2, x, y, z);
 			}
 		}));
-		this.addButton(new Button(this.guiLeft + 63, this.guiTop + 139, 46, 20, new StringTextComponent("王の一人"), e -> {
+		this.addButton(new Button(this.guiLeft + 69, this.guiTop + 139, 46, 20, new StringTextComponent("王の一人"), e -> {
 			if (true) {
 				JapaneseswordMod.PACKET_HANDLER.sendToServer(new BGui.ButtonPressedMessage(3, x, y, z));
 				BGui.handleButtonAction(entity, 3, x, y, z);

@@ -33,10 +33,10 @@
       "name": "TiShiLiaowoShibetatoki"
     },
     "isFood": true,
-    "nutritionalValue": 10,
-    "saturation": 10.0,
+    "nutritionalValue": 0,
+    "saturation": 0.0,
     "eatResultItem": {
-      "value": ""
+      "value": "Items.GLASS_BOTTLE"
     },
     "isMeat": false,
     "isAlwaysEdible": false,
