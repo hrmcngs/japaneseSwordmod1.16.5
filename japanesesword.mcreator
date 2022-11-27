@@ -5037,17 +5037,6 @@
       }
     },
     {
-      "name": "Effect10posiyonXiaoGuogaQieretaShi",
-      "type": "procedure",
-      "sortid": 364,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "effect_10posiyon_xiao_guoga_qiereta_shi",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
       "name": "Effect10",
       "type": "potioneffect",
       "sortid": 363,
@@ -5102,6 +5091,30 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "tokubetuno"
+    },
+    {
+      "name": "Nikki",
+      "type": "gui",
+      "sortid": 367,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nikki"
+    },
+    {
+      "name": "Kaiga",
+      "type": "painting",
+      "sortid": 368,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kaiga"
+    },
+    {
+      "name": "Appler",
+      "type": "recipe",
+      "sortid": 369,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "appler"
     }
   ],
   "variable_elements": [
