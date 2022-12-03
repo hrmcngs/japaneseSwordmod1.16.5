@@ -29,7 +29,7 @@ public class TokubetunoItem extends JapaneseswordModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new SwordItem(new IItemTier() {
 			public int getMaxUses() {
-				return 150;
+				return 0;
 			}
 
 			public float getEfficiency() {
@@ -37,7 +37,7 @@ public class TokubetunoItem extends JapaneseswordModElements.ModElement {
 			}
 
 			public float getAttackDamage() {
-				return 4f;
+				return 6f;
 			}
 
 			public int getHarvestLevel() {
