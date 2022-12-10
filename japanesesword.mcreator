@@ -5115,6 +5115,142 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "appler"
+    },
+    {
+      "name": "Tp1",
+      "type": "potioneffect",
+      "sortid": 370,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tp_1"
+    },
+    {
+      "name": "TpehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 370,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tpehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TpposiyonXiaoGuogaQieretaShi",
+      "type": "procedure",
+      "sortid": 371,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tpposiyon_xiao_guoga_qiereta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tp",
+      "type": "potioneffect",
+      "sortid": 370,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tp"
+    },
+    {
+      "name": "GehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 373,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "G",
+      "type": "potioneffect",
+      "sortid": 373,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "g"
+    },
+    {
+      "name": "TokubetunoYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 374,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tokubetuno_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -5322,6 +5458,7 @@
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
+      "effect.g": "g",
       "effect.effect": "effect",
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
@@ -5438,6 +5575,7 @@
       "item.japanesesword.halloween_20221031_chestplate": "§6§l§n§oHalloween 2022 10/31の胴着",
       "item.japanesesword.hon_4": "本",
       "item.japanesesword.turuhasi_1": "Turuhasi 1",
+      "effect.tp_1": "tp1",
       "item.japanesesword.hannmaa": "牛蒡刀",
       "item.japanesesword.hon_2": "本",
       "item.japanesesword.bookblood": "Book blood",
@@ -5474,6 +5612,7 @@
       "item.japanesesword.stonekatana": "Stonekatana",
       "item.japanesesword.tetunokatana": "Tetunokatana",
       "item.japanesesword.musicdisc_na": "ナイト・オブ・ナイト",
+      "effect.tp": "tp",
       "item.japanesesword.ti": "血",
       "effect.kill_2": "kill",
       "item.japanesesword.nannk": "Nannk",
@@ -5548,6 +5687,7 @@
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
+      "effect.g": "g",
       "effect.effect": "effect",
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
@@ -5664,6 +5804,7 @@
       "item.japanesesword.halloween_20221031_chestplate": "§6§l§n§oHalloween 2022 10/31の胴着",
       "item.japanesesword.hon_4": "本",
       "item.japanesesword.turuhasi_1": "Turuhasi 1",
+      "effect.tp_1": "tp1",
       "item.japanesesword.hannmaa": "牛蒡刀",
       "item.japanesesword.hon_2": "本",
       "item.japanesesword.bookblood": "Book blood",
@@ -5700,6 +5841,7 @@
       "item.japanesesword.stonekatana": "Stonekatana",
       "item.japanesesword.tetunokatana": "Tetunokatana",
       "item.japanesesword.musicdisc_na": "ナイト・オブ・ナイト",
+      "effect.tp": "tp",
       "item.japanesesword.ti": "血",
       "effect.kill_2": "kill",
       "item.japanesesword.nannk": "Nannk",

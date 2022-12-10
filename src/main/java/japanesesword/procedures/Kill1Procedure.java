@@ -4,9 +4,13 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -15,6 +19,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 import japanesesword.enchantment.KillEnchantment;
+import japanesesword.enchantment.DemonizedEnchantment;
 
 import japanesesword.JapaneseswordMod;
 
@@ -83,6 +88,31 @@ public class Kill1Procedure {
 								_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
 					}
 				}
+			}
+		}
+		if (!world.isRemote()) {
+			if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+					((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+				if (EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+						((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) > 0) {
+					if (sourceentity instanceof LivingEntity)
+						((LivingEntity) sourceentity)
+								.setHealth((float) (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHealth() : -1)
+										+ EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+												((sourceentity instanceof LivingEntity)
+														? ((LivingEntity) sourceentity).getHeldItemMainhand()
+														: ItemStack.EMPTY))));
+				}
+			}
+			if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+					? ((ServerPlayerEntity) entity).getAdvancements()
+							.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
+									.getAdvancement(new ResourceLocation("japanesesword:tidaisuki")))
+							.isDone()
+					: false) {
+				if (sourceentity instanceof LivingEntity)
+					((LivingEntity) sourceentity)
+							.setHealth((float) (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHealth() : -1) + 3));
 			}
 		}
 	}

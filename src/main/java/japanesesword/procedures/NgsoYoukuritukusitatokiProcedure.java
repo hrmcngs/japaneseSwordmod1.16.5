@@ -18,8 +18,6 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
@@ -38,18 +36,16 @@ import java.util.Comparator;
 import java.util.Collection;
 
 import japanesesword.potion.UgokasuPotionEffect;
-import japanesesword.potion.TomarePotionEffect;
-import japanesesword.potion.MatuPotionEffect;
+import japanesesword.potion.TpPotionEffect;
+import japanesesword.potion.Tp1PotionEffect;
 import japanesesword.potion.KurutaimunasiPotionEffect;
 import japanesesword.potion.Effect10PotionEffect;
 
 import japanesesword.particle.DokuroParticle;
 
-import japanesesword.item.TossinItem;
 import japanesesword.item.TokinohonnItem;
 import japanesesword.item.PoisonbookItem;
 import japanesesword.item.NgsoItem;
-import japanesesword.item.NgskItem;
 import japanesesword.item.BookbloodItem;
 
 import japanesesword.entity.KenEntity;
@@ -1536,8 +1532,20 @@ public class NgsoYoukuritukusitatokiProcedure {
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 3) {
-				if (NgskItem.block == ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem()) {
-					entity.getPersistentData().putBoolean("052ngs", (true));
+				if (((Entity) world
+						.getEntitiesWithinAABB(MobEntity.class,
+								new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
+						.stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+							}
+						}.compareDistOf(x, y, z)).findFirst().orElse(null)) != null) {
+					entity.getPersistentData().putBoolean("tp", (true));
+					entity.getPersistentData().putDouble("X", x);
+					entity.getPersistentData().putDouble("Y", y);
+					entity.getPersistentData().putDouble("Z", z);
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.BLINDNESS, (int) 60, (int) 255, (false), (false)));
 					new Object() {
 						private int ticks = 0;
 						private float waitTicks;
@@ -1559,185 +1567,33 @@ public class NgsoYoukuritukusitatokiProcedure {
 						}
 
 						private void run() {
-							entity.getPersistentData().putBoolean("052ngs", (false));
+							if (entity instanceof LivingEntity)
+								((LivingEntity) entity)
+										.addPotionEffect(new EffectInstance(TpPotionEffect.potion, (int) 60, (int) 1, (false), (false)));
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
-					}.start(world, (int) 20);
-				} else {
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private IWorld world;
-
-						public void start(IWorld world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							if (entity instanceof LivingEntity)
-								((LivingEntity) entity)
-										.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-							if (entity instanceof LivingEntity)
-								((LivingEntity) entity)
-										.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 20, (int) 1, (true), (false)));
-							new Object() {
-								private int ticks = 0;
-								private float waitTicks;
-								private IWorld world;
-
-								public void start(IWorld world, int waitTicks) {
-									this.waitTicks = waitTicks;
-									MinecraftForge.EVENT_BUS.register(this);
-									this.world = world;
-								}
-
-								@SubscribeEvent
-								public void tick(TickEvent.ServerTickEvent event) {
-									if (event.phase == TickEvent.Phase.END) {
-										this.ticks += 1;
-										if (this.ticks >= this.waitTicks)
-											run();
+					}.start(world, (int) 60);
+					{
+						List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class,
+								new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
+								.stream().sorted(new Object() {
+									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 									}
+								}.compareDistOf(x, y, z)).collect(Collectors.toList());
+						for (Entity entityiterator : _entfound) {
+							if (!(entityiterator == entity)) {
+								if (entityiterator instanceof MobEntity) {
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(Effects.GLOWING, (int) 150, (int) 255, (false), (false)));
+									if (entityiterator instanceof LivingEntity)
+										((LivingEntity) entityiterator)
+												.addPotionEffect(new EffectInstance(Tp1PotionEffect.potion, (int) 150, (int) 1, (false), (false)));
 								}
-
-								private void run() {
-									if (entity instanceof LivingEntity)
-										((LivingEntity) entity)
-												.addPotionEffect(new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-									if (entity instanceof LivingEntity)
-										((LivingEntity) entity)
-												.addPotionEffect(new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-									new Object() {
-										private int ticks = 0;
-										private float waitTicks;
-										private IWorld world;
-
-										public void start(IWorld world, int waitTicks) {
-											this.waitTicks = waitTicks;
-											MinecraftForge.EVENT_BUS.register(this);
-											this.world = world;
-										}
-
-										@SubscribeEvent
-										public void tick(TickEvent.ServerTickEvent event) {
-											if (event.phase == TickEvent.Phase.END) {
-												this.ticks += 1;
-												if (this.ticks >= this.waitTicks)
-													run();
-											}
-										}
-
-										private void run() {
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).addPotionEffect(
-														new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-											if (entity instanceof LivingEntity)
-												((LivingEntity) entity).addPotionEffect(
-														new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-											new Object() {
-												private int ticks = 0;
-												private float waitTicks;
-												private IWorld world;
-
-												public void start(IWorld world, int waitTicks) {
-													this.waitTicks = waitTicks;
-													MinecraftForge.EVENT_BUS.register(this);
-													this.world = world;
-												}
-
-												@SubscribeEvent
-												public void tick(TickEvent.ServerTickEvent event) {
-													if (event.phase == TickEvent.Phase.END) {
-														this.ticks += 1;
-														if (this.ticks >= this.waitTicks)
-															run();
-													}
-												}
-
-												private void run() {
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity).addPotionEffect(
-																new EffectInstance(MatuPotionEffect.potion, (int) 1, (int) 1, (true), (false)));
-													if (entity instanceof LivingEntity)
-														((LivingEntity) entity).addPotionEffect(
-																new EffectInstance(TomarePotionEffect.potion, (int) 10, (int) 1, (true), (false)));
-													new Object() {
-														private int ticks = 0;
-														private float waitTicks;
-														private IWorld world;
-
-														public void start(IWorld world, int waitTicks) {
-															this.waitTicks = waitTicks;
-															MinecraftForge.EVENT_BUS.register(this);
-															this.world = world;
-														}
-
-														@SubscribeEvent
-														public void tick(TickEvent.ServerTickEvent event) {
-															if (event.phase == TickEvent.Phase.END) {
-																this.ticks += 1;
-																if (this.ticks >= this.waitTicks)
-																	run();
-															}
-														}
-
-														private void run() {
-															entity.setMotion(0, 0, 0);
-															{
-																Entity _shootFrom = entity;
-																World projectileLevel = _shootFrom.world;
-																if (!projectileLevel.isRemote()) {
-																	ProjectileEntity _entityToSpawn = new Object() {
-																		public ProjectileEntity getArrow(World world, Entity shooter, float damage,
-																				int knockback, byte piercing) {
-																			AbstractArrowEntity entityToSpawn = new TossinItem.ArrowCustomEntity(
-																					TossinItem.arrow, world);
-																			entityToSpawn.setShooter(shooter);
-																			entityToSpawn.setDamage(damage);
-																			entityToSpawn.setKnockbackStrength(knockback);
-																			entityToSpawn.setSilent(true);
-																			entityToSpawn.setPierceLevel(piercing);
-
-																			return entityToSpawn;
-																		}
-																	}.getArrow(projectileLevel, entity, 0, 0, (byte) 10);
-																	_entityToSpawn.setPosition(_shootFrom.getPosX(), _shootFrom.getPosYEye() - 0.1,
-																			_shootFrom.getPosZ());
-																	_entityToSpawn.shoot(_shootFrom.getLookVec().x, _shootFrom.getLookVec().y,
-																			_shootFrom.getLookVec().z, 1, 0);
-																	projectileLevel.addEntity(_entityToSpawn);
-																}
-															}
-															MinecraftForge.EVENT_BUS.unregister(this);
-														}
-													}.start(world, (int) 5);
-													MinecraftForge.EVENT_BUS.unregister(this);
-												}
-											}.start(world, (int) 10);
-											MinecraftForge.EVENT_BUS.unregister(this);
-										}
-									}.start(world, (int) 10);
-									MinecraftForge.EVENT_BUS.unregister(this);
-								}
-							}.start(world, (int) 10);
-							MinecraftForge.EVENT_BUS.unregister(this);
+							}
 						}
-					}.start(world, (int) 20);
+					}
 				}
 				if (!(new Object() {
 					boolean check(Entity _entity) {
@@ -1752,7 +1608,7 @@ public class NgsoYoukuritukusitatokiProcedure {
 					}
 				}.check(entity))) {
 					if (entity instanceof PlayerEntity)
-						((PlayerEntity) entity).getCooldownTracker().setCooldown(NgsoItem.block, (int) 70);
+						((PlayerEntity) entity).getCooldownTracker().setCooldown(NgsoItem.block, (int) 140);
 				}
 			}
 			if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)

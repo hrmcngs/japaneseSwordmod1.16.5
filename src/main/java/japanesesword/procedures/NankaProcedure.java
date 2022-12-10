@@ -174,6 +174,16 @@ public class NankaProcedure {
 			}
 		}
 		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 9) {
+			{
+				String _setval = "\u7A7A\u4E2D\u653B\u6483";
+				entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.nanndarou = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
+		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto >= 9) {
 			{
 				String _setval = "\u65AC\u6483 ";
