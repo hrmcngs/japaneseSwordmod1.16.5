@@ -269,7 +269,7 @@
       "type": "potion",
       "sortid": 30,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "doku_3"
     },
     {
@@ -5281,14 +5281,6 @@
       }
     },
     {
-      "name": "TestBow",
-      "type": "item",
-      "sortid": 376,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "test_bow"
-    },
-    {
       "name": "Arrow001",
       "type": "item",
       "sortid": 377,
@@ -5542,7 +5534,6 @@
       "item.japanesesword.bou": "竹の弓",
       "item.japanesesword.katana_1": "桜観剣",
       "entity.japanesesword.yaa": "Yaa",
-      "item.japanesesword.test_bow": "Test Bow",
       "item.minecraft.tipped_arrow.effect.doku_3": "毒2の矢",
       "enchantment.japanesesword.bakudan": "explosion",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
@@ -5775,7 +5766,6 @@
       "item.japanesesword.bou": "竹の弓",
       "item.japanesesword.katana_1": "桜観剣",
       "entity.japanesesword.yaa": "Yaa",
-      "item.japanesesword.test_bow": "Test Bow",
       "item.minecraft.tipped_arrow.effect.doku_3": "毒2の矢",
       "enchantment.japanesesword.bakudan": "Bakudan",
       "entity.japanesesword.zanngekimob": "Zanngekimob",

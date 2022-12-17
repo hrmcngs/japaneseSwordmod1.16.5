@@ -15,30 +15,14 @@ import japanesesword.JapaneseswordModElements;
 public class Arrow001Item extends JapaneseswordModElements.ModElement {
 	@ObjectHolder("japanesesword:arrow_001")
 	public static final Item Arrow = null;
+   public AbstractArrowEntity createArrow(World worldIn, ItemStack stack, LivingEntity shooter) {
+      ArrowEntity arrowentity = new ArrowEntity(worldIn, shooter);
+      arrowentity.setPotionEffect(stack);
+      return arrowentity;
+   }
 
-	public Arrow001Item(JapaneseswordModElements instance) {
-		super(instance, 377);
+   public boolean isInfinite(ItemStack stack, ItemStack bow, net.minecraft.entity.player.PlayerEntity player) {
+      int enchant = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.enchantment.Enchantments.INFINITY, bow);
+      return enchant <= 0 ? false : this.getClass() == ArrowItem.class;
+   }
 	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
-	}
-
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
-			setRegistryName("arrow_001");
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 1F;
-		}
-	}
-}
