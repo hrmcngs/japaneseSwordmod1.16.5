@@ -1,6 +1,7 @@
 {
-  "parent": "item/handheld",
+  "parent": "japanesesword:custom/0526ngsdemon",
   "textures": {
-    "layer0": "japanesesword:items/kinnnokatana"
+    "0": "japanesesword:blocks/blood0526ngs",
+    "particle": "japanesesword:items/kinnnokatana"
   }
 }

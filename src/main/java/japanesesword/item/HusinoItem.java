@@ -58,8 +58,9 @@ public class HusinoItem extends JapaneseswordModElements.ModElement {
 			double z = entity.getPosZ();
 			if (selected)
 
-				HusinoaitemuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				HusinoaitemuwoShoudeChituteiruJiannoteitukuProcedure
+						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }
