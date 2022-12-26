@@ -53,7 +53,7 @@
       "type": "rangeditem",
       "sortid": 6,
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "bou"
     },
     {
@@ -5281,12 +5281,20 @@
       }
     },
     {
-      "name": "Arrow001",
-      "type": "item",
+      "name": "TestBow",
+      "type": "rangeditem",
+      "sortid": 376,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "test_bow"
+    },
+    {
+      "name": "TestBowcode",
+      "type": "code",
       "sortid": 377,
       "compiles": true,
       "locked_code": true,
-      "registry_name": "arrow_001"
+      "registry_name": "test_bowcode"
     }
   ],
   "variable_elements": [
@@ -5534,6 +5542,7 @@
       "item.japanesesword.bou": "竹の弓",
       "item.japanesesword.katana_1": "桜観剣",
       "entity.japanesesword.yaa": "Yaa",
+      "item.japanesesword.test_bow": "Test Bow",
       "item.minecraft.tipped_arrow.effect.doku_3": "毒2の矢",
       "enchantment.japanesesword.bakudan": "explosion",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
@@ -5642,7 +5651,6 @@
       "advancements.syodan.descr": "初段",
       "item.japanesesword.hanyou_helmet": "Hannyou ヘルメット",
       "effect.effect_iii": "effectⅢ",
-      "item.japanesesword.arrow_001": "Arrow 0 0 1",
       "item.japanesesword.tetotokin": "鉄と金",
       "advancements.bukinanigasuki.title": "こんな武器一々作るか普通",
       "itemGroup.tabbuki": "武器",
@@ -5766,6 +5774,7 @@
       "item.japanesesword.bou": "竹の弓",
       "item.japanesesword.katana_1": "桜観剣",
       "entity.japanesesword.yaa": "Yaa",
+      "item.japanesesword.test_bow": "Test Bow",
       "item.minecraft.tipped_arrow.effect.doku_3": "毒2の矢",
       "enchantment.japanesesword.bakudan": "Bakudan",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
@@ -5874,7 +5883,6 @@
       "advancements.syodan.descr": "　",
       "item.japanesesword.hanyou_helmet": "Hannyou ヘルメット",
       "effect.effect_iii": "effectⅢ",
-      "item.japanesesword.arrow_001": "Arrow 0 0 1",
       "item.japanesesword.tetotokin": "鉄と金",
       "advancements.bukinanigasuki.title": "武器は何が好き？",
       "itemGroup.tabbuki": "武器",

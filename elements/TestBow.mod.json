@@ -5,14 +5,14 @@
     "renderType": 0,
     "texture": "dream_bow",
     "customModelName": "Normal",
-    "name": "竹の弓",
+    "name": "Test Bow",
     "specialInfo": [],
     "creativeTab": {
-      "value": "CUSTOM:Buki"
+      "value": "COMBAT"
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "Items.ARROW"
+      "value": ""
     },
     "shootConstantly": false,
     "usageCount": 100,
@@ -23,15 +23,15 @@
     "animation": "bow",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "bulletPower": 2.0,
+    "bulletPower": 1.0,
     "bulletDamage": 5.0,
-    "bulletKnockback": 1,
+    "bulletKnockback": 5,
     "bulletParticles": false,
     "bulletIgnitesFire": false,
     "bulletItemTexture": {
       "value": "Blocks.AIR"
     },
-    "bulletModel": "Modelarrow2",
-    "customBulletModelTexture": "arrows.png"
+    "bulletModel": "Default",
+    "customBulletModelTexture": ""
   }
 }
