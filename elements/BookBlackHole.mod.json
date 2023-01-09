@@ -36,9 +36,6 @@
     "onBulletHitsBlock": {
       "name": "BookBlackHoleFeibiDaoJugaburotukuniDangtatutatoki"
     },
-    "onBulletHitsEntity": {
-      "name": "BookBlackHoleFeibiDaoJugaenteiteiniDangtatutatoki"
-    },
     "onBulletFlyingTick": {
       "name": "BookBlackHoleFeibiDaoJugaFeindeiruJian"
     }

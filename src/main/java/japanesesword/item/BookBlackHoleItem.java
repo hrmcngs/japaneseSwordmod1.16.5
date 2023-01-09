@@ -11,7 +11,6 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
@@ -38,7 +37,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.BookBlackHoleFeibiDaoJugaenteiteiniDangtatutatokiProcedure;
 import japanesesword.procedures.BookBlackHoleFeibiDaoJugaburotukuniDangtatutatokiProcedure;
 import japanesesword.procedures.BookBlackHoleFeibiDaoJugaFeindeiruJianProcedure;
 
@@ -143,23 +141,6 @@ public class BookBlackHoleItem extends JapaneseswordModElements.ModElement {
 		protected void arrowHit(LivingEntity entity) {
 			super.arrowHit(entity);
 			entity.setArrowCountInEntity(entity.getArrowCountInEntity() - 1);
-		}
-
-		@Override
-		public void onEntityHit(EntityRayTraceResult entityRayTraceResult) {
-			super.onEntityHit(entityRayTraceResult);
-			Entity entity = entityRayTraceResult.getEntity();
-			Entity sourceentity = this.func_234616_v_();
-			Entity immediatesourceentity = this;
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			World world = this.world;
-
-			BookBlackHoleFeibiDaoJugaenteiteiniDangtatutatokiProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
