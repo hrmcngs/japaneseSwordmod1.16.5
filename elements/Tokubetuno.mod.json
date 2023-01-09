@@ -2,9 +2,9 @@
   "_fv": 33,
   "_type": "tool",
   "definition": {
-    "renderType": 1,
+    "renderType": 0,
     "texture": "kinnnokatana",
-    "customModelName": "0526ngsdemon:default",
+    "customModelName": "Normal",
     "name": "金の刀",
     "specialInfo": [],
     "creativeTab": {

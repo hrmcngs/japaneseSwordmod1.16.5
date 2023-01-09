@@ -2795,354 +2795,6 @@
       "registry_name": "kogatana"
     },
     {
-      "name": "Mana",
-      "type": "overlay",
-      "sortid": 248,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana"
-    },
-    {
-      "name": "Mana1",
-      "type": "procedure",
-      "sortid": 249,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_1",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Mana2",
-      "type": "procedure",
-      "sortid": 250,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_2",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Mana3",
-      "type": "procedure",
-      "sortid": 251,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_3",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Mana4",
-      "type": "procedure",
-      "sortid": 252,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_4",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Mana5",
-      "type": "procedure",
-      "sortid": 253,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_5",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manna6",
-      "type": "procedure",
-      "sortid": 254,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manna_6",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Mana7",
-      "type": "procedure",
-      "sortid": 255,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_7",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Mana8",
-      "type": "procedure",
-      "sortid": 256,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_8",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Mana9",
-      "type": "procedure",
-      "sortid": 257,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_9",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Mana10",
-      "type": "procedure",
-      "sortid": 258,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "mana_10",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab1",
-      "type": "procedure",
-      "sortid": 259,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_1",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab2",
-      "type": "procedure",
-      "sortid": 260,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_2",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab3",
-      "type": "procedure",
-      "sortid": 261,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_3",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab4",
-      "type": "procedure",
-      "sortid": 262,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_4",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab5",
-      "type": "procedure",
-      "sortid": 263,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_5",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab6",
-      "type": "procedure",
-      "sortid": 264,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_6",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab7",
-      "type": "procedure",
-      "sortid": 265,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_7",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab8",
-      "type": "procedure",
-      "sortid": 266,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_8",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab9",
-      "type": "procedure",
-      "sortid": 267,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_9",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Manab10",
-      "type": "procedure",
-      "sortid": 268,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "manab_10",
-      "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "TesutehuekutogaYouXiaoShinoteituku",
       "type": "procedure",
       "sortid": 269,
@@ -5295,6 +4947,198 @@
       "compiles": true,
       "locked_code": true,
       "registry_name": "test_bowcode"
+    },
+    {
+      "name": "BlackHole",
+      "type": "livingentity",
+      "sortid": 378,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_hole"
+    },
+    {
+      "name": "BlackHoleenteiteiwoYoukuritukusitaShi",
+      "type": "procedure",
+      "sortid": 378,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_holeenteiteiwo_youkuritukusita_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BookBlackHole",
+      "type": "rangeditem",
+      "sortid": 379,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_black_hole"
+    },
+    {
+      "name": "BookBlackHoleFeibiDaoJugaFeindeiruJian",
+      "type": "procedure",
+      "sortid": 380,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_black_hole_feibi_dao_juga_feindeiru_jian",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BlackHoleP",
+      "type": "procedure",
+      "sortid": 381,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_hole_p",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BlackHolee",
+      "type": "procedure",
+      "sortid": 382,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_holee",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BookBlackHoleFeibiDaoJugaburotukuniDangtatutatoki",
+      "type": "procedure",
+      "sortid": 383,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_black_hole_feibi_dao_jugaburotukuni_dangtatutatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BookBlackHoleFeibiDaoJugaenteiteiniDangtatutatoki",
+      "type": "procedure",
+      "sortid": 385,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "book_black_hole_feibi_dao_jugaenteiteini_dangtatutatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BlackHoleKill",
+      "type": "livingentity",
+      "sortid": 386,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_hole_kill"
+    },
+    {
+      "name": "Wizard",
+      "type": "achievement",
+      "sortid": 387,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wizard"
     }
   ],
   "variable_elements": [
@@ -5486,20 +5330,20 @@
   "language_map": {
     "en_us": {
       "entity.japanesesword.ken_2": "Ken",
-      "advancements.naihunage.title": "ナイフ投げを始める",
       "item.japanesesword.halloween_20221031kama": "§6§l§nHalloween 2022 10/31の鎌",
+      "advancements.naihunage.title": "ナイフ投げを始める",
       "block.japanesesword.doku": "Doku",
       "item.japanesesword.airbougu_boots": "Airブーツ",
       "item.japanesesword.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.kama": "Kama",
-      "item.japanesesword.poisonnaginata": "毒がついた薙刀",
       "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
+      "item.japanesesword.poisonnaginata": "毒がついた薙刀",
       "key.japanesesword.r": "R",
-      "effect.tomare": " tomare",
       "item.japanesesword.sukop": "Sukop",
+      "effect.tomare": " tomare",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
-      "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
+      "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.g": "g",
@@ -5507,18 +5351,19 @@
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
+      "advancements.wizard.descr": "魔法使いだーフォー!!",
       "subtitles.g2": "",
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
-      "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
       "effect.kurutaimunasi": "クールタイムを無くす",
+      "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
       "item.japanesesword.musucdiscne_ne.desc": "ネガティブフィイス",
       "item.japanesesword.nagenaihu": "投げナイフ",
       "key.japanesesword.a": "落下ダメージ防止",
       "subtitles.un": "U.N.オーエンは彼女なのか？",
-      "item.japanesesword.naginata": "薙刀",
       "item.japanesesword.katanakatana": "白楼剣",
+      "item.japanesesword.naginata": "薙刀",
       "item.japanesesword.daiakatana": "ダイアモンドの刀",
       "item.japanesesword.musicdisc_ka.desc": "神々が恋した幻想郷",
       "item.japanesesword.halloween_20221031_leggings": "§6§l§n§oHalloween 2022 10/31のレギンス",
@@ -5529,15 +5374,16 @@
       "item.japanesesword.hannyou_boots": "Hannyou 個のブーツ",
       "enchantment.japanesesword.flame": "Flame defense",
       "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
-      "item.japanesesword.honn": "本",
       "item.japanesesword.kogatana": "小刀",
+      "item.japanesesword.honn": "本",
       "item.japanesesword.a_5": "A5",
       "entity.japanesesword.ken": "Ken",
+      "advancements.wizard.title": "Wizard",
       "item.japanesesword.a_1": "A 1",
       "block.japanesesword.ginnburokku": "銀ブロック",
-      "block.japanesesword.nezarazyoiyi": "ネザーライトブロック上位",
-      "item.japanesesword.gin": "銀インゴット",
       "advancements.bukinanigasuki.descr": "竹の弓を持つ",
+      "item.japanesesword.gin": "銀インゴット",
+      "block.japanesesword.nezarazyoiyi": "ネザーライトブロック上位",
       "effect.effect_10": "エフェクト",
       "item.japanesesword.bou": "竹の弓",
       "item.japanesesword.katana_1": "桜観剣",
@@ -5553,12 +5399,13 @@
       "item.japanesesword.tekitou_boots": "Tekitou 個のブーツ",
       "item.japanesesword.booktokubetu": "book rare",
       "item.japanesesword.ken_2_spawn_egg": "Ken Spawn Egg",
-      "effect.ugokasu": "動かす",
       "item.japanesesword.ginyade_leggings": "Ginyade レギンス",
+      "effect.ugokasu": "動かす",
       "item.japanesesword.otachibloodcurse": "§4§k守血刀",
       "item.japanesesword.nagerukatana": "Nagerukatana",
       "advancements.syodan.title": "初段",
       "item.japanesesword.mcsucdiscko": "広有射怪鳥事",
+      "item.japanesesword.black_hole_kill_spawn_egg": "Black hole kill Spawn Egg",
       "item.japanesesword.tekitou_helmet": "Tekitou ヘルメット",
       "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "effect.supuidokyouka": "スピード強化版",
@@ -5622,6 +5469,7 @@
       "item.japanesesword.hon_4": "本",
       "item.japanesesword.turuhasi_1": "Turuhasi 1",
       "effect.tp_1": "tp1",
+      "item.japanesesword.book_black_hole": "Book Black Hole",
       "item.japanesesword.hannmaa": "牛蒡刀",
       "item.japanesesword.hon_2": "本",
       "item.japanesesword.bookblood": "Book blood",
@@ -5673,6 +5521,7 @@
       "subtitles.i": "",
       "item.japanesesword.airbougu_leggings": "Airレギンス",
       "advancements.ounozisseki.title": "君王だって",
+      "item.japanesesword.black_hole_spawn_egg": "Black hole Spawn Egg",
       "item.japanesesword.ngsk": "0526ngsの小太刀",
       "advancements.hitokiri.title": "剣に夢見て",
       "effect.blood": "出血\u000e",
@@ -5687,7 +5536,9 @@
       "item.japanesesword.ginyade_chestplate": "Ginyade 胴着",
       "item.japanesesword.ginyade_boots": "Ginyade ブーツ",
       "enchantment.japanesesword.ansi": "暗視",
+      "entity.japanesesword.black_hole_kill": "Black hole kill",
       "item.japanesesword.musucdiscne_ne": "ネガティブフィイス",
+      "entity.japanesesword.black_hole": "Black hole",
       "subtitles.tu": "月まで届け、不死の煙",
       "item.japanesesword.n": "ネザーライト上位",
       "effect.doku_2": "毒2",
@@ -5718,20 +5569,20 @@
     },
     "ja_jp": {
       "entity.japanesesword.ken_2": "Ken",
-      "item.japanesesword.halloween_20221031kama": "§6§l§nHalloween 2022 10/31の鎌",
       "advancements.naihunage.title": "ナイフ投げを始める",
+      "item.japanesesword.halloween_20221031kama": "§6§l§nHalloween 2022 10/31の鎌",
       "block.japanesesword.doku": "Doku",
       "item.japanesesword.airbougu_boots": "Airブーツ",
       "item.japanesesword.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.kama": "Kama",
-      "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "item.japanesesword.poisonnaginata": "薙刀",
+      "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "key.japanesesword.r": "R",
-      "item.japanesesword.sukop": "Sukop",
       "effect.tomare": " tomare",
+      "item.japanesesword.sukop": "Sukop",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
-      "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
+      "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.g": "g",
@@ -5739,18 +5590,19 @@
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
+      "advancements.wizard.descr": "魔法使いだーフォー!!",
       "subtitles.g2": "",
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
-      "effect.kurutaimunasi": "クールタイムを無くす",
       "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
+      "effect.kurutaimunasi": "クールタイムを無くす",
       "item.japanesesword.musucdiscne_ne.desc": "ネガティブフィイス",
       "item.japanesesword.nagenaihu": "投げナイフ",
       "key.japanesesword.a": "落下ダメージ防止",
       "subtitles.un": "U.N.オーエンは彼女なのか?",
-      "item.japanesesword.katanakatana": "白楼剣",
       "item.japanesesword.naginata": "薙刀",
+      "item.japanesesword.katanakatana": "白楼剣",
       "item.japanesesword.daiakatana": "ダイアモンドの刀",
       "item.japanesesword.musicdisc_ka.desc": "神々が恋した幻想郷",
       "item.japanesesword.halloween_20221031_leggings": "§6§l§n§oHalloween 2022 10/31のレギンス",
@@ -5761,15 +5613,16 @@
       "item.japanesesword.hannyou_boots": "Hannyou 個のブーツ",
       "enchantment.japanesesword.flame": "Flame defense",
       "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
-      "item.japanesesword.kogatana": "小刀",
       "item.japanesesword.honn": "Honn",
+      "item.japanesesword.kogatana": "小刀",
       "item.japanesesword.a_5": "A 5",
       "entity.japanesesword.ken": "Ken",
+      "advancements.wizard.title": "Wizard",
       "item.japanesesword.a_1": "A 1",
       "block.japanesesword.ginnburokku": "Ginnburokku",
-      "advancements.bukinanigasuki.descr": "killエンチャント使う",
-      "item.japanesesword.gin": "銀インゴット",
       "block.japanesesword.nezarazyoiyi": "ネザーライト上位",
+      "item.japanesesword.gin": "銀インゴット",
+      "advancements.bukinanigasuki.descr": "killエンチャント使う",
       "effect.effect_10": "エフェクト",
       "item.japanesesword.bou": "竹の弓",
       "item.japanesesword.katana_1": "桜観剣",
@@ -5785,12 +5638,13 @@
       "item.japanesesword.tekitou_boots": "Tekitou 個のブーツ",
       "item.japanesesword.booktokubetu": "レアな本",
       "item.japanesesword.ken_2_spawn_egg": "Ken Spawn Egg",
-      "item.japanesesword.ginyade_leggings": "Ginyade 個のレギンス",
       "effect.ugokasu": "動かす",
+      "item.japanesesword.ginyade_leggings": "Ginyade 個のレギンス",
       "item.japanesesword.otachibloodcurse": "§4§k守血刀",
       "item.japanesesword.nagerukatana": "Nagerukatana",
       "advancements.syodan.title": "初段",
       "item.japanesesword.mcsucdiscko": "広有射怪鳥事",
+      "item.japanesesword.black_hole_kill_spawn_egg": "Black hole Spawn Egg",
       "item.japanesesword.tekitou_helmet": "Tekitou ヘルメット",
       "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "effect.supuidokyouka": "スピード強化版",
@@ -5854,6 +5708,7 @@
       "item.japanesesword.hon_4": "本",
       "item.japanesesword.turuhasi_1": "Turuhasi 1",
       "effect.tp_1": "tp1",
+      "item.japanesesword.book_black_hole": "Book Black Hole",
       "item.japanesesword.hannmaa": "牛蒡刀",
       "item.japanesesword.hon_2": "本",
       "item.japanesesword.bookblood": "Book blood",
@@ -5905,6 +5760,7 @@
       "subtitles.i": "",
       "item.japanesesword.airbougu_leggings": "Airレギンス",
       "advancements.ounozisseki.title": "君王だって",
+      "item.japanesesword.black_hole_spawn_egg": "Black hole Spawn Egg",
       "item.japanesesword.ngsk": "0526ngsの小太刀",
       "advancements.hitokiri.title": "武士に夢見て",
       "effect.blood": "出血\u000e",
@@ -5919,7 +5775,9 @@
       "item.japanesesword.ginyade_chestplate": "Ginyade 個の胴着",
       "item.japanesesword.ginyade_boots": "Ginyade 個のブーツ",
       "enchantment.japanesesword.ansi": "暗視",
+      "entity.japanesesword.black_hole_kill": "Black hole",
       "item.japanesesword.musucdiscne_ne": "ネガティブフィイス",
+      "entity.japanesesword.black_hole": "Black hole",
       "subtitles.tu": "月まで届け、不死の煙",
       "item.japanesesword.n": "ネザーライト上位",
       "effect.doku_2": "毒2",
