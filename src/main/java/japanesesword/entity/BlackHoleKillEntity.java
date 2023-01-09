@@ -98,7 +98,7 @@ public class BlackHoleKillEntity extends JapaneseswordModElements.ModElement {
 
 		@Override
 		public CreatureAttribute getCreatureAttribute() {
-			return CreatureAttribute.UNDEFINED;
+			return CreatureAttribute.WATER;
 		}
 
 		@Override
