@@ -14,27 +14,27 @@ import java.util.Map;
 
 import japanesesword.JapaneseswordMod;
 
-public class BlackHolePProcedure {
+public class BlackHoleInhallBlooksProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency world for procedure BlackHoleP!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency world for procedure BlackHoleInhallBlooks!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency x for procedure BlackHoleP!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency x for procedure BlackHoleInhallBlooks!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency y for procedure BlackHoleP!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency y for procedure BlackHoleInhallBlooks!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency z for procedure BlackHoleP!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency z for procedure BlackHoleInhallBlooks!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");

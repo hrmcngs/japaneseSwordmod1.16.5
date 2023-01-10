@@ -81,6 +81,7 @@ public class BlackHoleKillEntity extends JapaneseswordModElements.ModElement {
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
+			enablePersistence();
 			this.moveController = new FlyingMovementController(this, 10, true);
 			this.navigator = new FlyingPathNavigator(this, this.world);
 		}
@@ -99,6 +100,11 @@ public class BlackHoleKillEntity extends JapaneseswordModElements.ModElement {
 		@Override
 		public CreatureAttribute getCreatureAttribute() {
 			return CreatureAttribute.WATER;
+		}
+
+		@Override
+		public boolean canDespawn(double distanceToClosestPlayer) {
+			return false;
 		}
 
 		@Override
