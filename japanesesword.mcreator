@@ -4955,6 +4955,14 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "wizard"
+    },
+    {
+      "name": "Bloodkatana",
+      "type": "tool",
+      "sortid": 388,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bloodkatana"
     }
   ],
   "variable_elements": [
@@ -5166,6 +5174,7 @@
       "effect.effect": "effect",
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
+      "item.japanesesword.bloodkatana": "Bloodkatana",
       "advancements.wizard.descr": "魔法使いだーフォー!!",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "subtitles.g2": "",
@@ -5400,6 +5409,7 @@
       "effect.effect": "effect",
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
+      "item.japanesesword.bloodkatana": "Bloodkatana",
       "advancements.wizard.descr": "魔法使いだーフォー!!",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "subtitles.g2": "",
