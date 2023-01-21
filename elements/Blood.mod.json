@@ -12,6 +12,9 @@
     "isBad": true,
     "isBenefitical": false,
     "renderStatusInInventory": false,
-    "renderStatusInHUD": false
+    "renderStatusInHUD": false,
+    "onActiveTick": {
+      "name": "BloodehuekutogaYouXiaoShinoteituku"
+    }
   }
 }

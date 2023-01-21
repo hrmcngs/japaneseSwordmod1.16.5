@@ -5,7 +5,7 @@
     "achievementName": "Wizard",
     "achievementDescription": "魔法使いだーフォー!!",
     "achievementIcon": {
-      "value": "CUSTOM:BookBlackHole"
+      "value": "CUSTOM:Bookash"
     },
     "background": "Default",
     "disableDisplay": false,

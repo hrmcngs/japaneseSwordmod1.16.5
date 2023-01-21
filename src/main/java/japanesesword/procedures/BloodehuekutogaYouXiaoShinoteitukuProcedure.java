@@ -97,5 +97,12 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 		if (entity instanceof LivingEntity) {
 			((LivingEntity) entity).attackEntityFrom(new DamageSource("died of bleeding").setDamageBypassesArmor(), (float) 1);
 		}
+		{
+			Entity _ent = entity;
+			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+						"particle item redstone ~ ~1 ~ 0.5 0.5 0.5 0.3 100 force");
+			}
+		}
 	}
 }
