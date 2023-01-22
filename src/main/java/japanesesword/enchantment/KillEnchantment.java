@@ -14,10 +14,13 @@ import japanesesword.item.OtachibloodcurseItem;
 import japanesesword.item.NorooinokatanaItem;
 import japanesesword.item.NoroiItem;
 import japanesesword.item.NoKamaroiItem;
+import japanesesword.item.NgsoItem;
+import japanesesword.item.NgskItem;
 import japanesesword.item.NaihuItem;
 import japanesesword.item.KogatanaItem;
 import japanesesword.item.KamaItem;
 import japanesesword.item.JapaneseSwordItem;
+import japanesesword.item.BloodkatanaItem;
 
 import japanesesword.JapaneseswordModElements;
 
@@ -74,6 +77,12 @@ public class KillEnchantment extends JapaneseswordModElements.ModElement {
 			if (stack.getItem() == OtachibloodcurseItem.block)
 				return true;
 			if (stack.getItem() == KogatanaItem.block)
+				return true;
+			if (stack.getItem() == BloodkatanaItem.block)
+				return true;
+			if (stack.getItem() == NgsoItem.block)
+				return true;
+			if (stack.getItem() == NgskItem.block)
 				return true;
 			return false;
 		}

@@ -95,7 +95,18 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 				}
 			}.check(entity)), (true), (false)));
 		if (entity instanceof LivingEntity) {
-			((LivingEntity) entity).attackEntityFrom(new DamageSource("died of bleeding").setDamageBypassesArmor(), (float) 1);
+			((LivingEntity) entity).attackEntityFrom(new DamageSource("died of bleeding").setDamageBypassesArmor(), (float) (new Object() {
+				int check(Entity _entity) {
+					if (_entity instanceof LivingEntity) {
+						Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+						for (EffectInstance effect : effects) {
+							if (effect.getPotion() == BloodPotionEffect.potion)
+								return effect.getAmplifier();
+						}
+					}
+					return 0;
+				}
+			}.check(entity)));
 		}
 		{
 			Entity _ent = entity;

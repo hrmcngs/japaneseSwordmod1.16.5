@@ -36,6 +36,15 @@
       },
       {
         "value": "CUSTOM:Kogatana"
+      },
+      {
+        "value": "CUSTOM:Bloodkatana"
+      },
+      {
+        "value": "CUSTOM:Ngso"
+      },
+      {
+        "value": "CUSTOM:Ngsk"
       }
     ],
     "isTreasureEnchantment": true,

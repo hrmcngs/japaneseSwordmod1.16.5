@@ -269,7 +269,7 @@
       "type": "potion",
       "sortid": 30,
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "doku_3"
     },
     {
@@ -5188,7 +5188,7 @@
       "effect.effect": "effect",
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
-      "item.japanesesword.bloodkatana": "Bloodkatana",
+      "item.japanesesword.bloodkatana": "§4§k§o§ldemoniedkatana",
       "advancements.wizard.descr": "魔法使いだーフォー!!",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "subtitles.g2": "",

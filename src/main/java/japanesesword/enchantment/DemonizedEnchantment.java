@@ -9,12 +9,16 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.enchantment.Enchantment;
 
+import japanesesword.item.TuvaItem;
 import japanesesword.item.TubanoatukatanaItem;
 import japanesesword.item.TantouItem;
+import japanesesword.item.OtachiItem;
 import japanesesword.item.NgsoItem;
 import japanesesword.item.NgskItem;
+import japanesesword.item.KogatanaItem;
 import japanesesword.item.KazarinoarukatabaItem;
 import japanesesword.item.GoukinntouItem;
+import japanesesword.item.BloodkatanaItem;
 
 import japanesesword.JapaneseswordModElements;
 
@@ -70,6 +74,14 @@ public class DemonizedEnchantment extends JapaneseswordModElements.ModElement {
 			if (stack.getItem() == GoukinntouItem.block)
 				return true;
 			if (stack.getItem() == KazarinoarukatabaItem.block)
+				return true;
+			if (stack.getItem() == BloodkatanaItem.block)
+				return true;
+			if (stack.getItem() == TuvaItem.block)
+				return true;
+			if (stack.getItem() == KogatanaItem.block)
+				return true;
+			if (stack.getItem() == OtachiItem.block)
 				return true;
 			return false;
 		}

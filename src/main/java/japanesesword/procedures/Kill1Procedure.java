@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
@@ -17,6 +18,10 @@ import net.minecraft.enchantment.EnchantmentHelper;
 
 import java.util.Map;
 import java.util.HashMap;
+
+import japanesesword.potion.BloodPotionEffect;
+
+import japanesesword.item.BloodkatanaItem;
 
 import japanesesword.enchantment.KillEnchantment;
 import japanesesword.enchantment.DemonizedEnchantment;
@@ -113,6 +118,19 @@ public class Kill1Procedure {
 				if (sourceentity instanceof LivingEntity)
 					((LivingEntity) sourceentity)
 							.setHealth((float) (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHealth() : -1) + 3));
+			}
+		}
+		if (!world.isRemote()) {
+			if (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.getItem() == BloodkatanaItem.block) {
+				if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
+						((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(BloodPotionEffect.potion, (int) 300, (int) 5, (true), (false)));
+				} else {
+					if (entity instanceof LivingEntity)
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(BloodPotionEffect.potion, (int) 300, (int) 1, (true), (false)));
+				}
 			}
 		}
 	}
