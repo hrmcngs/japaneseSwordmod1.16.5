@@ -13,12 +13,12 @@ import japanesesword.itemgroup.BukiItemGroup;
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
-public class BloodkatanaItem extends JapaneseswordModElements.ModElement {
-	@ObjectHolder("japanesesword:bloodkatana")
+public class DemonizedkatanaItem extends JapaneseswordModElements.ModElement {
+	@ObjectHolder("japanesesword:demonizedkatana")
 	public static final Item block = null;
 
-	public BloodkatanaItem(JapaneseswordModElements instance) {
-		super(instance, 388);
+	public DemonizedkatanaItem(JapaneseswordModElements instance) {
+		super(instance, 390);
 	}
 
 	@Override
@@ -48,6 +48,6 @@ public class BloodkatanaItem extends JapaneseswordModElements.ModElement {
 				return Ingredient.EMPTY;
 			}
 		}, 3, -3.5f, new Item.Properties().group(BukiItemGroup.tab)) {
-		}.setRegistryName("bloodkatana"));
+		}.setRegistryName("demonizedkatana"));
 	}
 }

@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 import japanesesword.potion.BloodPotionEffect;
 
-import japanesesword.item.BloodkatanaItem;
+import japanesesword.item.DemonizedkatanaItem;
 
 import japanesesword.enchantment.KillEnchantment;
 import japanesesword.enchantment.DemonizedEnchantment;
@@ -122,7 +122,7 @@ public class Kill1Procedure {
 		}
 		if (!world.isRemote()) {
 			if (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getItem() == BloodkatanaItem.block) {
+					.getItem() == DemonizedkatanaItem.block) {
 				if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 						((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 					if (entity instanceof LivingEntity)

@@ -44,9 +44,6 @@
         "value": "CUSTOM:Kazarinoarukataba"
       },
       {
-        "value": "CUSTOM:Bloodkatana"
-      },
-      {
         "value": "CUSTOM:Tuva"
       },
       {
@@ -54,6 +51,9 @@
       },
       {
         "value": "CUSTOM:Otachi"
+      },
+      {
+        "value": "CUSTOM:Demonizedkatana"
       }
     ],
     "isTreasureEnchantment": false,

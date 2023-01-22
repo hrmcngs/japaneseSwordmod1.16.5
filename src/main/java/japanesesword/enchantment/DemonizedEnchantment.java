@@ -18,7 +18,7 @@ import japanesesword.item.NgskItem;
 import japanesesword.item.KogatanaItem;
 import japanesesword.item.KazarinoarukatabaItem;
 import japanesesword.item.GoukinntouItem;
-import japanesesword.item.BloodkatanaItem;
+import japanesesword.item.DemonizedkatanaItem;
 
 import japanesesword.JapaneseswordModElements;
 
@@ -75,13 +75,13 @@ public class DemonizedEnchantment extends JapaneseswordModElements.ModElement {
 				return true;
 			if (stack.getItem() == KazarinoarukatabaItem.block)
 				return true;
-			if (stack.getItem() == BloodkatanaItem.block)
-				return true;
 			if (stack.getItem() == TuvaItem.block)
 				return true;
 			if (stack.getItem() == KogatanaItem.block)
 				return true;
 			if (stack.getItem() == OtachiItem.block)
+				return true;
+			if (stack.getItem() == DemonizedkatanaItem.block)
 				return true;
 			return false;
 		}

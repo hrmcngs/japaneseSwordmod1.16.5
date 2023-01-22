@@ -4957,14 +4957,6 @@
       "registry_name": "wizard"
     },
     {
-      "name": "Bloodkatana",
-      "type": "tool",
-      "sortid": 388,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bloodkatana"
-    },
-    {
       "name": "Blackarmor",
       "type": "armor",
       "sortid": 389,
@@ -4977,6 +4969,14 @@
         "eb": true,
         "ec": true
       }
+    },
+    {
+      "name": "Demonizedkatana",
+      "type": "tool",
+      "sortid": 390,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demonizedkatana"
     }
   ],
   "variable_elements": [
@@ -5172,13 +5172,13 @@
       "item.japanesesword.halloween_20221031kama": "§6§l§nHalloween 2022 10/31の鎌",
       "block.japanesesword.doku": "Doku",
       "item.japanesesword.airbougu_boots": "Airブーツ",
-      "item.japanesesword.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.kama": "Kama",
+      "item.japanesesword.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.poisonnaginata": "毒がついた薙刀",
       "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "key.japanesesword.r": "R",
-      "effect.tomare": " tomare",
       "item.japanesesword.sukop": "Sukop",
+      "effect.tomare": " tomare",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
       "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
@@ -5188,7 +5188,6 @@
       "effect.effect": "effect",
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
-      "item.japanesesword.bloodkatana": "§4§k§o§ldemoniedkatana",
       "advancements.wizard.descr": "魔法使いだーフォー!!",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "subtitles.g2": "",
@@ -5353,6 +5352,7 @@
       "item.japanesesword.nannk": "Nannk",
       "enchantment.japanesesword.entyant": "Lightnung sirike",
       "advancements.zyoudan.descr": "上段",
+      "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
       "item.japanesesword.musucdiscti": "地霊達の起床",
       "effect.effect_v": "effectⅤ",
       "advancements.haziku.title": "刀で遠距離武器を弾く",
@@ -5411,13 +5411,13 @@
       "advancements.naihunage.title": "ナイフ投げを始める",
       "block.japanesesword.doku": "Doku",
       "item.japanesesword.airbougu_boots": "Airブーツ",
-      "item.japanesesword.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.kama": "Kama",
+      "item.japanesesword.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "item.japanesesword.poisonnaginata": "薙刀",
       "key.japanesesword.r": "R",
-      "item.japanesesword.sukop": "Sukop",
       "effect.tomare": " tomare",
+      "item.japanesesword.sukop": "Sukop",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
@@ -5427,7 +5427,6 @@
       "effect.effect": "effect",
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "item.japanesesword.mcsucdesicna.desc": "ナイト・オブザ・ナイツ",
-      "item.japanesesword.bloodkatana": "Bloodkatana",
       "advancements.wizard.descr": "魔法使いだーフォー!!",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "subtitles.g2": "",
@@ -5592,6 +5591,7 @@
       "item.japanesesword.nannk": "Nannk",
       "enchantment.japanesesword.entyant": "Lightnung sirike",
       "advancements.zyoudan.descr": "上段",
+      "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
       "item.japanesesword.musucdiscti": "地霊達の起床",
       "effect.effect_v": "effectⅤ",
       "advancements.haziku.title": "刀で遠距離武器を弾く",

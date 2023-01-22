@@ -20,7 +20,7 @@ import japanesesword.item.NaihuItem;
 import japanesesword.item.KogatanaItem;
 import japanesesword.item.KamaItem;
 import japanesesword.item.JapaneseSwordItem;
-import japanesesword.item.BloodkatanaItem;
+import japanesesword.item.DemonizedkatanaItem;
 
 import japanesesword.JapaneseswordModElements;
 
@@ -78,11 +78,11 @@ public class KillEnchantment extends JapaneseswordModElements.ModElement {
 				return true;
 			if (stack.getItem() == KogatanaItem.block)
 				return true;
-			if (stack.getItem() == BloodkatanaItem.block)
-				return true;
 			if (stack.getItem() == NgsoItem.block)
 				return true;
 			if (stack.getItem() == NgskItem.block)
+				return true;
+			if (stack.getItem() == DemonizedkatanaItem.block)
 				return true;
 			return false;
 		}

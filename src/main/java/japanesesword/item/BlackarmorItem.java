@@ -89,7 +89,7 @@ public class BlackarmorItem extends JapaneseswordModElements.ModElement {
 			@OnlyIn(Dist.CLIENT)
 			public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
 				BipedModel armorModel = new BipedModel(1);
-				armorModel.bipedHead = new Modelblack_armor().Head;
+				armorModel.bipedHead = new ModelHollow_helmet().Head;
 				armorModel.isSneak = living.isSneaking();
 				armorModel.isSitting = defaultModel.isSitting;
 				armorModel.isChild = living.isChild();
@@ -98,7 +98,7 @@ public class BlackarmorItem extends JapaneseswordModElements.ModElement {
 
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/entities/hollow_armor.png";
+				return "japanesesword:textures/entities/hollow_helmet1_.png";
 			}
 		}.setRegistryName("blackarmor_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -121,24 +121,18 @@ public class BlackarmorItem extends JapaneseswordModElements.ModElement {
 		}.setRegistryName("blackarmor_boots"));
 	}
 
-	// Made with Blockbench 4.5.2
+	// Made with Blockbench 4.6.1
 	// Exported for Minecraft version 1.15 - 1.16 with MCP mappings
 	// Paste this class into your mod and generate all required imports
-	public static class Modelblack_armor extends EntityModel<Entity> {
-		private final ModelRenderer bone;
+	public static class ModelHollow_helmet extends EntityModel<Entity> {
 		private final ModelRenderer Head;
 
-		public Modelblack_armor() {
+		public ModelHollow_helmet() {
 			textureWidth = 32;
 			textureHeight = 32;
-			bone = new ModelRenderer(this);
-			bone.setRotationPoint(0.0F, 24.0F, 0.0F);
 			Head = new ModelRenderer(this);
-			Head.setRotationPoint(0.0F, -24.0F, 0.0F);
-			bone.addChild(Head);
-			setRotationAngle(Head, -0.1047F, 0.0873F, 0.0F);
+			Head.setRotationPoint(0.0F, 0.0F, 0.0F);
 			Head.setTextureOffset(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 1.0F, false);
-			Head.setTextureOffset(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 1.5F, false);
 		}
 
 		@Override
@@ -149,7 +143,7 @@ public class BlackarmorItem extends JapaneseswordModElements.ModElement {
 		@Override
 		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
 				float alpha) {
-			bone.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+			Head.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		}
 
 		public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
