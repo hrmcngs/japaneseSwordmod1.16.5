@@ -8,6 +8,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector2f;
+import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -1071,7 +1072,22 @@ public class GehuekutogaYouXiaoShinoteitukuProcedure {
 			}
 		}
 		entity.fallDistance = (float) (0);
-		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 2, (true), (false)));
+		entity.setMotion((entity.world
+				.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+						entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
+						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
+				.getPos().getX()
+				- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+						entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
+						RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
+				0,
+				(entity.world
+						.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+								entity.getEyePosition(1f).add(entity.getLook(1f).x * 5, entity.getLook(1f).y * 5, entity.getLook(1f).z * 5),
+								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
+						.getPos().getZ()
+						- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
+								entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
+								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
 	}
 }

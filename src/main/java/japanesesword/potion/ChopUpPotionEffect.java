@@ -20,8 +20,8 @@ import java.util.AbstractMap;
 import japanesesword.procedures.BloodehuekutogaYouXiaoShinoteitukuProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class BloodPotionEffect {
-	@ObjectHolder("japanesesword:blood")
+public class ChopUpPotionEffect {
+	@ObjectHolder("japanesesword:chop_up")
 	public static final Effect potion = null;
 
 	@SubscribeEvent
@@ -31,13 +31,13 @@ public class BloodPotionEffect {
 
 	public static class EffectCustom extends Effect {
 		public EffectCustom() {
-			super(EffectType.HARMFUL, -5439488);
-			setRegistryName("blood");
+			super(EffectType.HARMFUL, -16777216);
+			setRegistryName("chop_up");
 		}
 
 		@Override
 		public String getName() {
-			return "effect.blood";
+			return "effect.chop_up";
 		}
 
 		@Override

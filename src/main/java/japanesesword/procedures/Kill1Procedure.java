@@ -131,6 +131,20 @@ public class Kill1Procedure {
 					if (entity instanceof LivingEntity)
 						((LivingEntity) entity).addPotionEffect(new EffectInstance(BloodPotionEffect.potion, (int) 300, (int) 1, (true), (false)));
 				}
+				if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+						? ((ServerPlayerEntity) entity).getAdvancements()
+								.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
+										.getAdvancement(new ResourceLocation("japanesesword:tidaisuki")))
+								.isDone()
+						: false) {
+					if (sourceentity instanceof LivingEntity)
+						((LivingEntity) sourceentity)
+								.setHealth((float) (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHealth() : -1) + 3));
+				} else {
+					if (sourceentity instanceof LivingEntity)
+						((LivingEntity) sourceentity)
+								.setHealth((float) (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHealth() : -1) + 1));
+				}
 			}
 		}
 	}

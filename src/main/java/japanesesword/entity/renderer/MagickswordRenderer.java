@@ -18,31 +18,31 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 
-import japanesesword.item.NagerukatanaItem;
+import japanesesword.item.MagickswordItem;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class NagerukatanaRenderer {
+public class MagickswordRenderer {
 	public static class ModelRegisterHandler {
 		@SubscribeEvent
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
-			RenderingRegistry.registerEntityRenderingHandler(NagerukatanaItem.arrow, renderManager -> new CustomRender(renderManager));
+			RenderingRegistry.registerEntityRenderingHandler(MagickswordItem.arrow, renderManager -> new CustomRender(renderManager));
 		}
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public static class CustomRender extends EntityRenderer<NagerukatanaItem.ArrowCustomEntity> {
-		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/entities/kuro2.png");
+	public static class CustomRender extends EntityRenderer<MagickswordItem.ArrowCustomEntity> {
+		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/entities/katanadaisuki.png");
 
 		public CustomRender(EntityRendererManager renderManager) {
 			super(renderManager);
 		}
 
 		@Override
-		public void render(NagerukatanaItem.ArrowCustomEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn,
+		public void render(MagickswordItem.ArrowCustomEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn,
 				IRenderTypeBuffer bufferIn, int packedLightIn) {
 			IVertexBuilder vb = bufferIn.getBuffer(RenderType.getEntityCutout(this.getEntityTexture(entityIn)));
 			matrixStackIn.push();
@@ -55,7 +55,7 @@ public class NagerukatanaRenderer {
 		}
 
 		@Override
-		public ResourceLocation getEntityTexture(NagerukatanaItem.ArrowCustomEntity entity) {
+		public ResourceLocation getEntityTexture(MagickswordItem.ArrowCustomEntity entity) {
 			return texture;
 		}
 	}

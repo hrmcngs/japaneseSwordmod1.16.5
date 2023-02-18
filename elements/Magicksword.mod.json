@@ -3,12 +3,12 @@
   "_type": "rangeditem",
   "definition": {
     "renderType": 0,
-    "texture": "kuikatana",
+    "texture": "tetunokenn",
     "customModelName": "Normal",
-    "name": "Nagerukatana",
+    "name": "Magicksword",
     "specialInfo": [],
     "creativeTab": {
-      "value": "CUSTOM:Buki"
+      "value": "COMBAT"
     },
     "stackSize": 1,
     "ammoItem": {
@@ -20,21 +20,21 @@
       "value": "entity.arrow.shoot"
     },
     "hasGlow": false,
-    "animation": "none",
+    "animation": "bow",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "bulletPower": 1.0,
     "bulletDamage": 5.0,
-    "bulletKnockback": 0,
+    "bulletKnockback": 5,
     "bulletParticles": false,
     "bulletIgnitesFire": false,
     "bulletItemTexture": {
       "value": "Blocks.AIR"
     },
     "bulletModel": "Modelkatanadaisuki",
-    "customBulletModelTexture": "kuro2.png",
+    "customBulletModelTexture": "katanadaisuki.png",
     "onBulletFlyingTick": {
-      "name": "Nagenaihuto"
+      "name": "MagickswordFeibiDaoJugaFeindeiruJian"
     }
   }
 }

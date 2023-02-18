@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac8f19e3-0689-474b-ab6c-aa73df1818c0" name="変更" comment="" />
+    <list default="true" id="ac8f19e3-0689-474b-ab6c-aa73df1818c0" name="変更" comment="">
+      <change beforePath="$PROJECT_DIR$/elements/Blackarmor.mod.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/BloodehuekutogaYouXiaoShinoteituku.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/BloodehuekutogaYouXiaoShinoteituku.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Demonizedkatana.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Demonizedkatana.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/GehuekutogaYouXiaoShinoteituku.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/GehuekutogaYouXiaoShinoteituku.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Kill1.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Kill1.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Nanka.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Nanka.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/TokubetunoYoukuritukusitatoki.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TokubetunoYoukuritukusitatoki.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/TpposiyonXiaoGuogaQieretaShi.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TpposiyonXiaoGuogaQieretaShi.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/japanesesword.mcreator" beforeDir="false" afterPath="$PROJECT_DIR$/japanesesword.mcreator" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ModelHollow_helmet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ModelHollow_helmet2.java" beforeDir="false" afterPath="$PROJECT_DIR$/models/ModelHollow_helmet2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/BlackarmorItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/DemonizedkatanaItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/item/DemonizedkatanaItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/potion/BloodPotionEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/potion/BloodPotionEffect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/BloodehuekutogaYouXiaoShinoteitukuProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/BloodehuekutogaYouXiaoShinoteitukuProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/GehuekutogaYouXiaoShinoteitukuProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/GehuekutogaYouXiaoShinoteitukuProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/Kill1Procedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/Kill1Procedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/NankaProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/NankaProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/TokubetunoYoukuritukusitatokiProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/TokubetunoYoukuritukusitatokiProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/ja_jp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/ja_jp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/blackarmor_boots.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/blackarmor_chestplate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/blackarmor_helmet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/blackarmor_leggings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/entities/armor_main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/entities/hollow_armor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/entities/hollow_helmet1_.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/entities/hollow_helmet1_.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +49,12 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="japanesesword" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>

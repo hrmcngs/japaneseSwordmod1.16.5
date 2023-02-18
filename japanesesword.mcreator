@@ -4928,6 +4928,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -4957,12 +4973,20 @@
       "registry_name": "wizard"
     },
     {
-      "name": "Blackarmor",
-      "type": "armor",
-      "sortid": 389,
+      "name": "Demonizedkatana",
+      "type": "tool",
+      "sortid": 390,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "blackarmor",
+      "registry_name": "demonizedkatana"
+    },
+    {
+      "name": "AamorBlack",
+      "type": "armor",
+      "sortid": 391,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aamor_black",
       "metadata": {
         "eh": true,
         "el": true,
@@ -4971,12 +4995,183 @@
       }
     },
     {
-      "name": "Demonizedkatana",
-      "type": "tool",
-      "sortid": 390,
+      "name": "Amorblack",
+      "type": "procedure",
+      "sortid": 394,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "demonizedkatana"
+      "registry_name": "amorblack",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DemonizedkatanaYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 395,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demonizedkatana_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DemonizedkatanapureiyagaShiYongwoTingZhisitaShi",
+      "type": "procedure",
+      "sortid": 396,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demonizedkatanapureiyaga_shi_yongwo_ting_zhisita_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DemonizedkatanaturuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 396,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demonizedkatanaturuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChopUp",
+      "type": "potioneffect",
+      "sortid": 397,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chop_up"
+    },
+    {
+      "name": "Killchopup",
+      "type": "potioneffect",
+      "sortid": 398,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "killchopup"
+    },
+    {
+      "name": "MagicWand",
+      "type": "item",
+      "sortid": 399,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_wand"
+    },
+    {
+      "name": "MagicWandaitemuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 400,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_wandaitemuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Magicksword",
+      "type": "rangeditem",
+      "sortid": 401,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magicksword"
+    },
+    {
+      "name": "MagickswordFeibiDaoJugaFeindeiruJian",
+      "type": "procedure",
+      "sortid": 402,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magicksword_feibi_dao_juga_feindeiru_jian",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MagicWandYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 400,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_wand_youkuritukusitatoki",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "MagickswordYuanJuLiWuQigaLiYongsaretaShi",
+      "type": "procedure",
+      "sortid": 403,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magicksword_yuan_ju_li_wu_qiga_li_yongsareta_shi",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -5177,11 +5372,12 @@
       "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "item.japanesesword.poisonnaginata": "毒がついた薙刀",
       "key.japanesesword.r": "R",
-      "effect.tomare": " tomare",
       "item.japanesesword.sukop": "Sukop",
+      "effect.tomare": " tomare",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
       "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
+      "item.japanesesword.aamor_black_helmet": "Blackarmor ヘルメット",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.g": "g",
@@ -5194,8 +5390,8 @@
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
-      "effect.kurutaimunasi": "クールタイムを無くす",
       "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
+      "effect.kurutaimunasi": "クールタイムを無くす",
       "item.japanesesword.musucdiscne_ne.desc": "ネガティブフィイス",
       "item.japanesesword.nagenaihu": "投げナイフ",
       "key.japanesesword.a": "落下ダメージ防止",
@@ -5219,6 +5415,7 @@
       "advancements.wizard.title": "Wizard",
       "item.japanesesword.a_1": "A 1",
       "block.japanesesword.ginnburokku": "銀ブロック",
+      "effect.killchopup": "斬り刻む",
       "advancements.bukinanigasuki.descr": "竹の弓を持つ",
       "item.japanesesword.gin": "銀インゴット",
       "block.japanesesword.nezarazyoiyi": "ネザーライトブロック上位",
@@ -5231,7 +5428,6 @@
       "enchantment.japanesesword.bakudan": "explosion",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
       "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
-      "item.japanesesword.blackarmor_chestplate": "Blackarmor 個の胴着",
       "item.minecraft.lingering_potion.effect.doku_3": "毒2残留",
       "item.japanesesword.japanese_sword": "日本刀",
       "item.japanesesword.tuva": "ツイヴァイヘンダー",
@@ -5252,7 +5448,6 @@
       "item.japanesesword.tokinohonn": "時の本",
       "item.japanesesword.goukinntou": "合金刀",
       "item.japanesesword.musicdisc_tu.desc": "月まで届け、不死の煙",
-      "item.japanesesword.blackarmor_boots": "Blackarmor 個のブーツ",
       "item.japanesesword.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
       "item.japanesesword.goukin": "合金",
       "item.japanesesword.daiazyui": "ダイアモンドの強化",
@@ -5268,7 +5463,6 @@
       "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
       "advancements.ninngenndayo.title": "人間です〜",
       "fluid.japanesesword.yabaiaitemu": "液体",
-      "item.japanesesword.blackarmor_leggings": "Blackarmor 個のレギンス",
       "death.attck.died of bleeding": "%1$sは出血死した",
       "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
       "item.japanesesword.poizunsword": "毒の刀",
@@ -5280,6 +5474,7 @@
       "entity.japanesesword.kuroimob": "生贄",
       "effect.effect_vi": "effectⅥ",
       "enchantment.japanesesword.demonized": "§4§l§kDemonized",
+      "item.japanesesword.magic_wand": "魔法の杖",
       "item.japanesesword.ha": "Ha",
       "item.japanesesword.poisonbook": "Poisonbook",
       "block.japanesesword.naka": "チェスト",
@@ -5321,9 +5516,9 @@
       "key.japanesesword.waza": "クールタイムとかを無しにする",
       "enchantment.japanesesword.hasiru": "speed",
       "item.japanesesword.tokubetuno": "金の刀",
+      "item.japanesesword.magicksword": "Magicksword",
       "enchantment.japanesesword.nannnnnka": "ダメージ防止",
       "effect.damezinasi": "反動なし",
-      "item.japanesesword.blackarmor_helmet": "Blackarmor ヘルメット",
       "advancements.kennkaku.title": "剣士",
       "advancements.hitokiri.descr": "剣士を選ぶ",
       "item.japanesesword.tossin": "Tossin",
@@ -5334,9 +5529,11 @@
       "item.japanesesword.naihu": "強化された投げナイフ",
       "item.minecraft.potion.effect.doku_3": "毒2ボトル瓶",
       "effect.effect_ii": "effectⅡ",
+      "item.japanesesword.aamor_black_chestplate": "Blackarmorチェストプレート",
       "effect.effect_iv": "effectⅣ",
       "subtitles.sword": "",
       "advancements.syodan.descr": "初段",
+      "effect.chop_up": "斬り刻む",
       "item.japanesesword.hanyou_helmet": "Hannyou ヘルメット",
       "effect.effect_iii": "effectⅢ",
       "item.japanesesword.tetotokin": "鉄と金",
@@ -5358,6 +5555,7 @@
       "advancements.haziku.title": "刀で遠距離武器を弾く",
       "item.japanesesword.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
       "subtitles.g": "",
+      "item.japanesesword.aamor_black_leggings": "Blackarmorレギンス",
       "enchantment.japanesesword.kill": "Kill",
       "subtitles.i": "",
       "item.japanesesword.airbougu_leggings": "Airレギンス",
@@ -5403,6 +5601,7 @@
       "block.japanesesword.daiazyoi": "ダイヤモンド上位",
       "item.japanesesword.axesword": "Axesword",
       "item.japanesesword.hon": "本",
+      "item.japanesesword.aamor_black_boots": "Blackarmorブーツ",
       "item.japanesesword.kinnnokatana": "金の刀"
     },
     "ja_jp": {
@@ -5416,11 +5615,12 @@
       "item.japanesesword.poisonnaginata": "薙刀",
       "item.japanesesword.nezaraitokatana": "ネザーライトの刀",
       "key.japanesesword.r": "R",
-      "item.japanesesword.sukop": "Sukop",
       "effect.tomare": " tomare",
+      "item.japanesesword.sukop": "Sukop",
       "advancements.kennkaku.descr": "剣に自信はあるかい?",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
+      "item.japanesesword.aamor_black_helmet": "Blackarmor ヘルメット",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.g": "g",
@@ -5433,8 +5633,8 @@
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
-      "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
       "effect.kurutaimunasi": "クールタイムを無くす",
+      "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
       "item.japanesesword.musucdiscne_ne.desc": "ネガティブフィイス",
       "item.japanesesword.nagenaihu": "投げナイフ",
       "key.japanesesword.a": "落下ダメージ防止",
@@ -5458,6 +5658,7 @@
       "advancements.wizard.title": "Wizard",
       "item.japanesesword.a_1": "A 1",
       "block.japanesesword.ginnburokku": "Ginnburokku",
+      "effect.killchopup": "斬り刻む",
       "block.japanesesword.nezarazyoiyi": "ネザーライト上位",
       "item.japanesesword.gin": "銀インゴット",
       "advancements.bukinanigasuki.descr": "killエンチャント使う",
@@ -5470,7 +5671,6 @@
       "enchantment.japanesesword.bakudan": "Bakudan",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
       "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
-      "item.japanesesword.blackarmor_chestplate": "Blackarmor 個の胴着",
       "item.minecraft.lingering_potion.effect.doku_3": "毒2残留",
       "item.japanesesword.japanese_sword": "日本刀",
       "item.japanesesword.tuva": "ツイヴァイヘンダー",
@@ -5491,7 +5691,6 @@
       "item.japanesesword.tokinohonn": "時の本",
       "item.japanesesword.goukinntou": "合金刀",
       "item.japanesesword.musicdisc_tu.desc": "月まで届け、不死の煙",
-      "item.japanesesword.blackarmor_boots": "Blackarmor 個のブーツ",
       "item.japanesesword.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
       "item.japanesesword.goukin": "合金",
       "item.japanesesword.daiazyui": "ダイアモンドの強化",
@@ -5507,7 +5706,6 @@
       "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
       "advancements.ninngenndayo.title": "人間です〜",
       "fluid.japanesesword.yabaiaitemu": "液体",
-      "item.japanesesword.blackarmor_leggings": "Blackarmor 個のレギンス",
       "death.attck.died of bleeding": "出血死した",
       "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
       "item.japanesesword.poizunsword": "毒の刀",
@@ -5519,6 +5717,7 @@
       "entity.japanesesword.kuroimob": "生贄",
       "effect.effect_vi": "effectⅥ",
       "enchantment.japanesesword.demonized": "§4§l§kDemonized",
+      "item.japanesesword.magic_wand": "魔法の杖",
       "item.japanesesword.ha": "Ha",
       "item.japanesesword.poisonbook": "Poisonbook",
       "block.japanesesword.naka": "チェスト",
@@ -5560,9 +5759,9 @@
       "key.japanesesword.waza": "クールタイムを無しにする",
       "enchantment.japanesesword.hasiru": "走りながら",
       "item.japanesesword.tokubetuno": "金の刀",
+      "item.japanesesword.magicksword": "Magicksword",
       "enchantment.japanesesword.nannnnnka": "ダメージ防止",
       "effect.damezinasi": "反動なし",
-      "item.japanesesword.blackarmor_helmet": "Blackarmor ヘルメット",
       "advancements.kennkaku.title": "剣士",
       "advancements.hitokiri.descr": "刀を持つ",
       "item.japanesesword.tossin": "Tossin",
@@ -5573,9 +5772,11 @@
       "item.japanesesword.naihu": "強化された投げナイフ",
       "item.minecraft.potion.effect.doku_3": "毒2ボトル瓶",
       "effect.effect_ii": "effectⅡ",
+      "item.japanesesword.aamor_black_chestplate": "Blackarmor 個の胴着",
       "effect.effect_iv": "effectⅣ",
       "subtitles.sword": "",
       "advancements.syodan.descr": "　",
+      "effect.chop_up": "斬り刻む",
       "item.japanesesword.hanyou_helmet": "Hannyou ヘルメット",
       "effect.effect_iii": "effectⅢ",
       "item.japanesesword.tetotokin": "鉄と金",
@@ -5597,6 +5798,7 @@
       "advancements.haziku.title": "刀で遠距離武器を弾く",
       "item.japanesesword.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
       "subtitles.g": "g",
+      "item.japanesesword.aamor_black_leggings": "Blackarmor 個のレギンス",
       "enchantment.japanesesword.kill": "Kill",
       "subtitles.i": "",
       "item.japanesesword.airbougu_leggings": "Airレギンス",
@@ -5642,6 +5844,7 @@
       "block.japanesesword.daiazyoi": "ダイヤモンド上位",
       "item.japanesesword.axesword": "Axesword",
       "item.japanesesword.hon": "本",
+      "item.japanesesword.aamor_black_boots": "Blackarmor 個のブーツ",
       "item.japanesesword.kinnnokatana": "金の刀"
     }
   },

@@ -22,6 +22,15 @@
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "DemonizedkatanaYoukuritukusitatoki"
+    },
+    "onItemInUseTick": {
+      "name": "DemonizedkatanaturuwoShoudeChituteiruJiannoteituku"
+    },
+    "onStoppedUsing": {
+      "name": "DemonizedkatanapureiyagaShiYongwoTingZhisitaShi"
+    }
   }
 }

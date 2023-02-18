@@ -10,6 +10,7 @@ import japanesesword.item.NorooinokatanaItem;
 import japanesesword.item.NoroiItem;
 import japanesesword.item.NoKamaroiItem;
 import japanesesword.item.KamaItem;
+import japanesesword.item.DemonizedkatanaItem;
 
 import japanesesword.JapaneseswordModVariables;
 
@@ -54,12 +55,23 @@ public class NankaProcedure {
 		}
 		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 4) {
-			{
-				String _setval = "\u56DE\u5FA9";
-				entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.nanndarou = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.getItem() == DemonizedkatanaItem.block) {
+				{
+					String _setval = "\u65AC\u6483(\u602A)";
+					entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.nanndarou = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			} else {
+				{
+					String _setval = "\u56DE\u5FA9";
+					entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.nanndarou = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		}
 		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
