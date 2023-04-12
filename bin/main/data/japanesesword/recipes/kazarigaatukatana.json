@@ -1,0 +1,20 @@
+{
+  "group": "biki",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1",
+    "2 "
+  ],
+  "key": {
+    "1": {
+      "item": "japanesesword:tubanoatukatana"
+    },
+    "2": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "japanesesword:kazarinoarukataba",
+    "count": 1
+  }
+}

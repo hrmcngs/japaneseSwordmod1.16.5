@@ -39,7 +39,7 @@ public class MintItem extends JapaneseswordModElements.ModElement {
 		IArmorMaterial armormaterial = new IArmorMaterial() {
 			@Override
 			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 500;
+				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 5000;
 			}
 
 			@Override

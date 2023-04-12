@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="Academic Free License v3.0"
+
+[[mods]]
+modId="japanesesword"
+version="1.0.0"
+displayName="0526ngs"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+displayURL="https://onl.sc/FfZMpbi"
+logoFile="logo.png"
+authors="0526ngs"
+description='''
+お腹減りました
+'''
+
+[[dependencies.japanesesword]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

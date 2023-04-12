@@ -1,0 +1,7 @@
+
+{
+    "parent": "japanesesword:item/dream_bow",
+    "textures": {
+        "layer0": "japanesesword:items/dream_bow_pulling_2"
+    }
+}

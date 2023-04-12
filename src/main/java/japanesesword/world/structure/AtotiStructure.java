@@ -64,7 +64,7 @@ public class AtotiStructure {
 							int y = spawnTo.getY();
 							int z = spawnTo.getZ();
 							Template template = world.getWorld().getStructureTemplateManager()
-									.getTemplateDefaulted(new ResourceLocation("japanesesword", "a"));
+									.getTemplateDefaulted(new ResourceLocation("japanesesword", "tera1"));
 							if (template == null)
 								return false;
 							template.func_237144_a_(world, spawnTo, new PlacementSettings().setRotation(rotation).setRandom(random).setMirror(mirror)

@@ -31,7 +31,7 @@ public class TesutPotionEffect {
 
 	public static class EffectCustom extends Effect {
 		public EffectCustom() {
-			super(EffectType.NEUTRAL, 5263440);
+			super(EffectType.NEUTRAL, -11513776);
 			setRegistryName("tesut");
 		}
 

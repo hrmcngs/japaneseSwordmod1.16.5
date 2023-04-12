@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "Zanngekimob",
     "mobLabel": "",
-    "mobModelName": "Modelzanngeki",
+    "mobModelName": "Biped",
     "mobModelTexture": "katanadaisuki.png",
     "mobModelGlowTexture": "",
     "modelWidth": 0.6,
@@ -13,11 +13,11 @@
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": 16775930,
+      "value": -1286,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": 16777215,
+      "value": -1,
       "falpha": 0.0
     },
     "creativeTab": {

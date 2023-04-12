@@ -12,6 +12,13 @@ import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.Minecraft;
 
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
+
+import japanesesword.procedures.NamaenaninisiyoukanaProcedure;
+
 import japanesesword.JapaneseswordModVariables;
 
 @Mod.EventBusSubscriber
@@ -44,6 +51,12 @@ public class TapOverlay {
 						"" + ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 								.orElse(new JapaneseswordModVariables.PlayerVariables())).nanndarou) + "",
 						posX + 136, posY + 110, -6710887);
+				if (NamaenaninisiyoukanaProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll)))
+					Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
+							"" + ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new JapaneseswordModVariables.PlayerVariables())).naninisiyoukana) + "",
+							posX + -213, posY + 103, -16724788);
 			}
 		}
 	}

@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.projectile.TridentEntity;
 import net.minecraft.entity.projectile.SpectralArrowEntity;
 import net.minecraft.entity.projectile.SnowballEntity;
+import net.minecraft.entity.projectile.SmallFireballEntity;
 import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.entity.projectile.EggEntity;
 import net.minecraft.entity.projectile.DragonFireballEntity;
@@ -82,7 +83,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -219,7 +220,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -356,7 +357,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -493,7 +494,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -630,7 +631,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -770,7 +771,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -907,7 +908,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -1044,7 +1045,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -1181,7 +1182,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));
@@ -1318,7 +1319,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 					if (entityiterator instanceof ArrowEntity || entityiterator instanceof SpectralArrowEntity
 							|| entityiterator instanceof TridentEntity || entityiterator instanceof FireballEntity
 							|| entityiterator instanceof DragonFireballEntity || entityiterator instanceof SnowballEntity
-							|| entityiterator instanceof EggEntity) {
+							|| entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
 								entityiterator.getPersistentData().putBoolean("Check", (true));

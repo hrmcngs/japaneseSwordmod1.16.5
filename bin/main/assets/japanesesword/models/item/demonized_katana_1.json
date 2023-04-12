@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/katana343",
+  "textures": {
+    "4": "japanesesword:blocks/demondkatana",
+    "particle": "japanesesword:items/menndo"
+  }
+}

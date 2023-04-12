@@ -1,9 +1,7 @@
 package japanesesword.procedures;
 
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.entity.Entity;
 
-import java.util.Random;
 import java.util.Map;
 
 import japanesesword.JapaneseswordMod;
@@ -17,6 +15,6 @@ public class UgokasuehuekutogaYouXiaoShinoteitukuProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		entity.setMotion((MathHelper.nextDouble(new Random(), 0, 1)), 1, (MathHelper.nextDouble(new Random(), 0, 1)));
+		entity.setMotion(0, 5, 0);
 	}
 }

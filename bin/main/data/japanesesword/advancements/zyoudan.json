@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "japanesesword:tubanoatukatana"
+    },
+    "title": {
+      "translate": "advancements.zyoudan.title"
+    },
+    "description": {
+      "translate": "advancements.zyoudan.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "zyoudan": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "japanesesword:tyudan"
+}

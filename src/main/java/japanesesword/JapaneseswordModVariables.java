@@ -239,8 +239,10 @@ public class JapaneseswordModVariables {
 			nbt.putDouble("e", instance.e);
 			nbt.putDouble("f", instance.f);
 			nbt.putDouble("k", instance.k);
-			nbt.putDouble("mana", instance.mana);
 			nbt.putDouble("counnt", instance.counnt);
+			nbt.putDouble("mana", instance.mana);
+			nbt.putString("naninisiyoukana", instance.naninisiyoukana);
+			nbt.putDouble("kaunnta", instance.kaunnta);
 			return nbt;
 		}
 
@@ -256,8 +258,10 @@ public class JapaneseswordModVariables {
 			instance.e = nbt.getDouble("e");
 			instance.f = nbt.getDouble("f");
 			instance.k = nbt.getDouble("k");
-			instance.mana = nbt.getDouble("mana");
 			instance.counnt = nbt.getDouble("counnt");
+			instance.mana = nbt.getDouble("mana");
+			instance.naninisiyoukana = nbt.getString("naninisiyoukana");
+			instance.kaunnta = nbt.getDouble("kaunnta");
 		}
 	}
 
@@ -271,8 +275,10 @@ public class JapaneseswordModVariables {
 		public double e = 0;
 		public double f = 0;
 		public double k = 0;
-		public double mana = 1.0;
 		public double counnt = 0;
+		public double mana = 0;
+		public String naninisiyoukana = "\"\"";
+		public double kaunnta = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -316,8 +322,10 @@ public class JapaneseswordModVariables {
 		clone.e = original.e;
 		clone.f = original.f;
 		clone.k = original.k;
-		clone.mana = original.mana;
 		clone.counnt = original.counnt;
+		clone.mana = original.mana;
+		clone.naninisiyoukana = original.naninisiyoukana;
+		clone.kaunnta = original.kaunnta;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -353,8 +361,10 @@ public class JapaneseswordModVariables {
 					variables.e = message.data.e;
 					variables.f = message.data.f;
 					variables.k = message.data.k;
-					variables.mana = message.data.mana;
 					variables.counnt = message.data.counnt;
+					variables.mana = message.data.mana;
+					variables.naninisiyoukana = message.data.naninisiyoukana;
+					variables.kaunnta = message.data.kaunnta;
 				}
 			});
 			context.setPacketHandled(true);

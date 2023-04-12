@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/tuvuaihenda",
+  "textures": {
+    "0": "japanesesword:blocks/tuvuaihenda",
+    "particle": "japanesesword:items/tetunokenn"
+  }
+}

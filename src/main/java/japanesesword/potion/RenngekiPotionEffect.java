@@ -31,7 +31,7 @@ public class RenngekiPotionEffect {
 
 	public static class EffectCustom extends Effect {
 		public EffectCustom() {
-			super(EffectType.NEUTRAL, 16777215);
+			super(EffectType.NEUTRAL, -1);
 			setRegistryName("renngeki");
 		}
 

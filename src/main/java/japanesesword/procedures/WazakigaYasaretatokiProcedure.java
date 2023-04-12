@@ -30,7 +30,7 @@ public class WazakigaYasaretatokiProcedure {
 						.isDone()
 				: false) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(KurutaimunasiPotionEffect.potion, (int) 120, (int) 1));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(KurutaimunasiPotionEffect.potion, (int) 300, (int) 1, (true), (false)));
 		}
 	}
 }

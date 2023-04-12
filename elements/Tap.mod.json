@@ -16,6 +16,22 @@
           "x": 349,
           "y": 230
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:naninisiyoukana>",
+          "color": {
+            "value": -16724788,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "Namaenaninisiyoukana"
+          },
+          "name": "<VAR:naninisiyoukana>",
+          "x": 0,
+          "y": 223
+        }
       }
     ],
     "baseTexture": "",

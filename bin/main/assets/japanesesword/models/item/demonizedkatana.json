@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/0526ngsdemon",
+  "textures": {
+    "0": "japanesesword:blocks/blood0526ngs",
+    "particle": "japanesesword:items/menndo"
+  }
+}

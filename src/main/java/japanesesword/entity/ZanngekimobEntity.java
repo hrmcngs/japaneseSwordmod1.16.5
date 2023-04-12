@@ -61,8 +61,7 @@ public class ZanngekimobEntity extends JapaneseswordModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
-		elements.items
-				.add(() -> new SpawnEggItem(entity, 16775930, 16777215, new Item.Properties().group(null)).setRegistryName("zanngekimob_spawn_egg"));
+		elements.items.add(() -> new SpawnEggItem(entity, -1286, -1, new Item.Properties().group(null)).setRegistryName("zanngekimob_spawn_egg"));
 	}
 
 	@Override

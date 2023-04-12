@@ -1,7 +1,0 @@
-{
-  "parent": "japanesesword:custom/mazic_wand",
-  "textures": {
-    "0": "japanesesword:blocks/mazic_wand",
-    "particle": "japanesesword:items/kuikatana"
-  }
-}

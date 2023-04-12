@@ -1,0 +1,13 @@
+{
+  "group": "buki",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "japanesesword:nezarazyoiyi"
+    }
+  ],
+  "result": {
+    "item": "japanesesword:n",
+    "count": 9
+  }
+}

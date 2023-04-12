@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/halloweenkama",
+  "textures": {
+    "0": "japanesesword:blocks/hallokama",
+    "particle": "japanesesword:items/kamaa"
+  }
+}

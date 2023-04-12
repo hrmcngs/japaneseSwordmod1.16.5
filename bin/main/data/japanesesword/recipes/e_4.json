@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "japanesesword:daiakatana"
+  },
+  "addition": {
+    "item": "japanesesword:daiazyui"
+  },
+  "result": {
+    "item": "japanesesword:kyoukadaiyamonndonokatana"
+  }
+}

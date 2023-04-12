@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "japanesesword:gin"
+    },
+    "1": {
+      "item": "japanesesword:gin"
+    },
+    "2": {
+      "item": "japanesesword:gin"
+    },
+    "3": {
+      "item": "japanesesword:gin"
+    },
+    "4": {
+      "item": "japanesesword:gin"
+    },
+    "5": {
+      "item": "japanesesword:gin"
+    },
+    "6": {
+      "item": "japanesesword:gin"
+    },
+    "7": {
+      "item": "japanesesword:gin"
+    },
+    "8": {
+      "item": "japanesesword:gin"
+    }
+  },
+  "result": {
+    "item": "japanesesword:ginnburokku",
+    "count": 1
+  }
+}

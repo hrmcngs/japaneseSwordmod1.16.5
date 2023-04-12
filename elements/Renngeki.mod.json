@@ -5,7 +5,7 @@
     "effectName": "renngeki",
     "icon": "katanaup.png",
     "color": {
-      "value": 16777215,
+      "value": -1,
       "falpha": 0.0
     },
     "isInstant": false,

@@ -1,0 +1,99 @@
+{
+  "g": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "japanesesword:jian_dezhan_ru1",
+        "stream": false
+      }
+    ]
+  },
+  "ne": {
+    "category": "music",
+    "subtitle": "subtitles.ne",
+    "sounds": [
+      {
+        "name": "japanesesword:dong_fang_feng_shen_lu__-neiteibuhueisu-_",
+        "stream": true
+      }
+    ]
+  },
+  "un": {
+    "category": "music",
+    "subtitle": "subtitles.un",
+    "sounds": [
+      {
+        "name": "japanesesword:dong_fang_hong_mo_xiang__-u.n.oenhabi_nu_nanoka-_yuan_qu_gao_yin_zhi___1",
+        "stream": true
+      }
+    ]
+  },
+  "ko": {
+    "category": "music",
+    "subtitle": "subtitles.ko",
+    "sounds": [
+      {
+        "name": "japanesesword:guang_you_she_guai_niao_shi__-till-when",
+        "stream": true
+      }
+    ]
+  },
+  "noiz": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "japanesesword:tutu4",
+        "stream": false
+      }
+    ]
+  },
+  "g2": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "japanesesword:jian_dezhan_ru3",
+        "stream": false
+      }
+    ]
+  },
+  "na": {
+    "category": "music",
+    "subtitle": "subtitles.na",
+    "sounds": [
+      {
+        "name": "japanesesword:naitoobunaitu",
+        "stream": true
+      }
+    ]
+  },
+  "ka": {
+    "category": "music",
+    "subtitle": "subtitles.ka",
+    "sounds": [
+      {
+        "name": "japanesesword:dong_fang_feng_shen_lu__-shen_galian_sitahuan_xiang_xiang_-_",
+        "stream": true
+      }
+    ]
+  },
+  "ti": {
+    "category": "music",
+    "subtitle": "subtitles.ti",
+    "sounds": [
+      {
+        "name": "japanesesword:th11_01.-di_ling_da_noqi_chuang_",
+        "stream": true
+      }
+    ]
+  },
+  "tu": {
+    "category": "music",
+    "subtitle": "subtitles.tu",
+    "sounds": [
+      {
+        "name": "japanesesword:dong_fang_yong_ye_chao__yue_madejie_ke_bu_si_noyan_yuan_qu__",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -35,7 +35,7 @@ public class MagickswordRenderer {
 
 	@OnlyIn(Dist.CLIENT)
 	public static class CustomRender extends EntityRenderer<MagickswordItem.ArrowCustomEntity> {
-		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/entities/katanadaisuki.png");
+		private static final ResourceLocation texture = new ResourceLocation("japanesesword:textures/entities/kuro2.png");
 
 		public CustomRender(EntityRendererManager renderManager) {
 			super(renderManager);

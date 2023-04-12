@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/katana5",
+  "textures": {
+    "0": "japanesesword:blocks/katana5",
+    "particle": "japanesesword:items/tetunokatana"
+  }
+}

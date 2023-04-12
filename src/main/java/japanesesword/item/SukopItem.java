@@ -25,7 +25,7 @@ public class SukopItem extends JapaneseswordModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ShovelItem(new IItemTier() {
 			public int getMaxUses() {
-				return 300;
+				return 5000;
 			}
 
 			public float getEfficiency() {

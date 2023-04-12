@@ -1,7 +1,0 @@
-{
-  "parent": "japanesesword:custom/bookrea",
-  "textures": {
-    "0": "japanesesword:blocks/reabook",
-    "particle": "japanesesword:items/download"
-  }
-}

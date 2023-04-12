@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "backuptestmod:items/dream_bow_pulling_0"
+    }
+}

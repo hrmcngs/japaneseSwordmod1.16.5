@@ -5290,7 +5290,6 @@ public class Halloween20221031kamaYoukuritukusitatokiProcedure {
 											if (entityiterator instanceof LivingEntity)
 												((LivingEntity) entityiterator)
 														.addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 1));
-											entityiterator.setFire((int) 15);
 											{
 												Entity _ent = entityiterator;
 												if (!_ent.world.isRemote && _ent.world.getServer() != null) {

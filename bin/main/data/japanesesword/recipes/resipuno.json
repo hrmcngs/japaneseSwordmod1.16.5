@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "japanesesword:japanese_sword"
+    },
+    "1": {
+      "item": "japanesesword:norooinokatana"
+    },
+    "2": {
+      "item": "japanesesword:ancientbooks"
+    },
+    "3": {
+      "item": "japanesesword:noroi"
+    },
+    "4": {
+      "item": "japanesesword:yuugenkenn"
+    },
+    "5": {
+      "item": "japanesesword:bookblood"
+    },
+    "6": {
+      "item": "japanesesword:otachibloodcurse"
+    },
+    "7": {
+      "item": "japanesesword:naihu"
+    },
+    "8": {
+      "item": "japanesesword:booktokubetu"
+    }
+  },
+  "result": {
+    "item": "japanesesword:katanakatana",
+    "count": 1
+  }
+}

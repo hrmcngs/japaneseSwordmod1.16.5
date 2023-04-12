@@ -23,7 +23,7 @@ public class TokubetunoYoukuritukusitatokiProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(GPotionEffect.potion, (int) 480, (int) 1, (true), (false)));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(GPotionEffect.potion, (int) 300, (int) 1, (true), (false)));
 		if (entity instanceof PlayerEntity)
 			((PlayerEntity) entity).getCooldownTracker().setCooldown(TokubetunoItem.block, (int) 50);
 	}

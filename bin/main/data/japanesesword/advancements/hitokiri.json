@@ -1,0 +1,29 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "japanesesword:j"
+    },
+    "title": {
+      "translate": "advancements.hitokiri.title"
+    },
+    "description": {
+      "translate": "advancements.hitokiri.descr"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "hitokiri": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "japanesesword:saikyounokatana"
+    ]
+  }
+}

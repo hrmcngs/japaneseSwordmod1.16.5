@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "kamaitem",
 	"textures": {
 		"0": "スクリーンショット 2022-06-19 10.04.13",
 		"1": "スクリーンショット 2022-06-19 10.03.24",
@@ -374,6 +375,8 @@
 			"name": "group",
 			"origin": [0, 0, 0],
 			"color": 0,
+			"nbt": "{}",
+			"armAnimationEnabled": false,
 			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
 		}
 	]

@@ -9,8 +9,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -19,9 +21,16 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import java.util.Map;
 import java.util.HashMap;
 
+import japanesesword.potion.NoroiwotukeruPotionEffect;
 import japanesesword.potion.BloodPotionEffect;
 
+import japanesesword.item.StreyOuterArmorItem;
+import japanesesword.item.PoisonbookItem;
 import japanesesword.item.DemonizedkatanaItem;
+import japanesesword.item.DemonizedKatana1Item;
+import japanesesword.item.DemonScytheItem;
+import japanesesword.item.BookbloodItem;
+import japanesesword.item.BlackStreyOuterArmorItem;
 
 import japanesesword.enchantment.KillEnchantment;
 import japanesesword.enchantment.DemonizedEnchantment;
@@ -109,9 +118,9 @@ public class Kill1Procedure {
 														: ItemStack.EMPTY))));
 				}
 			}
-			if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-					? ((ServerPlayerEntity) entity).getAdvancements()
-							.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
+			if (((sourceentity instanceof ServerPlayerEntity) && (sourceentity.world instanceof ServerWorld))
+					? ((ServerPlayerEntity) sourceentity).getAdvancements()
+							.getProgress(((MinecraftServer) ((ServerPlayerEntity) sourceentity).server).getAdvancementManager()
 									.getAdvancement(new ResourceLocation("japanesesword:tidaisuki")))
 							.isDone()
 					: false) {
@@ -122,7 +131,11 @@ public class Kill1Procedure {
 		}
 		if (!world.isRemote()) {
 			if (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)
-					.getItem() == DemonizedkatanaItem.block) {
+					.getItem() == DemonizedKatana1Item.block
+					|| ((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)
+							.getItem() == DemonizedkatanaItem.block
+					|| ((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)
+							.getItem() == DemonScytheItem.block) {
 				if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
 						((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 					if (entity instanceof LivingEntity)
@@ -145,6 +158,58 @@ public class Kill1Procedure {
 						((LivingEntity) sourceentity)
 								.setHealth((float) (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHealth() : -1) + 1));
 				}
+			}
+		}
+		if (!world.isRemote()) {
+			if (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
+					.getItem() == PoisonbookItem.block
+					|| ((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)
+							.getItem() == PoisonbookItem.block) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 300, (int) 5, (true), (false)));
+			}
+		}
+		if (!world.isRemote()) {
+			if (((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemOffhand() : ItemStack.EMPTY)
+					.getItem() == BookbloodItem.block
+					|| ((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)
+							.getItem() == BookbloodItem.block) {
+				entity.setFire((int) 15);
+			}
+		}
+		if (!world.isRemote()) {
+			if (((sourceentity instanceof LivingEntity)
+					? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.HEAD)
+					: ItemStack.EMPTY).getItem() == BlackStreyOuterArmorItem.helmet
+					&& ((sourceentity instanceof LivingEntity)
+							? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.CHEST)
+							: ItemStack.EMPTY).getItem() == BlackStreyOuterArmorItem.body
+					&& ((sourceentity instanceof LivingEntity)
+							? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.LEGS)
+							: ItemStack.EMPTY).getItem() == BlackStreyOuterArmorItem.legs
+					&& ((sourceentity instanceof LivingEntity)
+							? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.FEET)
+							: ItemStack.EMPTY).getItem() == BlackStreyOuterArmorItem.boots) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity)
+							.addPotionEffect(new EffectInstance(NoroiwotukeruPotionEffect.potion, (int) 300, (int) 5, (true), (false)));
+			}
+		}
+		if (!world.isRemote()) {
+			if (((sourceentity instanceof LivingEntity)
+					? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.HEAD)
+					: ItemStack.EMPTY).getItem() == StreyOuterArmorItem.helmet
+					&& ((sourceentity instanceof LivingEntity)
+							? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.CHEST)
+							: ItemStack.EMPTY).getItem() == StreyOuterArmorItem.body
+					&& ((sourceentity instanceof LivingEntity)
+							? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.LEGS)
+							: ItemStack.EMPTY).getItem() == StreyOuterArmorItem.legs
+					&& ((sourceentity instanceof LivingEntity)
+							? ((LivingEntity) sourceentity).getItemStackFromSlot(EquipmentSlotType.FEET)
+							: ItemStack.EMPTY).getItem() == StreyOuterArmorItem.boots) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 300, (int) 3, (true), (false)));
 			}
 		}
 	}

@@ -1,0 +1,8 @@
+{
+  "parent": "japanesesword:custom/ying_guan_jian_",
+  "textures": {
+    "0": "japanesesword:blocks/ying_guan_jian__bing_",
+    "1": "japanesesword:blocks/ying_guan_jian_",
+    "particle": "japanesesword:items/tetunokatana"
+  }
+}

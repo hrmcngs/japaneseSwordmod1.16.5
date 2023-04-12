@@ -8,6 +8,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.World;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
@@ -15,6 +16,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 import japanesesword.item.NorooinokatanaItem;
+import japanesesword.item.NoroharetakatanaItem;
 
 import japanesesword.JapaneseswordModVariables;
 
@@ -66,6 +68,11 @@ public class NoroharetakatanamobugaturudeGongJisaretatokiProcedure {
 		}
 		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new JapaneseswordModVariables.PlayerVariables())).c == 4) {
+			if (entity instanceof PlayerEntity) {
+				ItemStack _stktoremove = new ItemStack(NoroharetakatanaItem.block);
+				((PlayerEntity) entity).inventory.func_234564_a_(p -> _stktoremove.getItem() == p.getItem(), (int) 1,
+						((PlayerEntity) entity).container.func_234641_j_());
+			}
 			{
 				ItemStack _isc = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
 				final ItemStack _setstack = new ItemStack(NorooinokatanaItem.block);

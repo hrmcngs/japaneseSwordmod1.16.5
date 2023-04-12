@@ -141,7 +141,7 @@ public class YabaiaitemuBlock extends JapaneseswordModElements.ModElement {
 				}
 			};
 			configuredFeature = feature.withConfiguration(new BlockStateFeatureConfig(block.getDefaultState()))
-					.withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(5)));
+					.withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(1)));
 			event.getRegistry().register(feature.setRegistryName("yabaiaitemu_lakes"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("japanesesword:yabaiaitemu_lakes"), configuredFeature);
 		}

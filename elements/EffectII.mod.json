@@ -5,7 +5,7 @@
     "effectName": "effectⅡ",
     "icon": "are.png",
     "color": {
-      "value": 0,
+      "value": -16777216,
       "falpha": 0.0
     },
     "isInstant": false,

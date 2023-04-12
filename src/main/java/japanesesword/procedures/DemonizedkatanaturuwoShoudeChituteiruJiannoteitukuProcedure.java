@@ -11,6 +11,9 @@ import java.util.Map;
 
 import japanesesword.potion.Arrow2PotionEffect;
 
+import japanesesword.item.DemonScytheItem;
+import japanesesword.item.BooktokubetuItem;
+
 import japanesesword.enchantment.HasiruEnchantment;
 import japanesesword.enchantment.DemonizedEnchantment;
 import japanesesword.enchantment.AnsiEnchantment;
@@ -60,6 +63,30 @@ public class DemonizedkatanaturuwoShoudeChituteiruJiannoteitukuProcedure {
 		} else {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 2, (true), (false)));
+		}
+		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 6
+				&& ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+						.getItem() == BooktokubetuItem.block) {
+			{
+				String _setval = "\u7A81\u9032";
+				entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.nanndarou = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
+		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 5
+				&& ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.getItem() == DemonScytheItem.block) {
+			{
+				String _setval = "\u5F15\u304D\u5BC4\u305B";
+				entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.nanndarou = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
 	}
 }

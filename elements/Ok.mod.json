@@ -45,31 +45,6 @@
             "priceMultiplier": 0.0
           }
         ]
-      },
-      {
-        "villagerProfession": {
-          "value": "CLERIC"
-        },
-        "entries": [
-          {
-            "price1": {
-              "value": "Blocks.EMERALD_BLOCK"
-            },
-            "countPrice1": 64,
-            "price2": {
-              "value": "Blocks.BEACON"
-            },
-            "countPrice2": 64,
-            "offer": {
-              "value": "CUSTOM:Rea"
-            },
-            "countOffer": 1,
-            "level": 5,
-            "maxTrades": 1,
-            "xp": 343,
-            "priceMultiplier": 1.0
-          }
-        ]
       }
     ]
   }

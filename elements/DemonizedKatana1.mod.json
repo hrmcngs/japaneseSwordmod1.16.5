@@ -1,0 +1,36 @@
+{
+  "_fv": 33,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "menndo",
+    "customModelName": "katana343:default",
+    "name": "§4§k§o§ldemonizedKatana343",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:Buki"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 1,
+    "efficiency": 4.0,
+    "attackSpeed": 100.0,
+    "enchantability": 2,
+    "damageVsEntity": 8.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": true,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "DemonizedKatana1Youkuritukusitatoki"
+    },
+    "onItemInUseTick": {
+      "name": "DemonizedkatanaturuwoShoudeChituteiruJiannoteituku"
+    },
+    "onStoppedUsing": {
+      "name": "DemonizedkatanapureiyagaShiYongwoTingZhisitaShi"
+    }
+  }
+}

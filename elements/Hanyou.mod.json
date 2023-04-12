@@ -6,14 +6,14 @@
     "textureHelmet": "tekitou_head",
     "enableBody": true,
     "textureBody": "hanyou",
-    "enableLeggings": false,
+    "enableLeggings": true,
     "textureLeggings": "tekitou_leggings",
-    "enableBoots": false,
+    "enableBoots": true,
     "textureBoots": "tekitou_boots",
     "creativeTab": {
       "value": "CUSTOM:Buki"
     },
-    "armorTextureFile": "uraomote",
+    "armorTextureFile": "reikonnsiro",
     "helmetName": "Hannyou ヘルメット",
     "bodyName": "Hannyou 個の胴着",
     "leggingsName": "Hannyou 個のレギンス",

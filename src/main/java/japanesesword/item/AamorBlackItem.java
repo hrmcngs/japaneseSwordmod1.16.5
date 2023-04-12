@@ -89,7 +89,7 @@ public class AamorBlackItem extends JapaneseswordModElements.ModElement {
 			@OnlyIn(Dist.CLIENT)
 			public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
 				BipedModel armorModel = new BipedModel(1);
-				armorModel.bipedHead = new ModelHollow_helmet2().Head;
+				armorModel.bipedHead = new ModelSkyBlock_armor_hollow().Head;
 				armorModel.isSneak = living.isSneaking();
 				armorModel.isSitting = defaultModel.isSitting;
 				armorModel.isChild = living.isChild();
@@ -98,7 +98,7 @@ public class AamorBlackItem extends JapaneseswordModElements.ModElement {
 
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/entities/hollow_helmet1_.png";
+				return "japanesesword:textures/entities/skyblock_armor_hollow2.png";
 			}
 		}.setRegistryName("aamor_black_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -121,18 +121,18 @@ public class AamorBlackItem extends JapaneseswordModElements.ModElement {
 		}.setRegistryName("aamor_black_boots"));
 	}
 
-	// Made with Blockbench 4.6.1
+	// Made with Blockbench 4.6.5
 	// Exported for Minecraft version 1.15 - 1.16 with MCP mappings
 	// Paste this class into your mod and generate all required imports
-	public static class ModelHollow_helmet2 extends EntityModel<Entity> {
+	public static class ModelSkyBlock_armor_hollow extends EntityModel<Entity> {
 		private final ModelRenderer Head;
 
-		public ModelHollow_helmet2() {
+		public ModelSkyBlock_armor_hollow() {
 			textureWidth = 32;
 			textureHeight = 32;
 			Head = new ModelRenderer(this);
 			Head.setRotationPoint(0.0F, 0.0F, 0.0F);
-			Head.setTextureOffset(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 1.5F, false);
+			Head.setTextureOffset(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
 		}
 
 		@Override

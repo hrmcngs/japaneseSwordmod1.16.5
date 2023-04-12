@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "japanesesword:mint_boots"
+  },
+  "addition": {
+    "item": "japanesesword:n"
+  },
+  "result": {
+    "item": "japanesesword:nezarazyouigokan_boots"
+  }
+}

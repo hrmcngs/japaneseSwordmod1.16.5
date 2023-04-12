@@ -180,7 +180,7 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 							_ent.world.getServer().getCommandManager().handleCommand(
 									_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-									"particle item redstone ~ ~1 ~ 0.5 0.5 0.5 0.3 10 force");
+									"particle item redstone ~ ~1 ~ 0.5 0.5 0.5 0.3 5 force");
 						}
 					}
 					MinecraftForge.EVENT_BUS.unregister(this);

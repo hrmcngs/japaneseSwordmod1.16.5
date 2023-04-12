@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "tyoutou",
+        "1": "tyoutouttuka"
+      },
+      "name": "default"
+    }
+  }
+}

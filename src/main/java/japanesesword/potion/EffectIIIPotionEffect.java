@@ -33,7 +33,7 @@ public class EffectIIIPotionEffect {
 
 	public static class EffectCustom extends Effect {
 		public EffectCustom() {
-			super(EffectType.NEUTRAL, 16777215);
+			super(EffectType.NEUTRAL, -1);
 			setRegistryName("effect_iii");
 		}
 

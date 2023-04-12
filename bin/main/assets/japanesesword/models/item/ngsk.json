@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/0526ngsk",
+  "textures": {
+    "0": "japanesesword:blocks/0526ngska",
+    "particle": "japanesesword:items/a"
+  }
+}

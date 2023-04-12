@@ -90,6 +90,18 @@ public class HannyouItem extends JapaneseswordModElements.ModElement {
 				return "japanesesword:textures/models/armor/aaaaaaaaaae_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
 		}.setRegistryName("hannyou_chestplate"));
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(BukiItemGroup.tab)) {
+			@Override
+			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+				return "japanesesword:textures/models/armor/aaaaaaaaaae_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+			}
+		}.setRegistryName("hannyou_leggings"));
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(BukiItemGroup.tab)) {
+			@Override
+			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+				return "japanesesword:textures/models/armor/aaaaaaaaaae_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+			}
+		}.setRegistryName("hannyou_boots"));
 	}
 
 }

@@ -6,9 +6,9 @@
     "textureHelmet": "tekitou_head",
     "enableBody": true,
     "textureBody": "hannyou",
-    "enableLeggings": false,
+    "enableLeggings": true,
     "textureLeggings": "tekitou_leggings",
-    "enableBoots": false,
+    "enableBoots": true,
     "textureBoots": "tekitou_boots",
     "creativeTab": {
       "value": "CUSTOM:Buki"

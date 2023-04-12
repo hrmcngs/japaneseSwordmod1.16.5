@@ -25,7 +25,7 @@ public class AxekatanaItem extends JapaneseswordModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new AxeItem(new IItemTier() {
 			public int getMaxUses() {
-				return 250;
+				return 4000;
 			}
 
 			public float getEfficiency() {

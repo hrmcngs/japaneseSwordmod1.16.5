@@ -28,6 +28,8 @@ import java.util.Collections;
 
 import japanesesword.item.PoisonbookItem;
 import japanesesword.item.NgsoItem;
+import japanesesword.item.DemonizedkatanaItem;
+import japanesesword.item.DemonScytheItem;
 import japanesesword.item.BookbloodItem;
 
 import japanesesword.enchantment.KillEnchantment;
@@ -91,8 +93,15 @@ public class Effect10ehuekutogaYouXiaoShinoteitukuProcedure {
 						0.1, 0.1, 0.1, 0);
 			}
 			if (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getItem() == NgsoItem.block
+					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY).getItem() == NgsoItem.block
+					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+							.getItem() == DemonScytheItem.block
 					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
-							.getItem() == NgsoItem.block) {
+							.getItem() == DemonScytheItem.block
+					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+							.getItem() == DemonizedkatanaItem.block
+					|| ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+							.getItem() == DemonizedkatanaItem.block) {
 				{
 					List<Entity> _entfound = world
 							.getEntitiesWithinAABB(Entity.class,
