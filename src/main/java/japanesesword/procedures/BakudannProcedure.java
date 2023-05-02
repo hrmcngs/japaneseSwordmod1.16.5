@@ -67,13 +67,11 @@ public class BakudannProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		if (!world.isRemote()) {
-			if ((EnchantmentHelper.getEnchantmentLevel(BakudanEnchantment.enchantment,
-					((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+			if ((EnchantmentHelper.getEnchantmentLevel(BakudanEnchantment.enchantment, ((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 				{
 					Entity _ent = entity;
 					if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-						_ent.world.getServer().getCommandManager()
-								.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/summon tnt");
+						_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/summon tnt");
 					}
 				}
 			}

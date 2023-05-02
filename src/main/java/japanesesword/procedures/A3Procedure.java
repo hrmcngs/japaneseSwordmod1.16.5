@@ -23,8 +23,7 @@ public class A3Procedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof ServerPlayerEntity) {
-			Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-					.getAdvancement(new ResourceLocation("japanesesword:zyoudan"));
+			Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:zyoudan"));
 			AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 			if (!_ap.isDone()) {
 				Iterator _iterator = _ap.getRemaningCriteria().iterator();

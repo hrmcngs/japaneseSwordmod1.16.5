@@ -13,11 +13,12 @@ import net.minecraft.potion.Effect;
 import net.minecraft.entity.LivingEntity;
 
 import java.util.stream.Stream;
+
+import japanesesword.procedures.EffectVehuekutogaYouXiaoShinoteitukuProcedure;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
-
-import japanesesword.procedures.EffectVehuekutogaYouXiaoShinoteitukuProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EffectVPotionEffect {
@@ -72,10 +73,8 @@ public class EffectVPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			EffectVehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			EffectVehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(
+					Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

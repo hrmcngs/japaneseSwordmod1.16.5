@@ -84,7 +84,7 @@ public class AamorBlackItem extends JapaneseswordModElements.ModElement {
 				return 1f;
 			}
 		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)) {
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT).isImmuneToFire()) {
 			@Override
 			@OnlyIn(Dist.CLIENT)
 			public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
@@ -141,8 +141,7 @@ public class AamorBlackItem extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
-		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-				float alpha) {
+		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 			Head.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		}
 

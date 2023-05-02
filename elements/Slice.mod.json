@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "potioneffect",
   "definition": {
     "effectName": "slice",
@@ -12,7 +12,7 @@
     "isBad": false,
     "isBenefitical": false,
     "renderStatusInInventory": false,
-    "renderStatusInHUD": false,
+    "renderStatusInHUD": true,
     "onStarted": {
       "name": "SliceposiyonnoXiaoGuogaKaiShiShiYongsaretatoki"
     },

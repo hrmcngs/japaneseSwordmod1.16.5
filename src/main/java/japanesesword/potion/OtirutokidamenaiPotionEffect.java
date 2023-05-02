@@ -72,8 +72,7 @@ public class OtirutokidamenaiPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			OtirutokidamenaiehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			OtirutokidamenaiehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

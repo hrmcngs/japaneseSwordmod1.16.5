@@ -7,9 +7,8 @@ import net.minecraft.enchantment.EnchantmentHelper;
 
 import java.util.Map;
 
-import japanesesword.enchantment.KillEnchantment;
-
 import japanesesword.JapaneseswordMod;
+import japanesesword.enchantment.KillEnchantment;
 
 public class KilltagProcedure {
 
@@ -20,8 +19,7 @@ public class KilltagProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			entity.getPersistentData().putBoolean("killtag343014", (true));
 		} else {
 			entity.getPersistentData().putBoolean("killtag343014", (false));

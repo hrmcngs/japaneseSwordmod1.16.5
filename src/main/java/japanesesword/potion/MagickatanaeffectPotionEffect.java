@@ -13,11 +13,12 @@ import net.minecraft.potion.Effect;
 import net.minecraft.entity.LivingEntity;
 
 import java.util.stream.Stream;
+
+import japanesesword.procedures.MagickatanaeffectehuekutogaYouXiaoShinoteitukuProcedure;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
-
-import japanesesword.procedures.MagickatanaeffectehuekutogaYouXiaoShinoteitukuProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MagickatanaeffectPotionEffect {
@@ -73,8 +74,7 @@ public class MagickatanaeffectPotionEffect {
 			double z = entity.getPosZ();
 
 			MagickatanaeffectehuekutogaYouXiaoShinoteitukuProcedure
-					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

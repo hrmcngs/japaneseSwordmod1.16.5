@@ -16,10 +16,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.OtachibloodenteiteigaaitemuwoZhentutaShiProcedure;
-
 import japanesesword.itemgroup.BukiItemGroup;
-
+import japanesesword.procedures.OtachibloodenteiteigaaitemuwoZhentutaShiProcedure;
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
@@ -66,11 +64,9 @@ public class OtachiItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				World world = entity.world;
 
-				OtachibloodenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				OtachibloodenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 		}.setRegistryName("otachi"));

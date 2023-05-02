@@ -20,10 +20,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.DemonKatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.DemonKatanamobugaturudeGongJisaretatokiProcedure;
-
 import japanesesword.JapaneseswordModElements;
+import japanesesword.procedures.DemonKatanamobugaturudeGongJisaretatokiProcedure;
+import japanesesword.procedures.DemonKatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
 
 @JapaneseswordModElements.ModElement.Tag
 public class DemonKatanaItem extends JapaneseswordModElements.ModElement {
@@ -69,11 +68,9 @@ public class DemonKatanaItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				World world = entity.world;
 
-				DemonKatanamobugaturudeGongJisaretatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				DemonKatanamobugaturudeGongJisaretatokiProcedure
+						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -85,11 +82,9 @@ public class DemonKatanaItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				if (selected)
 
-					DemonKatanaturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream
-							.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-									new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-									new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					DemonKatanaturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(
+							Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 
 			@Override

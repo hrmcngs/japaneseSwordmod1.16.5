@@ -19,8 +19,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.NgsoturuwoShoudeChituteiruJiannoteitukuProcedure;
 import japanesesword.procedures.Halloween20221031kamaYoukuritukusitatokiProcedure;
+import japanesesword.procedures.NgsoturuwoShoudeChituteiruJiannoteitukuProcedure;
 
 import japanesesword.itemgroup.EventItemGroup;
 
@@ -70,11 +70,9 @@ public class Halloween20221031kamaItem extends JapaneseswordModElements.ModEleme
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				Halloween20221031kamaYoukuritukusitatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				Halloween20221031kamaYoukuritukusitatokiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -86,8 +84,7 @@ public class Halloween20221031kamaItem extends JapaneseswordModElements.ModEleme
 				double z = entity.getPosZ();
 				if (selected)
 
-					NgsoturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					NgsoturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("halloween_20221031kama"));
 	}

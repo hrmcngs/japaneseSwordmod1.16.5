@@ -19,8 +19,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.TuvaturuwoShoudeChituteiruJiannoteitukuProcedure;
 import japanesesword.procedures.TuvaYoukuritukusitatokiProcedure;
+import japanesesword.procedures.TuvaturuwoShoudeChituteiruJiannoteitukuProcedure;
 
 import japanesesword.itemgroup.BukiItemGroup;
 
@@ -70,11 +70,9 @@ public class TuvaItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				TuvaYoukuritukusitatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				TuvaYoukuritukusitatokiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -86,8 +84,7 @@ public class TuvaItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				if (selected)
 
-					TuvaturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					TuvaturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("tuva"));
 	}

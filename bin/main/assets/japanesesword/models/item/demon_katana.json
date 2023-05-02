@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/ironkatana23",
+  "textures": {
+    "1": "japanesesword:blocks/netheritekatana",
+    "particle": "japanesesword:items/nazarakoime"
+  }
+}

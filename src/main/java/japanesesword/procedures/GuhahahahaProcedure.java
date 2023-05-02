@@ -76,8 +76,7 @@ public class GuhahahahaProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new JapaneseswordModVariables.PlayerVariables())).counnt < 1) {
+		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new JapaneseswordModVariables.PlayerVariables())).counnt < 1) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {

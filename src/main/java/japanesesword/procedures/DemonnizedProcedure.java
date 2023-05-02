@@ -13,9 +13,8 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import java.util.Map;
 import java.util.HashMap;
 
-import japanesesword.enchantment.DemonizedEnchantment;
-
 import japanesesword.JapaneseswordMod;
+import japanesesword.enchantment.DemonizedEnchantment;
 
 public class DemonnizedProcedure {
 	@Mod.EventBusSubscriber
@@ -53,8 +52,7 @@ public class DemonnizedProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1) + 1));
 		}

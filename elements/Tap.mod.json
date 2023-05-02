@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "overlay",
   "definition": {
     "priority": "NORMAL",
@@ -7,12 +7,14 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:nanndarou>",
+          "name": "label_varnanndarou",
+          "text": {
+            "fixedValue": "<VAR:nanndarou>"
+          },
           "color": {
             "value": -6710887,
             "falpha": 0.0
           },
-          "name": "<VAR:nanndarou>",
           "x": 349,
           "y": 230
         }
@@ -20,7 +22,10 @@
       {
         "type": "label",
         "data": {
-          "text": "<VAR:naninisiyoukana>",
+          "name": "label_varnaninisiyoukana",
+          "text": {
+            "fixedValue": "<VAR:naninisiyoukana>"
+          },
           "color": {
             "value": -16724788,
             "falpha": 0.0
@@ -28,7 +33,6 @@
           "displayCondition": {
             "name": "Namaenaninisiyoukana"
           },
-          "name": "<VAR:naninisiyoukana>",
           "x": 0,
           "y": 223
         }

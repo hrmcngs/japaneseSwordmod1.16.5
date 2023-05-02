@@ -18,8 +18,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.EffectIIIposiyonXiaoGuogaQieretaShiProcedure;
 import japanesesword.procedures.EffectIIIehuekutogaYouXiaoShinoteitukuProcedure;
+import japanesesword.procedures.EffectIIIposiyonXiaoGuogaQieretaShiProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EffectIIIPotionEffect {
@@ -74,10 +74,8 @@ public class EffectIIIPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			EffectIIIehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			EffectIIIehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(
+					Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -88,8 +86,7 @@ public class EffectIIIPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			EffectIIIposiyonXiaoGuogaQieretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			EffectIIIposiyonXiaoGuogaQieretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

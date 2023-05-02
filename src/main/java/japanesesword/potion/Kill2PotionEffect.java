@@ -73,8 +73,7 @@ public class Kill2PotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			Kill2posiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			Kill2posiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

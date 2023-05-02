@@ -20,7 +20,7 @@
       "conditions": {
         "items": [
           {
-            "item": "japanesesword:rea",
+            "item": "japanesesword:deleted_mod_element",
             "count": {
               "min": 1,
               "max": 1

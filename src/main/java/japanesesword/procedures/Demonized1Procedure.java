@@ -11,9 +11,8 @@ import java.util.Map;
 
 import japanesesword.potion.Arrow2PotionEffect;
 
-import japanesesword.enchantment.DemonizedEnchantment;
-
 import japanesesword.JapaneseswordMod;
+import japanesesword.enchantment.DemonizedEnchantment;
 
 public class Demonized1Procedure {
 
@@ -24,23 +23,19 @@ public class Demonized1Procedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow2PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
 		}
-		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow2PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
 		}
-		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HUNGER, (int) 1, (int) 4, (true), (false)));
 		}
-		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(DemonizedEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HUNGER, (int) 1, (int) 4, (true), (false)));
 		}

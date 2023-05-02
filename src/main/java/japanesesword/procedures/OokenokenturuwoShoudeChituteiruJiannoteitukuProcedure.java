@@ -28,22 +28,15 @@ public class OokenokenturuwoShoudeChituteiruJiannoteitukuProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
 		}
 		if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-				? ((ServerPlayerEntity) entity).getAdvancements()
-						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-								.getAdvancement(new ResourceLocation("japanesesword:kennkaku")))
-						.isDone()
+				? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:kennkaku"))).isDone()
 				: false)
 				|| (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-						? ((ServerPlayerEntity) entity).getAdvancements()
-								.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-										.getAdvancement(new ResourceLocation("japanesesword:ounozisseki")))
-								.isDone()
+						? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:ounozisseki"))).isDone()
 						: false)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 1, (true), (false)));

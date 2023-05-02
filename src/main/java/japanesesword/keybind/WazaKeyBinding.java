@@ -37,8 +37,7 @@ public class WazaKeyBinding extends JapaneseswordModElements.ModElement {
 
 	public WazaKeyBinding(JapaneseswordModElements instance) {
 		super(instance, 101);
-		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
-				KeyBindingPressedMessage::handler);
+		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new, KeyBindingPressedMessage::handler);
 	}
 
 	@Override
@@ -99,8 +98,7 @@ public class WazaKeyBinding extends JapaneseswordModElements.ModElement {
 			return;
 		if (type == 0) {
 
-			WazakigaYasaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			WazakigaYasaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

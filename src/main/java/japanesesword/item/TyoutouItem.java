@@ -20,8 +20,8 @@ import java.util.HashMap;
 import java.util.Collections;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.TyoutouturuwoShoudeChituteiruJiannoteitukuProcedure;
 import japanesesword.procedures.TyoutouYoukuritukusitatokiProcedure;
+import japanesesword.procedures.TyoutouturuwoShoudeChituteiruJiannoteitukuProcedure;
 
 import japanesesword.itemgroup.BukiItemGroup;
 
@@ -71,11 +71,9 @@ public class TyoutouItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				TyoutouYoukuritukusitatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				TyoutouYoukuritukusitatokiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 

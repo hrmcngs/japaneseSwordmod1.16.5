@@ -7,9 +7,8 @@ import net.minecraft.entity.Entity;
 
 import java.util.Map;
 
-import japanesesword.item.KamanoyoteiItem;
-
 import japanesesword.JapaneseswordMod;
+import japanesesword.item.KamanoyoteiItem;
 
 public class NoKamaroienteiteigaaitemuwoZhentutaShiProcedure {
 
@@ -31,7 +30,6 @@ public class NoKamaroienteiteigaaitemuwoZhentutaShiProcedure {
 							entityToSpawn.setShooter(shooter);
 							entityToSpawn.setDamage(damage);
 							entityToSpawn.setKnockbackStrength(knockback);
-							entityToSpawn.setSilent(true);
 
 							return entityToSpawn;
 						}

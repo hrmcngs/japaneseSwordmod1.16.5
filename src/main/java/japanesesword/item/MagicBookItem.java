@@ -17,10 +17,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.MagicBookYoukuritukusitatokiProcedure;
-
 import japanesesword.itemgroup.BukiItemGroup;
-
+import japanesesword.procedures.MagicBookYoukuritukusitatokiProcedure;
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
@@ -49,6 +47,11 @@ public class MagicBookItem extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
+		public int getUseDuration(ItemStack itemstack) {
+			return 0;
+		}
+
+		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
 		}
@@ -61,8 +64,7 @@ public class MagicBookItem extends JapaneseswordModElements.ModElement {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			MagicBookYoukuritukusitatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			MagicBookYoukuritukusitatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return ar;
 		}
 	}

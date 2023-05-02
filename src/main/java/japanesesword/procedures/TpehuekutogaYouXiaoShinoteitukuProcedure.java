@@ -72,14 +72,11 @@ public class TpehuekutogaYouXiaoShinoteitukuProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity.getPersistentData().getBoolean("tp") == true) {
 			{
-				List<Entity> _entfound = world
-						.getEntitiesWithinAABB(Entity.class,
-								new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
-						.stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-							}
-						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null).stream().sorted(new Object() {
+					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+					}
+				}.compareDistOf(x, y, z)).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof MobEntity) {
@@ -111,26 +108,18 @@ public class TpehuekutogaYouXiaoShinoteitukuProcedure {
 										Entity _ent = entity;
 										_ent.setPositionAndUpdate((entityiterator.getPosX()), (entityiterator.getPosY()), (entityiterator.getPosZ()));
 										if (_ent instanceof ServerPlayerEntity) {
-											((ServerPlayerEntity) _ent).connection.setPlayerLocation((entityiterator.getPosX()),
-													(entityiterator.getPosY()), (entityiterator.getPosZ()), _ent.rotationYaw, _ent.rotationPitch,
-													Collections.emptySet());
+											((ServerPlayerEntity) _ent).connection.setPlayerLocation((entityiterator.getPosX()), (entityiterator.getPosY()), (entityiterator.getPosZ()), _ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
 										}
 									}
 									if (world instanceof ServerWorld) {
-										((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()),
-												(entityiterator.getPosY() + 1.8), (entityiterator.getPosZ()), (int) 1, 0.1, 0.1, 0.1, 0.2);
+										((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()), (entityiterator.getPosY() + 1.8), (entityiterator.getPosZ()), (int) 1, 0.1, 0.1, 0.1, 0.2);
 									}
 									if (world instanceof World && !world.isRemote()) {
-										((World) world).playSound(null,
-												new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
-												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-														.getValue(new ResourceLocation("entity.player.attack.sweep")),
-												SoundCategory.NEUTRAL, (float) 0.5, (float) 0.8);
+										((World) world).playSound(null, new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
+												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.sweep")), SoundCategory.NEUTRAL, (float) 0.5, (float) 0.8);
 									} else {
 										((World) world).playSound((entityiterator.getPosX()), (entityiterator.getPosY()), (entityiterator.getPosZ()),
-												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
-														.getValue(new ResourceLocation("entity.player.attack.sweep")),
-												SoundCategory.NEUTRAL, (float) 0.5, (float) 0.8, false);
+												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.attack.sweep")), SoundCategory.NEUTRAL, (float) 0.5, (float) 0.8, false);
 									}
 								}
 							}
@@ -139,14 +128,11 @@ public class TpehuekutogaYouXiaoShinoteitukuProcedure {
 				}
 			}
 			{
-				List<Entity> _entfound = world
-						.getEntitiesWithinAABB(Entity.class,
-								new AxisAlignedBB(x - (2 / 2d), y - (2 / 2d), z - (2 / 2d), x + (2 / 2d), y + (2 / 2d), z + (2 / 2d)), null)
-						.stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-							}
-						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(x - (2 / 2d), y - (2 / 2d), z - (2 / 2d), x + (2 / 2d), y + (2 / 2d), z + (2 / 2d)), null).stream().sorted(new Object() {
+					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+					}
+				}.compareDistOf(x, y, z)).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof MobEntity) {
@@ -215,8 +201,7 @@ public class TpehuekutogaYouXiaoShinoteitukuProcedure {
 					if (_ent instanceof ServerPlayerEntity) {
 						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
 					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
-						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-								.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
+						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection().getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 						return _npi != null && _npi.getGameType() == GameType.CREATIVE;
 					}
 					return false;

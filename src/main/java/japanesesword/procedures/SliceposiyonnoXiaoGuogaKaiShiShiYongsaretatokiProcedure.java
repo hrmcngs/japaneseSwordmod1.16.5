@@ -34,9 +34,7 @@ public class SliceposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 		{
 			List<Entity> _entfound = world
 					.getEntitiesWithinAABB(Entity.class,
-							new AxisAlignedBB((entity.getPosX()) - (3 / 2d), (entity.getPosY()) - (3 / 2d), (entity.getPosZ()) - (3 / 2d),
-									(entity.getPosX()) + (3 / 2d), (entity.getPosY()) + (3 / 2d), (entity.getPosZ()) + (3 / 2d)),
-							null)
+							new AxisAlignedBB((entity.getPosX()) - (3 / 2d), (entity.getPosY()) - (3 / 2d), (entity.getPosZ()) - (3 / 2d), (entity.getPosX()) + (3 / 2d), (entity.getPosY()) + (3 / 2d), (entity.getPosZ()) + (3 / 2d)), null)
 					.stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
@@ -44,8 +42,7 @@ public class SliceposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 					}.compareDistOf((entity.getPosX()), (entity.getPosY()), (entity.getPosZ()))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof LivingEntity)
-					((LivingEntity) entityiterator)
-							.addPotionEffect(new EffectInstance(ChopUpPotionEffect.potion, (int) 120, (int) 1, (true), (false)));
+					((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(ChopUpPotionEffect.potion, (int) 120, (int) 1, (true), (false)));
 			}
 		}
 	}

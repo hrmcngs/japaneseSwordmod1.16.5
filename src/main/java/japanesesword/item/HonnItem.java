@@ -90,6 +90,11 @@ public class HonnItem extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
+		public int getUseDuration(ItemStack itemstack) {
+			return 0;
+		}
+
+		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
 		}
@@ -132,8 +137,7 @@ public class HonnItem extends JapaneseswordModElements.ModElement {
 		public CompoundNBT getShareTag(ItemStack stack) {
 			CompoundNBT nbt = super.getShareTag(stack);
 			if (nbt != null)
-				stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-						.ifPresent(capability -> nbt.put("Inventory", ((ItemStackHandler) capability).serializeNBT()));
+				stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> nbt.put("Inventory", ((ItemStackHandler) capability).serializeNBT()));
 			return nbt;
 		}
 
@@ -141,8 +145,7 @@ public class HonnItem extends JapaneseswordModElements.ModElement {
 		public void readShareTag(ItemStack stack, @Nullable CompoundNBT nbt) {
 			super.readShareTag(stack, nbt);
 			if (nbt != null)
-				stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
-						.ifPresent(capability -> ((ItemStackHandler) capability).deserializeNBT((CompoundNBT) nbt.get("Inventory")));
+				stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> ((ItemStackHandler) capability).deserializeNBT((CompoundNBT) nbt.get("Inventory")));
 		}
 	}
 

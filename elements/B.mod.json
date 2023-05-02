@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,13 +13,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_min_jian_ren",
           "text": "民間人",
           "onClick": {
             "name": "Minnkannzinn"
           },
           "width": 40,
           "height": 20,
-          "name": "民間人",
           "x": 140,
           "y": 151
         }
@@ -27,13 +27,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_jian_shi",
           "text": "剣士",
           "onClick": {
             "name": "H"
           },
           "width": 35,
           "height": 20,
-          "name": "剣士",
           "x": 255,
           "y": 151
         }
@@ -41,13 +41,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_xi_xie_gui",
           "text": "吸血鬼",
           "onClick": {
             "name": "C"
           },
           "width": 40,
           "height": 20,
-          "name": "吸血鬼",
           "x": 198,
           "y": 151
         }
@@ -57,7 +57,6 @@
         "data": {
           "image": "sukurinsiyotuto_2022-05-08_16.41.14.png",
           "use1Xscale": false,
-          "name": "sukurinsiyotuto_2022-05-08_16.41.14.png",
           "x": 149,
           "y": 51
         }
@@ -67,7 +66,6 @@
         "data": {
           "image": "abc.png",
           "use1Xscale": false,
-          "name": "abc.png",
           "x": 227,
           "y": 51
         }
@@ -75,13 +73,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_wang_no_ren",
           "text": "王の一人",
           "onClick": {
             "name": "O"
           },
           "width": 46,
           "height": 20,
-          "name": "王の一人",
           "x": 195,
           "y": 176
         }

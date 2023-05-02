@@ -18,8 +18,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.Attack1posiyonXiaoGuogaQieretaShiProcedure;
 import japanesesword.procedures.Attack1ehuekutogaYouXiaoShinoteitukuProcedure;
+import japanesesword.procedures.Attack1posiyonXiaoGuogaQieretaShiProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Attack1PotionEffect {
@@ -74,10 +74,9 @@ public class Attack1PotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			Attack1ehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			Attack1ehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(
+					Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -88,8 +87,7 @@ public class Attack1PotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			Attack1posiyonXiaoGuogaQieretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			Attack1posiyonXiaoGuogaQieretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

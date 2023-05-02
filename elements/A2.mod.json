@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "久しぶりだね",
+          "name": "label_jiu_siburidane",
+          "text": {
+            "fixedValue": "久しぶりだね"
+          },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "name": "久しぶりだね",
           "x": 199,
           "y": 73
         }
@@ -26,13 +28,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_tap",
           "text": "tap!!",
           "onClick": {
             "name": "A3"
           },
           "width": 51,
           "height": 20,
-          "name": "tap!!",
           "x": 191,
           "y": 143
         }

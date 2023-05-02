@@ -19,11 +19,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.PoizunswordmobugaturudeGongJisaretatokiProcedure;
-import japanesesword.procedures.PoizunswordKongQiwoYoukuritukusitatokiProcedure;
-
 import japanesesword.itemgroup.BukiItemGroup;
-
+import japanesesword.procedures.PoizunswordKongQiwoYoukuritukusitatokiProcedure;
+import japanesesword.procedures.PoizunswordmobugaturudeGongJisaretatokiProcedure;
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
@@ -70,11 +68,9 @@ public class PoizunswordItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				PoizunswordKongQiwoYoukuritukusitatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				PoizunswordKongQiwoYoukuritukusitatokiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -86,9 +82,8 @@ public class PoizunswordItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				World world = entity.world;
 
-				PoizunswordmobugaturudeGongJisaretatokiProcedure.executeProcedure(
-						Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				PoizunswordmobugaturudeGongJisaretatokiProcedure
+						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("sourceentity", sourceentity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 		}.setRegistryName("poizunsword"));

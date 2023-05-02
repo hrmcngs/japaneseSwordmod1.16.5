@@ -29,22 +29,18 @@ public class KillSliceehuekutogaYouXiaoShinoteitukuProcedure {
 		{
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"/kill @s");
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
 			}
 		}
 		{
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"/deta merge entity @s (Health:0)");
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
 			}
 		}
 		if (world instanceof ServerWorld) {
-			((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, (MathHelper.nextDouble(new Random(), 1, 1.5)),
-					(MathHelper.nextDouble(new Random(), 0.8, 1.2)), (MathHelper.nextDouble(new Random(), 1, 1.5)), (int) 5,
-					(MathHelper.nextDouble(new Random(), 1, 3)), (MathHelper.nextDouble(new Random(), 1, 3)),
-					(MathHelper.nextDouble(new Random(), 1, 3)), 1);
+			((ServerWorld) world).spawnParticle(ParticleTypes.SWEEP_ATTACK, (MathHelper.nextDouble(new Random(), 1, 1.5)), (MathHelper.nextDouble(new Random(), 0.8, 1.2)), (MathHelper.nextDouble(new Random(), 1, 1.5)), (int) 5,
+					(MathHelper.nextDouble(new Random(), 1, 3)), (MathHelper.nextDouble(new Random(), 1, 3)), (MathHelper.nextDouble(new Random(), 1, 3)), 1);
 		}
 	}
 }

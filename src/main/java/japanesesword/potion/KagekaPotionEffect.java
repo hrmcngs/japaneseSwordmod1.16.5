@@ -75,8 +75,7 @@ public class KagekaPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -86,9 +85,7 @@ public class KagekaPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			KagekaehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z))
+			KagekaehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
@@ -100,8 +97,7 @@ public class KagekaPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			KagekaposiyonXiaoGuogaQieretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			KagekaposiyonXiaoGuogaQieretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

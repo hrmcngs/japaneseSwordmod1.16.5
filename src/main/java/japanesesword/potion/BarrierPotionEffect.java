@@ -13,11 +13,12 @@ import net.minecraft.potion.Effect;
 import net.minecraft.entity.LivingEntity;
 
 import java.util.stream.Stream;
+
+import japanesesword.procedures.BarrierehuekutogaYouXiaoShinoteitukuProcedure;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
-
-import japanesesword.procedures.BarrierehuekutogaYouXiaoShinoteitukuProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BarrierPotionEffect {
@@ -72,10 +73,9 @@ public class BarrierPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			BarrierehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			BarrierehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(
+					Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

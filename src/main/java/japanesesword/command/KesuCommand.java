@@ -45,8 +45,7 @@ public class KesuCommand {
 						index++;
 					}
 
-					KesukomandogaShiXingsaretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					KesukomandogaShiXingsaretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					return 0;
 				})).executes(arguments -> {
 					ServerWorld world = arguments.getSource().getWorld();
@@ -65,8 +64,7 @@ public class KesuCommand {
 						index++;
 					}
 
-					KesukomandogaShiXingsaretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					KesukomandogaShiXingsaretaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 					return 0;
 				}));
 	}

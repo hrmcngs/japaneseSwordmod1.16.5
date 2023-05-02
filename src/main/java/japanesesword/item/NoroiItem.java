@@ -20,10 +20,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.NoroituruwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.NoroimobugaturudeGongJisaretatokiProcedure;
 import japanesesword.procedures.NoroiYoukuritukusitatokiProcedure;
-
+import japanesesword.procedures.NoroimobugaturudeGongJisaretatokiProcedure;
+import japanesesword.procedures.NoroituruwoShoudeChituteiruJiannoteitukuProcedure;
 import japanesesword.itemgroup.BukiItemGroup;
 
 import japanesesword.JapaneseswordModElements;
@@ -72,11 +71,9 @@ public class NoroiItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				NoroiYoukuritukusitatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				NoroiYoukuritukusitatokiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -88,8 +85,7 @@ public class NoroiItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				World world = entity.world;
 
-				NoroimobugaturudeGongJisaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("sourceentity", sourceentity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				NoroimobugaturudeGongJisaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("sourceentity", sourceentity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -101,9 +97,8 @@ public class NoroiItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				if (selected)
 
-					NoroituruwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(
-							Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
-									.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					NoroituruwoShoudeChituteiruJiannoteitukuProcedure
+							.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("noroi"));
 	}

@@ -26,8 +26,7 @@ public class KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				if (_ent instanceof ServerPlayerEntity) {
 					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
 				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
-					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-							.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
+					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection().getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 					return _npi != null && _npi.getGameType() == GameType.CREATIVE;
 				}
 				return false;
@@ -42,8 +41,7 @@ public class KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				if (_ent instanceof ServerPlayerEntity) {
 					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.ADVENTURE;
 				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
-					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-							.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
+					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection().getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 					return _npi != null && _npi.getGameType() == GameType.ADVENTURE;
 				}
 				return false;
@@ -58,8 +56,7 @@ public class KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				if (_ent instanceof ServerPlayerEntity) {
 					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
 				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
-					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-							.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
+					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection().getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 					return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
 				}
 				return false;
@@ -74,8 +71,7 @@ public class KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				if (_ent instanceof ServerPlayerEntity) {
 					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SPECTATOR;
 				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
-					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-							.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
+					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection().getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 					return _npi != null && _npi.getGameType() == GameType.SPECTATOR;
 				}
 				return false;

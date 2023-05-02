@@ -23,9 +23,8 @@ import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
-import japanesesword.enchantment.KillEnchantment;
-
 import japanesesword.JapaneseswordMod;
+import japanesesword.enchantment.KillEnchantment;
 
 public class ZangekiFeibiDaoJugaFeindeiruJianProcedure {
 
@@ -54,70 +53,51 @@ public class ZangekiFeibiDaoJugaFeindeiruJianProcedure {
 		double angle = 0;
 		double Numerical_value = 0;
 		double yaw = 0;
-		immediatesourceentity
-				.setMotion(
-						(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-								entity.getEyePosition(1f).add(entity.getLook(1f).x * 20, entity.getLook(1f).y * 20, entity.getLook(1f).z * 20),
-								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getX() - entity.world
-										.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-												entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0,
-														entity.getLook(1f).z * 0),
-												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-										.getPos().getX()),
-						(entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-								entity.getEyePosition(1f).add(entity.getLook(1f).x * 20, entity.getLook(1f).y * 20, entity.getLook(1f).z * 20),
-								RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getY() - entity.world
-										.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-												entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0,
-														entity.getLook(1f).z * 0),
-												RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-										.getPos().getY()),
-						(entity.world
-								.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 20, entity.getLook(1f).y * 20,
-												entity.getLook(1f).z * 20),
-										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity))
-								.getPos().getZ()
-								- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f),
-										entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0),
-										RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
+		immediatesourceentity.setMotion(
+				(entity.world
+						.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getLook(1f).x * 20, entity.getLook(1f).y * 20, entity.getLook(1f).z * 20), RayTraceContext.BlockMode.OUTLINE,
+								RayTraceContext.FluidMode.NONE, entity))
+						.getPos().getX()
+						- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0), RayTraceContext.BlockMode.OUTLINE,
+								RayTraceContext.FluidMode.NONE, entity)).getPos().getX()),
+				(entity.world
+						.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getLook(1f).x * 20, entity.getLook(1f).y * 20, entity.getLook(1f).z * 20), RayTraceContext.BlockMode.OUTLINE,
+								RayTraceContext.FluidMode.NONE, entity))
+						.getPos().getY()
+						- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0), RayTraceContext.BlockMode.OUTLINE,
+								RayTraceContext.FluidMode.NONE, entity)).getPos().getY()),
+				(entity.world
+						.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getLook(1f).x * 20, entity.getLook(1f).y * 20, entity.getLook(1f).z * 20), RayTraceContext.BlockMode.OUTLINE,
+								RayTraceContext.FluidMode.NONE, entity))
+						.getPos().getZ()
+						- entity.world.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getLook(1f).x * 0, entity.getLook(1f).y * 0, entity.getLook(1f).z * 0), RayTraceContext.BlockMode.OUTLINE,
+								RayTraceContext.FluidMode.NONE, entity)).getPos().getZ()));
 		x = (immediatesourceentity.getPosX());
 		y = (immediatesourceentity.getPosY());
 		z = (immediatesourceentity.getPosZ());
 		{
-			List<Entity> _entfound = world
-					.getEntitiesWithinAABB(Entity.class,
-							new AxisAlignedBB((immediatesourceentity.getPosX()) - (3 / 2d), (immediatesourceentity.getPosY()) - (3 / 2d),
-									(immediatesourceentity.getPosZ()) - (3 / 2d), (immediatesourceentity.getPosX()) + (3 / 2d),
-									(immediatesourceentity.getPosY()) + (3 / 2d), (immediatesourceentity.getPosZ()) + (3 / 2d)),
-							null)
-					.stream().sorted(new Object() {
+			List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB((immediatesourceentity.getPosX()) - (3 / 2d), (immediatesourceentity.getPosY()) - (3 / 2d), (immediatesourceentity.getPosZ()) - (3 / 2d),
+					(immediatesourceentity.getPosX()) + (3 / 2d), (immediatesourceentity.getPosY()) + (3 / 2d), (immediatesourceentity.getPosZ()) + (3 / 2d)), null).stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 						}
-					}.compareDistOf((immediatesourceentity.getPosX()), (immediatesourceentity.getPosY()), (immediatesourceentity.getPosZ())))
-					.collect(Collectors.toList());
+					}.compareDistOf((immediatesourceentity.getPosX()), (immediatesourceentity.getPosY()), (immediatesourceentity.getPosZ()))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof MobEntity) {
 					if (!(entityiterator == entity)) {
-						if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-								((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)
-								|| (EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-										((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
+						if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)
+								|| (EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
 							if (entityiterator instanceof MobEntity) {
 								{
 									Entity _ent = entityiterator;
 									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-										_ent.world.getServer().getCommandManager()
-												.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+										_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
 									}
 								}
 								{
 									Entity _ent = entityiterator;
 									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-										_ent.world.getServer().getCommandManager().handleCommand(
-												_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-												"/deta merge entity @s (Health:0)");
+										_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
 									}
 								}
 							}
@@ -132,56 +112,47 @@ public class ZangekiFeibiDaoJugaFeindeiruJianProcedure {
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d((x - 1), (z - 1), (z - 1)), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d((x - 1), (z - 1), (z - 1)), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d((x + 1), (y + 1), (z + 1)), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d((x + 1), (y + 1), (z + 1)), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d(x, y, z), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d((x + 1), (z + 1), (z + 1)), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d((x + 1), (z + 1), (z + 1)), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d((x - 1), (y - 1), (z - 1)), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d((x - 1), (y - 1), (z - 1)), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d((x - 1), (z + 1), (z - 1)), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d((x - 1), (z + 1), (z - 1)), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d((x + 1), (y - 1), (z + 1)), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d((x + 1), (y - 1), (z + 1)), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d((x + 1), (z - 1), (z - 1)), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d((x + 1), (z - 1), (z - 1)), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 		if (world instanceof ServerWorld) {
 			((World) world).getServer().getCommandManager().handleCommand(
-					new CommandSource(ICommandSource.DUMMY, new Vector3d((x - 1), (y + 1), (z + 1)), Vector2f.ZERO, (ServerWorld) world, 4, "",
-							new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
+					new CommandSource(ICommandSource.DUMMY, new Vector3d((x - 1), (y + 1), (z + 1)), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
 					"/particle dust_color_transition 0.000 0.000 0.000 1 0.000 0.000 0.000 ~ ~ ~");
 		}
 	}

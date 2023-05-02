@@ -33,10 +33,8 @@ import java.util.function.Supplier;
 
 public class JapaneseswordModVariables {
 	public JapaneseswordModVariables(JapaneseswordModElements elements) {
-		elements.addNetworkMessage(WorldSavedDataSyncMessage.class, WorldSavedDataSyncMessage::buffer, WorldSavedDataSyncMessage::new,
-				WorldSavedDataSyncMessage::handler);
-		elements.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new,
-				PlayerVariablesSyncMessage::handler);
+		elements.addNetworkMessage(WorldSavedDataSyncMessage.class, WorldSavedDataSyncMessage::buffer, WorldSavedDataSyncMessage::new, WorldSavedDataSyncMessage::handler);
+		elements.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handler);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::init);
 	}
 
@@ -50,11 +48,9 @@ public class JapaneseswordModVariables {
 			WorldSavedData mapdata = MapVariables.get(event.getPlayer().world);
 			WorldSavedData worlddata = WorldVariables.get(event.getPlayer().world);
 			if (mapdata != null)
-				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
-						new WorldSavedDataSyncMessage(0, mapdata));
+				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()), new WorldSavedDataSyncMessage(0, mapdata));
 			if (worlddata != null)
-				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
-						new WorldSavedDataSyncMessage(1, worlddata));
+				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()), new WorldSavedDataSyncMessage(1, worlddata));
 		}
 	}
 
@@ -63,8 +59,7 @@ public class JapaneseswordModVariables {
 		if (!event.getPlayer().world.isRemote()) {
 			WorldSavedData worlddata = WorldVariables.get(event.getPlayer().world);
 			if (worlddata != null)
-				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
-						new WorldSavedDataSyncMessage(1, worlddata));
+				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()), new WorldSavedDataSyncMessage(1, worlddata));
 		}
 	}
 
@@ -91,8 +86,7 @@ public class JapaneseswordModVariables {
 		public void syncData(IWorld world) {
 			this.markDirty();
 			if (world instanceof World && !world.isRemote())
-				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(((World) world)::getDimensionKey),
-						new WorldSavedDataSyncMessage(1, this));
+				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(((World) world)::getDimensionKey), new WorldSavedDataSyncMessage(1, this));
 		}
 
 		static WorldVariables clientSide = new WorldVariables();
@@ -154,8 +148,7 @@ public class JapaneseswordModVariables {
 
 		public static MapVariables get(IWorld world) {
 			if (world instanceof IServerWorld) {
-				return ((IServerWorld) world).getWorld().getServer().getWorld(World.OVERWORLD).getSavedData().getOrCreate(MapVariables::new,
-						DATA_NAME);
+				return ((IServerWorld) world).getWorld().getServer().getWorld(World.OVERWORLD).getSavedData().getOrCreate(MapVariables::new, DATA_NAME);
 			} else {
 				return clientSide;
 			}
@@ -215,14 +208,12 @@ public class JapaneseswordModVariables {
 
 		@Override
 		public INBT serializeNBT() {
-			return PLAYER_VARIABLES_CAPABILITY.getStorage().writeNBT(PLAYER_VARIABLES_CAPABILITY, this.instance.orElseThrow(RuntimeException::new),
-					null);
+			return PLAYER_VARIABLES_CAPABILITY.getStorage().writeNBT(PLAYER_VARIABLES_CAPABILITY, this.instance.orElseThrow(RuntimeException::new), null);
 		}
 
 		@Override
 		public void deserializeNBT(INBT nbt) {
-			PLAYER_VARIABLES_CAPABILITY.getStorage().readNBT(PLAYER_VARIABLES_CAPABILITY, this.instance.orElseThrow(RuntimeException::new), null,
-					nbt);
+			PLAYER_VARIABLES_CAPABILITY.getStorage().readNBT(PLAYER_VARIABLES_CAPABILITY, this.instance.orElseThrow(RuntimeException::new), null, nbt);
 		}
 	}
 
@@ -282,36 +273,31 @@ public class JapaneseswordModVariables {
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
-				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
-						new PlayerVariablesSyncMessage(this));
+				JapaneseswordMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity), new PlayerVariablesSyncMessage(this));
 		}
 	}
 
 	@SubscribeEvent
 	public void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
 		if (!event.getPlayer().world.isRemote())
-			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-					.syncPlayerVariables(event.getPlayer());
+			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getPlayer());
 	}
 
 	@SubscribeEvent
 	public void onPlayerRespawnedSyncPlayerVariables(PlayerEvent.PlayerRespawnEvent event) {
 		if (!event.getPlayer().world.isRemote())
-			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-					.syncPlayerVariables(event.getPlayer());
+			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getPlayer());
 	}
 
 	@SubscribeEvent
 	public void onPlayerChangedDimensionSyncPlayerVariables(PlayerEvent.PlayerChangedDimensionEvent event) {
 		if (!event.getPlayer().world.isRemote())
-			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()))
-					.syncPlayerVariables(event.getPlayer());
+			((PlayerVariables) event.getPlayer().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getPlayer());
 	}
 
 	@SubscribeEvent
 	public void clonePlayer(PlayerEvent.Clone event) {
-		PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new PlayerVariables()));
+		PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 		clone.kaunnto = original.kaunnto;
 		clone.nanka = original.nanka;
@@ -350,8 +336,7 @@ public class JapaneseswordModVariables {
 			NetworkEvent.Context context = contextSupplier.get();
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
-					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new PlayerVariables()));
+					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.kaunnto = message.data.kaunnto;
 					variables.nanka = message.data.nanka;
 					variables.N = message.data.N;

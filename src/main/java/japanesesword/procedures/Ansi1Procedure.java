@@ -22,8 +22,7 @@ public class Ansi1Procedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((EnchantmentHelper.getEnchantmentLevel(AnsiEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(AnsiEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 240, (int) 255, (true), (true)));
 		}

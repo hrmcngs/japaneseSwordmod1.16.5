@@ -2,8 +2,6 @@
 package japanesesword.item;
 
 import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
 import net.minecraft.util.Hand;
@@ -22,10 +20,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.DemonizedkatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.DemonizedkatanapureiyagaShiYongwoTingZhisitaShiProcedure;
 import japanesesword.procedures.DemonizedKatana1YoukuritukusitatokiProcedure;
-
+import japanesesword.procedures.DemonizedkatanapureiyagaShiYongwoTingZhisitaShiProcedure;
+import japanesesword.procedures.DemonizedkatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
 import japanesesword.itemgroup.BukiItemGroup;
 
 import japanesesword.JapaneseswordModElements;
@@ -74,11 +71,9 @@ public class DemonizedKatana1Item extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				DemonizedKatana1YoukuritukusitatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				DemonizedKatana1YoukuritukusitatokiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -89,8 +84,7 @@ public class DemonizedKatana1Item extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				DemonizedkatanapureiyagaShiYongwoTingZhisitaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				DemonizedkatanapureiyagaShiYongwoTingZhisitaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 
 			@Override
@@ -101,15 +95,7 @@ public class DemonizedKatana1Item extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				if (selected)
 
-					DemonizedkatanaturuwoShoudeChituteiruJiannoteitukuProcedure
-							.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			}
-
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public boolean hasEffect(ItemStack itemstack) {
-				return true;
+					DemonizedkatanaturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("demonized_katana_1"));
 	}

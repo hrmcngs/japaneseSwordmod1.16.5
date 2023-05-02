@@ -26,9 +26,8 @@ import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
-import japanesesword.enchantment.KillEnchantment;
-
 import japanesesword.JapaneseswordMod;
+import japanesesword.enchantment.KillEnchantment;
 
 public class YouyoumuenteiteinotitukuGengXinShiProcedure {
 
@@ -75,22 +74,14 @@ public class YouyoumuenteiteinotitukuGengXinShiProcedure {
 		katana = (MathHelper.nextDouble(new Random(), 1, 10));
 		if (katana == 1) {
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos(x, y, z),
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				((World) world).playSound(null, new BlockPos(x, y, z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
 			} else {
-				((World) world).playSound(x, y, z,
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				((World) world).playSound(x, y, z, (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g")), SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 			}
 			if (world instanceof World && !world.isRemote()) {
-				((World) world).playSound(null, new BlockPos(x, y, z),
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g2")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				((World) world).playSound(null, new BlockPos(x, y, z), (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g2")), SoundCategory.NEUTRAL, (float) 1, (float) 1);
 			} else {
-				((World) world).playSound(x, y, z,
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g2")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+				((World) world).playSound(x, y, z, (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("japanesesword:g2")), SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 			}
 			if (entity instanceof LivingEntity) {
 				((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
@@ -113,31 +104,24 @@ public class YouyoumuenteiteinotitukuGengXinShiProcedure {
 					((ServerWorld) world).spawnParticle(ParticleTypes.TOTEM_OF_UNDYING, X, Y, Z, (int) 3, 0.1, 0.1, 0.1, 0);
 				}
 				{
-					List<Entity> _entfound = world
-							.getEntitiesWithinAABB(Entity.class,
-									new AxisAlignedBB(X - (3 / 2d), Y - (3 / 2d), Z - (3 / 2d), X + (3 / 2d), Y + (3 / 2d), Z + (3 / 2d)), null)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf(X, Y, Z)).collect(Collectors.toList());
+					List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(X - (3 / 2d), Y - (3 / 2d), Z - (3 / 2d), X + (3 / 2d), Y + (3 / 2d), Z + (3 / 2d)), null).stream().sorted(new Object() {
+						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+						}
+					}.compareDistOf(X, Y, Z)).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
-						if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-								((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
+						if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemOffhand() : ItemStack.EMPTY)) != 0)) {
 							if (entityiterator instanceof MobEntity) {
 								{
 									Entity _ent = entityiterator;
 									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-										_ent.world.getServer().getCommandManager()
-												.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+										_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
 									}
 								}
 								{
 									Entity _ent = entityiterator;
 									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-										_ent.world.getServer().getCommandManager().handleCommand(
-												_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-												"/deta merge entity @s (Health:0)");
+										_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
 									}
 								}
 							}

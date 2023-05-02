@@ -120,10 +120,9 @@ public class Kusari2Item extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				KusariherumetutonoMeiteitukunoibentoProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				KusariherumetutonoMeiteitukunoibentoProcedure
+						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("kusari_2_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -151,10 +150,9 @@ public class Kusari2Item extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				KusaritiesutopuretonoMeiteitukunoibentoProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				KusaritiesutopuretonoMeiteitukunoibentoProcedure
+						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("kusari_2_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -181,10 +179,9 @@ public class Kusari2Item extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				KusarireginsunoMeiteitukunoibentoProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				KusarireginsunoMeiteitukunoibentoProcedure
+						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("kusari_2_leggings"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)) {
@@ -211,9 +208,7 @@ public class Kusari2Item extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				KusaributunoMeiteitukunoibentoProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
+				KusaributunoMeiteitukunoibentoProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("kusari_2_boots"));
@@ -600,8 +595,7 @@ public class Kusari2Item extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
-		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-				float alpha) {
+		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 			haori_mashiro.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		}
 
@@ -789,8 +783,7 @@ public class Kusari2Item extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
-		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-				float alpha) {
+		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 			Head.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		}
 
@@ -1094,8 +1087,7 @@ public class Kusari2Item extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
-		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-				float alpha) {
+		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 			RightLeg.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 			LeftLeg.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		}

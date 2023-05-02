@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,13 +13,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_tap",
           "text": "tap!",
           "onClick": {
             "name": "K"
           },
           "width": 46,
           "height": 20,
-          "name": "tap!",
           "x": 189,
           "y": 139
         }
@@ -27,12 +27,14 @@
       {
         "type": "label",
         "data": {
-          "text": "中断になれるよ",
+          "name": "label_zhong_duan_ninareruyo",
+          "text": {
+            "fixedValue": "中断になれるよ"
+          },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "name": "中断になれるよ",
           "x": 193,
           "y": 72
         }

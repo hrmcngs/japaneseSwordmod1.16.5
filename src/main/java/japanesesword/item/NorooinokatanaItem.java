@@ -20,11 +20,10 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.NorooinokatanaenteiteigaaitemuwoZhentutaShiProcedure;
-import japanesesword.procedures.NoroinokatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.NoroinokatanaKongQiwoYoukuritukusitatokiProcedure;
-
 import japanesesword.JapaneseswordModElements;
+import japanesesword.procedures.NoroinokatanaKongQiwoYoukuritukusitatokiProcedure;
+import japanesesword.procedures.NoroinokatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
+import japanesesword.procedures.NorooinokatanaenteiteigaaitemuwoZhentutaShiProcedure;
 
 @JapaneseswordModElements.ModElement.Tag
 public class NorooinokatanaItem extends JapaneseswordModElements.ModElement {
@@ -70,11 +69,9 @@ public class NorooinokatanaItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				NoroinokatanaKongQiwoYoukuritukusitatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				NoroinokatanaKongQiwoYoukuritukusitatokiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -86,11 +83,9 @@ public class NorooinokatanaItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				World world = entity.world;
 
-				NorooinokatanaenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				NorooinokatanaenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -102,9 +97,7 @@ public class NorooinokatanaItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				if (selected)
 
-					NoroinokatanaturuwoShoudeChituteiruJiannoteitukuProcedure
-							.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-									(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					NoroinokatanaturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("norooinokatana"));
 	}

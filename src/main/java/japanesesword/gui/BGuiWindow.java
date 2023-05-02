@@ -58,8 +58,7 @@ public class BGuiWindow extends ContainerScreen<BGui.GuiContainerMod> {
 		int l = (this.height - this.ySize) / 2;
 		this.blit(ms, k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 
-		Minecraft.getInstance().getTextureManager()
-				.bindTexture(new ResourceLocation("japanesesword:textures/screens/sukurinsiyotuto_2022-05-08_16.41.14.png"));
+		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/screens/sukurinsiyotuto_2022-05-08_16.41.14.png"));
 		this.blit(ms, this.guiLeft + 23, this.guiTop + 14, 0, 0, 34, 34, 34, 34);
 
 		Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("japanesesword:textures/screens/abc.png"));

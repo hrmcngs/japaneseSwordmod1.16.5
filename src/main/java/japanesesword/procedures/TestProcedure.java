@@ -72,8 +72,7 @@ public class TestProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		if (!world.isRemote()) {
-			if ((EnchantmentHelper.getEnchantmentLevel(EntyantEnchantment.enchantment,
-					((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+			if ((EnchantmentHelper.getEnchantmentLevel(EntyantEnchantment.enchantment, ((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 				if (world instanceof ServerWorld) {
 					LightningBoltEntity _ent = EntityType.LIGHTNING_BOLT.create((World) world);
 					_ent.moveForced(Vector3d.copyCenteredHorizontally(new BlockPos(entity.getPosX(), entity.getPosY(), entity.getPosZ())));

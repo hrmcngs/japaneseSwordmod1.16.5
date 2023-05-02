@@ -73,8 +73,7 @@ public class HaatoPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			HaatoposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			HaatoposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

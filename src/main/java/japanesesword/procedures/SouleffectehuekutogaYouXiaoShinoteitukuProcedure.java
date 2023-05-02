@@ -18,8 +18,7 @@ public class SouleffectehuekutogaYouXiaoShinoteitukuProcedure {
 		{
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"particle minecraft:soul ~ ~1 ~ 0.5 0.5 0.5 0.1 1 normal @s");
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "particle minecraft:soul ~ ~1 ~ 0.5 0.5 0.5 0.1 1 normal @s");
 			}
 		}
 	}

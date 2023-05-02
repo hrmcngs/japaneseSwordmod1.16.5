@@ -29,8 +29,7 @@ public class MusucdiscneNEItem extends JapaneseswordModElements.ModElement {
 
 	public static class MusicDiscItemCustom extends MusicDiscItem {
 		public MusicDiscItemCustom() {
-			super(0, JapaneseswordModElements.sounds.get(new ResourceLocation("japanesesword:ne")),
-					new Item.Properties().group(null).maxStackSize(1).rarity(Rarity.RARE));
+			super(0, JapaneseswordModElements.sounds.get(new ResourceLocation("japanesesword:ne")), new Item.Properties().group(null).maxStackSize(1).rarity(Rarity.RARE));
 			setRegistryName("musucdiscne_ne");
 		}
 

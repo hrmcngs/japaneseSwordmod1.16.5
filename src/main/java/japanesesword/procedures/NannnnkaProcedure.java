@@ -54,20 +54,10 @@ public class NannnnkaProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((EnchantmentHelper.getEnchantmentLevel(NannnnnkaEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)) != 0)
-				|| (EnchantmentHelper.getEnchantmentLevel(NannnnnkaEnchantment.enchantment,
-						((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
-								: ItemStack.EMPTY)) != 0)
-				|| (EnchantmentHelper.getEnchantmentLevel(NannnnnkaEnchantment.enchantment,
-						((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-								: ItemStack.EMPTY)) != 0)
-				|| (EnchantmentHelper.getEnchantmentLevel(NannnnnkaEnchantment.enchantment,
-						((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-								: ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(NannnnnkaEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)) != 0)
+				|| (EnchantmentHelper.getEnchantmentLevel(NannnnnkaEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)) != 0)
+				|| (EnchantmentHelper.getEnchantmentLevel(NannnnnkaEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)) != 0)
+				|| (EnchantmentHelper.getEnchantmentLevel(NannnnnkaEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.RESISTANCE, (int) 1, (int) 5));
 		}

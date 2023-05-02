@@ -45,19 +45,14 @@ public class ZanngekimobenteiteigasuponsitaShiProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity instanceof TameableEntity) && (((Entity) world
-				.getEntitiesWithinAABB(PlayerEntity.class,
-						new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
-				.stream().sorted(new Object() {
-					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof PlayerEntity)) {
+		if ((entity instanceof TameableEntity) && (((Entity) world.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null).stream().sorted(new Object() {
+			Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+				return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+			}
+		}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof PlayerEntity)) {
 			((TameableEntity) entity).setTamed(true);
-			((TameableEntity) entity).setTamedBy((PlayerEntity) ((Entity) world
-					.getEntitiesWithinAABB(PlayerEntity.class,
-							new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
-					.stream().sorted(new Object() {
+			((TameableEntity) entity)
+					.setTamedBy((PlayerEntity) ((Entity) world.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null).stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 						}

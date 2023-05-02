@@ -178,9 +178,7 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 					{
 						Entity _ent = entity;
 						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-							_ent.world.getServer().getCommandManager().handleCommand(
-									_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-									"particle item redstone ~ ~1 ~ 0.5 0.5 0.5 0.3 5 force");
+							_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "particle item redstone ~ ~1 ~ 0.5 0.5 0.5 0.3 5 force");
 						}
 					}
 					MinecraftForge.EVENT_BUS.unregister(this);
@@ -234,8 +232,7 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 				}
 
 				private void run() {
-					world.addParticle(ParticleTypes.SWEEP_ATTACK, (MathHelper.nextDouble(new Random(), x - 3, x + 3)),
-							(MathHelper.nextDouble(new Random(), y - 3, y + 3)), (MathHelper.nextDouble(new Random(), z - 3, z + 3)), 0, 1, 0);
+					world.addParticle(ParticleTypes.SWEEP_ATTACK, (MathHelper.nextDouble(new Random(), x - 3, x + 3)), (MathHelper.nextDouble(new Random(), y - 3, y + 3)), (MathHelper.nextDouble(new Random(), z - 3, z + 3)), 0, 1, 0);
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, (int) 10);
@@ -276,15 +273,13 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 					{
 						Entity _ent = entity;
 						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-							_ent.world.getServer().getCommandManager()
-									.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+							_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
 						}
 					}
 					{
 						Entity _ent = entity;
 						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-							_ent.world.getServer().getCommandManager().handleCommand(
-									_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
+							_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
 						}
 					}
 					MinecraftForge.EVENT_BUS.unregister(this);
@@ -314,8 +309,7 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 				}
 
 				private void run() {
-					world.addParticle(ParticleTypes.SWEEP_ATTACK, (MathHelper.nextDouble(new Random(), x - 3, x + 3)),
-							(MathHelper.nextDouble(new Random(), y - 3, y + 3)), (MathHelper.nextDouble(new Random(), z - 3, z + 3)), 0, 1, 0);
+					world.addParticle(ParticleTypes.SWEEP_ATTACK, (MathHelper.nextDouble(new Random(), x - 3, x + 3)), (MathHelper.nextDouble(new Random(), y - 3, y + 3)), (MathHelper.nextDouble(new Random(), z - 3, z + 3)), 0, 1, 0);
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, (int) 10);

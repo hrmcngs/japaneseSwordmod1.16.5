@@ -73,19 +73,16 @@ public class TeraStructure {
 							int x = spawnTo.getX();
 							int y = spawnTo.getY();
 							int z = spawnTo.getZ();
-							Template template = world.getWorld().getStructureTemplateManager()
-									.getTemplateDefaulted(new ResourceLocation("japanesesword", "tera1"));
+							Template template = world.getWorld().getStructureTemplateManager().getTemplateDefaulted(new ResourceLocation("japanesesword", "tera1"));
 							if (template == null)
 								return false;
-							template.func_237144_a_(world, spawnTo, new PlacementSettings().setRotation(rotation).setRandom(random).setMirror(mirror)
-									.addProcessor(BlockIgnoreStructureProcessor.AIR).setChunk(null).setIgnoreEntities(false), random);
+							template.func_237144_a_(world, spawnTo, new PlacementSettings().setRotation(rotation).setRandom(random).setMirror(mirror).addProcessor(BlockIgnoreStructureProcessor.AIR).setChunk(null).setIgnoreEntities(false), random);
 						}
 					}
 					return true;
 				}
 			};
-			configuredFeature = feature.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
-					.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG));
+			configuredFeature = feature.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG));
 			event.getRegistry().register(feature.setRegistryName("tera"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("japanesesword:tera"), configuredFeature);
 		}

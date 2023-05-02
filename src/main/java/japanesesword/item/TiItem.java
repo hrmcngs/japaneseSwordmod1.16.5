@@ -41,10 +41,9 @@ public class TiItem extends JapaneseswordModElements.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(BukiItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON)
-					.food((new Food.Builder()).hunger(0).saturation(0f)
+			super(new Item.Properties().group(BukiItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON).food((new Food.Builder()).hunger(0).saturation(0f)
 
-							.build()));
+					.build()));
 			setRegistryName("ti");
 		}
 
@@ -64,6 +63,11 @@ public class TiItem extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
+		public int getUseDuration(ItemStack itemstack) {
+			return 32;
+		}
+
+		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 0F;
 		}
@@ -76,8 +80,7 @@ public class TiItem extends JapaneseswordModElements.ModElement {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			TiShiLiaowoShibetatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			TiShiLiaowoShibetatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			if (itemstack.isEmpty()) {
 				return retval;
 			} else {

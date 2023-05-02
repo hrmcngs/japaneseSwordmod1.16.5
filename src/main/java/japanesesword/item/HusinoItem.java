@@ -16,9 +16,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.HusinoaitemuwoShoudeChituteiruJiannoteitukuProcedure;
-
 import japanesesword.JapaneseswordModElements;
+import japanesesword.procedures.HusinoaitemuwoShoudeChituteiruJiannoteitukuProcedure;
 
 @JapaneseswordModElements.ModElement.Tag
 public class HusinoItem extends JapaneseswordModElements.ModElement {
@@ -46,6 +45,11 @@ public class HusinoItem extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
+		public int getUseDuration(ItemStack itemstack) {
+			return 0;
+		}
+
+		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
 		}
@@ -59,8 +63,7 @@ public class HusinoItem extends JapaneseswordModElements.ModElement {
 			if (selected)
 
 				HusinoaitemuwoShoudeChituteiruJiannoteitukuProcedure
-						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+						.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

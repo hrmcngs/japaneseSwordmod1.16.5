@@ -16,10 +16,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.NoroharetakatanamobugaturudeGongJisaretatokiProcedure;
-
 import japanesesword.itemgroup.BukiItemGroup;
-
+import japanesesword.procedures.NoroharetakatanamobugaturudeGongJisaretatokiProcedure;
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
@@ -66,8 +64,7 @@ public class NoroharetakatanaItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				World world = entity.world;
 
-				NoroharetakatanamobugaturudeGongJisaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				NoroharetakatanamobugaturudeGongJisaretatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 		}.setRegistryName("motonokatana"));

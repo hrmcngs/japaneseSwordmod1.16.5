@@ -104,10 +104,7 @@ public class DokuBlock extends JapaneseswordModElements.ModElement {
 					return super.generate(world, generator, random, pos, config);
 				}
 			};
-			configuredFeature = feature
-					.withConfiguration(
-							(new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(block.getDefaultState()), new SimpleBlockPlacer()))
-									.tries(64).build())
+			configuredFeature = feature.withConfiguration((new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(block.getDefaultState()), new SimpleBlockPlacer())).tries(64).build())
 					.withPlacement(Features.Placements.VEGETATION_PLACEMENT).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).func_242731_b(5);
 			event.getRegistry().register(feature.setRegistryName("doku"));
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("japanesesword:doku"), configuredFeature);
@@ -121,8 +118,7 @@ public class DokuBlock extends JapaneseswordModElements.ModElement {
 
 	public static class BlockCustomFlower extends FlowerBlock {
 		public BlockCustomFlower() {
-			super(Effects.SATURATION, 100, Block.Properties.create(Material.PLANTS, MaterialColor.AIR).doesNotBlockMovement().sound(SoundType.PLANT)
-					.hardnessAndResistance(0f, 0f).setLightLevel(s -> 0));
+			super(Effects.SATURATION, 100, Block.Properties.create(Material.PLANTS, MaterialColor.AIR).doesNotBlockMovement().sound(SoundType.PLANT).hardnessAndResistance(0f, 0f).setLightLevel(s -> 0));
 			setRegistryName("doku");
 		}
 

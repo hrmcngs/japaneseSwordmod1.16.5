@@ -1,17 +1,19 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "musicdisc",
   "definition": {
-    "texture": "disc",
     "name": "U.N.オーエンは彼女なのか？",
+    "texture": "disc",
     "description": "U.N.オーエンは彼女なのか？",
     "creativeTab": {
       "value": "No creative tab entry"
     },
+    "specialInfo": [],
+    "hasGlow": true,
     "music": {
       "value": "CUSTOM:un"
     },
-    "specialInfo": [],
-    "hasGlow": true
+    "lengthInTicks": 0,
+    "analogOutput": 0
   }
 }

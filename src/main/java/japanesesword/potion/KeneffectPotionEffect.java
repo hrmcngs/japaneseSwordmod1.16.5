@@ -72,8 +72,7 @@ public class KeneffectPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			KeneffectehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			KeneffectehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

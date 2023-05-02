@@ -20,8 +20,7 @@ public class HaturuwoShoudeChituteiruJiannoteitukuProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 10) {
+		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new JapaneseswordModVariables.PlayerVariables())).kaunnto == 10) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.STRENGTH, (int) 1, (int) 3));
 		}

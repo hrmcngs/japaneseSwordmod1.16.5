@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "japanesesword:blocks/kuro",
-    "particle": "japanesesword:blocks/kuro"
-  }
-}

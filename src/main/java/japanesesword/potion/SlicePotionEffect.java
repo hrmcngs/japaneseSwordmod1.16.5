@@ -64,7 +64,7 @@ public class SlicePotionEffect {
 
 		@Override
 		public boolean shouldRenderHUD(EffectInstance effect) {
-			return false;
+			return true;
 		}
 
 		@Override
@@ -75,8 +75,7 @@ public class SlicePotionEffect {
 			double z = entity.getPosZ();
 
 			SliceposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure
-					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -86,8 +85,7 @@ public class SlicePotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			SliceehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			SliceehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

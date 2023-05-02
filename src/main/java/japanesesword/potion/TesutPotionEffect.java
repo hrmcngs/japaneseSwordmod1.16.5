@@ -72,8 +72,7 @@ public class TesutPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			TesutehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			TesutehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

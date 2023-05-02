@@ -51,9 +51,8 @@ import japanesesword.JapaneseswordModElements;
 public class TossinItem extends JapaneseswordModElements.ModElement {
 	@ObjectHolder("japanesesword:tossin")
 	public static final Item block = null;
-	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-			.size(0.5f, 0.5f)).build("projectile_tossin").setRegistryName("projectile_tossin");
+	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1)
+			.setCustomClientFactory(ArrowCustomEntity::new).size(0.5f, 0.5f)).build("projectile_tossin").setRegistryName("projectile_tossin");
 
 	public TossinItem(JapaneseswordModElements instance) {
 		super(instance, 313);
@@ -155,8 +154,7 @@ public class TossinItem extends JapaneseswordModElements.ModElement {
 			World world = this.world;
 
 			TossinFeibiDaoJugapureiyaniDangtatutatokiProcedure
-					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new,
-							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -171,8 +169,7 @@ public class TossinItem extends JapaneseswordModElements.ModElement {
 			World world = this.world;
 
 			TossinFeibiDaoJugaenteiteiniDangtatutatokiProcedure
-					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new,
-							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -186,8 +183,7 @@ public class TossinItem extends JapaneseswordModElements.ModElement {
 			Entity immediatesourceentity = this;
 
 			TossinFeibiDaoJugaburotukuniDangtatutatokiProcedure
-					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new,
-							(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override
@@ -200,11 +196,8 @@ public class TossinItem extends JapaneseswordModElements.ModElement {
 			Entity entity = this.func_234616_v_();
 			Entity immediatesourceentity = this;
 
-			TossinFeibiDaoJugaFeindeiruJianProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity),
-							new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			TossinFeibiDaoJugaFeindeiruJianProcedure.executeProcedure(
+					Stream.of(new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			if (this.inGround)
 				this.remove();
 		}
@@ -221,9 +214,8 @@ public class TossinItem extends JapaneseswordModElements.ModElement {
 		double x = entity.getPosX();
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
-		world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.shoot")),
-				SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z, (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.shoot")), SoundCategory.PLAYERS, 1,
+				1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
 
@@ -241,9 +233,8 @@ public class TossinItem extends JapaneseswordModElements.ModElement {
 		double x = entity.getPosX();
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
-		entity.world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.shoot")),
-				SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
+		entity.world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z, (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.shoot")), SoundCategory.PLAYERS, 1,
+				1f / (new Random().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}
 }

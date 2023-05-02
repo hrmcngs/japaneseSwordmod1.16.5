@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "enchantment",
   "definition": {
     "name": "遠距離武器を反らす",
@@ -9,7 +9,9 @@
     "maxLevel": 5,
     "damageModifier": 0,
     "compatibleEnchantments": [],
+    "excludeEnchantments": false,
     "compatibleItems": [],
+    "excludeItems": false,
     "isTreasureEnchantment": false,
     "isCurse": false,
     "isAllowedOnBooks": true,

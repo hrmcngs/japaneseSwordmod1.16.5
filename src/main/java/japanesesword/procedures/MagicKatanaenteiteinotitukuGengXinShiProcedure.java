@@ -20,10 +20,9 @@ import java.util.Collection;
 
 import japanesesword.potion.NoMagicKatanaPotionEffect;
 
-import japanesesword.entity.MagicKatanaEntity;
-import japanesesword.entity.KillMagicKatanaEntity;
-
 import japanesesword.JapaneseswordMod;
+import japanesesword.entity.KillMagicKatanaEntity;
+import japanesesword.entity.MagicKatanaEntity;
 
 public class MagicKatanaenteiteinotitukuGengXinShiProcedure {
 
@@ -62,28 +61,22 @@ public class MagicKatanaenteiteinotitukuGengXinShiProcedure {
 		if (entity.getPersistentData().getBoolean("upmagickatana") == true) {
 			{
 				Entity _ent = entity;
-				_ent.setPositionAndUpdate((entity.getPersistentData().getDouble("magickatanaX")),
-						(entity.getPersistentData().getDouble("magickatanaY")), (entity.getPersistentData().getDouble("magickatanaZ")));
+				_ent.setPositionAndUpdate((entity.getPersistentData().getDouble("magickatanaX")), (entity.getPersistentData().getDouble("magickatanaY")), (entity.getPersistentData().getDouble("magickatanaZ")));
 				if (_ent instanceof ServerPlayerEntity) {
-					((ServerPlayerEntity) _ent).connection.setPlayerLocation((entity.getPersistentData().getDouble("magickatanaX")),
-							(entity.getPersistentData().getDouble("magickatanaY")), (entity.getPersistentData().getDouble("magickatanaZ")),
+					((ServerPlayerEntity) _ent).connection.setPlayerLocation((entity.getPersistentData().getDouble("magickatanaX")), (entity.getPersistentData().getDouble("magickatanaY")), (entity.getPersistentData().getDouble("magickatanaZ")),
 							_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
 				}
 			}
 			entity.getPersistentData().putDouble("magickatanaY", (entity.getPersistentData().getDouble("magickatanaY") + 0.6));
 			{
-				List<Entity> _entfound = world
-						.getEntitiesWithinAABB(Entity.class,
-								new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
-						.stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-							}
-						}.compareDistOf(x, y, z)).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null).stream().sorted(new Object() {
+					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+					}
+				}.compareDistOf(x, y, z)).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
-						if (!(entityiterator instanceof MagicKatanaEntity.CustomEntity)
-								&& !(entityiterator instanceof KillMagicKatanaEntity.CustomEntity)) {
+						if (!(entityiterator instanceof MagicKatanaEntity.CustomEntity) && !(entityiterator instanceof KillMagicKatanaEntity.CustomEntity)) {
 							if (!(new Object() {
 								boolean check(Entity _entity) {
 									if (_entity instanceof LivingEntity) {
@@ -99,29 +92,24 @@ public class MagicKatanaenteiteinotitukuGengXinShiProcedure {
 								if (entity instanceof KillMagicKatanaEntity.CustomEntity) {
 									if (entityiterator instanceof MobEntity) {
 										if (entityiterator instanceof LivingEntity)
-											((LivingEntity) entityiterator)
-													.addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 3, (true), (false)));
+											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 3, (true), (false)));
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+												_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
 											}
 										}
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-												_ent.world.getServer().getCommandManager().handleCommand(
-														_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-														"/deta merge entity @s (Health:0)");
+												_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
 											}
 										}
 									}
 								} else if (entity instanceof MagicKatanaEntity.CustomEntity) {
 									if (entityiterator instanceof MobEntity) {
 										if (entityiterator instanceof LivingEntity)
-											((LivingEntity) entityiterator)
-													.addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 3, (true), (false)));
+											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 3, (true), (false)));
 										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 									}
 								}
@@ -133,11 +121,9 @@ public class MagicKatanaenteiteinotitukuGengXinShiProcedure {
 		} else {
 			{
 				Entity _ent = entity;
-				_ent.setPositionAndUpdate((entity.getPersistentData().getDouble("magickatanaX")),
-						(entity.getPersistentData().getDouble("magickatanaY")), (entity.getPersistentData().getDouble("magickatanaZ")));
+				_ent.setPositionAndUpdate((entity.getPersistentData().getDouble("magickatanaX")), (entity.getPersistentData().getDouble("magickatanaY")), (entity.getPersistentData().getDouble("magickatanaZ")));
 				if (_ent instanceof ServerPlayerEntity) {
-					((ServerPlayerEntity) _ent).connection.setPlayerLocation((entity.getPersistentData().getDouble("magickatanaX")),
-							(entity.getPersistentData().getDouble("magickatanaY")), (entity.getPersistentData().getDouble("magickatanaZ")),
+					((ServerPlayerEntity) _ent).connection.setPlayerLocation((entity.getPersistentData().getDouble("magickatanaX")), (entity.getPersistentData().getDouble("magickatanaY")), (entity.getPersistentData().getDouble("magickatanaZ")),
 							_ent.rotationYaw, _ent.rotationPitch, Collections.emptySet());
 				}
 			}

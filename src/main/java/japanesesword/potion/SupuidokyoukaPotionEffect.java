@@ -14,11 +14,12 @@ import net.minecraft.entity.ai.attributes.AttributeModifierManager;
 import net.minecraft.entity.LivingEntity;
 
 import java.util.stream.Stream;
+
+import japanesesword.procedures.NoroProcedure;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
-
-import japanesesword.procedures.NoroProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SupuidokyoukaPotionEffect {
@@ -73,8 +74,7 @@ public class SupuidokyoukaPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			NoroProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			NoroProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

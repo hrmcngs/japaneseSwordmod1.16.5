@@ -48,9 +48,8 @@ import japanesesword.JapaneseswordModElements;
 public class NagerukatanaItem extends JapaneseswordModElements.ModElement {
 	@ObjectHolder("japanesesword:nagerukatana")
 	public static final Item block = null;
-	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-			.size(0.5f, 0.5f)).build("projectile_nagerukatana").setRegistryName("projectile_nagerukatana");
+	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1)
+			.setCustomClientFactory(ArrowCustomEntity::new).size(0.5f, 0.5f)).build("projectile_nagerukatana").setRegistryName("projectile_nagerukatana");
 
 	public NagerukatanaItem(JapaneseswordModElements instance) {
 		super(instance, 216);
@@ -151,10 +150,8 @@ public class NagerukatanaItem extends JapaneseswordModElements.ModElement {
 			Entity entity = this.func_234616_v_();
 			Entity immediatesourceentity = this;
 
-			NagenaihutoProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			NagenaihutoProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
+					new AbstractMap.SimpleEntry<>("immediatesourceentity", immediatesourceentity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			if (this.inGround)
 				this.remove();
 		}
@@ -171,9 +168,8 @@ public class NagerukatanaItem extends JapaneseswordModElements.ModElement {
 		double x = entity.getPosX();
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
-		world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.shoot")),
-				SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z, (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.shoot")), SoundCategory.PLAYERS, 1,
+				1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
 
@@ -191,9 +187,8 @@ public class NagerukatanaItem extends JapaneseswordModElements.ModElement {
 		double x = entity.getPosX();
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
-		entity.world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.shoot")),
-				SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
+		entity.world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z, (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.shoot")), SoundCategory.PLAYERS, 1,
+				1f / (new Random().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}
 }

@@ -17,9 +17,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.AncientbooksaitemuwoShoudeChituteiruJiannoteitukuProcedure;
-
 import japanesesword.JapaneseswordModElements;
+import japanesesword.procedures.AncientbooksaitemuwoShoudeChituteiruJiannoteitukuProcedure;
 
 @JapaneseswordModElements.ModElement.Tag
 public class AncientbooksItem extends JapaneseswordModElements.ModElement {
@@ -52,6 +51,11 @@ public class AncientbooksItem extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
+		public int getUseDuration(ItemStack itemstack) {
+			return 0;
+		}
+
+		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
 		}
@@ -64,8 +68,7 @@ public class AncientbooksItem extends JapaneseswordModElements.ModElement {
 			double z = entity.getPosZ();
 			if (selected)
 
-				AncientbooksaitemuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				AncientbooksaitemuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

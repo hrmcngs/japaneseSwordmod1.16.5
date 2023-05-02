@@ -58,8 +58,7 @@ public class Demonized2Procedure {
 			{
 				Entity _ent = entity;
 				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-							"/attribute @s minecraft:generic.attack_damage base set 0");
+					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/attribute @s minecraft:generic.attack_damage base set 0");
 				}
 			}
 		}

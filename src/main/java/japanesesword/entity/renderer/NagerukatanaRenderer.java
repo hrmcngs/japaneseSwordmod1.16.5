@@ -42,8 +42,7 @@ public class NagerukatanaRenderer {
 		}
 
 		@Override
-		public void render(NagerukatanaItem.ArrowCustomEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn,
-				IRenderTypeBuffer bufferIn, int packedLightIn) {
+		public void render(NagerukatanaItem.ArrowCustomEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
 			IVertexBuilder vb = bufferIn.getBuffer(RenderType.getEntityCutout(this.getEntityTexture(entityIn)));
 			matrixStackIn.push();
 			matrixStackIn.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationYaw, entityIn.rotationYaw) - 90));
@@ -107,8 +106,7 @@ public class NagerukatanaRenderer {
 		}
 
 		@Override
-		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-				float alpha) {
+		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 			bone.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		}
 

@@ -17,9 +17,8 @@ import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
-import japanesesword.enchantment.KillEnchantment;
-
 import japanesesword.JapaneseswordMod;
+import japanesesword.enchantment.KillEnchantment;
 
 public class TerepotoehuekutogaYouXiaoShinoteitukuProcedure {
 
@@ -61,8 +60,7 @@ public class TerepotoehuekutogaYouXiaoShinoteitukuProcedure {
 		double x_pos = 0;
 		double z_pos = 0;
 		double dis = 0;
-		if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity) {
 				((LivingEntity) entity).swing(Hand.MAIN_HAND, true);
 			}
@@ -79,8 +77,8 @@ public class TerepotoehuekutogaYouXiaoShinoteitukuProcedure {
 					z_pos = (z + Math.cos(rad_now) * Math.sin(degree) * rad * dis);
 					world.addParticle(ParticleTypes.SOUL_FIRE_FLAME, x_pos, xRabius, z_pos, 0.01, 0.01, 0.01);
 					{
-						List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(x_pos - (3 / 2d), xRabius - (3 / 2d),
-								z_pos - (3 / 2d), x_pos + (3 / 2d), xRabius + (3 / 2d), z_pos + (3 / 2d)), null).stream().sorted(new Object() {
+						List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(x_pos - (3 / 2d), xRabius - (3 / 2d), z_pos - (3 / 2d), x_pos + (3 / 2d), xRabius + (3 / 2d), z_pos + (3 / 2d)), null).stream()
+								.sorted(new Object() {
 									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 									}
@@ -92,16 +90,13 @@ public class TerepotoehuekutogaYouXiaoShinoteitukuProcedure {
 									{
 										Entity _ent = entityiterator;
 										if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-											_ent.world.getServer().getCommandManager()
-													.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
+											_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/kill @s");
 										}
 									}
 									{
 										Entity _ent = entityiterator;
 										if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-											_ent.world.getServer().getCommandManager().handleCommand(
-													_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-													"/deta merge entity @s (Health:0)");
+											_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
 										}
 									}
 								}
@@ -130,8 +125,8 @@ public class TerepotoehuekutogaYouXiaoShinoteitukuProcedure {
 					z_pos = (z + Math.cos(rad_now) * Math.sin(degree) * rad * dis);
 					world.addParticle(ParticleTypes.FLAME, x_pos, xRabius, z_pos, 0.01, 0.01, 0.01);
 					{
-						List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(x_pos - (3 / 2d), xRabius - (3 / 2d),
-								z_pos - (3 / 2d), x_pos + (3 / 2d), xRabius + (3 / 2d), z_pos + (3 / 2d)), null).stream().sorted(new Object() {
+						List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(x_pos - (3 / 2d), xRabius - (3 / 2d), z_pos - (3 / 2d), x_pos + (3 / 2d), xRabius + (3 / 2d), z_pos + (3 / 2d)), null).stream()
+								.sorted(new Object() {
 									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 									}

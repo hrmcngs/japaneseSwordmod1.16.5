@@ -19,10 +19,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.YuugenkennenteiteigaaitemuwoZhentutaShiProcedure;
-import japanesesword.procedures.YuugenkennKongQiwoYoukuritukusitatokiProcedure;
-
 import japanesesword.JapaneseswordModElements;
+import japanesesword.procedures.YuugenkennKongQiwoYoukuritukusitatokiProcedure;
+import japanesesword.procedures.YuugenkennenteiteigaaitemuwoZhentutaShiProcedure;
 
 @JapaneseswordModElements.ModElement.Tag
 public class YuugenkennItem extends JapaneseswordModElements.ModElement {
@@ -68,11 +67,9 @@ public class YuugenkennItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				YuugenkennKongQiwoYoukuritukusitatokiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				YuugenkennKongQiwoYoukuritukusitatokiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -84,8 +81,7 @@ public class YuugenkennItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				World world = entity.world;
 
-				YuugenkennenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				YuugenkennenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 		}.setRegistryName("yuugenkenn"));

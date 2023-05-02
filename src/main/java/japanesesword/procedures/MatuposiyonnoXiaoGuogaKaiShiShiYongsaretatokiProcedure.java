@@ -55,34 +55,22 @@ public class MatuposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 		deta = (entity.rotationPitch);
 		for (int index0 = 0; index0 < (int) (100); index0++) {
 			if (world instanceof ServerWorld) {
-				((World) world).getServer().getCommandManager().handleCommand(
-						new CommandSource(ICommandSource.DUMMY,
-								new Vector3d((x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))),
-										((y + 1) - r * Math.sin(Math.toRadians(deta))),
-										(z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha)))),
-								Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-								.withFeedbackDisabled(),
-						"particle minecraft:dust 0.059 0.059 0.059 0.5 ~ ~ ~ 0.01 0.01 0.01 1 10");
+				((World) world).getServer().getCommandManager()
+						.handleCommand(new CommandSource(ICommandSource.DUMMY,
+								new Vector3d((x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))), ((y + 1) - r * Math.sin(Math.toRadians(deta))), (z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha)))),
+								Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(), "particle minecraft:dust 0.059 0.059 0.059 0.5 ~ ~ ~ 0.01 0.01 0.01 1 10");
 			}
 			if (world instanceof ServerWorld) {
-				((World) world).getServer().getCommandManager().handleCommand(
-						new CommandSource(ICommandSource.DUMMY,
-								new Vector3d((x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))),
-										((y + 1) - r * Math.sin(Math.toRadians(deta))),
-										(z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha)))),
-								Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-								.withFeedbackDisabled(),
-						"particle minecraft:dust 0.188 0.000 0.000 0.5 ~ ~ ~ 0.01 0.01 0.01 1 10");
+				((World) world).getServer().getCommandManager()
+						.handleCommand(new CommandSource(ICommandSource.DUMMY,
+								new Vector3d((x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))), ((y + 1) - r * Math.sin(Math.toRadians(deta))), (z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha)))),
+								Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(), "particle minecraft:dust 0.188 0.000 0.000 0.5 ~ ~ ~ 0.01 0.01 0.01 1 10");
 			}
 			if (world instanceof ServerWorld) {
-				((World) world).getServer().getCommandManager().handleCommand(
-						new CommandSource(ICommandSource.DUMMY,
-								new Vector3d((x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))),
-										((y + 1) - r * Math.sin(Math.toRadians(deta))),
-										(z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha)))),
-								Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null)
-								.withFeedbackDisabled(),
-						"particle minecraft:dust 0.549 0.000 0.000 0.5 ~ ~ ~ 0.01 0.01 0.01 1 10");
+				((World) world).getServer().getCommandManager()
+						.handleCommand(new CommandSource(ICommandSource.DUMMY,
+								new Vector3d((x - r * Math.cos(Math.toRadians(deta)) * Math.sin(Math.toRadians(alpha))), ((y + 1) - r * Math.sin(Math.toRadians(deta))), (z + r * Math.cos(Math.toRadians(deta)) * Math.cos(Math.toRadians(alpha)))),
+								Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(), "particle minecraft:dust 0.549 0.000 0.000 0.5 ~ ~ ~ 0.01 0.01 0.01 1 10");
 			}
 			r = (r + 0.2);
 		}

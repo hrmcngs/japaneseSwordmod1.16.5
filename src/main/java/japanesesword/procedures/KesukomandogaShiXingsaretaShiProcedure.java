@@ -22,10 +22,7 @@ public class KesukomandogaShiXingsaretaShiProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-				? ((ServerPlayerEntity) entity).getAdvancements()
-						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-								.getAdvancement(new ResourceLocation("japanesesword:deleted_mod_element")))
-						.isDone()
+				? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:deleted_mod_element"))).isDone()
 				: false) {
 			{
 				double _setval = 0;

@@ -54,70 +54,46 @@ public class NagenaihutoProcedure {
 		Entity immediatesourceentity = (Entity) dependencies.get("immediatesourceentity");
 		double dis = 0;
 		if (world instanceof ServerWorld) {
-			((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (immediatesourceentity.getPosX()), (immediatesourceentity.getPosY()),
-					(immediatesourceentity.getPosZ()), (int) 1.5, 0.3, 0.25, 0.3, 0);
+			((ServerWorld) world).spawnParticle(ParticleTypes.SMOKE, (immediatesourceentity.getPosX()), (immediatesourceentity.getPosY()), (immediatesourceentity.getPosZ()), (int) 1.5, 0.3, 0.25, 0.3, 0);
 		}
 		if (world instanceof ServerWorld) {
-			((ServerWorld) world).spawnParticle(ParticleTypes.ASH, (immediatesourceentity.getPosX()), (immediatesourceentity.getPosY()),
-					(immediatesourceentity.getPosZ()), (int) 1.5, 0.3, 0.25, 0.3, 0);
+			((ServerWorld) world).spawnParticle(ParticleTypes.ASH, (immediatesourceentity.getPosX()), (immediatesourceentity.getPosY()), (immediatesourceentity.getPosZ()), (int) 1.5, 0.3, 0.25, 0.3, 0);
 		}
-		if (((Entity) world
-				.getEntitiesWithinAABB(MobEntity.class,
-						new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
-				.stream().sorted(new Object() {
-					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) != null) {
-			dis = Math.sqrt(Math.pow(((Entity) world
-					.getEntitiesWithinAABB(MobEntity.class,
-							new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
-					.stream().sorted(new Object() {
+		if (((Entity) world.getEntitiesWithinAABB(MobEntity.class, new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null).stream().sorted(new Object() {
+			Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+				return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+			}
+		}.compareDistOf(x, y, z)).findFirst().orElse(null)) != null) {
+			dis = Math.sqrt(Math.pow(((Entity) world.getEntitiesWithinAABB(MobEntity.class, new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null).stream().sorted(new Object() {
+				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+					return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+				}
+			}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosX() - immediatesourceentity.getPosX(), 2)
+					+ Math.pow(((Entity) world.getEntitiesWithinAABB(MobEntity.class, new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null).stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosX() - immediatesourceentity.getPosX(), 2) + Math.pow(((Entity) world
-							.getEntitiesWithinAABB(MobEntity.class,
-									new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf(x, y,
-									z))
-							.findFirst().orElse(null)).getPosY() - immediatesourceentity.getPosY(), 2)
-					+ Math.pow(((Entity) world
-							.getEntitiesWithinAABB(MobEntity.class,
-									new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosZ() - immediatesourceentity.getPosZ(), 2));
-			immediatesourceentity.setMotion(((((Entity) world
-					.getEntitiesWithinAABB(MobEntity.class,
-							new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
-					.stream().sorted(new Object() {
+					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosY() - immediatesourceentity.getPosY(), 2)
+					+ Math.pow(((Entity) world.getEntitiesWithinAABB(MobEntity.class, new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null).stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosX() - immediatesourceentity.getPosX()) / dis),
-					((((Entity) world
-							.getEntitiesWithinAABB(MobEntity.class,
-									new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosY() - immediatesourceentity.getPosY()) / dis),
-					((((Entity) world
-							.getEntitiesWithinAABB(MobEntity.class,
-									new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosZ() - immediatesourceentity.getPosZ()) / dis));
+					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosZ() - immediatesourceentity.getPosZ(), 2));
+			immediatesourceentity.setMotion(((((Entity) world.getEntitiesWithinAABB(MobEntity.class, new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null).stream().sorted(new Object() {
+				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+					return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+				}
+			}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosX() - immediatesourceentity.getPosX()) / dis),
+					((((Entity) world.getEntitiesWithinAABB(MobEntity.class, new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null).stream().sorted(new Object() {
+						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+						}
+					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosY() - immediatesourceentity.getPosY()) / dis),
+					((((Entity) world.getEntitiesWithinAABB(MobEntity.class, new AxisAlignedBB(x - (50 / 2d), y - (50 / 2d), z - (50 / 2d), x + (50 / 2d), y + (50 / 2d), z + (50 / 2d)), null).stream().sorted(new Object() {
+						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+							return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+						}
+					}.compareDistOf(x, y, z)).findFirst().orElse(null)).getPosZ() - immediatesourceentity.getPosZ()) / dis));
 		}
 		new Object() {
 			private int ticks = 0;
@@ -140,9 +116,7 @@ public class NagenaihutoProcedure {
 			}
 
 			private void run() {
-				if (((immediatesourceentity.getEntity() instanceof ProjectileEntity)
-						? ((immediatesourceentity).getMotion().distanceTo(Vector3d.ZERO))
-						: 0) >= 0.5) {
+				if (((immediatesourceentity.getEntity() instanceof ProjectileEntity) ? ((immediatesourceentity).getMotion().distanceTo(Vector3d.ZERO)) : 0) >= 0.5) {
 					if (!immediatesourceentity.world.isRemote())
 						immediatesourceentity.remove();
 				}

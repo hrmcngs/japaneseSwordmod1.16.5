@@ -18,8 +18,7 @@ public class NoroimobugaturudeGongJisaretatokiProcedure {
 		{
 			Entity _ent = sourceentity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-						"/particle dust 0.000 0.000 0.000 1 ~ ~ ~");
+				_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/particle dust 0.000 0.000 0.000 1 ~ ~ ~");
 			}
 		}
 	}

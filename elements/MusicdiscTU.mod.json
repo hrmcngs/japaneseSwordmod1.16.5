@@ -1,17 +1,19 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "musicdisc",
   "definition": {
-    "texture": "disc",
     "name": "月まで届け、不死の煙",
+    "texture": "disc",
     "description": "月まで届け、不死の煙",
     "creativeTab": {
       "value": "No creative tab entry"
     },
+    "specialInfo": [],
+    "hasGlow": true,
     "music": {
       "value": "CUSTOM:tu"
     },
-    "specialInfo": [],
-    "hasGlow": true
+    "lengthInTicks": 0,
+    "analogOutput": 0
   }
 }

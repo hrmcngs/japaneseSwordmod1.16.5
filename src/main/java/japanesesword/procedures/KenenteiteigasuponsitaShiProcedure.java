@@ -52,15 +52,11 @@ public class KenenteiteigasuponsitaShiProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		entity.getPersistentData().putString("UUID",
-				((Entity) world
-						.getEntitiesWithinAABB(PlayerEntity.class,
-								new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null)
-						.stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(null)).getUniqueID().toString());
+		entity.getPersistentData().putString("UUID", ((Entity) world.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (4 / 2d), y - (4 / 2d), z - (4 / 2d), x + (4 / 2d), y + (4 / 2d), z + (4 / 2d)), null).stream().sorted(new Object() {
+			Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+				return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+			}
+		}.compareDistOf(x, y, z)).findFirst().orElse(null)).getUniqueID().toString());
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(KeneffectPotionEffect.potion, (int) 99999, (int) 1, (true), (false)));
 		new Object() {

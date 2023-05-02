@@ -43,8 +43,7 @@ import java.util.function.Supplier;
 public class JapaneseswordMod {
 	public static final Logger LOGGER = LogManager.getLogger(JapaneseswordMod.class);
 	private static final String PROTOCOL_VERSION = "1";
-	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("japanesesword", "japanesesword"),
-			() -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
+	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("japanesesword", "japanesesword"), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 	public JapaneseswordModElements elements;
 
 	public JapaneseswordMod() {

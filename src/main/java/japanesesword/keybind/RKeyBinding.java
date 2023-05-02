@@ -24,10 +24,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.NankaProcedure;
-
 import japanesesword.JapaneseswordModElements;
-
+import japanesesword.procedures.NankaProcedure;
 import japanesesword.JapaneseswordMod;
 
 @JapaneseswordModElements.ModElement.Tag
@@ -37,8 +35,7 @@ public class RKeyBinding extends JapaneseswordModElements.ModElement {
 
 	public RKeyBinding(JapaneseswordModElements instance) {
 		super(instance, 45);
-		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
-				KeyBindingPressedMessage::handler);
+		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new, KeyBindingPressedMessage::handler);
 	}
 
 	@Override
@@ -99,8 +96,7 @@ public class RKeyBinding extends JapaneseswordModElements.ModElement {
 			return;
 		if (type == 0) {
 
-			NankaProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			NankaProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

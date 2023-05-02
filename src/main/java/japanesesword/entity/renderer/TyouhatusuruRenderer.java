@@ -17,8 +17,7 @@ public class TyouhatusuruRenderer {
 		@SubscribeEvent
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
-			RenderingRegistry.registerEntityRenderingHandler(TyouhatusuruItem.arrow,
-					renderManager -> new SpriteRenderer(renderManager, Minecraft.getInstance().getItemRenderer()));
+			RenderingRegistry.registerEntityRenderingHandler(TyouhatusuruItem.arrow, renderManager -> new SpriteRenderer(renderManager, Minecraft.getInstance().getItemRenderer()));
 		}
 	}
 }

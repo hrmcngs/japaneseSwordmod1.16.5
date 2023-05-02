@@ -54,20 +54,10 @@ public class SaiseinakamiProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((EnchantmentHelper.getEnchantmentLevel(SaiseiEnchantment.enchantment,
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)) != 0)
-				|| (EnchantmentHelper.getEnchantmentLevel(SaiseiEnchantment.enchantment,
-						((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST)
-								: ItemStack.EMPTY)) != 0)
-				|| (EnchantmentHelper.getEnchantmentLevel(SaiseiEnchantment.enchantment,
-						((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD)
-								: ItemStack.EMPTY)) != 0)
-				|| (EnchantmentHelper.getEnchantmentLevel(SaiseiEnchantment.enchantment,
-						((entity instanceof LivingEntity)
-								? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET)
-								: ItemStack.EMPTY)) != 0)) {
+		if ((EnchantmentHelper.getEnchantmentLevel(SaiseiEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.LEGS) : ItemStack.EMPTY)) != 0)
+				|| (EnchantmentHelper.getEnchantmentLevel(SaiseiEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.CHEST) : ItemStack.EMPTY)) != 0)
+				|| (EnchantmentHelper.getEnchantmentLevel(SaiseiEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.HEAD) : ItemStack.EMPTY)) != 0)
+				|| (EnchantmentHelper.getEnchantmentLevel(SaiseiEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.REGENERATION, (int) 0.1, (int) 255));
 			if (entity instanceof LivingEntity)

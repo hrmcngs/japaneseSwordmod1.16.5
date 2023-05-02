@@ -6,7 +6,13 @@
       "sortid": 2,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "j"
+      "registry_name": "j",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/j.json",
+          "src/main/java/japanesesword/item/JItem.java"
+        ]
+      }
     },
     {
       "name": "Entyant",
@@ -14,7 +20,12 @@
       "sortid": 3,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "entyant"
+      "registry_name": "entyant",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/enchantment/EntyantEnchantment.java"
+        ]
+      }
     },
     {
       "name": "Buki",
@@ -22,7 +33,12 @@
       "sortid": 4,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "buki"
+      "registry_name": "buki",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/itemgroup/BukiItemGroup.java"
+        ]
+      }
     },
     {
       "name": "Test",
@@ -32,6 +48,9 @@
       "locked_code": false,
       "registry_name": "test",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TestProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -62,7 +81,12 @@
       "sortid": 7,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "takebow"
+      "registry_name": "takebow",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/takebow.json"
+        ]
+      }
     },
     {
       "name": "Katana",
@@ -70,7 +94,12 @@
       "sortid": 8,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "katana"
+      "registry_name": "katana",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/katana.json"
+        ]
+      }
     },
     {
       "name": "Takebow2",
@@ -78,7 +107,12 @@
       "sortid": 9,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "takebow_2"
+      "registry_name": "takebow_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/takebow_2.json"
+        ]
+      }
     },
     {
       "name": "Tantou",
@@ -86,7 +120,13 @@
       "sortid": 10,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tantou"
+      "registry_name": "tantou",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/TantouItem.java",
+          "src/main/resources/assets/japanesesword/models/item/tantou.json"
+        ]
+      }
     },
     {
       "name": "Tantou1",
@@ -94,7 +134,12 @@
       "sortid": 11,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tantou_1"
+      "registry_name": "tantou_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/tantou_1.json"
+        ]
+      }
     },
     {
       "name": "Nannka",
@@ -102,7 +147,13 @@
       "sortid": 12,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nannka"
+      "registry_name": "nannka",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/nannka.json",
+          "src/main/java/japanesesword/item/NannkaItem.java"
+        ]
+      }
     },
     {
       "name": "Kill",
@@ -142,7 +193,13 @@
       "sortid": 15,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "japanese_sword"
+      "registry_name": "japanese_sword",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/JapaneseSwordItem.java",
+          "src/main/resources/assets/japanesesword/models/item/japanese_sword.json"
+        ]
+      }
     },
     {
       "name": "Tubanoatukatana",
@@ -150,7 +207,13 @@
       "sortid": 16,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tubanoatukatana"
+      "registry_name": "tubanoatukatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/tubanoatukatana.json",
+          "src/main/java/japanesesword/item/TubanoatukatanaItem.java"
+        ]
+      }
     },
     {
       "name": "Tubatukikatana",
@@ -158,7 +221,12 @@
       "sortid": 17,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tubatukikatana"
+      "registry_name": "tubatukikatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/tubatukikatana.json"
+        ]
+      }
     },
     {
       "name": "Saikyounokatana",
@@ -166,7 +234,12 @@
       "sortid": 18,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "saikyounokatana"
+      "registry_name": "saikyounokatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/saikyounokatana.json"
+        ]
+      }
     },
     {
       "name": "Goukinntou",
@@ -174,7 +247,13 @@
       "sortid": 19,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "goukinntou"
+      "registry_name": "goukinntou",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/goukinntou.json",
+          "src/main/java/japanesesword/item/GoukinntouItem.java"
+        ]
+      }
     },
     {
       "name": "Kazarinoarukataba",
@@ -182,7 +261,13 @@
       "sortid": 20,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kazarinoarukataba"
+      "registry_name": "kazarinoarukataba",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/kazarinoarukataba.json",
+          "src/main/java/japanesesword/item/KazarinoarukatabaItem.java"
+        ]
+      }
     },
     {
       "name": "Kazarigaatukatana",
@@ -190,7 +275,12 @@
       "sortid": 20,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kazarigaatukatana"
+      "registry_name": "kazarigaatukatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/kazarigaatukatana.json"
+        ]
+      }
     },
     {
       "name": "Tetotokin",
@@ -198,7 +288,13 @@
       "sortid": 21,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tetotokin"
+      "registry_name": "tetotokin",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/tetotokin.json",
+          "src/main/java/japanesesword/item/TetotokinItem.java"
+        ]
+      }
     },
     {
       "name": "Goukin",
@@ -206,7 +302,13 @@
       "sortid": 22,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "goukin"
+      "registry_name": "goukin",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/GoukinItem.java",
+          "src/main/resources/assets/japanesesword/models/item/goukin.json"
+        ]
+      }
     },
     {
       "name": "Goukintukurikata",
@@ -214,7 +316,12 @@
       "sortid": 23,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "goukintukurikata"
+      "registry_name": "goukintukurikata",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/goukintukurikata.json"
+        ]
+      }
     },
     {
       "name": "Goukintou",
@@ -222,7 +329,12 @@
       "sortid": 24,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "goukintou"
+      "registry_name": "goukintou",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/goukintou.json"
+        ]
+      }
     },
     {
       "name": "Tetutokinnoresipi",
@@ -230,7 +342,12 @@
       "sortid": 25,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tetutokinnoresipi"
+      "registry_name": "tetutokinnoresipi",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/tetutokinnoresipi.json"
+        ]
+      }
     },
     {
       "name": "Tetutokinnoresipi2",
@@ -238,7 +355,12 @@
       "sortid": 26,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tetutokinnoresipi_2"
+      "registry_name": "tetutokinnoresipi_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/tetutokinnoresipi_2.json"
+        ]
+      }
     },
     {
       "name": "Hannmaa",
@@ -254,7 +376,15 @@
       "sortid": 28,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "doku"
+      "registry_name": "doku",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/block/doku.json",
+          "src/main/resources/assets/japanesesword/blockstates/doku.json",
+          "src/main/resources/assets/japanesesword/models/item/doku.json",
+          "src/main/java/japanesesword/block/DokuBlock.java"
+        ]
+      }
     },
     {
       "name": "Doku2",
@@ -262,7 +392,12 @@
       "sortid": 29,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "doku_2"
+      "registry_name": "doku_2",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Doku2PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Doku3",
@@ -270,7 +405,12 @@
       "sortid": 30,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "doku_3"
+      "registry_name": "doku_3",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Doku3Potion.java"
+        ]
+      }
     },
     {
       "name": "Doku2posiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
@@ -280,6 +420,9 @@
       "locked_code": false,
       "registry_name": "doku_2posiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Doku2posiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -310,7 +453,12 @@
       "sortid": 35,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nagenaihuresipu"
+      "registry_name": "nagenaihuresipu",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/nagenaihuresipu.json"
+        ]
+      }
     },
     {
       "name": "Naihu",
@@ -326,7 +474,12 @@
       "sortid": 37,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "hitokiri"
+      "registry_name": "hitokiri",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/hitokiri.json"
+        ]
+      }
     },
     {
       "name": "Naihuresipi",
@@ -334,7 +487,12 @@
       "sortid": 40,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "naihuresipi"
+      "registry_name": "naihuresipi",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/naihuresipi.json"
+        ]
+      }
     },
     {
       "name": "Naihunage",
@@ -342,7 +500,12 @@
       "sortid": 40,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "naihunage"
+      "registry_name": "naihunage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/naihunage.json"
+        ]
+      }
     },
     {
       "name": "Naihunege",
@@ -350,7 +513,12 @@
       "sortid": 41,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "naihunege"
+      "registry_name": "naihunege",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/naihunege.json"
+        ]
+      }
     },
     {
       "name": "Nanka",
@@ -406,7 +574,12 @@
       "sortid": 45,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "r"
+      "registry_name": "r",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/keybind/RKeyBinding.java"
+        ]
+      }
     },
     {
       "name": "Bakudan",
@@ -414,7 +587,12 @@
       "sortid": 46,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "bakudan"
+      "registry_name": "bakudan",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/enchantment/BakudanEnchantment.java"
+        ]
+      }
     },
     {
       "name": "Bakudann",
@@ -424,6 +602,9 @@
       "locked_code": false,
       "registry_name": "bakudann",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/BakudannProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -448,6 +629,9 @@
       "locked_code": false,
       "registry_name": "japanese_swordenteiteigaaitemuwo_zhentuta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/JapaneseSwordenteiteigaaitemuwoZhentutaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -462,7 +646,13 @@
       "sortid": 52,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "zanngeki"
+      "registry_name": "zanngeki",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/particle/ZanngekiParticle.java",
+          "src/main/resources/assets/japanesesword/particles/zanngeki.json"
+        ]
+      }
     },
     {
       "name": "YoumuenteiteigaSiWangsitaShi",
@@ -472,6 +662,9 @@
       "locked_code": false,
       "registry_name": "youmuenteiteiga_si_wangsita_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/YoumuenteiteigaSiWangsitaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -494,7 +687,12 @@
       "sortid": 54,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "bukinanigasuki"
+      "registry_name": "bukinanigasuki",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/bukinanigasuki.json"
+        ]
+      }
     },
     {
       "name": "Tap",
@@ -502,7 +700,12 @@
       "sortid": 55,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tap"
+      "registry_name": "tap",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/gui/overlay/TapOverlay.java"
+        ]
+      }
     },
     {
       "name": "Yuugenkenn",
@@ -510,7 +713,13 @@
       "sortid": 56,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "yuugenkenn"
+      "registry_name": "yuugenkenn",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/YuugenkennItem.java",
+          "src/main/resources/assets/japanesesword/models/item/yuugenkenn.json"
+        ]
+      }
     },
     {
       "name": "YuugenkennKongQiwoYoukuritukusitatoki",
@@ -552,6 +761,9 @@
       "locked_code": false,
       "registry_name": "kesukomandoga_shi_xingsareta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KesukomandogaShiXingsaretaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -590,7 +802,12 @@
       "sortid": 62,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "a"
+      "registry_name": "a",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/keybind/AKeyBinding.java"
+        ]
+      }
     },
     {
       "name": "Kesu",
@@ -598,7 +815,12 @@
       "sortid": 63,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kesu"
+      "registry_name": "kesu",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/command/KesuCommand.java"
+        ]
+      }
     },
     {
       "name": "YuugenkennenteiteigaaitemuwoZhentutaShi",
@@ -627,7 +849,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/java/japanesesword/item/TekitouItem.java",
+          "src/main/resources/assets/japanesesword/models/item/tekitou_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/tekitou_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/tekitou_leggings.json",
+          "src/main/resources/assets/japanesesword/models/item/tekitou_boots.json"
+        ]
       }
     },
     {
@@ -646,6 +875,9 @@
       "locked_code": false,
       "registry_name": "kill_2posiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Kill2posiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -660,7 +892,12 @@
       "sortid": 68,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kill_2"
+      "registry_name": "kill_2",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Kill2PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Nannk",
@@ -684,7 +921,13 @@
       "sortid": 72,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "gin"
+      "registry_name": "gin",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/GinnItem.java",
+          "src/main/resources/assets/japanesesword/models/item/gin.json"
+        ]
+      }
     },
     {
       "name": "Gin",
@@ -692,7 +935,12 @@
       "sortid": 73,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "gin"
+      "registry_name": "gin",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/gin.json"
+        ]
+      }
     },
     {
       "name": "Ginnburokku",
@@ -780,7 +1028,13 @@
       "sortid": 83,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "naihu_2"
+      "registry_name": "naihu_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/naihu_2.json",
+          "src/main/java/japanesesword/item/Naihu2Item.java"
+        ]
+      }
     },
     {
       "name": "Ginyade",
@@ -802,7 +1056,12 @@
       "sortid": 85,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tidaisuki"
+      "registry_name": "tidaisuki",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/tidaisuki.json"
+        ]
+      }
     },
     {
       "name": "TiShiLiaowoShibetatoki",
@@ -812,6 +1071,9 @@
       "locked_code": false,
       "registry_name": "ti_shi_liaowo_shibetatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TiShiLiaowoShibetatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -826,7 +1088,13 @@
       "sortid": 87,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ha"
+      "registry_name": "ha",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/ha.json",
+          "src/main/java/japanesesword/item/HaItem.java"
+        ]
+      }
     },
     {
       "name": "HaturuwoShoudeChituteiruJiannoteituku",
@@ -836,6 +1104,9 @@
       "locked_code": false,
       "registry_name": "haturuwo_shoude_chituteiru_jiannoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/HaturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -850,7 +1121,12 @@
       "sortid": 91,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nannnnnka"
+      "registry_name": "nannnnnka",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/enchantment/NannnnnkaEnchantment.java"
+        ]
+      }
     },
     {
       "name": "Nannnnka",
@@ -860,6 +1136,9 @@
       "locked_code": false,
       "registry_name": "nannnnka",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NannnnkaProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -874,7 +1153,12 @@
       "sortid": 93,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "flame"
+      "registry_name": "flame",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/enchantment/NannnkaEnchantment.java"
+        ]
+      }
     },
     {
       "name": "Nannnnnnka",
@@ -884,6 +1168,9 @@
       "locked_code": false,
       "registry_name": "nannnnnnka",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NannnnnnkaProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -898,7 +1185,12 @@
       "sortid": 95,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ginnbunnkai"
+      "registry_name": "ginnbunnkai",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/ginnbunnkai.json"
+        ]
+      }
     },
     {
       "name": "Ginnburokkuturikata",
@@ -906,7 +1198,12 @@
       "sortid": 96,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ginnburokkuturikata"
+      "registry_name": "ginnburokkuturikata",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/ginnburokkuturikata.json"
+        ]
+      }
     },
     {
       "name": "Saisei",
@@ -914,7 +1211,12 @@
       "sortid": 97,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "saisei"
+      "registry_name": "saisei",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/enchantment/SaiseiEnchantment.java"
+        ]
+      }
     },
     {
       "name": "Saiseinakami",
@@ -924,6 +1226,9 @@
       "locked_code": false,
       "registry_name": "saiseinakami",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/SaiseinakamiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -938,7 +1243,12 @@
       "sortid": 99,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tera"
+      "registry_name": "tera",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/world/structure/TeraStructure.java"
+        ]
+      }
     },
     {
       "name": "Kurutaimunasi",
@@ -946,7 +1256,12 @@
       "sortid": 100,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kurutaimunasi"
+      "registry_name": "kurutaimunasi",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/KurutaimunasiPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "WazakigaYasaretatoki",
@@ -956,6 +1271,9 @@
       "locked_code": false,
       "registry_name": "wazakiga_yasaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/WazakigaYasaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -970,7 +1288,12 @@
       "sortid": 101,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "waza"
+      "registry_name": "waza",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/keybind/WazaKeyBinding.java"
+        ]
+      }
     },
     {
       "name": "Noroharetakatana",
@@ -978,7 +1301,13 @@
       "sortid": 102,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "motonokatana"
+      "registry_name": "motonokatana",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/NoroharetakatanaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/motonokatana.json"
+        ]
+      }
     },
     {
       "name": "Haka666",
@@ -986,7 +1315,12 @@
       "sortid": 105,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "haka_666"
+      "registry_name": "haka_666",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/world/structure/Haka666Structure.java"
+        ]
+      }
     },
     {
       "name": "Kanata",
@@ -997,6 +1331,9 @@
       "registry_name": "kanata",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/japanesesword/procedures/KanataProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -1135,7 +1472,13 @@
       "sortid": 115,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "hon"
+      "registry_name": "hon",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/HonItem.java",
+          "src/main/resources/assets/japanesesword/models/item/hon.json"
+        ]
+      }
     },
     {
       "name": "C",
@@ -1145,6 +1488,9 @@
       "locked_code": false,
       "registry_name": "c",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/CProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1161,6 +1507,9 @@
       "locked_code": false,
       "registry_name": "f",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/FProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1177,6 +1526,9 @@
       "locked_code": false,
       "registry_name": "h",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/HProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1191,7 +1543,13 @@
       "sortid": 117,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "b"
+      "registry_name": "b",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/gui/BGuiWindow.java",
+          "src/main/java/japanesesword/gui/BGui.java"
+        ]
+      }
     },
     {
       "name": "Mint",
@@ -1213,7 +1571,13 @@
       "sortid": 121,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "honn"
+      "registry_name": "honn",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/honn.json",
+          "src/main/java/japanesesword/item/HonnItem.java"
+        ]
+      }
     },
     {
       "name": "Syodan",
@@ -1221,7 +1585,12 @@
       "sortid": 122,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "syodan"
+      "registry_name": "syodan",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/syodan.json"
+        ]
+      }
     },
     {
       "name": "Tyudan",
@@ -1229,7 +1598,12 @@
       "sortid": 123,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tyudan"
+      "registry_name": "tyudan",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/tyudan.json"
+        ]
+      }
     },
     {
       "name": "Bokutou",
@@ -1245,7 +1619,12 @@
       "sortid": 125,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "bokutouresipu"
+      "registry_name": "bokutouresipu",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/bokutouresipu.json"
+        ]
+      }
     },
     {
       "name": "Daiazyui",
@@ -1253,7 +1632,13 @@
       "sortid": 126,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "daiazyui"
+      "registry_name": "daiazyui",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/daiazyui.json",
+          "src/main/java/japanesesword/item/DaiazyuiItem.java"
+        ]
+      }
     },
     {
       "name": "Daiazyoi",
@@ -1277,7 +1662,12 @@
       "sortid": 130,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "daiazyuiresipu"
+      "registry_name": "daiazyuiresipu",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/daiazyuiresipu.json"
+        ]
+      }
     },
     {
       "name": "Daiazyuiresipu1",
@@ -1285,7 +1675,12 @@
       "sortid": 131,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "daiazyuiresipu_1"
+      "registry_name": "daiazyuiresipu_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/daiazyuiresipu_1.json"
+        ]
+      }
     },
     {
       "name": "Nezarazyoui",
@@ -1293,7 +1688,12 @@
       "sortid": 132,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nezarazyoui"
+      "registry_name": "nezarazyoui",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/nezarazyoui.json"
+        ]
+      }
     },
     {
       "name": "Nezara",
@@ -1301,7 +1701,12 @@
       "sortid": 133,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nezara"
+      "registry_name": "nezara",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/nezara.json"
+        ]
+      }
     },
     {
       "name": "E",
@@ -1309,7 +1714,12 @@
       "sortid": 134,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "e"
+      "registry_name": "e",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/crafting_table.json"
+        ]
+      }
     },
     {
       "name": "Nezarazyouigokan",
@@ -1331,7 +1741,12 @@
       "sortid": 136,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "e_1"
+      "registry_name": "e_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/e_1.json"
+        ]
+      }
     },
     {
       "name": "E2",
@@ -1339,7 +1754,12 @@
       "sortid": 137,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "e_2"
+      "registry_name": "e_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/e_2.json"
+        ]
+      }
     },
     {
       "name": "E3",
@@ -1347,7 +1767,12 @@
       "sortid": 138,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "e_3"
+      "registry_name": "e_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/e_3.json"
+        ]
+      }
     },
     {
       "name": "W1",
@@ -1355,7 +1780,12 @@
       "sortid": 139,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "w_1"
+      "registry_name": "w_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/w_1.json"
+        ]
+      }
     },
     {
       "name": "W",
@@ -1363,7 +1793,12 @@
       "sortid": 140,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "w"
+      "registry_name": "w",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/w.json"
+        ]
+      }
     },
     {
       "name": "W2",
@@ -1371,7 +1806,12 @@
       "sortid": 141,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "w_2"
+      "registry_name": "w_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/w_2.json"
+        ]
+      }
     },
     {
       "name": "W3",
@@ -1379,7 +1819,12 @@
       "sortid": 142,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "w_3"
+      "registry_name": "w_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/w_3.json"
+        ]
+      }
     },
     {
       "name": "E4",
@@ -1387,7 +1832,12 @@
       "sortid": 143,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "e_4"
+      "registry_name": "e_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/e_4.json"
+        ]
+      }
     },
     {
       "name": "Daiakatana",
@@ -1395,7 +1845,13 @@
       "sortid": 144,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "daiakatana"
+      "registry_name": "daiakatana",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/DaiakatanaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/daiakatana.json"
+        ]
+      }
     },
     {
       "name": "Dkr",
@@ -1403,7 +1859,12 @@
       "sortid": 145,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "dkr"
+      "registry_name": "dkr",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/dkr.json"
+        ]
+      }
     },
     {
       "name": "Nezaraitokatana",
@@ -1435,7 +1896,12 @@
       "sortid": 149,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nk"
+      "registry_name": "nk",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/nk.json"
+        ]
+      }
     },
     {
       "name": "W4",
@@ -1443,7 +1909,12 @@
       "sortid": 150,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "w_4"
+      "registry_name": "w_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/w_4.json"
+        ]
+      }
     },
     {
       "name": "N",
@@ -1451,7 +1922,13 @@
       "sortid": 151,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "n"
+      "registry_name": "n",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/n.json",
+          "src/main/java/japanesesword/item/NItem.java"
+        ]
+      }
     },
     {
       "name": "Noro",
@@ -1479,7 +1956,12 @@
       "sortid": 155,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "supuidokyouka"
+      "registry_name": "supuidokyouka",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/SupuidokyoukaPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Haato",
@@ -1487,7 +1969,12 @@
       "sortid": 156,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "haato"
+      "registry_name": "haato",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/HaatoPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "HaatoposiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
@@ -1497,6 +1984,9 @@
       "locked_code": false,
       "registry_name": "haatoposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/HaatoposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1511,7 +2001,13 @@
       "sortid": 157,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "norooinokatana"
+      "registry_name": "norooinokatana",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/NorooinokatanaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/norooinokatana.json"
+        ]
+      }
     },
     {
       "name": "Norinanokore",
@@ -1551,7 +2047,13 @@
       "sortid": 159,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "poizunsword"
+      "registry_name": "poizunsword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/poizunsword.json",
+          "src/main/java/japanesesword/item/PoizunswordItem.java"
+        ]
+      }
     },
     {
       "name": "PoizunswordKongQiwoYoukuritukusitatoki",
@@ -1611,7 +2113,13 @@
       "sortid": 162,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "hon_2"
+      "registry_name": "hon_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/hon_2.json",
+          "src/main/java/japanesesword/item/Hon2Item.java"
+        ]
+      }
     },
     {
       "name": "Hon3",
@@ -1619,7 +2127,13 @@
       "sortid": 163,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "hon_3"
+      "registry_name": "hon_3",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/Hon3Item.java",
+          "src/main/resources/assets/japanesesword/models/item/hon_3.json"
+        ]
+      }
     },
     {
       "name": "Hon4",
@@ -1627,7 +2141,13 @@
       "sortid": 164,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "hon_4"
+      "registry_name": "hon_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/hon_4.json",
+          "src/main/java/japanesesword/item/Hon4Item.java"
+        ]
+      }
     },
     {
       "name": "Honn1",
@@ -1635,7 +2155,12 @@
       "sortid": 165,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "honn_1"
+      "registry_name": "honn_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/honn_1.json"
+        ]
+      }
     },
     {
       "name": "Honn2",
@@ -1643,7 +2168,12 @@
       "sortid": 166,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "honn_2"
+      "registry_name": "honn_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/honn_2.json"
+        ]
+      }
     },
     {
       "name": "Honn3",
@@ -1651,7 +2181,12 @@
       "sortid": 167,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "honn_3"
+      "registry_name": "honn_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/honn_3.json"
+        ]
+      }
     },
     {
       "name": "Honnnn",
@@ -1659,7 +2194,12 @@
       "sortid": 168,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "honnnn"
+      "registry_name": "honnnn",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/honnnn.json"
+        ]
+      }
     },
     {
       "name": "Zyoudan",
@@ -1667,7 +2207,12 @@
       "sortid": 169,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "zyoudan"
+      "registry_name": "zyoudan",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/zyoudan.json"
+        ]
+      }
     },
     {
       "name": "Yabaiaitemu",
@@ -1686,7 +2231,13 @@
       "sortid": 172,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "no"
+      "registry_name": "no",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/gui/NoGui.java",
+          "src/main/java/japanesesword/gui/NoGuiWindow.java"
+        ]
+      }
     },
     {
       "name": "Y",
@@ -1704,6 +2255,9 @@
       "locked_code": false,
       "registry_name": "m",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1720,6 +2274,9 @@
       "locked_code": false,
       "registry_name": "m_1",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/M1Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1736,6 +2293,9 @@
       "locked_code": false,
       "registry_name": "m_2",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/M2Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1784,6 +2344,9 @@
       "locked_code": false,
       "registry_name": "m_3",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/M3Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1798,7 +2361,13 @@
       "sortid": 179,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nannnkaa"
+      "registry_name": "nannnkaa",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/particle/NannnkaaParticle.java",
+          "src/main/resources/assets/japanesesword/particles/nannnkaa.json"
+        ]
+      }
     },
     {
       "name": "Musucdiscti",
@@ -1806,7 +2375,13 @@
       "sortid": 182,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "musucdiscti"
+      "registry_name": "musucdiscti",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/musucdiscti.json",
+          "src/main/java/japanesesword/item/MusucdisctiItem.java"
+        ]
+      }
     },
     {
       "name": "Mcsucdiscka",
@@ -1814,7 +2389,13 @@
       "sortid": 184,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "mcsucdiscka"
+      "registry_name": "mcsucdiscka",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/mcsucdiscka.json",
+          "src/main/java/japanesesword/item/McsucdisckaItem.java"
+        ]
+      }
     },
     {
       "name": "Arrow1ehuekutogaYouXiaoShinoteituku",
@@ -1824,6 +2405,9 @@
       "locked_code": false,
       "registry_name": "arrow_1ehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Arrow1ehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1854,7 +2438,12 @@
       "sortid": 186,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "arrow_1"
+      "registry_name": "arrow_1",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Arrow1PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Mcsucdesicna",
@@ -1862,7 +2451,13 @@
       "sortid": 187,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "mcsucdesicna"
+      "registry_name": "mcsucdesicna",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/mcsucdesicna.json",
+          "src/main/java/japanesesword/item/McsucdesicnaItem.java"
+        ]
+      }
     },
     {
       "name": "Isei",
@@ -1870,7 +2465,12 @@
       "sortid": 188,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "isei"
+      "registry_name": "isei",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/world/structure/IseiStructure.java"
+        ]
+      }
     },
     {
       "name": "A1YuanJuLiWuQigaLiYongsaretaShi",
@@ -1880,6 +2480,9 @@
       "locked_code": false,
       "registry_name": "a_1_yuan_ju_li_wu_qiga_li_yongsareta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/A1YuanJuLiWuQigaLiYongsaretaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1914,7 +2517,14 @@
       "sortid": 189,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "a_1"
+      "registry_name": "a_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/a_1.json",
+          "src/main/java/japanesesword/item/A1Item.java",
+          "src/main/java/japanesesword/entity/renderer/A1Renderer.java"
+        ]
+      }
     },
     {
       "name": "K",
@@ -1924,6 +2534,9 @@
       "locked_code": false,
       "registry_name": "k",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1938,7 +2551,13 @@
       "sortid": 190,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kunoyoumu"
+      "registry_name": "kunoyoumu",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/gui/KunoyoumuGui.java",
+          "src/main/java/japanesesword/gui/KunoyoumuGuiWindow.java"
+        ]
+      }
     },
     {
       "name": "Mcsucdiscko",
@@ -1946,7 +2565,13 @@
       "sortid": 191,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "mcsucdiscko"
+      "registry_name": "mcsucdiscko",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/McsucdisckoItem.java",
+          "src/main/resources/assets/japanesesword/models/item/mcsucdiscko.json"
+        ]
+      }
     },
     {
       "name": "A2",
@@ -1954,7 +2579,13 @@
       "sortid": 192,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "a_2"
+      "registry_name": "a_2",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/gui/A2Gui.java",
+          "src/main/java/japanesesword/gui/A2GuiWindow.java"
+        ]
+      }
     },
     {
       "name": "A3",
@@ -1964,6 +2595,9 @@
       "locked_code": false,
       "registry_name": "a_3",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/A3Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2010,7 +2644,13 @@
       "sortid": 195,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "a_5"
+      "registry_name": "a_5",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/a_5.json",
+          "src/main/java/japanesesword/item/A5Item.java"
+        ]
+      }
     },
     {
       "name": "A6",
@@ -2018,7 +2658,12 @@
       "sortid": 196,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "a_6"
+      "registry_name": "a_6",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/a_6.json"
+        ]
+      }
     },
     {
       "name": "Kama",
@@ -2026,7 +2671,13 @@
       "sortid": 197,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kama"
+      "registry_name": "kama",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/KamaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/kama.json"
+        ]
+      }
     },
     {
       "name": "KamaYoukuritukusitatoki",
@@ -2066,7 +2717,13 @@
       "sortid": 198,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kuso"
+      "registry_name": "kuso",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/particles/kuso.json",
+          "src/main/java/japanesesword/particle/KusoParticle.java"
+        ]
+      }
     },
     {
       "name": "Tuki",
@@ -2074,7 +2731,13 @@
       "sortid": 199,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tuki"
+      "registry_name": "tuki",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/particle/TukiParticle.java",
+          "src/main/resources/assets/japanesesword/particles/tuki.json"
+        ]
+      }
     },
     {
       "name": "Noroi",
@@ -2082,7 +2745,13 @@
       "sortid": 200,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "noroi"
+      "registry_name": "noroi",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/noroi.json",
+          "src/main/java/japanesesword/item/NoroiItem.java"
+        ]
+      }
     },
     {
       "name": "NoroiYoukuritukusitatoki",
@@ -2122,7 +2791,13 @@
       "sortid": 201,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "no_kamaroi"
+      "registry_name": "no_kamaroi",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/no_kamaroi.json",
+          "src/main/java/japanesesword/item/NoKamaroiItem.java"
+        ]
+      }
     },
     {
       "name": "NoKamaroiYoukuritukusitatoki",
@@ -2162,7 +2837,12 @@
       "sortid": 202,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kennkaku"
+      "registry_name": "kennkaku",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/kennkaku.json"
+        ]
+      }
     },
     {
       "name": "Damezinasi",
@@ -2170,7 +2850,12 @@
       "sortid": 203,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "damezinasi"
+      "registry_name": "damezinasi",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/DamezinasiPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "NoroimobugaturudeGongJisaretatoki",
@@ -2180,6 +2865,9 @@
       "locked_code": false,
       "registry_name": "noroimobugaturude_gong_jisaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NoroimobugaturudeGongJisaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "sourceentity",
@@ -2230,7 +2918,12 @@
       "sortid": 206,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "atoti"
+      "registry_name": "atoti",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/world/structure/AtotiStructure.java"
+        ]
+      }
     },
     {
       "name": "Airbougu",
@@ -2243,7 +2936,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/java/japanesesword/item/AirbouguItem.java",
+          "src/main/resources/assets/japanesesword/models/item/airbougu_boots.json",
+          "src/main/resources/assets/japanesesword/models/item/airbougu_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/airbougu_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/airbougu_leggings.json"
+        ]
       }
     },
     {
@@ -2252,7 +2952,13 @@
       "sortid": 210,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "booktokubetu"
+      "registry_name": "booktokubetu",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/BooktokubetuItem.java",
+          "src/main/resources/assets/japanesesword/models/item/booktokubetu.json"
+        ]
+      }
     },
     {
       "name": "Bookash",
@@ -2260,7 +2966,13 @@
       "sortid": 211,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "bookash"
+      "registry_name": "bookash",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/BookashItem.java",
+          "src/main/resources/assets/japanesesword/models/item/bookash.json"
+        ]
+      }
     },
     {
       "name": "Kamanoyotei",
@@ -2298,6 +3010,9 @@
       "locked_code": false,
       "registry_name": "no_kamaroienteiteigaaitemuwo_zhentuta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NoKamaroienteiteigaaitemuwoZhentutaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2312,7 +3027,13 @@
       "sortid": 215,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "bookblood"
+      "registry_name": "bookblood",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/BookbloodItem.java",
+          "src/main/resources/assets/japanesesword/models/item/bookblood.json"
+        ]
+      }
     },
     {
       "name": "Nagerukatana",
@@ -2320,7 +3041,14 @@
       "sortid": 216,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nagerukatana"
+      "registry_name": "nagerukatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/nagerukatana.json",
+          "src/main/java/japanesesword/item/NagerukatanaItem.java",
+          "src/main/java/japanesesword/entity/renderer/NagerukatanaRenderer.java"
+        ]
+      }
     },
     {
       "name": "Otachi",
@@ -2328,7 +3056,13 @@
       "sortid": 218,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "otachi"
+      "registry_name": "otachi",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/otachi.json",
+          "src/main/java/japanesesword/item/OtachiItem.java"
+        ]
+      }
     },
     {
       "name": "OtachibloodYoukuritukusitatoki",
@@ -2402,6 +3136,9 @@
       "locked_code": false,
       "registry_name": "nagenaihuto",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NagenaihutoProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "immediatesourceentity",
@@ -2432,7 +3169,12 @@
       "sortid": 222,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "otachiresipi"
+      "registry_name": "otachiresipi",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/crafting_table.json"
+        ]
+      }
     },
     {
       "name": "KanasibariehuekutogaYouXiaoShinoteituku",
@@ -2442,6 +3184,9 @@
       "locked_code": false,
       "registry_name": "kanasibariehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KanasibariehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2468,7 +3213,12 @@
       "sortid": 223,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kanasibari"
+      "registry_name": "kanasibari",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/KanasibariPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Ancientbooks",
@@ -2476,7 +3226,13 @@
       "sortid": 224,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ancientbooks"
+      "registry_name": "ancientbooks",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/AncientbooksItem.java",
+          "src/main/resources/assets/japanesesword/models/item/ancientbooks.json"
+        ]
+      }
     },
     {
       "name": "AncientbooksaitemuwoShoudeChituteiruJiannoteituku",
@@ -2500,7 +3256,13 @@
       "sortid": 226,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "otachibloodcurse"
+      "registry_name": "otachibloodcurse",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/OtachibloodcurseItem.java",
+          "src/main/resources/assets/japanesesword/models/item/otachibloodcurse.json"
+        ]
+      }
     },
     {
       "name": "Axekatana",
@@ -2564,7 +3326,12 @@
       "sortid": 235,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "resipuno"
+      "registry_name": "resipuno",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/resipuno.json"
+        ]
+      }
     },
     {
       "name": "KatanakatanaYoukuritukusitatoki",
@@ -2606,6 +3373,9 @@
       "locked_code": false,
       "registry_name": "katanakatanaturuwo_shoude_chituteiru_jiannoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KatanakatanaturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2652,7 +3422,12 @@
       "sortid": 240,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "effect"
+      "registry_name": "effect",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/EffectPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Zanngekimob",
@@ -2670,6 +3445,9 @@
       "locked_code": false,
       "registry_name": "zanngekimobenteiteigasuponsita_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/ZanngekimobenteiteigasuponsitaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2702,6 +3480,9 @@
       "locked_code": false,
       "registry_name": "youyoumuenteiteinotituku_geng_xin_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/YouyoumuenteiteinotitukuGengXinShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2734,6 +3515,9 @@
       "locked_code": false,
       "registry_name": "terepotoehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TerepotoehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2764,7 +3548,12 @@
       "sortid": 245,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "terepoto"
+      "registry_name": "terepoto",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/TerepotoPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Kogatana",
@@ -2782,6 +3571,9 @@
       "locked_code": false,
       "registry_name": "tesutehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TesutehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2796,7 +3588,12 @@
       "sortid": 269,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tesut"
+      "registry_name": "tesut",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/TesutPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Tokinohonn",
@@ -2804,7 +3601,13 @@
       "sortid": 271,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tokinohonn"
+      "registry_name": "tokinohonn",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/TokinohonnItem.java",
+          "src/main/resources/assets/japanesesword/models/item/tokinohonn.json"
+        ]
+      }
     },
     {
       "name": "RenngekiehuekutogaYouXiaoShinoteituku",
@@ -2814,6 +3617,9 @@
       "locked_code": false,
       "registry_name": "renngekiehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/RenngekiehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2844,7 +3650,12 @@
       "sortid": 272,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "renngeki"
+      "registry_name": "renngeki",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/RenngekiPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "KogatanaenteiteigaaitemuwoZhentutaShi",
@@ -2886,6 +3697,9 @@
       "locked_code": false,
       "registry_name": "manna",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MannaProcedure.java"
+        ],
         "dependencies": []
       }
     },
@@ -2903,7 +3717,12 @@
       "sortid": 274,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tetunokatanaresip"
+      "registry_name": "tetunokatanaresip",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/tetunokatanaresip.json"
+        ]
+      }
     },
     {
       "name": "Naginata",
@@ -2911,7 +3730,13 @@
       "sortid": 275,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "naginata"
+      "registry_name": "naginata",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/naginata.json",
+          "src/main/java/japanesesword/item/NaginataItem.java"
+        ]
+      }
     },
     {
       "name": "NaginataenteiteigaaitemuwoZhentutaShi",
@@ -3015,7 +3840,12 @@
       "sortid": 278,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "effect_ii"
+      "registry_name": "effect_ii",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/EffectIIPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "EffectIIIehuekutogaYouXiaoShinoteituku",
@@ -3071,7 +3901,12 @@
       "sortid": 279,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "effect_iii"
+      "registry_name": "effect_iii",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/EffectIIIPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "EffectIVposiyonXiaoGuogaQieretaShi",
@@ -3081,6 +3916,9 @@
       "locked_code": false,
       "registry_name": "effect_i_vposiyon_xiao_guoga_qiereta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/EffectIVposiyonXiaoGuogaQieretaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3095,7 +3933,12 @@
       "sortid": 280,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "effect_iv"
+      "registry_name": "effect_iv",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/EffectIVPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "EffectVehuekutogaYouXiaoShinoteituku",
@@ -3127,7 +3970,12 @@
       "sortid": 282,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "effect_v"
+      "registry_name": "effect_v",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/EffectVPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "EffectIIIposiyonXiaoGuogaQieretaShi",
@@ -3137,6 +3985,9 @@
       "locked_code": false,
       "registry_name": "effect_ii_iposiyon_xiao_guoga_qiereta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/EffectIIIposiyonXiaoGuogaQieretaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3151,7 +4002,12 @@
       "sortid": 284,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "hasiru"
+      "registry_name": "hasiru",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/enchantment/HasiruEnchantment.java"
+        ]
+      }
     },
     {
       "name": "NaginataturuwoShoudeChituteiruJiannoteituku",
@@ -3177,6 +4033,9 @@
       "locked_code": false,
       "registry_name": "effect_i_iposiyon_xiao_guoga_qiereta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/EffectIIposiyonXiaoGuogaQieretaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -3237,6 +4096,9 @@
       "locked_code": false,
       "registry_name": "effect_v_iposiyon_xiao_guoga_qiereta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/EffectVIposiyonXiaoGuogaQieretaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -3263,7 +4125,12 @@
       "sortid": 287,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "effect_vi"
+      "registry_name": "effect_vi",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/EffectVIPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Katana1enteiteigaaitemuwoZhentutaShi",
@@ -3303,7 +4170,13 @@
       "sortid": 290,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "katana_1"
+      "registry_name": "katana_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/katana_1.json",
+          "src/main/java/japanesesword/item/Katana1Item.java"
+        ]
+      }
     },
     {
       "name": "Katana1Youkuritukusitatoki",
@@ -3407,7 +4280,12 @@
       "sortid": 292,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "effect_7"
+      "registry_name": "effect_7",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Effect7PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Ansi",
@@ -3415,7 +4293,12 @@
       "sortid": 293,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ansi"
+      "registry_name": "ansi",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/enchantment/AnsiEnchantment.java"
+        ]
+      }
     },
     {
       "name": "Ansi1",
@@ -3425,6 +4308,9 @@
       "locked_code": false,
       "registry_name": "ansi_1",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Ansi1Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3439,7 +4325,13 @@
       "sortid": 295,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "katanakatana"
+      "registry_name": "katanakatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/katanakatana.json",
+          "src/main/java/japanesesword/item/KatanakatanaItem.java"
+        ]
+      }
     },
     {
       "name": "Haziku",
@@ -3447,7 +4339,12 @@
       "sortid": 296,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "haziku"
+      "registry_name": "haziku",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/haziku.json"
+        ]
+      }
     },
     {
       "name": "Tuva",
@@ -3455,7 +4352,13 @@
       "sortid": 298,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tuva"
+      "registry_name": "tuva",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/TuvaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/tuva.json"
+        ]
+      }
     },
     {
       "name": "TuvaYoukuritukusitatoki",
@@ -3497,6 +4400,9 @@
       "locked_code": false,
       "registry_name": "tuvaturuwo_shoude_chituteiru_jiannoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TuvaturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3513,6 +4419,9 @@
       "locked_code": false,
       "registry_name": "zangeki_feibi_dao_juga_feindeiru_jian",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/ZangekiFeibiDaoJugaFeindeiruJianProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3535,7 +4444,12 @@
       "sortid": 301,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "yawo"
+      "registry_name": "yawo",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/enchantment/YawoEnchantment.java"
+        ]
+      }
     },
     {
       "name": "Hannyou",
@@ -3548,7 +4462,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/hannyou_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/hannyou_leggings.json",
+          "src/main/java/japanesesword/item/HannyouItem.java",
+          "src/main/resources/assets/japanesesword/models/item/hannyou_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/hannyou_boots.json"
+        ]
       }
     },
     {
@@ -3565,7 +4486,12 @@
       "sortid": 304,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kinnnnokatana"
+      "registry_name": "kinnnnokatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/crafting_table.json"
+        ]
+      }
     },
     {
       "name": "Ookenoken",
@@ -3573,7 +4499,13 @@
       "sortid": 305,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ookenoken"
+      "registry_name": "ookenoken",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/OokenokenItem.java",
+          "src/main/resources/assets/japanesesword/models/item/ookenoken.json"
+        ]
+      }
     },
     {
       "name": "Ounozisseki",
@@ -3581,7 +4513,12 @@
       "sortid": 306,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ounozisseki"
+      "registry_name": "ounozisseki",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/ounozisseki.json"
+        ]
+      }
     },
     {
       "name": "O",
@@ -3591,6 +4528,9 @@
       "locked_code": false,
       "registry_name": "o",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/OProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3605,7 +4545,12 @@
       "sortid": 308,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ninngenndayo"
+      "registry_name": "ninngenndayo",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/ninngenndayo.json"
+        ]
+      }
     },
     {
       "name": "Minnkannzinn",
@@ -3615,6 +4560,9 @@
       "locked_code": false,
       "registry_name": "minnkannzinn",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MinnkannzinnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3631,6 +4579,9 @@
       "locked_code": false,
       "registry_name": "ookenokenturuwo_shoude_chituteiru_jiannoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/OokenokenturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3664,6 +4615,9 @@
       "registry_name": "mobbb",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/japanesesword/procedures/MobbbProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -3692,6 +4646,9 @@
       "locked_code": false,
       "registry_name": "tossin_feibi_dao_juga_feindeiru_jian",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TossinFeibiDaoJugaFeindeiruJianProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3700,22 +4657,6 @@
           {
             "name": "immediatesourceentity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
@@ -3726,7 +4667,14 @@
       "sortid": 313,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tossin"
+      "registry_name": "tossin",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/TossinItem.java",
+          "src/main/resources/assets/japanesesword/models/item/tossin.json",
+          "src/main/java/japanesesword/entity/renderer/TossinRenderer.java"
+        ]
+      }
     },
     {
       "name": "TossinFeibiDaoJugaenteiteiniDangtatutatoki",
@@ -3736,6 +4684,9 @@
       "locked_code": false,
       "registry_name": "tossin_feibi_dao_jugaenteiteini_dangtatutatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TossinFeibiDaoJugaenteiteiniDangtatutatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "immediatesourceentity",
@@ -3752,6 +4703,9 @@
       "locked_code": false,
       "registry_name": "tossin_feibi_dao_jugaburotukuni_dangtatutatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TossinFeibiDaoJugaburotukuniDangtatutatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "immediatesourceentity",
@@ -3768,6 +4722,9 @@
       "locked_code": false,
       "registry_name": "matuposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MatuposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3798,7 +4755,12 @@
       "sortid": 316,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "matu"
+      "registry_name": "matu",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/MatuPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "TomareposiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
@@ -3808,6 +4770,9 @@
       "locked_code": false,
       "registry_name": "tomareposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TomareposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3822,7 +4787,12 @@
       "sortid": 317,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tomare"
+      "registry_name": "tomare",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/TomarePotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Ken",
@@ -3838,7 +4808,13 @@
       "sortid": 319,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ngsk"
+      "registry_name": "ngsk",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/ngsk.json",
+          "src/main/java/japanesesword/item/NgskItem.java"
+        ]
+      }
     },
     {
       "name": "KenenteiteigasuponsitaShi",
@@ -3848,6 +4824,9 @@
       "locked_code": false,
       "registry_name": "kenenteiteigasuponsita_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KenenteiteigasuponsitaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3880,6 +4859,9 @@
       "locked_code": false,
       "registry_name": "keneffectehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KeneffectehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3894,7 +4876,12 @@
       "sortid": 321,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "keneffect"
+      "registry_name": "keneffect",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/KeneffectPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "NgskYoukuritukusitatoki",
@@ -3903,38 +4890,6 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "ngsk_youkuritukusitatoki",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "KenenteiteinotitukuGengXinShi",
-      "type": "procedure",
-      "sortid": 322,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "kenenteiteinotituku_geng_xin_shi",
       "metadata": {
         "dependencies": [
           {
@@ -3974,7 +4929,12 @@
       "sortid": 324,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "otirutokidamenai"
+      "registry_name": "otirutokidamenai",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/OtirutokidamenaiPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "OtirutokidamenaiehuekutogaYouXiaoShinoteituku",
@@ -3984,6 +4944,9 @@
       "locked_code": false,
       "registry_name": "otirutokidamenaiehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/OtirutokidamenaiehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4000,6 +4963,9 @@
       "locked_code": false,
       "registry_name": "ugokasuehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/UgokasuehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4014,7 +4980,12 @@
       "sortid": 325,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ugokasu"
+      "registry_name": "ugokasu",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/UgokasuPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "NgskturuwoShoudeChituteiruJiannoteituku",
@@ -4024,6 +4995,9 @@
       "locked_code": false,
       "registry_name": "ngskturuwo_shoude_chituteiru_jiannoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NgskturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4058,7 +5032,13 @@
       "sortid": 327,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "husino"
+      "registry_name": "husino",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/HusinoItem.java",
+          "src/main/resources/assets/japanesesword/models/item/husino.json"
+        ]
+      }
     },
     {
       "name": "Nakami",
@@ -4082,7 +5062,12 @@
       "sortid": 329,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nakaminoresipi"
+      "registry_name": "nakaminoresipi",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/nakaminoresipi.json"
+        ]
+      }
     },
     {
       "name": "Stonekatana",
@@ -4090,7 +5075,13 @@
       "sortid": 330,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "stonekatana"
+      "registry_name": "stonekatana",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/StonekatanaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/stonekatana.json"
+        ]
+      }
     },
     {
       "name": "Stonekatanaresipi",
@@ -4098,7 +5089,12 @@
       "sortid": 331,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "stonekatanaresipi"
+      "registry_name": "stonekatanaresipi",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/stonekatanaresipi.json"
+        ]
+      }
     },
     {
       "name": "MusicdiscUN",
@@ -4106,7 +5102,13 @@
       "sortid": 332,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "musicdisc_un"
+      "registry_name": "musicdisc_un",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/musicdisc_un.json",
+          "src/main/java/japanesesword/item/MusicdiscUNItem.java"
+        ]
+      }
     },
     {
       "name": "MusucdiscneNE",
@@ -4114,7 +5116,13 @@
       "sortid": 333,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "musucdiscne_ne"
+      "registry_name": "musucdiscne_ne",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/MusucdiscneNEItem.java",
+          "src/main/resources/assets/japanesesword/models/item/musucdiscne_ne.json"
+        ]
+      }
     },
     {
       "name": "MusicdiscKA",
@@ -4122,7 +5130,13 @@
       "sortid": 334,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "musicdisc_ka"
+      "registry_name": "musicdisc_ka",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/musicdisc_ka.json",
+          "src/main/java/japanesesword/item/MusicdiscKAItem.java"
+        ]
+      }
     },
     {
       "name": "MusicdiscTU",
@@ -4130,7 +5144,13 @@
       "sortid": 335,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "musicdisc_tu"
+      "registry_name": "musicdisc_tu",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/MusicdiscTUItem.java",
+          "src/main/resources/assets/japanesesword/models/item/musicdisc_tu.json"
+        ]
+      }
     },
     {
       "name": "MusicdiscKO",
@@ -4138,7 +5158,13 @@
       "sortid": 336,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "musicdisc_ko"
+      "registry_name": "musicdisc_ko",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/MusicdiscKOItem.java",
+          "src/main/resources/assets/japanesesword/models/item/musicdisc_ko.json"
+        ]
+      }
     },
     {
       "name": "MusicdiscNA",
@@ -4146,7 +5172,13 @@
       "sortid": 337,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "musicdisc_na"
+      "registry_name": "musicdisc_na",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/musicdisc_na.json",
+          "src/main/java/japanesesword/item/MusicdiscNAItem.java"
+        ]
+      }
     },
     {
       "name": "Poisonbook",
@@ -4154,7 +5186,13 @@
       "sortid": 338,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "poisonbook"
+      "registry_name": "poisonbook",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/poisonbook.json",
+          "src/main/java/japanesesword/item/PoisonbookItem.java"
+        ]
+      }
     },
     {
       "name": "Dokunosukelton",
@@ -4190,7 +5228,13 @@
       "sortid": 340,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "dokuro"
+      "registry_name": "dokuro",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/particle/DokuroParticle.java",
+          "src/main/resources/assets/japanesesword/particles/dokuro.json"
+        ]
+      }
     },
     {
       "name": "Poisonnaginata",
@@ -4198,7 +5242,13 @@
       "sortid": 341,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "poisonnaginata"
+      "registry_name": "poisonnaginata",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/PoisonnaginataItem.java",
+          "src/main/resources/assets/japanesesword/models/item/poisonnaginata.json"
+        ]
+      }
     },
     {
       "name": "PoisonnaginataYoukuritukusitatoki",
@@ -4240,6 +5290,9 @@
       "locked_code": false,
       "registry_name": "poisonnaginatamobugaturude_gong_jisaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/PoisonnaginatamobugaturudeGongJisaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "sourceentity",
@@ -4264,6 +5317,9 @@
       "locked_code": false,
       "registry_name": "demonnized",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/DemonnizedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4280,6 +5336,9 @@
       "locked_code": false,
       "registry_name": "demonized_1",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Demonized1Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4296,6 +5355,9 @@
       "locked_code": false,
       "registry_name": "arrow_2ehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Arrow2ehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4326,7 +5388,12 @@
       "sortid": 347,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "arrow_2"
+      "registry_name": "arrow_2",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Arrow2PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Ngso",
@@ -4334,7 +5401,13 @@
       "sortid": 348,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ngso"
+      "registry_name": "ngso",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/NgsoItem.java",
+          "src/main/resources/assets/japanesesword/models/item/ngso.json"
+        ]
+      }
     },
     {
       "name": "NgsoYoukuritukusitatoki",
@@ -4376,6 +5449,9 @@
       "locked_code": false,
       "registry_name": "ngsoturuwo_shoude_chituteiru_jiannoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NgsoturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4392,6 +5468,9 @@
       "locked_code": false,
       "registry_name": "demonized_2",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Demonized2Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4410,7 +5489,12 @@
       "sortid": 353,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "event"
+      "registry_name": "event",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/itemgroup/EventItemGroup.java"
+        ]
+      }
     },
     {
       "name": "Halloween20221031",
@@ -4423,7 +5507,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/halloween_20221031_boots.json",
+          "src/main/resources/assets/japanesesword/models/item/halloween_20221031_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/halloween_20221031_leggings.json",
+          "src/main/resources/assets/japanesesword/models/item/halloween_20221031_chestplate.json",
+          "src/main/java/japanesesword/item/Halloween20221031Item.java"
+        ]
       }
     },
     {
@@ -4434,6 +5525,9 @@
       "locked_code": false,
       "registry_name": "halloween",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/HalloweenProcedure.java"
+        ],
         "dependencies": []
       }
     },
@@ -4443,7 +5537,13 @@
       "sortid": 355,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "halloween_20221031kama"
+      "registry_name": "halloween_20221031kama",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/halloween_20221031kama.json",
+          "src/main/java/japanesesword/item/Halloween20221031kamaItem.java"
+        ]
+      }
     },
     {
       "name": "Halloween20221031kamaYoukuritukusitatoki",
@@ -4485,6 +5585,9 @@
       "locked_code": false,
       "registry_name": "tossin_feibi_dao_jugapureiyani_dangtatutatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TossinFeibiDaoJugapureiyaniDangtatutatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "immediatesourceentity",
@@ -4501,6 +5604,9 @@
       "locked_code": false,
       "registry_name": "qkiga_lisaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/QkigaLisaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4552,7 +5658,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/hanyou_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/hanyou_leggings.json",
+          "src/main/java/japanesesword/item/HanyouItem.java",
+          "src/main/resources/assets/japanesesword/models/item/hanyou_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/hanyou_boots.json"
+        ]
       }
     },
     {
@@ -4593,7 +5706,12 @@
       "sortid": 363,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "effect_10"
+      "registry_name": "effect_10",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Effect10PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Ti",
@@ -4601,7 +5719,13 @@
       "sortid": 170,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "ti"
+      "registry_name": "ti",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/TiItem.java",
+          "src/main/resources/assets/japanesesword/models/item/ti.json"
+        ]
+      }
     },
     {
       "name": "Guhahahaha",
@@ -4611,6 +5735,9 @@
       "locked_code": false,
       "registry_name": "guhahahaha",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/GuhahahahaProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4649,7 +5776,12 @@
       "sortid": 368,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kaiga"
+      "registry_name": "kaiga",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/painting/KaigaPainting.java"
+        ]
+      }
     },
     {
       "name": "Appler",
@@ -4657,7 +5789,12 @@
       "sortid": 369,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "appler"
+      "registry_name": "appler",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/apple.json"
+        ]
+      }
     },
     {
       "name": "Tp1",
@@ -4665,7 +5802,12 @@
       "sortid": 370,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tp_1"
+      "registry_name": "tp_1",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Tp1PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "TpehuekutogaYouXiaoShinoteituku",
@@ -4675,6 +5817,9 @@
       "locked_code": false,
       "registry_name": "tpehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TpehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4737,7 +5882,12 @@
       "sortid": 370,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tp"
+      "registry_name": "tp",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/TpPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "GehuekutogaYouXiaoShinoteituku",
@@ -4777,7 +5927,12 @@
       "sortid": 373,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "g"
+      "registry_name": "g",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/GPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "TokubetunoYoukuritukusitatoki",
@@ -4801,7 +5956,12 @@
       "sortid": 375,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "blood"
+      "registry_name": "blood",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/BloodPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "BloodehuekutogaYouXiaoShinoteituku",
@@ -4811,6 +5971,9 @@
       "locked_code": false,
       "registry_name": "bloodehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/BloodehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4841,7 +6004,12 @@
       "sortid": 387,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "wizard"
+      "registry_name": "wizard",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/advancements/wizard.json"
+        ]
+      }
     },
     {
       "name": "Demonizedkatana",
@@ -4849,7 +6017,13 @@
       "sortid": 390,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "demonizedkatana"
+      "registry_name": "demonizedkatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/demonizedkatana.json",
+          "src/main/java/japanesesword/item/DemonizedkatanaItem.java"
+        ]
+      }
     },
     {
       "name": "AamorBlack",
@@ -4862,7 +6036,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/java/japanesesword/item/AamorBlackItem.java",
+          "src/main/resources/assets/japanesesword/models/item/aamor_black_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/aamor_black_leggings.json",
+          "src/main/resources/assets/japanesesword/models/item/aamor_black_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/aamor_black_boots.json"
+        ]
       }
     },
     {
@@ -4921,6 +6102,9 @@
       "locked_code": false,
       "registry_name": "demonizedkatanapureiyaga_shi_yongwo_ting_zhisita_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/DemonizedkatanapureiyagaShiYongwoTingZhisitaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4951,7 +6135,12 @@
       "sortid": 397,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "chop_up"
+      "registry_name": "chop_up",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/ChopUpPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Killchopup",
@@ -4959,7 +6148,12 @@
       "sortid": 398,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "killchopup"
+      "registry_name": "killchopup",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/KillchopupPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Magicksword",
@@ -4967,7 +6161,14 @@
       "sortid": 401,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "magicksword"
+      "registry_name": "magicksword",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/MagickswordItem.java",
+          "src/main/java/japanesesword/entity/renderer/MagickswordRenderer.java",
+          "src/main/resources/assets/japanesesword/models/item/magicksword.json"
+        ]
+      }
     },
     {
       "name": "MagickswordFeibiDaoJugaFeindeiruJian",
@@ -4977,6 +6178,9 @@
       "locked_code": false,
       "registry_name": "magicksword_feibi_dao_juga_feindeiru_jian",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MagickswordFeibiDaoJugaFeindeiruJianProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4995,7 +6199,13 @@
       "sortid": 404,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "baria"
+      "registry_name": "baria",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/particle/BariaParticle.java",
+          "src/main/resources/assets/japanesesword/particles/baria.json"
+        ]
+      }
     },
     {
       "name": "MagicBook",
@@ -5003,7 +6213,13 @@
       "sortid": 405,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "magic_book"
+      "registry_name": "magic_book",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/magic_book.json",
+          "src/main/java/japanesesword/item/MagicBookItem.java"
+        ]
+      }
     },
     {
       "name": "DemonizedKatana1",
@@ -5011,7 +6227,13 @@
       "sortid": 407,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "demonized_katana_1"
+      "registry_name": "demonized_katana_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/demonized_katana_1.json",
+          "src/main/java/japanesesword/item/DemonizedKatana1Item.java"
+        ]
+      }
     },
     {
       "name": "Tossin1ehuekutogaYouXiaoShinoteituku",
@@ -5051,7 +6273,12 @@
       "sortid": 408,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tossin_1"
+      "registry_name": "tossin_1",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Tossin1PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Attack1ehuekutogaYouXiaoShinoteituku",
@@ -5091,7 +6318,12 @@
       "sortid": 410,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "oriru"
+      "registry_name": "oriru",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/OriruPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "OriruehuekutogaYouXiaoShinoteituku",
@@ -5133,6 +6365,9 @@
       "locked_code": false,
       "registry_name": "attack_1posiyon_xiao_guoga_qiereta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Attack1posiyonXiaoGuogaQieretaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5147,7 +6382,12 @@
       "sortid": 409,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "attack_1"
+      "registry_name": "attack_1",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Attack1PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Nemui",
@@ -5155,22 +6395,10 @@
       "sortid": 412,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "nemui"
-    },
-    {
-      "name": "Namaenaninisiyoukana",
-      "type": "procedure",
-      "sortid": 413,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "namaenaninisiyoukana",
+      "registry_name": "nemui",
       "metadata": {
-        "return_type": "logic",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
+        "files": [
+          "src/main/java/japanesesword/potion/NemuiPotionEffect.java"
         ]
       }
     },
@@ -5182,6 +6410,9 @@
       "locked_code": false,
       "registry_name": "kagekaehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KagekaehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -5210,6 +6441,9 @@
       "locked_code": false,
       "registry_name": "kagekaposiyon_xiao_guoga_qiereta_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KagekaposiyonXiaoGuogaQieretaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5224,7 +6458,12 @@
       "sortid": 414,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kageka"
+      "registry_name": "kageka",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/KagekaPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
@@ -5234,6 +6473,9 @@
       "locked_code": false,
       "registry_name": "kagekaposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5250,6 +6492,9 @@
       "locked_code": false,
       "registry_name": "arrow_343ehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Arrow343ehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5280,7 +6525,12 @@
       "sortid": 417,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "arrow_343"
+      "registry_name": "arrow_343",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/Arrow343PotionEffect.java"
+        ]
+      }
     },
     {
       "name": "MagicBookYoukuritukusitatoki",
@@ -5368,7 +6618,12 @@
       "sortid": 418,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "barrier"
+      "registry_name": "barrier",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/BarrierPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "BlackPerson",
@@ -5402,6 +6657,9 @@
       "locked_code": false,
       "registry_name": "killtag",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KilltagProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5448,7 +6706,13 @@
       "sortid": 425,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "demon_katana"
+      "registry_name": "demon_katana",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/demon_katana.json",
+          "src/main/java/japanesesword/item/DemonKatanaItem.java"
+        ]
+      }
     },
     {
       "name": "DemonKatanamobugaturudeGongJisaretatoki",
@@ -5494,6 +6758,9 @@
       "locked_code": false,
       "registry_name": "souleffectehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/SouleffectehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5508,7 +6775,12 @@
       "sortid": 426,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "souleffect"
+      "registry_name": "souleffect",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/SouleffectPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "KusaritiesutopuretonoMeiteitukunoibento",
@@ -5518,6 +6790,9 @@
       "locked_code": false,
       "registry_name": "kusaritiesutopuretono_meiteitukunoibento",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KusaritiesutopuretonoMeiteitukunoibentoProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5546,6 +6821,9 @@
       "locked_code": false,
       "registry_name": "kusariherumetutono_meiteitukunoibento",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KusariherumetutonoMeiteitukunoibentoProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5574,6 +6852,9 @@
       "locked_code": false,
       "registry_name": "kusarireginsuno_meiteitukunoibento",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KusarireginsunoMeiteitukunoibentoProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5602,6 +6883,9 @@
       "locked_code": false,
       "registry_name": "kusaributuno_meiteitukunoibento",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KusaributunoMeiteitukunoibentoProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5633,7 +6917,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/kusari_2_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/kusari_2_leggings.json",
+          "src/main/java/japanesesword/item/Kusari2Item.java",
+          "src/main/resources/assets/japanesesword/models/item/kusari_2_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/kusari_2_boots.json"
+        ]
       }
     },
     {
@@ -5644,6 +6935,9 @@
       "locked_code": false,
       "registry_name": "kill_sliceposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KillSliceposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -5672,6 +6966,9 @@
       "locked_code": false,
       "registry_name": "kill_sliceehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/KillSliceehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5690,7 +6987,12 @@
       "sortid": 433,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "kill_slice"
+      "registry_name": "kill_slice",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/KillSlicePotionEffect.java"
+        ]
+      }
     },
     {
       "name": "SliceposiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
@@ -5700,6 +7002,9 @@
       "locked_code": false,
       "registry_name": "sliceposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/SliceposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5718,7 +7023,12 @@
       "sortid": 433,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "slice"
+      "registry_name": "slice",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/SlicePotionEffect.java"
+        ]
+      }
     },
     {
       "name": "SliceehuekutogaYouXiaoShinoteituku",
@@ -5728,6 +7038,9 @@
       "locked_code": false,
       "registry_name": "sliceehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/SliceehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5744,6 +7057,9 @@
       "locked_code": false,
       "registry_name": "magic_katanaenteiteigasuponsita_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MagicKatanaenteiteigasuponsitaShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5790,7 +7106,12 @@
       "sortid": 438,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "no_magic_katana"
+      "registry_name": "no_magic_katana",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/NoMagicKatanaPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "MagicKatanaenteiteinotitukuGengXinShi",
@@ -5800,6 +7121,9 @@
       "locked_code": false,
       "registry_name": "magic_katanaenteiteinotituku_geng_xin_shi",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MagicKatanaenteiteinotitukuGengXinShiProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -5830,7 +7154,13 @@
       "sortid": 439,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "demon_scythe"
+      "registry_name": "demon_scythe",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/DemonScytheItem.java",
+          "src/main/resources/assets/japanesesword/models/item/demon_scythe.json"
+        ]
+      }
     },
     {
       "name": "DemonScytheYoukuritukusitatoki",
@@ -5870,7 +7200,13 @@
       "sortid": 440,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tyoutou"
+      "registry_name": "tyoutou",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/TyoutouItem.java",
+          "src/main/resources/assets/japanesesword/models/item/tyoutou.json"
+        ]
+      }
     },
     {
       "name": "TyoutouturuwoShoudeChituteiruJiannoteituku",
@@ -5880,6 +7216,9 @@
       "locked_code": false,
       "registry_name": "tyoutouturuwo_shoude_chituteiru_jiannoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TyoutouturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
         "dependencies": []
       }
     },
@@ -5921,7 +7260,12 @@
       "sortid": 444,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "hanekaesu"
+      "registry_name": "hanekaesu",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/HanekaesuPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "Udewa",
@@ -5934,7 +7278,11 @@
         "eh": false,
         "el": false,
         "eb": false,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/java/japanesesword/item/UdewaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/udewa_chestplate.json"
+        ]
       }
     },
     {
@@ -5943,7 +7291,12 @@
       "sortid": 449,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "magickatanaeffect"
+      "registry_name": "magickatanaeffect",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/MagickatanaeffectPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "MagickatanaeffectehuekutogaYouXiaoShinoteituku",
@@ -5971,7 +7324,14 @@
       "sortid": 459,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tyouhatusuru"
+      "registry_name": "tyouhatusuru",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/TyouhatusuruItem.java",
+          "src/main/resources/assets/japanesesword/models/item/tyouhatusuru.json",
+          "src/main/java/japanesesword/entity/renderer/TyouhatusuruRenderer.java"
+        ]
+      }
     },
     {
       "name": "StreyOuterArmor",
@@ -5984,7 +7344,14 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/strey_outer_armor_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/strey_outer_armor_leggings.json",
+          "src/main/java/japanesesword/item/StreyOuterArmorItem.java",
+          "src/main/resources/assets/japanesesword/models/item/strey_outer_armor_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/strey_outer_armor_boots.json"
+        ]
       }
     },
     {
@@ -5995,6 +7362,9 @@
       "locked_code": false,
       "registry_name": "mukuehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MukuehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -6025,7 +7395,12 @@
       "sortid": 469,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "muku"
+      "registry_name": "muku",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/MukuPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "StreyOuterArmorProgram",
@@ -6049,7 +7424,12 @@
       "sortid": 471,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "noroiwotukeru"
+      "registry_name": "noroiwotukeru",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/NoroiwotukeruPotionEffect.java"
+        ]
+      }
     },
     {
       "name": "NoroiwotukeruehuekutogaYouXiaoShinoteituku",
@@ -6059,6 +7439,9 @@
       "locked_code": false,
       "registry_name": "noroiwotukeruehuekutoga_you_xiao_shinoteituku",
       "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NoroiwotukeruehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -6078,16 +7461,74 @@
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/black_strey_outer_armor_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/black_strey_outer_armor_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/black_strey_outer_armor_leggings.json",
+          "src/main/resources/assets/japanesesword/models/item/black_strey_outer_armor_boots.json",
+          "src/main/java/japanesesword/item/BlackStreyOuterArmorItem.java"
+        ]
       }
     },
     {
-      "name": "Noooooo",
-      "type": "rangeditem",
+      "name": "HusukArmor",
+      "type": "armor",
       "sortid": 473,
       "compiles": true,
+      "locked_code": false,
+      "registry_name": "husuk_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/husuk_armor_helmet.json",
+          "src/main/java/japanesesword/item/HusukArmorItem.java",
+          "src/main/resources/assets/japanesesword/models/item/husuk_armor_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/husuk_armor_boots.json",
+          "src/main/resources/assets/japanesesword/models/item/husuk_armor_leggings.json"
+        ]
+      }
+    },
+    {
+      "name": "WizardArmor",
+      "type": "armor",
+      "sortid": 474,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wizard_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true,
+        "files": [
+          "src/main/java/japanesesword/item/WizardArmorItem.java",
+          "src/main/resources/assets/japanesesword/models/item/wizard_armor_leggings.json",
+          "src/main/resources/assets/japanesesword/models/item/wizard_armor_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/wizard_armor_boots.json",
+          "src/main/resources/assets/japanesesword/models/item/wizard_armor_chestplate.json"
+        ]
+      }
+    },
+    {
+      "name": "Angelos",
+      "type": "armor",
+      "sortid": 475,
+      "compiles": true,
       "locked_code": true,
-      "registry_name": "noooooo"
+      "registry_name": "angelos",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/angelos_leggings.json",
+          "src/main/resources/assets/japanesesword/models/item/angelos_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/angelos_boots.json",
+          "src/main/resources/assets/japanesesword/models/item/angelos_helmet.json",
+          "src/main/java/japanesesword/item/AngelosItem.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -6311,8 +7752,8 @@
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "fluid.0526ngs.yabaiaitemu": "液体",
       "entity.0526ngs.who_is_this_person": "Who Is This Person",
-      "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "item.0526ngs.aamor_black_leggings": "Blackarmorレギンス",
+      "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "item.0526ngs.airbougu_leggings": "Airレギンス",
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "block.0526ngs.doku": "Doku",
@@ -6333,6 +7774,7 @@
       "item.0526ngs.naginata": "薙刀",
       "block.0526ngs.yabaiaitemu": "液体",
       "item.japanesesword.halloween_20221031_leggings": "§6§l§n§oHalloween 2022 10/31のレギンス",
+      "item.japanesesword.angelos_leggings": "Angelos",
       "item.japanesesword.nezarazyouigokan_boots": "Nezarazyouigokan 個のブーツ",
       "item.0526ngs.mint_chestplate": "Mint 個の胴着",
       "item.0526ngs.dokunosukelton_spawn_egg": "毒を使うスケルトン Spawn Egg",
@@ -6355,6 +7797,7 @@
       "effect.effect_10": "エフェクト",
       "item.0526ngs.ngso": "0526ngsの大太刀",
       "item.japanesesword.katana_1": "桜観剣",
+      "item.japanesesword.wizard_armor_boots": "Wizard boots",
       "item.0526ngs.hanyou_leggings": "Hannyou 個のレギンス",
       "enchantment.japanesesword.bakudan": "explosion",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
@@ -6362,6 +7805,7 @@
       "key.0526ngs.waza": "クールタイムとかを無しにする",
       "item.minecraft.lingering_potion.effect.doku_3": "毒2残留",
       "block.0526ngs.ginnburokku": "銀ブロック",
+      "item.japanesesword.angelos_helmet": "Angelos",
       "item.japanesesword.booktokubetu": "book rare",
       "item.0526ngs.hannyou_chestplate": "Hannyou 個の胴着",
       "item.japanesesword.ginyade_leggings": "Ginyade レギンス",
@@ -6373,6 +7817,7 @@
       "item.0526ngs.stonekatana": "Stonekatana",
       "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "item.0526ngs.nezaraitokatana": "ネザーライトの刀",
+      "item.japanesesword.wizard_armor_leggings": "Wizard leggings",
       "effect.supuidokyouka": "スピード強化版",
       "effect.terepoto": "flamsword",
       "item.japanesesword.halloween_20221031_boots": "§6§l§n§oHalloween 2022 10/31のブーツ",
@@ -6391,7 +7836,6 @@
       "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
       "fluid.japanesesword.yabaiaitemu": "液体",
       "item.japanesesword.tyouhatusuru": "Tyouhatusuru",
-      "item.japanesesword.noooooo": "Noooooo",
       "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
       "item.0526ngs.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
       "enchantment.japanesesword.demonized": "§4§l§kDemonized",
@@ -6459,6 +7903,7 @@
       "enchantment.0526ngs.nannnnnka": "ダメージ防止",
       "advancements.zyoudan.descr": "上段",
       "item.0526ngs.bokutou": "木刀",
+      "item.japanesesword.angelos_boots": "Angelos",
       "item.japanesesword.musucdiscti": "地霊達の起床",
       "effect.effect_v": "effectⅤ",
       "item.japanesesword.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
@@ -6496,6 +7941,7 @@
       "item.0526ngs.musicdisc_un": "U.N.オーエンは彼女なのか？",
       "advancements.tidaisuki.descr": "haを持つ",
       "item.japanesesword.kazarinoarukataba": "飾りのある刀",
+      "item.japanesesword.wizard_armor_helmet": "Wizard helmet",
       "effect.barrier": "barrir",
       "effect.hanekaesu": "barrir",
       "item.0526ngs.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
@@ -6572,6 +8018,8 @@
       "entity.0526ngs.kuromob": "Kuromob",
       "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
       "item.0526ngs.no_kamaroi": "§4§k刀と鎌大好き",
+      "item.japanesesword.husuk_armor_chestplate": "§eHusuk leggings",
+      "item.japanesesword.angelos_chestplate": "Angelos",
       "item.japanesesword.kusari_2_chestplate": "Kusari 個の胴着",
       "item.japanesesword.japanese_sword": "日本刀",
       "item.japanesesword.tuva": "ツイヴァイヘンダー",
@@ -6666,12 +8114,14 @@
       "enchantment.0526ngs.hasiru": "speed",
       "entity.japanesesword.kill_magic_katana": "Magic Katana",
       "effect.damezinasi": "反動なし",
+      "item.japanesesword.husuk_armor_leggings": "§eHusuk leggings",
       "item.0526ngs.mcsucdiscko": "広有射怪鳥事",
       "advancements.kennkaku.title": "剣士",
       "item.0526ngs.syabel": "強化ダイヤモンドのスコップ",
       "item.japanesesword.bookash": "Book ash",
       "item.japanesesword.tekitou_chestplate": "Tekitou 個の胴着",
       "item.0526ngs.ha": "Ha",
+      "item.japanesesword.wizard_armor_chestplate": "Wizard chestplate",
       "item.japanesesword.naihu": "強化された投げナイフ",
       "item.japanesesword.aamor_black_chestplate": "Blackarmorチェストプレート",
       "item.0526ngs.ancientbooks": "§0§kcursebook",
@@ -6692,6 +8142,7 @@
       "effect.tp": "tp",
       "effect.kill_2": "kill",
       "item.japanesesword.nannk": "Nannk",
+      "item.japanesesword.husuk_armor_boots": "§eHusuk boots",
       "enchantment.japanesesword.entyant": "Lightnung sirike",
       "item.japanesesword.strey_outer_armor_chestplate": "Strey Outer chestplate",
       "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
@@ -6738,6 +8189,7 @@
       "key.0526ngs.a": "落下ダメージ防止",
       "item.japanesesword.mint_boots": "Mint 個のブーツ",
       "item.0526ngs.musucdiscne_ne.desc": "ネガティブフィイス",
+      "item.japanesesword.husuk_armor_helmet": "§eHusuk helmet",
       "block.japanesesword.daiazyoi": "ダイヤモンド上位",
       "item.japanesesword.hon": "本",
       "item.japanesesword.aamor_black_boots": "Blackarmorブーツ",
@@ -6765,8 +8217,8 @@
       "item.japanesesword.musicdisc_ka": "神々が恋した幻想郷",
       "fluid.0526ngs.yabaiaitemu": "液体",
       "entity.0526ngs.who_is_this_person": "Who Is This Person",
-      "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "item.0526ngs.aamor_black_leggings": "Blackarmorレギンス",
+      "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "item.0526ngs.airbougu_leggings": "Airレギンス",
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
       "block.0526ngs.doku": "Doku",
@@ -6787,6 +8239,7 @@
       "item.0526ngs.naginata": "薙刀",
       "block.0526ngs.yabaiaitemu": "液体",
       "item.japanesesword.halloween_20221031_leggings": "§6§l§n§oHalloween 2022 10/31のレギンス",
+      "item.japanesesword.angelos_leggings": "Angelos",
       "item.japanesesword.nezarazyouigokan_boots": "Nezarazyouigokan 個のブーツ",
       "item.0526ngs.mint_chestplate": "Mint 個の胴着",
       "item.0526ngs.dokunosukelton_spawn_egg": "毒を使うスケルトン Spawn Egg",
@@ -6809,6 +8262,7 @@
       "effect.effect_10": "エフェクト",
       "item.0526ngs.ngso": "0526ngsの大太刀",
       "item.japanesesword.katana_1": "桜観剣",
+      "item.japanesesword.wizard_armor_boots": "Wizard boots",
       "item.0526ngs.hanyou_leggings": "Hannyou 個のレギンス",
       "enchantment.japanesesword.bakudan": "Bakudan",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
@@ -6816,6 +8270,7 @@
       "key.0526ngs.waza": "クールタイムとかを無しにする",
       "item.minecraft.lingering_potion.effect.doku_3": "毒2残留",
       "block.0526ngs.ginnburokku": "銀ブロック",
+      "item.japanesesword.angelos_helmet": "Angelos",
       "item.japanesesword.booktokubetu": "レアな本",
       "item.0526ngs.hannyou_chestplate": "Hannyou 個の胴着",
       "effect.ugokasu": "動かす",
@@ -6827,6 +8282,7 @@
       "item.0526ngs.stonekatana": "Stonekatana",
       "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "item.0526ngs.nezaraitokatana": "ネザーライトの刀",
+      "item.japanesesword.wizard_armor_leggings": "Wizard leggings",
       "effect.supuidokyouka": "スピード強化版",
       "effect.terepoto": "flamsword",
       "item.japanesesword.halloween_20221031_boots": "§6§l§n§oHalloween 2022 10/31のブーツ",
@@ -6845,7 +8301,6 @@
       "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
       "fluid.japanesesword.yabaiaitemu": "液体",
       "item.japanesesword.tyouhatusuru": "Tyouhatusuru",
-      "item.japanesesword.noooooo": "Noooooo",
       "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
       "item.0526ngs.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
       "enchantment.japanesesword.demonized": "§4§l§kDemonized",
@@ -6913,6 +8368,7 @@
       "enchantment.0526ngs.nannnnnka": "ダメージ防止",
       "advancements.zyoudan.descr": "上段",
       "item.0526ngs.bokutou": "木刀",
+      "item.japanesesword.angelos_boots": "Angelos",
       "item.japanesesword.musucdiscti": "地霊達の起床",
       "effect.effect_v": "effectⅤ",
       "item.japanesesword.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
@@ -6950,6 +8406,7 @@
       "item.0526ngs.musicdisc_un": "U.N.オーエンは彼女なのか？",
       "advancements.tidaisuki.descr": "血を飲む",
       "item.japanesesword.kazarinoarukataba": "飾りのある刀",
+      "item.japanesesword.wizard_armor_helmet": "Wizard helmet",
       "effect.barrier": "barrir",
       "effect.hanekaesu": "barrir",
       "item.0526ngs.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
@@ -7026,6 +8483,8 @@
       "entity.0526ngs.kuromob": "Kuromob",
       "item.japanesesword.syabel": "強化ダイヤモンドのスコップ",
       "item.0526ngs.no_kamaroi": "§4§k刀と鎌大好き",
+      "item.japanesesword.husuk_armor_chestplate": "§eHusuk leggings",
+      "item.japanesesword.angelos_chestplate": "Angelos",
       "item.japanesesword.kusari_2_chestplate": "Kusari 個の胴着",
       "item.japanesesword.japanese_sword": "日本刀",
       "item.japanesesword.tuva": "ツイヴァイヘンダー",
@@ -7120,12 +8579,14 @@
       "enchantment.0526ngs.hasiru": "speed",
       "entity.japanesesword.kill_magic_katana": "Magic Katana",
       "effect.damezinasi": "反動なし",
+      "item.japanesesword.husuk_armor_leggings": "§eHusuk leggings",
       "item.0526ngs.mcsucdiscko": "広有射怪鳥事",
       "advancements.kennkaku.title": "剣士",
       "item.0526ngs.syabel": "強化ダイヤモンドのスコップ",
       "item.japanesesword.bookash": "Book ash",
       "item.japanesesword.tekitou_chestplate": "Tekitou 個の胴着",
       "item.0526ngs.ha": "Ha",
+      "item.japanesesword.wizard_armor_chestplate": "Wizard chestplate",
       "item.japanesesword.naihu": "強化された投げナイフ",
       "item.japanesesword.aamor_black_chestplate": "Blackarmor 個の胴着",
       "item.0526ngs.ancientbooks": "§0§kcursebook",
@@ -7146,6 +8607,7 @@
       "effect.tp": "tp",
       "effect.kill_2": "kill",
       "item.japanesesword.nannk": "Nannk",
+      "item.japanesesword.husuk_armor_boots": "§eHusuk boots",
       "enchantment.japanesesword.entyant": "Lightnung sirike",
       "item.japanesesword.strey_outer_armor_chestplate": "Strey Outer Armor 個の胴着",
       "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
@@ -7192,6 +8654,7 @@
       "key.0526ngs.a": "落下ダメージ防止",
       "item.japanesesword.mint_boots": "Mint 個のブーツ",
       "item.0526ngs.musucdiscne_ne.desc": "ネガティブフィイス",
+      "item.japanesesword.husuk_armor_helmet": "§eHusuk helmet",
       "block.japanesesword.daiazyoi": "ダイヤモンド上位",
       "item.japanesesword.hon": "本",
       "item.japanesesword.aamor_black_boots": "Blackarmor 個のブーツ",
@@ -7222,5 +8685,5 @@
     "modElementsPackage": "japanesesword",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200234517
+  "mcreatorVersion": 202300110610
 }

@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -13,13 +13,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_ding_qi",
           "text": "定期",
           "onClick": {
             "name": "M"
           },
           "width": 30,
           "height": 20,
-          "name": "定期",
           "x": 163,
           "y": 164
         }
@@ -27,13 +27,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_gado",
           "text": "ガード",
           "onClick": {
             "name": "M1"
           },
           "width": 40,
           "height": 20,
-          "name": "ガード",
           "x": 159,
           "y": 117
         }
@@ -41,13 +41,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_da_ji",
           "text": "大技",
           "onClick": {
             "name": "M2"
           },
           "width": 35,
           "height": 20,
-          "name": "大技",
           "x": 233,
           "y": 164
         }
@@ -55,12 +55,14 @@
       {
         "type": "label",
         "data": {
-          "text": "強いよ",
+          "name": "label_qiang_iyo",
+          "text": {
+            "fixedValue": "強いよ"
+          },
           "color": {
             "value": -16777216,
             "falpha": 0.0
           },
-          "name": "強いよ",
           "x": 205,
           "y": 65
         }
@@ -68,13 +70,13 @@
       {
         "type": "button",
         "data": {
+          "name": "button_yin_kiji_se",
           "text": "引き寄せ",
           "onClick": {
             "name": "M3"
           },
           "width": 40,
           "height": 20,
-          "name": "引き寄せ",
           "x": 229,
           "y": 118
         }

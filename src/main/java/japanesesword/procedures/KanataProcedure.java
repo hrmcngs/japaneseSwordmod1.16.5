@@ -42,45 +42,28 @@ public class KanataProcedure {
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		return !(((((Entity) world
-				.getEntitiesWithinAABB(PlayerEntity.class,
-						new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null)
-				.stream().sorted(new Object() {
+		return !(((((Entity) world.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null).stream().sorted(new Object() {
+			Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+				return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+			}
+		}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof ServerPlayerEntity)
+				&& (((Entity) world.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof ServerPlayerEntity)
-				&& (((Entity) world.getEntitiesWithinAABB(PlayerEntity.class,
-						new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null)
-						.stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-							}
-						}.compareDistOf(x, y, z)).findFirst().orElse(
-								null)).world instanceof ServerWorld))
-										? ((ServerPlayerEntity) ((Entity) world
-												.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d),
-														z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null)
-												.stream().sorted(new Object() {
-													Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-														return Comparator
-																.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-													}
-												}.compareDistOf(x, y, z)).findFirst().orElse(null))).getAdvancements()
-												.getProgress(
-														((MinecraftServer) ((ServerPlayerEntity) ((Entity) world
-																.getEntitiesWithinAABB(PlayerEntity.class,
-																		new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d),
-																				x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)),
-																		null)
-																.stream().sorted(new Object() {
-																	Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-																		return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd
-																				.getDistanceSq(_x, _y, _z)));
-																	}
-																}.compareDistOf(x, y, z)).findFirst().orElse(null))).server).getAdvancementManager()
-																.getAdvancement(new ResourceLocation("japanesesword:tidaisuki")))
-												.isDone()
-										: false);
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)).world instanceof ServerWorld))
+						? ((ServerPlayerEntity) ((Entity) world.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null).stream()
+								.sorted(new Object() {
+									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+										return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+									}
+								}.compareDistOf(x, y, z)).findFirst().orElse(null))).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) ((Entity) world
+										.getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(x - (100 / 2d), y - (100 / 2d), z - (100 / 2d), x + (100 / 2d), y + (100 / 2d), z + (100 / 2d)), null).stream().sorted(new Object() {
+											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+												return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
+											}
+										}.compareDistOf(x, y, z)).findFirst().orElse(null))).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:tidaisuki")))
+								.isDone()
+						: false);
 	}
 }

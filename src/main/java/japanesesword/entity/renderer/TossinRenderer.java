@@ -17,8 +17,7 @@ public class TossinRenderer {
 		@SubscribeEvent
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
-			RenderingRegistry.registerEntityRenderingHandler(TossinItem.arrow,
-					renderManager -> new SpriteRenderer(renderManager, Minecraft.getInstance().getItemRenderer()));
+			RenderingRegistry.registerEntityRenderingHandler(TossinItem.arrow, renderManager -> new SpriteRenderer(renderManager, Minecraft.getInstance().getItemRenderer()));
 		}
 	}
 }

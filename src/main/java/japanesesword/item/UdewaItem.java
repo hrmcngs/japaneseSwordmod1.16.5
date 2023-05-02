@@ -85,26 +85,25 @@ public class UdewaItem extends JapaneseswordModElements.ModElement {
 				return 5f;
 			}
 		};
-		elements.items
-				.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(BukiItemGroup.tab).isImmuneToFire()) {
-					@Override
-					@OnlyIn(Dist.CLIENT)
-					public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
-						BipedModel armorModel = new BipedModel(1);
-						armorModel.bipedBody = new Modeltekubi().body;
-						armorModel.bipedLeftArm = new Modeltekubi().RightArm;
-						armorModel.bipedRightArm = new Modeltekubi().RightArm;
-						armorModel.isSneak = living.isSneaking();
-						armorModel.isSitting = defaultModel.isSitting;
-						armorModel.isChild = living.isChild();
-						return armorModel;
-					}
+		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(BukiItemGroup.tab).isImmuneToFire()) {
+			@Override
+			@OnlyIn(Dist.CLIENT)
+			public BipedModel getArmorModel(LivingEntity living, ItemStack stack, EquipmentSlotType slot, BipedModel defaultModel) {
+				BipedModel armorModel = new BipedModel(1);
+				armorModel.bipedBody = new Modeltekubi().body;
+				armorModel.bipedLeftArm = new Modeltekubi().RightArm;
+				armorModel.bipedRightArm = new Modeltekubi().RightArm;
+				armorModel.isSneak = living.isSneaking();
+				armorModel.isSitting = defaultModel.isSitting;
+				armorModel.isChild = living.isChild();
+				return armorModel;
+			}
 
-					@Override
-					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-						return "japanesesword:textures/entities/tekubini2.png";
-					}
-				}.setRegistryName("udewa_chestplate"));
+			@Override
+			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
+				return "japanesesword:textures/entities/tekubini2.png";
+			}
+		}.setRegistryName("udewa_chestplate"));
 	}
 
 	// Made with Blockbench 4.6.5
@@ -135,8 +134,7 @@ public class UdewaItem extends JapaneseswordModElements.ModElement {
 		}
 
 		@Override
-		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-				float alpha) {
+		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 			bone.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		}
 

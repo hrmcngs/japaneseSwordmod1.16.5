@@ -26,10 +26,7 @@ public class TiShiLiaowoShibetatokiProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		double mannpuku = 0;
 		if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-				? ((ServerPlayerEntity) entity).getAdvancements()
-						.getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-								.getAdvancement(new ResourceLocation("japanesesword:tidaisuki")))
-						.isDone()
+				? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:tidaisuki"))).isDone()
 				: false) {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1) + 1));
@@ -42,44 +39,29 @@ public class TiShiLiaowoShibetatokiProcedure {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).setHealth((float) (((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHealth() : -1) + 5));
 			if (entity instanceof PlayerEntity)
-				((PlayerEntity) entity).getFoodStats()
-						.setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 1));
+				((PlayerEntity) entity).getFoodStats().setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 1));
 			if (entity instanceof PlayerEntity) {
-				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(),
-						(float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 1),
-						"field_75125_b");
+				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(), (float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 1), "field_75125_b");
 			}
 			if (entity instanceof PlayerEntity)
-				((PlayerEntity) entity).getFoodStats()
-						.setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 2));
+				((PlayerEntity) entity).getFoodStats().setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 2));
 			if (entity instanceof PlayerEntity) {
-				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(),
-						(float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 2),
-						"field_75125_b");
+				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(), (float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 2), "field_75125_b");
 			}
 			if (entity instanceof PlayerEntity)
-				((PlayerEntity) entity).getFoodStats()
-						.setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 3));
+				((PlayerEntity) entity).getFoodStats().setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 3));
 			if (entity instanceof PlayerEntity) {
-				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(),
-						(float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 3),
-						"field_75125_b");
+				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(), (float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 3), "field_75125_b");
 			}
 			if (entity instanceof PlayerEntity)
-				((PlayerEntity) entity).getFoodStats()
-						.setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 4));
+				((PlayerEntity) entity).getFoodStats().setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 4));
 			if (entity instanceof PlayerEntity) {
-				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(),
-						(float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 4),
-						"field_75125_b");
+				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(), (float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 4), "field_75125_b");
 			}
 			if (entity instanceof PlayerEntity)
-				((PlayerEntity) entity).getFoodStats()
-						.setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 5));
+				((PlayerEntity) entity).getFoodStats().setFoodLevel((int) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getFoodLevel() : 0) + 5));
 			if (entity instanceof PlayerEntity) {
-				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(),
-						(float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 5),
-						"field_75125_b");
+				ObfuscationReflectionHelper.setPrivateValue(FoodStats.class, ((PlayerEntity) entity).getFoodStats(), (float) (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).getFoodStats().getSaturationLevel() : 0) + 5), "field_75125_b");
 			}
 		}
 	}
