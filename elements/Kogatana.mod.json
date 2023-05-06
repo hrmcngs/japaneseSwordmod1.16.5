@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 39,
   "_type": "tool",
   "definition": {
     "renderType": 0,
@@ -11,23 +11,22 @@
       "value": "CUSTOM:Buki"
     },
     "toolType": "Sword",
-    "harvestLevel": 20,
-    "efficiency": 20.0,
+    "harvestLevel": 1,
+    "efficiency": 4.0,
     "attackSpeed": 100.0,
-    "enchantability": 9,
-    "damageVsEntity": 2.0,
+    "enchantability": 2,
+    "damageVsEntity": 4.0,
     "usageCount": 0,
     "blocksAffected": [],
     "hasGlow": false,
-    "repairItems": [
-      {
-        "value": "CUSTOM:Ancientbooks"
-      }
-    ],
+    "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onRightClickedInAir": {
+      "name": "KogatanaenteiteigaaitemuwoZhentutaShi"
+    },
+    "onEntitySwing": {
       "name": "KogatanaenteiteigaaitemuwoZhentutaShi"
     }
   }

@@ -16,8 +16,9 @@ import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
-import japanesesword.JapaneseswordMod;
 import japanesesword.enchantment.KillEnchantment;
+
+import japanesesword.JapaneseswordMod;
 
 public class RenngekiehuekutogaYouXiaoShinoteitukuProcedure {
 

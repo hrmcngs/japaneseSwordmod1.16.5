@@ -117,7 +117,7 @@ public class AngelosItem extends JapaneseswordModElements.ModElement {
 
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/models/armor/tekitou_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+				return "japanesesword:textures/entities/hane.png";
 			}
 		}.setRegistryName("angelos_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)) {

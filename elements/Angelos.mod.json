@@ -29,7 +29,7 @@
     "bodyModelPart": "body",
     "armsModelPartL": "left_arm",
     "armsModelPartR": "right_arm",
-    "bodyModelTexture": "From armor",
+    "bodyModelTexture": "hane.png",
     "leggingsModelName": "Default",
     "leggingsModelPartL": "Leggings L",
     "leggingsModelPartR": "Leggings R",

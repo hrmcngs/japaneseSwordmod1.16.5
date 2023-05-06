@@ -1,7 +1,7 @@
 {
   "parent": "japanesesword:custom/demonscythe",
   "textures": {
-    "6": "japanesesword:blocks/demonscythe",
+    "missing": "japanesesword:blocks/demonscythe",
     "particle": "japanesesword:items/kama"
   }
 }

@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "missing": "demonscythe"
+        "0": "kogatana"
       },
       "name": "default"
     }

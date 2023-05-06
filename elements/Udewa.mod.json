@@ -2,18 +2,18 @@
   "_fv": 39,
   "_type": "armor",
   "definition": {
-    "enableHelmet": true,
+    "enableHelmet": false,
     "textureHelmet": "aaaaaaaaaae_head",
     "enableBody": true,
     "textureBody": "udewa",
-    "enableLeggings": true,
+    "enableLeggings": false,
     "textureLeggings": "black_leggings",
-    "enableBoots": true,
+    "enableBoots": false,
     "textureBoots": "black_boots",
     "creativeTab": {
       "value": "CUSTOM:Buki"
     },
-    "armorTextureFile": "tekitou",
+    "armorTextureFile": "reikon",
     "helmetName": "Udewa ヘルメット",
     "bodyName": "Udewa 個の胴着",
     "leggingsName": "Udewa 個のレギンス",

@@ -85,12 +85,6 @@ public class UdewaItem extends JapaneseswordModElements.ModElement {
 				return 5f;
 			}
 		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(BukiItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/models/armor/tekitou_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("udewa_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(BukiItemGroup.tab).isImmuneToFire()) {
 			@Override
 			@OnlyIn(Dist.CLIENT)
@@ -110,18 +104,6 @@ public class UdewaItem extends JapaneseswordModElements.ModElement {
 				return "japanesesword:textures/entities/tekubini2.png";
 			}
 		}.setRegistryName("udewa_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(BukiItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/models/armor/tekitou_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("udewa_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(BukiItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/models/armor/tekitou_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("udewa_boots"));
 	}
 
 	// Made with Blockbench 4.6.5

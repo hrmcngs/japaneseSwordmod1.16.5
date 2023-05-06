@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
 
 import java.util.stream.Stream;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class KogatanaItem extends JapaneseswordModElements.ModElement {
 	public static final Item block = null;
 
 	public KogatanaItem(JapaneseswordModElements instance) {
-		super(instance, 247);
+		super(instance, 478);
 	}
 
 	@Override
@@ -41,23 +42,23 @@ public class KogatanaItem extends JapaneseswordModElements.ModElement {
 			}
 
 			public float getEfficiency() {
-				return 20f;
+				return 4f;
 			}
 
 			public float getAttackDamage() {
-				return 0f;
+				return 2f;
 			}
 
 			public int getHarvestLevel() {
-				return 20;
+				return 1;
 			}
 
 			public int getEnchantability() {
-				return 9;
+				return 2;
 			}
 
 			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(AncientbooksItem.block));
+				return Ingredient.EMPTY;
 			}
 		}, 3, 96f, new Item.Properties().group(BukiItemGroup.tab)) {
 			@Override
@@ -68,11 +69,23 @@ public class KogatanaItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				KogatanaenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(Stream
-						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
-								new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				KogatanaenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				return retval;
+			}
+
+			@Override
+			public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
+				boolean retval = super.onEntitySwing(itemstack, entity);
+				double x = entity.getPosX();
+				double y = entity.getPosY();
+				double z = entity.getPosZ();
+				World world = entity.world;
+
+				KogatanaenteiteigaaitemuwoZhentutaShiProcedure.executeProcedure(
+						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 		}.setRegistryName("kogatana"));
