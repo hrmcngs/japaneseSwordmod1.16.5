@@ -2,7 +2,7 @@
   "display": {
     "background": "minecraft:textures/block/stone.png",
     "icon": {
-      "item": "japanesesword:tokubetuno"
+      "item": "japanesesword:ookenoken"
     },
     "title": {
       "translate": "advancements.ounozisseki.title"

@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "japanesesword:items/retunoswrd"
+    "layer0": "japanesesword:items/tetunokenn"
   },
   "display": {
     "thirdperson_righthand": {

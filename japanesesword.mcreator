@@ -1,20 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "J",
-      "type": "tool",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "j",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/japanesesword/models/item/j.json",
-          "src/main/java/japanesesword/item/JItem.java"
-        ]
-      }
-    },
-    {
       "name": "Entyant",
       "type": "enchantment",
       "sortid": 3,
@@ -37,33 +23,6 @@
       "metadata": {
         "files": [
           "src/main/java/japanesesword/itemgroup/BukiItemGroup.java"
-        ]
-      }
-    },
-    {
-      "name": "Test",
-      "type": "procedure",
-      "sortid": 5,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "test",
-      "metadata": {
-        "files": [
-          "src/main/java/japanesesword/procedures/TestProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
         ]
       }
     },
@@ -491,19 +450,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/japanesesword/recipes/naihuresipi.json"
-        ]
-      }
-    },
-    {
-      "name": "Naihunage",
-      "type": "achievement",
-      "sortid": 40,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "naihunage",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/advancements/naihunage.json"
         ]
       }
     },
@@ -1580,32 +1526,6 @@
       }
     },
     {
-      "name": "Syodan",
-      "type": "achievement",
-      "sortid": 122,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "syodan",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/advancements/syodan.json"
-        ]
-      }
-    },
-    {
-      "name": "Tyudan",
-      "type": "achievement",
-      "sortid": 123,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tyudan",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/advancements/tyudan.json"
-        ]
-      }
-    },
-    {
       "name": "Bokutou",
       "type": "tool",
       "sortid": 124,
@@ -2199,30 +2119,6 @@
         "files": [
           "src/main/resources/data/japanesesword/recipes/honnnn.json"
         ]
-      }
-    },
-    {
-      "name": "Zyoudan",
-      "type": "achievement",
-      "sortid": 169,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "zyoudan",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/advancements/zyoudan.json"
-        ]
-      }
-    },
-    {
-      "name": "Yabaiaitemu",
-      "type": "fluid",
-      "sortid": 171,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "yabaiaitemu",
-      "metadata": {
-        "gb": true
       }
     },
     {
@@ -2828,19 +2724,6 @@
             "name": "world",
             "type": "world"
           }
-        ]
-      }
-    },
-    {
-      "name": "Kennkaku",
-      "type": "achievement",
-      "sortid": 202,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "kennkaku",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/advancements/kennkaku.json"
         ]
       }
     },
@@ -3704,14 +3587,6 @@
       }
     },
     {
-      "name": "Tetunokatana",
-      "type": "tool",
-      "sortid": 273,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tetunokatana"
-    },
-    {
       "name": "Tetunokatanaresip",
       "type": "recipe",
       "sortid": 274,
@@ -4330,19 +4205,6 @@
         "files": [
           "src/main/resources/assets/japanesesword/models/item/katanakatana.json",
           "src/main/java/japanesesword/item/KatanakatanaItem.java"
-        ]
-      }
-    },
-    {
-      "name": "Haziku",
-      "type": "achievement",
-      "sortid": 296,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "haziku",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/advancements/haziku.json"
         ]
       }
     },
@@ -7281,6 +7143,9 @@
         "ec": true,
         "files": [
           "src/main/java/japanesesword/item/UdewaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/udewa_leggings.json",
+          "src/main/resources/assets/japanesesword/models/item/udewa_boots.json",
+          "src/main/resources/assets/japanesesword/models/item/udewa_helmet.json",
           "src/main/resources/assets/japanesesword/models/item/udewa_chestplate.json"
         ]
       }
@@ -7529,6 +7394,34 @@
           "src/main/java/japanesesword/item/AngelosItem.java"
         ]
       }
+    },
+    {
+      "name": "Tetunokatana",
+      "type": "tool",
+      "sortid": 476,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tetunokatana",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/TetunokatanaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/tetunokatana.json"
+        ]
+      }
+    },
+    {
+      "name": "Hakuzaya",
+      "type": "tool",
+      "sortid": 477,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hakuzaya",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/hakuzaya.json",
+          "src/main/java/japanesesword/item/HakuzayaItem.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -7732,7 +7625,6 @@
   "language_map": {
     "en_us": {
       "entity.japanesesword.ken_2": "Ken",
-      "advancements.naihunage.title": "ナイフ投げを始める",
       "item.japanesesword.udewa_boots": "Udewa 個のブーツ",
       "item.0526ngs.tossin": "Tossin",
       "item.japanesesword.black_strey_outer_armor_leggings": "Black Strey Outer leggings",
@@ -7740,8 +7632,8 @@
       "item.0526ngs.zanngekimob_spawn_egg": "Zanngekimob Spawn Egg",
       "entity.0526ngs.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.sukop": "Sukop",
-      "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
+      "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.g": "g",
       "item.0526ngs.tetunokatana": "Tetunokatana",
@@ -7765,6 +7657,7 @@
       "item.japanesesword.nagenaihu": "投げナイフ",
       "subtitles.un": "U.N.オーエンは彼女なのか？",
       "item.0526ngs.kinnnokatana": "金の刀",
+      "item.japanesesword.hakuzaya": "白鞘",
       "item.0526ngs.daiakatana": "ダイアモンドの刀",
       "item.0526ngs.musicdisc_ka.desc": "神々が恋した幻想郷",
       "item.0526ngs.magic_book": "Magic Book",
@@ -7812,7 +7705,6 @@
       "effect.ugokasu": "動かす",
       "item.japanesesword.otachibloodcurse": "§4§k守血刀",
       "item.japanesesword.nagerukatana": "Nagerukatana",
-      "advancements.syodan.title": "初段",
       "item.japanesesword.mcsucdiscko": "広有射怪鳥事",
       "item.0526ngs.stonekatana": "Stonekatana",
       "item.japanesesword.mint_helmet": "Mint ヘルメット",
@@ -7831,10 +7723,8 @@
       "effect.keneffect": "keneffect",
       "item.japanesesword.mcsucdiscka": "神々が恋した幻想郷",
       "item.0526ngs.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
-      "block.japanesesword.yabaiaitemu": "液体",
       "item.0526ngs.hanyou_chestplate": "Hannyou 個の胴着",
       "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
-      "fluid.japanesesword.yabaiaitemu": "液体",
       "item.japanesesword.tyouhatusuru": "Tyouhatusuru",
       "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
       "item.0526ngs.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
@@ -7893,7 +7783,7 @@
       "advancements.bukinanigasuki.title": "こんな武器一々作るか普通",
       "subtitles.a": "U.N.オーエンは彼女なのか?",
       "item.0526ngs.tekitou_boots": "Tekitou 個のブーツ",
-      "item.japanesesword.tetunokatana": "Tetunokatana",
+      "item.japanesesword.tetunokatana": "鉄の刀",
       "item.0526ngs.tokubetuno": "金の刀",
       "item.japanesesword.ti": "血",
       "item.0526ngs.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
@@ -7901,7 +7791,6 @@
       "effect.magickatanaeffect": "magicKatanaEffect",
       "effect.nemui": "test",
       "enchantment.0526ngs.nannnnnka": "ダメージ防止",
-      "advancements.zyoudan.descr": "上段",
       "item.0526ngs.bokutou": "木刀",
       "item.japanesesword.angelos_boots": "Angelos",
       "item.japanesesword.musucdiscti": "地霊達の起床",
@@ -7916,7 +7805,6 @@
       "advancements.hitokiri.title": "剣に夢見て",
       "item.0526ngs.yuugenkenn": "幽玄剣",
       "item.0526ngs.airbougu_boots": "Airブーツ",
-      "advancements.naihunage.descr": "投げナイフを持つ",
       "item.0526ngs.musucdiscne_ne": "ネガティブフィイス",
       "item.japanesesword.udewa_chestplate": "Udewa 個の胴着",
       "item.japanesesword.mint_chestplate": "Mint 個の胴着",
@@ -7965,7 +7853,6 @@
       "item.0526ngs.airbougu_helmet": "Airヘルメット",
       "key.japanesesword.r": "R",
       "effect.tomare": " tomare",
-      "advancements.kennkaku.descr": "剣に自信はあるかい?",
       "item.japanesesword.aamor_black_helmet": "Blackarmor ヘルメット",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "effect.effect": "effect",
@@ -8046,7 +7933,6 @@
       "item.0526ngs.a_1": "A 1",
       "entity.0526ngs.siromob": "Siromob",
       "item.0526ngs.naihu_2": "Naihu 2",
-      "item.japanesesword.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
       "item.0526ngs.halloween_20221031_leggings": "§6§l§n§oHalloween 2022 10/31のレギンス",
       "item.japanesesword.goukin": "合金",
       "item.japanesesword.daiazyui": "ダイアモンドの強化",
@@ -8066,7 +7952,6 @@
       "item.0526ngs.tantou": "短刀",
       "subtitles.ka": "神々が恋した幻想郷",
       "item.japanesesword.musicdisc_tu": "月まで届け、不死の煙",
-      "advancements.tyudan.descr": "中段",
       "item.japanesesword.hanyou_chestplate": "Hannyou 個の胴着",
       "enchantment.0526ngs.flame": "Flame defense",
       "item.japanesesword.ookenoken": "王の刀",
@@ -8084,16 +7969,13 @@
       "subtitles.ne": "ネガティブフィス",
       "item.japanesesword.tubanoatukatana": "鍔のある刀",
       "entity.japanesesword.kabotya": "Kabotya",
-      "advancements.zyoudan.title": "上段",
       "item.japanesesword.kill_magic_katana_spawn_egg": "Magic Katana Spawn Egg",
       "item.japanesesword.yuugenkenn": "幽玄剣",
       "item.0526ngs.katana_1": "桜観剣",
       "item.japanesesword.dokunosukelton_spawn_egg": "毒を使うスケルトン Spawn Egg",
       "item.japanesesword.ancientbooks": "§0§kcursebook",
-      "advancements.haziku.descr": "遠距離武器を弾く",
       "item.japanesesword.mcsucdiscko.desc": "広有射怪鳥事",
       "item.0526ngs.mcsucdiscka": "神々が恋した幻想郷",
-      "advancements.tyudan.title": "中段",
       "item.japanesesword.noroi": "§4§k好きな人いない",
       "item.japanesesword.motonokatana": "刀(封)",
       "item.0526ngs.ginyade_helmet": "Ginyade ヘルメット",
@@ -8116,7 +7998,6 @@
       "effect.damezinasi": "反動なし",
       "item.japanesesword.husuk_armor_leggings": "§eHusuk leggings",
       "item.0526ngs.mcsucdiscko": "広有射怪鳥事",
-      "advancements.kennkaku.title": "剣士",
       "item.0526ngs.syabel": "強化ダイヤモンドのスコップ",
       "item.japanesesword.bookash": "Book ash",
       "item.japanesesword.tekitou_chestplate": "Tekitou 個の胴着",
@@ -8128,7 +8009,6 @@
       "item.0526ngs.magicksword": "Magicksword",
       "subtitles.sword": "",
       "effect.noroiwotukeru": "nori",
-      "advancements.syodan.descr": "初段",
       "effect.chop_up": "斬り刻む",
       "item.0526ngs.noroi": "§4§k好きな人いない",
       "item.japanesesword.tetotokin": "鉄と金",
@@ -8146,7 +8026,6 @@
       "enchantment.japanesesword.entyant": "Lightnung sirike",
       "item.japanesesword.strey_outer_armor_chestplate": "Strey Outer chestplate",
       "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
-      "advancements.haziku.title": "刀で遠距離武器を弾く",
       "item.0526ngs.tuva": "ツイヴァイヘンダー",
       "entity.0526ngs.yaa": "Yaa",
       "item.0526ngs.turuhasi": "強化ダイヤモンドのツルハシ",
@@ -8179,7 +8058,6 @@
       "item.0526ngs.hannyou_boots": "Hannyou 個のブーツ",
       "item.0526ngs.kazarinoarukataba": "飾りのある刀",
       "subtitles.ti": "地霊達の起床",
-      "item.japanesesword.j": "白鞘",
       "item.japanesesword.musicdisc_ko": "広有射怪鳥事",
       "item.japanesesword.halloween_20221031_helmet": "§6§l§n§oHalloween 2022 10/31のヘルメット",
       "item.japanesesword.hannyou_helmet": "Hannyou ヘルメット",
@@ -8197,7 +8075,6 @@
     },
     "ja_jp": {
       "entity.japanesesword.ken_2": "Ken",
-      "advancements.naihunage.title": "ナイフ投げを始める",
       "item.japanesesword.udewa_boots": "Udewa 個のブーツ",
       "item.0526ngs.tossin": "Tossin",
       "item.japanesesword.black_strey_outer_armor_leggings": "Strey Outer Armor 個のレギンス",
@@ -8205,8 +8082,8 @@
       "item.0526ngs.zanngekimob_spawn_egg": "Zanngekimob Spawn Egg",
       "entity.0526ngs.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.sukop": "Sukop",
-      "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
+      "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.g": "g",
       "item.0526ngs.tetunokatana": "Tetunokatana",
@@ -8230,6 +8107,7 @@
       "item.japanesesword.nagenaihu": "投げナイフ",
       "subtitles.un": "U.N.オーエンは彼女なのか?",
       "item.0526ngs.kinnnokatana": "金の刀",
+      "item.japanesesword.hakuzaya": "白鞘",
       "item.0526ngs.daiakatana": "ダイアモンドの刀",
       "item.0526ngs.musicdisc_ka.desc": "神々が恋した幻想郷",
       "item.0526ngs.magic_book": "Magic Book",
@@ -8277,7 +8155,6 @@
       "item.japanesesword.ginyade_leggings": "Ginyade 個のレギンス",
       "item.japanesesword.otachibloodcurse": "§4§k守血刀",
       "item.japanesesword.nagerukatana": "Nagerukatana",
-      "advancements.syodan.title": "初段",
       "item.japanesesword.mcsucdiscko": "広有射怪鳥事",
       "item.0526ngs.stonekatana": "Stonekatana",
       "item.japanesesword.mint_helmet": "Mint ヘルメット",
@@ -8296,10 +8173,8 @@
       "effect.keneffect": "keneffect",
       "item.japanesesword.mcsucdiscka": "神々が恋した幻想郷",
       "item.0526ngs.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
-      "block.japanesesword.yabaiaitemu": "液体",
       "item.0526ngs.hanyou_chestplate": "Hannyou 個の胴着",
       "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
-      "fluid.japanesesword.yabaiaitemu": "液体",
       "item.japanesesword.tyouhatusuru": "Tyouhatusuru",
       "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
       "item.0526ngs.nezarazyouigokan_leggings": "Nezarazyouigokan 個のレギンス",
@@ -8358,7 +8233,7 @@
       "advancements.bukinanigasuki.title": "武器は何が好き？",
       "subtitles.a": "U.N.オーエンは彼女なのか?",
       "item.0526ngs.tekitou_boots": "Tekitou 個のブーツ",
-      "item.japanesesword.tetunokatana": "Tetunokatana",
+      "item.japanesesword.tetunokatana": "鉄の刀",
       "item.0526ngs.tokubetuno": "金の刀",
       "item.japanesesword.ti": "血",
       "item.0526ngs.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
@@ -8366,7 +8241,6 @@
       "effect.magickatanaeffect": "magicKatanaEffect",
       "effect.nemui": "test",
       "enchantment.0526ngs.nannnnnka": "ダメージ防止",
-      "advancements.zyoudan.descr": "上段",
       "item.0526ngs.bokutou": "木刀",
       "item.japanesesword.angelos_boots": "Angelos",
       "item.japanesesword.musucdiscti": "地霊達の起床",
@@ -8381,7 +8255,6 @@
       "advancements.hitokiri.title": "武士に夢見て",
       "item.0526ngs.yuugenkenn": "幽玄剣",
       "item.0526ngs.airbougu_boots": "Airブーツ",
-      "advancements.naihunage.descr": "投げナイフを持つ",
       "item.0526ngs.musucdiscne_ne": "ネガティブフィイス",
       "item.japanesesword.udewa_chestplate": "Udewa 個の胴着",
       "item.japanesesword.mint_chestplate": "Mint 個の胴着",
@@ -8430,7 +8303,6 @@
       "item.0526ngs.airbougu_helmet": "Airヘルメット",
       "key.japanesesword.r": "R",
       "effect.tomare": " tomare",
-      "advancements.kennkaku.descr": "剣に自信はあるかい?",
       "item.japanesesword.aamor_black_helmet": "Blackarmor ヘルメット",
       "item.japanesesword.nezarazyouigokan_chestplate": "Nezarazyouigokan 個の胴着",
       "effect.effect": "effect",
@@ -8511,7 +8383,6 @@
       "item.0526ngs.a_1": "A 1",
       "entity.0526ngs.siromob": "Siromob",
       "item.0526ngs.naihu_2": "Naihu 2",
-      "item.japanesesword.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
       "item.0526ngs.halloween_20221031_leggings": "§6§l§n§oHalloween 2022 10/31のレギンス",
       "item.japanesesword.goukin": "合金",
       "item.japanesesword.daiazyui": "ダイアモンドの強化",
@@ -8531,7 +8402,6 @@
       "item.0526ngs.tantou": "短刀",
       "subtitles.ka": "神々が恋した幻想郷",
       "item.japanesesword.musicdisc_tu": "月まで届け、不死の煙",
-      "advancements.tyudan.descr": "中段",
       "item.japanesesword.hanyou_chestplate": "Hannyou 個の胴着",
       "enchantment.0526ngs.flame": "Flame defense",
       "item.japanesesword.ookenoken": "Ookenoken",
@@ -8549,16 +8419,13 @@
       "subtitles.ne": "ネガティブフィス",
       "item.japanesesword.tubanoatukatana": "鍔のある刀",
       "entity.japanesesword.kabotya": "Kabotya",
-      "advancements.zyoudan.title": "上段",
       "item.japanesesword.kill_magic_katana_spawn_egg": "Magic Katana Spawn Egg",
       "item.japanesesword.yuugenkenn": "幽玄剣",
       "item.0526ngs.katana_1": "桜観剣",
       "item.japanesesword.dokunosukelton_spawn_egg": "毒を使うスケルトン Spawn Egg",
       "item.japanesesword.ancientbooks": "§0§kcursebook",
-      "advancements.haziku.descr": "遠距離武器を弾く",
       "item.japanesesword.mcsucdiscko.desc": "広有射怪鳥事",
       "item.0526ngs.mcsucdiscka": "神々が恋した幻想郷",
-      "advancements.tyudan.title": "中段",
       "item.japanesesword.noroi": "§4§k好きな人いない",
       "item.japanesesword.motonokatana": "元の刀",
       "item.0526ngs.ginyade_helmet": "Ginyade ヘルメット",
@@ -8581,7 +8448,6 @@
       "effect.damezinasi": "反動なし",
       "item.japanesesword.husuk_armor_leggings": "§eHusuk leggings",
       "item.0526ngs.mcsucdiscko": "広有射怪鳥事",
-      "advancements.kennkaku.title": "剣士",
       "item.0526ngs.syabel": "強化ダイヤモンドのスコップ",
       "item.japanesesword.bookash": "Book ash",
       "item.japanesesword.tekitou_chestplate": "Tekitou 個の胴着",
@@ -8593,7 +8459,6 @@
       "item.0526ngs.magicksword": "Magicksword",
       "subtitles.sword": "",
       "effect.noroiwotukeru": "nori",
-      "advancements.syodan.descr": "　",
       "effect.chop_up": "斬り刻む",
       "item.0526ngs.noroi": "§4§k好きな人いない",
       "item.japanesesword.tetotokin": "鉄と金",
@@ -8611,7 +8476,6 @@
       "enchantment.japanesesword.entyant": "Lightnung sirike",
       "item.japanesesword.strey_outer_armor_chestplate": "Strey Outer Armor 個の胴着",
       "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
-      "advancements.haziku.title": "刀で遠距離武器を弾く",
       "item.0526ngs.tuva": "ツイヴァイヘンダー",
       "entity.0526ngs.yaa": "Yaa",
       "item.0526ngs.turuhasi": "強化ダイヤモンドのツルハシ",
@@ -8644,7 +8508,6 @@
       "item.0526ngs.hannyou_boots": "Hannyou 個のブーツ",
       "item.0526ngs.kazarinoarukataba": "飾りのある刀",
       "subtitles.ti": "地霊達の起床",
-      "item.japanesesword.j": "白鞘",
       "item.japanesesword.musicdisc_ko": "広有射怪鳥事",
       "item.japanesesword.halloween_20221031_helmet": "§6§l§n§oHalloween 2022 10/31のヘルメット",
       "item.japanesesword.hannyou_helmet": "Hannyou ヘルメット",

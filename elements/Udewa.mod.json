@@ -2,14 +2,14 @@
   "_fv": 39,
   "_type": "armor",
   "definition": {
-    "enableHelmet": false,
-    "textureHelmet": "",
+    "enableHelmet": true,
+    "textureHelmet": "aaaaaaaaaae_head",
     "enableBody": true,
     "textureBody": "udewa",
-    "enableLeggings": false,
-    "textureLeggings": "",
-    "enableBoots": false,
-    "textureBoots": "",
+    "enableLeggings": true,
+    "textureLeggings": "black_leggings",
+    "enableBoots": true,
+    "textureBoots": "black_boots",
     "creativeTab": {
       "value": "CUSTOM:Buki"
     },

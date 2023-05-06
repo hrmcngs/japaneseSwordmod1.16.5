@@ -15,19 +15,19 @@ import japanesesword.itemgroup.BukiItemGroup;
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
-public class JItem extends JapaneseswordModElements.ModElement {
-	@ObjectHolder("japanesesword:j")
+public class HakuzayaItem extends JapaneseswordModElements.ModElement {
+	@ObjectHolder("japanesesword:hakuzaya")
 	public static final Item block = null;
 
-	public JItem(JapaneseswordModElements instance) {
-		super(instance, 2);
+	public HakuzayaItem(JapaneseswordModElements instance) {
+		super(instance, 477);
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new SwordItem(new IItemTier() {
 			public int getMaxUses() {
-				return 100;
+				return 250;
 			}
 
 			public float getEfficiency() {
@@ -35,7 +35,7 @@ public class JItem extends JapaneseswordModElements.ModElement {
 			}
 
 			public float getAttackDamage() {
-				return 4f;
+				return 3f;
 			}
 
 			public int getHarvestLevel() {
@@ -47,9 +47,9 @@ public class JItem extends JapaneseswordModElements.ModElement {
 			}
 
 			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(Items.GOLD_NUGGET), new ItemStack(Items.IRON_NUGGET));
+				return Ingredient.fromStacks(new ItemStack(Items.IRON_INGOT));
 			}
-		}, 3, 0f, new Item.Properties().group(BukiItemGroup.tab)) {
-		}.setRegistryName("j"));
+		}, 3, -2f, new Item.Properties().group(BukiItemGroup.tab)) {
+		}.setRegistryName("hakuzaya"));
 	}
 }

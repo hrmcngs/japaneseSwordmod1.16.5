@@ -5,7 +5,7 @@
     "achievementName": "剣に夢見て",
     "achievementDescription": "剣士を選ぶ",
     "achievementIcon": {
-      "value": "CUSTOM:J"
+      "value": "CUSTOM:Hakuzaya"
     },
     "background": "Default",
     "disableDisplay": false,

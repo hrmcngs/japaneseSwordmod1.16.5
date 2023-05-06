@@ -32,14 +32,14 @@ public class OokenokenturuwoShoudeChituteiruJiannoteitukuProcedure {
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
 		}
-		if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-				? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:kennkaku"))).isDone()
-				: false)
-				|| (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-						? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:ounozisseki"))).isDone()
-						: false)) {
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 1, (true), (false)));
-		}
+//		if ((((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+//				? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:kennkaku"))).isDone()
+//				: false)
+//				|| (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
+//						? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:ounozisseki"))).isDone()
+//						: false)) {
+//			if (entity instanceof LivingEntity)
+//				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 1, (true), (false)));
+//		}
 	}
 }
