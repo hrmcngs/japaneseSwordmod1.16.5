@@ -7,52 +7,49 @@ import net.minecraft.world.World;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResult;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.SwordItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.AxeItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Collections;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.TyoutouturuwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.TyoutouYoukuritukusitatokiProcedure;
-
-import japanesesword.itemgroup.BukiItemGroup;
+import japanesesword.procedures.MagicGoldenKatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
 
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
-public class TyoutouItem extends JapaneseswordModElements.ModElement {
-	@ObjectHolder("japanesesword:tyoutou")
+public class MagicGoldenKatanaItem extends JapaneseswordModElements.ModElement {
+	@ObjectHolder("japanesesword:magic_golden_katana")
 	public static final Item block = null;
 
-	public TyoutouItem(JapaneseswordModElements instance) {
-		super(instance, 440);
+	public MagicGoldenKatanaItem(JapaneseswordModElements instance) {
+		super(instance, 482);
 	}
 
 	@Override
 	public void initElements() {
-		elements.items.add(() -> new SwordItem(new IItemTier() {
+		elements.items.add(() -> new AxeItem(new IItemTier() {
 			public int getMaxUses() {
 				return 0;
 			}
 
 			public float getEfficiency() {
-				return 9f;
+				return 7f;
 			}
 
 			public float getAttackDamage() {
-				return 11f;
+				return 4f;
 			}
 
 			public int getHarvestLevel() {
-				return 9;
+				return 10;
 			}
 
 			public int getEnchantability() {
@@ -62,7 +59,7 @@ public class TyoutouItem extends JapaneseswordModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, -2.4f, new Item.Properties().group(BukiItemGroup.tab).isImmuneToFire()) {
+		}, 1, 96f, new Item.Properties().group(ItemGroup.TOOLS)) {
 			@Override
 			public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
 				ActionResult<ItemStack> retval = super.onItemRightClick(world, entity, hand);
@@ -71,9 +68,7 @@ public class TyoutouItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				TyoutouYoukuritukusitatokiProcedure.executeProcedure(
-						Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-								.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				MagicGoldenKatanaturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -85,8 +80,8 @@ public class TyoutouItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				if (selected)
 
-					TyoutouturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Collections.emptyMap());
+					MagicGoldenKatanaturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
-		}.setRegistryName("tyoutou"));
+		}.setRegistryName("magic_golden_katana"));
 	}
 }

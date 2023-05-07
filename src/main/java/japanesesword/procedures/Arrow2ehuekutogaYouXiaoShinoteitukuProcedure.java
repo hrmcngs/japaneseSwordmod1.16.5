@@ -30,8 +30,9 @@ import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
-import japanesesword.JapaneseswordMod;
 import japanesesword.enchantment.DemonizedEnchantment;
+
+import japanesesword.JapaneseswordMod;
 
 public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 
@@ -86,7 +87,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -179,7 +180,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -272,7 +273,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -365,7 +366,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -458,7 +459,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -553,7 +554,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -646,7 +647,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -739,7 +740,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -832,7 +833,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {
@@ -925,7 +926,7 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 								} else {
 									entityiterator.getPersistentData().putBoolean("My arrow", (false));
 								}
-								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
+								if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
 										entityiterator.getPersistentData().putBoolean("Check2", (true));
 										if (world instanceof World && !world.isRemote()) {

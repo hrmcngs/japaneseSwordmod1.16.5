@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/golden_katana",
+  "textures": {
+    "0": "japanesesword:blocks/golden_katana",
+    "particle": "japanesesword:items/kinnnokatana"
+  }
+}

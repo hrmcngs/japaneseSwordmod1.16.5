@@ -15,7 +15,7 @@
     "efficiency": 9.0,
     "attackSpeed": 2.5,
     "enchantability": 9,
-    "damageVsEntity": 13.0,
+    "damageVsEntity": 11.0,
     "usageCount": 0,
     "blocksAffected": [],
     "hasGlow": false,
@@ -25,12 +25,6 @@
     "damageOnCrafting": false,
     "onRightClickedInAir": {
       "name": "DemonScytheYoukuritukusitatoki"
-    },
-    "onItemInUseTick": {
-      "name": "DemonizedkatanaturuwoShoudeChituteiruJiannoteituku"
-    },
-    "onStoppedUsing": {
-      "name": "DemonizedkatanapureiyagaShiYongwoTingZhisitaShi"
     }
   }
 }

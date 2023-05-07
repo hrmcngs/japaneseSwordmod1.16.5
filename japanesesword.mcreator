@@ -6995,20 +6995,6 @@
       }
     },
     {
-      "name": "DemonScythe",
-      "type": "tool",
-      "sortid": 439,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "demon_scythe",
-      "metadata": {
-        "files": [
-          "src/main/java/japanesesword/item/DemonScytheItem.java",
-          "src/main/resources/assets/japanesesword/models/item/demon_scythe.json"
-        ]
-      }
-    },
-    {
       "name": "DemonScytheYoukuritukusitatoki",
       "type": "procedure",
       "sortid": 439,
@@ -7425,6 +7411,61 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "kamanoyotei"
+    },
+    {
+      "name": "DemonScythe",
+      "type": "tool",
+      "sortid": 479,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demon_scythe",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/DemonScytheItem.java",
+          "src/main/resources/assets/japanesesword/models/item/demon_scythe.json"
+        ]
+      }
+    },
+    {
+      "name": "MagicGoldenKatanaturuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 480,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_golden_katanaturuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/MagicGoldenKatanaturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MagicGoldenKatanaYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 481,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_golden_katana_youkuritukusitatoki"
+    },
+    {
+      "name": "MagicGoldenKatana",
+      "type": "tool",
+      "sortid": 482,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_golden_katana",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/MagicGoldenKatanaItem.java",
+          "src/main/resources/assets/japanesesword/models/item/magic_golden_katana.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -8030,6 +8071,7 @@
       "item.japanesesword.strey_outer_armor_chestplate": "Strey Outer chestplate",
       "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
       "item.0526ngs.tuva": "ツイヴァイヘンダー",
+      "item.japanesesword.magic_golden_katana": "§6MagicGoldenKatana",
       "entity.0526ngs.yaa": "Yaa",
       "item.0526ngs.turuhasi": "強化ダイヤモンドのツルハシ",
       "item.japanesesword.aamor_black_leggings": "Blackarmorレギンス",
@@ -8479,6 +8521,7 @@
       "item.japanesesword.strey_outer_armor_chestplate": "Strey Outer Armor 個の胴着",
       "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
       "item.0526ngs.tuva": "ツイヴァイヘンダー",
+      "item.japanesesword.magic_golden_katana": "§6MagicGoldenKatana",
       "entity.0526ngs.yaa": "Yaa",
       "item.0526ngs.turuhasi": "強化ダイヤモンドのツルハシ",
       "item.japanesesword.aamor_black_leggings": "Blackarmor 個のレギンス",
