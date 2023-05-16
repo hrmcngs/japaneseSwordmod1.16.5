@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "golden_katana"
+        "1": "golden_katana"
       },
       "name": "default"
     }
