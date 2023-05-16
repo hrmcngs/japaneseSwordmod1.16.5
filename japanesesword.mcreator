@@ -123,30 +123,6 @@
       "registry_name": "kill"
     },
     {
-      "name": "Kill1",
-      "type": "procedure",
-      "sortid": 14,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "kill_1",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "JapaneseSword",
       "type": "tool",
       "sortid": 15,
@@ -6476,7 +6452,7 @@
       "type": "livingentity",
       "sortid": 419,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "black_person"
     },
     {
@@ -7135,7 +7111,7 @@
       "type": "procedure",
       "sortid": 449,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "magickatanaeffectehuekutoga_you_xiao_shinoteituku",
       "metadata": {
         "dependencies": [
@@ -7427,15 +7403,94 @@
       }
     },
     {
-      "name": "MagicGoldenKatanaturuwoShoudeChituteiruJiannoteituku",
+      "name": "GoldenkatanaYoukuritukusitatoki",
       "type": "procedure",
       "sortid": 480,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "magic_golden_katanaturuwo_shoude_chituteiru_jiannoteituku",
+      "registry_name": "goldenkatana_youkuritukusitatoki",
       "metadata": {
         "files": [
-          "src/main/java/japanesesword/procedures/MagicGoldenKatanaturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+          "src/main/java/japanesesword/procedures/GoldenkatanaYoukuritukusitatokiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Goldenkatana",
+      "type": "tool",
+      "sortid": 481,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "goldenkatana",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/goldenkatana.json",
+          "src/main/java/japanesesword/item/GoldenkatanaItem.java"
+        ]
+      }
+    },
+    {
+      "name": "DemonKatanaYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 482,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demon_katana_youkuritukusitatoki",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/DemonKatanaYoukuritukusitatokiProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Kawasiro",
+      "type": "armor",
+      "sortid": 483,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kawasiro",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/japanesesword/models/item/kawasiro_chestplate.json",
+          "src/main/java/japanesesword/item/KawasiroItem.java",
+          "src/main/resources/assets/japanesesword/models/item/kawasiro_boots.json",
+          "src/main/resources/assets/japanesesword/models/item/kawasiro_leggings.json"
+        ]
+      }
+    },
+    {
+      "name": "Tatakaiyonnda",
+      "type": "procedure",
+      "sortid": 484,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tatakaiyonnda",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/TatakaiyonndaProcedure.java"
         ],
         "dependencies": [
           {
@@ -7446,24 +7501,118 @@
       }
     },
     {
-      "name": "MagicGoldenKatanaYoukuritukusitatoki",
+      "name": "Yonndadake",
       "type": "procedure",
-      "sortid": 481,
+      "sortid": 485,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "magic_golden_katana_youkuritukusitatoki"
-    },
-    {
-      "name": "MagicGoldenKatana",
-      "type": "tool",
-      "sortid": 482,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "magic_golden_katana",
+      "registry_name": "yonndadake",
       "metadata": {
         "files": [
-          "src/main/java/japanesesword/item/MagicGoldenKatanaItem.java",
-          "src/main/resources/assets/japanesesword/models/item/magic_golden_katana.json"
+          "src/main/java/japanesesword/procedures/YonndadakeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tatakau",
+      "type": "gui",
+      "sortid": 486,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tatakau",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/gui/TatakauGui.java",
+          "src/main/java/japanesesword/gui/TatakauGuiWindow.java"
+        ]
+      }
+    },
+    {
+      "name": "EeeenteiteiwoYoukuritukusitaShi",
+      "type": "procedure",
+      "sortid": 487,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "eeeenteiteiwo_youkuritukusita_shi",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/EeeenteiteiwoYoukuritukusitaShiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Eee",
+      "type": "livingentity",
+      "sortid": 488,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "eee"
+    },
+    {
+      "name": "Katanasasatteru",
+      "type": "structure",
+      "sortid": 489,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "katanasasatteru",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/world/structure/KatanasasatteruStructure.java"
+        ]
+      }
+    },
+    {
+      "name": "Kill3",
+      "type": "procedure",
+      "sortid": 490,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_3",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/Kill3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
         ]
       }
     }
@@ -7785,6 +7934,7 @@
       "effect.haato": "回復強化版",
       "item.0526ngs.halloween_20221031_helmet": "§6§l§n§oHalloween 2022 10/31のヘルメット",
       "item.0526ngs.mint_leggings": "Mint 個のレギンス",
+      "item.japanesesword.kawasiro_leggings": "白い革防具",
       "item.japanesesword.strey_outer_armor_boots": "Strey Outer boots",
       "item.0526ngs.ookenoken": "王の刀",
       "item.japanesesword.hannyou_leggings": "Hannyou 個のレギンス",
@@ -7876,6 +8026,7 @@
       "item.japanesesword.wizard_armor_helmet": "Wizard helmet",
       "effect.barrier": "barrir",
       "effect.hanekaesu": "barrir",
+      "item.japanesesword.kawasiro_chestplate": "白い革防具",
       "item.0526ngs.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
       "item.0526ngs.mcsucdiscko.desc": "広有射怪鳥事",
       "item.0526ngs.nannka": "Nannka",
@@ -7971,6 +8122,7 @@
       "item.japanesesword.goukinntou": "合金刀",
       "enchantment.0526ngs.yawo": "遠距離武器を反らす",
       "item.0526ngs.a_5": "A5",
+      "item.japanesesword.kawasiro_helmet": "Kawasiro ヘルメット",
       "item.0526ngs.hannmaa": "牛蒡刀",
       "item.0526ngs.tokinohonn": "時の本",
       "item.japanesesword.musicdisc_tu.desc": "月まで届け、不死の煙",
@@ -7981,6 +8133,7 @@
       "item.japanesesword.goukin": "合金",
       "item.japanesesword.daiazyui": "ダイアモンドの強化",
       "item.0526ngs.musicdisc_un.desc": "U.N.オーエンは彼女なのか？",
+      "item.japanesesword.goldenkatana": "§6MagicGoldenKatana",
       "item.japanesesword.husino": "お守り",
       "item.japanesesword.ginyade_helmet": "Ginyade ヘルメット",
       "item.japanesesword.black_person_spawn_egg": "Black Person Spawn Egg",
@@ -8021,6 +8174,7 @@
       "item.japanesesword.mcsucdiscko.desc": "広有射怪鳥事",
       "item.0526ngs.mcsucdiscka": "神々が恋した幻想郷",
       "item.japanesesword.noroi": "§4§k好きな人いない",
+      "effect.iroirotobasu": "tobasu",
       "item.japanesesword.motonokatana": "刀(封)",
       "item.0526ngs.ginyade_helmet": "Ginyade ヘルメット",
       "effect.kill_slice": "kill_slice",
@@ -8049,6 +8203,7 @@
       "item.japanesesword.wizard_armor_chestplate": "Wizard chestplate",
       "item.japanesesword.naihu": "強化された投げナイフ",
       "item.japanesesword.aamor_black_chestplate": "Blackarmorチェストプレート",
+      "item.japanesesword.kawasiro_boots": "白い革防具",
       "item.0526ngs.ancientbooks": "§0§kcursebook",
       "item.0526ngs.magicksword": "Magicksword",
       "subtitles.sword": "",
@@ -8071,7 +8226,6 @@
       "item.japanesesword.strey_outer_armor_chestplate": "Strey Outer chestplate",
       "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
       "item.0526ngs.tuva": "ツイヴァイヘンダー",
-      "item.japanesesword.magic_golden_katana": "§6MagicGoldenKatana",
       "entity.0526ngs.yaa": "Yaa",
       "item.0526ngs.turuhasi": "強化ダイヤモンドのツルハシ",
       "item.japanesesword.aamor_black_leggings": "Blackarmorレギンス",
@@ -8235,6 +8389,7 @@
       "effect.haato": "回復強化版",
       "item.0526ngs.halloween_20221031_helmet": "§6§l§n§oHalloween 2022 10/31のヘルメット",
       "item.0526ngs.mint_leggings": "Mint 個のレギンス",
+      "item.japanesesword.kawasiro_leggings": "白い革防具",
       "item.japanesesword.strey_outer_armor_boots": "Strey Outer Armor 個のブーツ",
       "item.0526ngs.ookenoken": "王の刀",
       "item.japanesesword.hannyou_leggings": "Hannyou 個のレギンス",
@@ -8326,6 +8481,7 @@
       "item.japanesesword.wizard_armor_helmet": "Wizard helmet",
       "effect.barrier": "barrir",
       "effect.hanekaesu": "barrir",
+      "item.japanesesword.kawasiro_chestplate": "白い革防具",
       "item.0526ngs.yabaiaitemu_bucket": "Yabaiaitemu Bucket",
       "item.0526ngs.mcsucdiscko.desc": "広有射怪鳥事",
       "item.0526ngs.nannka": "Nannka",
@@ -8421,6 +8577,7 @@
       "item.japanesesword.goukinntou": "合金刀",
       "enchantment.0526ngs.yawo": "遠距離武器を反らす",
       "item.0526ngs.a_5": "A5",
+      "item.japanesesword.kawasiro_helmet": "Kawasiro ヘルメット",
       "item.0526ngs.hannmaa": "牛蒡刀",
       "item.0526ngs.tokinohonn": "時の本",
       "item.japanesesword.musicdisc_tu.desc": "月まで届け、不死の煙",
@@ -8431,6 +8588,7 @@
       "item.japanesesword.goukin": "合金",
       "item.japanesesword.daiazyui": "ダイアモンドの強化",
       "item.0526ngs.musicdisc_un.desc": "U.N.オーエンは彼女なのか？",
+      "item.japanesesword.goldenkatana": "§6MagicGoldenKatana",
       "item.japanesesword.husino": "お守り",
       "item.japanesesword.ginyade_helmet": "Ginyade ヘルメット",
       "item.japanesesword.black_person_spawn_egg": "Black Person Spawn Egg",
@@ -8471,6 +8629,7 @@
       "item.japanesesword.mcsucdiscko.desc": "広有射怪鳥事",
       "item.0526ngs.mcsucdiscka": "神々が恋した幻想郷",
       "item.japanesesword.noroi": "§4§k好きな人いない",
+      "effect.iroirotobasu": "tobasu",
       "item.japanesesword.motonokatana": "元の刀",
       "item.0526ngs.ginyade_helmet": "Ginyade ヘルメット",
       "effect.kill_slice": "kill_slice",
@@ -8499,6 +8658,7 @@
       "item.japanesesword.wizard_armor_chestplate": "Wizard chestplate",
       "item.japanesesword.naihu": "強化された投げナイフ",
       "item.japanesesword.aamor_black_chestplate": "Blackarmor 個の胴着",
+      "item.japanesesword.kawasiro_boots": "白い革防具",
       "item.0526ngs.ancientbooks": "§0§kcursebook",
       "item.0526ngs.magicksword": "Magicksword",
       "subtitles.sword": "",
@@ -8521,7 +8681,6 @@
       "item.japanesesword.strey_outer_armor_chestplate": "Strey Outer Armor 個の胴着",
       "item.japanesesword.demonizedkatana": "§4§k§o§ldemoniedkatana",
       "item.0526ngs.tuva": "ツイヴァイヘンダー",
-      "item.japanesesword.magic_golden_katana": "§6MagicGoldenKatana",
       "entity.0526ngs.yaa": "Yaa",
       "item.0526ngs.turuhasi": "強化ダイヤモンドのツルハシ",
       "item.japanesesword.aamor_black_leggings": "Blackarmor 個のレギンス",

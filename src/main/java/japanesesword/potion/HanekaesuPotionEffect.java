@@ -13,12 +13,11 @@ import net.minecraft.potion.Effect;
 import net.minecraft.entity.LivingEntity;
 
 import java.util.stream.Stream;
-
-import japanesesword.procedures.BarrierehuekutogaYouXiaoShinoteitukuProcedure;
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
+
+import japanesesword.procedures.BarrierehuekutogaYouXiaoShinoteitukuProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class HanekaesuPotionEffect {

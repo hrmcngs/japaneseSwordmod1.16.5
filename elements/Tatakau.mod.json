@@ -1,0 +1,65 @@
+{
+  "_fv": 39,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_anatahasi_nihe_noyong",
+          "text": {
+            "fixedValue": "あなたは私に何の用？"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 184,
+          "y": 54
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_zhan_inilai_ta",
+          "text": "戦いに来た",
+          "onClick": {
+            "name": "Tatakaiyonnda"
+          },
+          "width": 51,
+          "height": 20,
+          "x": 139,
+          "y": 67
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_tadahu_ndadake",
+          "text": "ただ呼んだだけ",
+          "onClick": {
+            "name": "Yonndadake"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 139,
+          "y": 96
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

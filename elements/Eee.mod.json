@@ -2,10 +2,10 @@
   "_fv": 39,
   "_type": "livingentity",
   "definition": {
-    "mobName": "Kabotya",
+    "mobName": "Eee",
     "mobLabel": "",
     "mobModelName": "Biped",
-    "mobModelTexture": "2020-12-07-1.png",
+    "mobModelTexture": "bab6244e6b6cc95d_1.png",
     "mobModelGlowTexture": "",
     "solidBoundingBox": {
       "fixedValue": false
@@ -16,11 +16,11 @@
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -39424,
+      "value": -1,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -10066330,
+      "value": -1,
       "falpha": 0.0
     },
     "creativeTab": {
@@ -30,35 +30,35 @@
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
     "equipmentMainHand": {
-      "value": "CUSTOM:Halloween20221031kama"
+      "value": "CUSTOM:Goldenkatana"
     },
     "equipmentOffHand": {
-      "value": "CUSTOM:Halloween20221031kama"
+      "value": ""
     },
     "equipmentHelmet": {
-      "value": "CUSTOM:Halloween20221031.helmet"
+      "value": ""
     },
     "equipmentBody": {
-      "value": "CUSTOM:Halloween20221031.body"
+      "value": "CUSTOM:Kawasiro.body"
     },
     "equipmentLeggings": {
-      "value": "CUSTOM:Halloween20221031.legs"
+      "value": "CUSTOM:Kawasiro.legs"
     },
     "equipmentBoots": {
-      "value": "CUSTOM:Halloween20221031.boots"
+      "value": "CUSTOM:Kawasiro.boots"
     },
     "mobBehaviourType": "Creature",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 10,
-    "attackKnockback": 3.0,
-    "knockbackResistance": 5.0,
-    "movementSpeed": 0.5,
+    "attackStrength": 5,
+    "attackKnockback": 0.0,
+    "knockbackResistance": 1000.0,
+    "movementSpeed": 0.3,
     "armorBaseValue": 20.0,
     "trackingRange": 64,
     "followRange": 16,
     "health": 20,
     "xpAmount": 0,
-    "waterMob": true,
+    "waterMob": false,
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
@@ -68,20 +68,20 @@
     "canControlForward": false,
     "canControlStrafe": false,
     "immuneToFire": false,
-    "immuneToArrows": true,
+    "immuneToArrows": false,
     "immuneToFallDamage": false,
-    "immuneToCactus": false,
-    "immuneToDrowning": true,
+    "immuneToCactus": true,
+    "immuneToDrowning": false,
     "immuneToLightning": true,
     "immuneToPotions": false,
     "immuneToPlayer": false,
     "immuneToExplosion": false,
-    "immuneToTrident": true,
+    "immuneToTrident": false,
     "immuneToAnvil": false,
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": "CUSTOM:Ti"
+      "value": "CUSTOM:Goldenkatana"
     },
     "livingSound": {
       "value": ""
@@ -95,17 +95,16 @@
     "stepSound": {
       "value": ""
     },
+    "onRightClickedOn": {
+      "name": "EeeenteiteiwoYoukuritukusitaShi"
+    },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"protect_owner\"><field name=\"condition\">null,null</field><next><block type=\"fight_as_owner\"><field name=\"condition\">null,null</field><next><block type=\"doors_open\"><field name=\"condition\">null,null</field><next><block type=\"doors_close\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
-    "breedable": true,
-    "tameable": true,
-    "breedTriggerItems": [
-      {
-        "value": "CUSTOM:Ti"
-      }
-    ],
-    "ranged": true,
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"100\" y=\"37\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block><block type=\"wander\" x=\"82\" y=\"325\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field></block></xml>",
+    "breedable": false,
+    "tameable": false,
+    "breedTriggerItems": [],
+    "ranged": false,
     "rangedAttackItem": {
       "value": ""
     },
@@ -113,7 +112,7 @@
     "rangedAttackInterval": 20,
     "rangedAttackRadius": 10.0,
     "spawnThisMob": false,
-    "doesDespawnWhenIdle": false,
+    "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 4,

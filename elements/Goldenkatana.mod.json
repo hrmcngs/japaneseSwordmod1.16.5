@@ -12,22 +12,19 @@
     },
     "toolType": "Axe",
     "harvestLevel": 10,
-    "efficiency": 7.0,
+    "efficiency": 6.0,
     "attackSpeed": 100.0,
     "enchantability": 9,
     "damageVsEntity": 6.0,
     "usageCount": 0,
     "blocksAffected": [],
-    "hasGlow": false,
+    "hasGlow": true,
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
     "onRightClickedInAir": {
-      "name": "MagicGoldenKatanaturuwoShoudeChituteiruJiannoteituku"
-    },
-    "onItemInUseTick": {
-      "name": "MagicGoldenKatanaturuwoShoudeChituteiruJiannoteituku"
+      "name": "GoldenkatanaYoukuritukusitatoki"
     }
   }
 }
