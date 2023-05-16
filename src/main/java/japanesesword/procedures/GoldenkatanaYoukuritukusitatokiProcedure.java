@@ -8,8 +8,11 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.entity.MobEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
@@ -19,6 +22,8 @@ import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
+
+import japanesesword.enchantment.KillEnchantment;
 
 import japanesesword.JapaneseswordMod;
 
@@ -103,33 +108,46 @@ public class GoldenkatanaYoukuritukusitatokiProcedure {
 					}
 				}.compareDistOf(xPos, yPos, zPos)).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (!(entity == entityiterator)) {
-						if (entityiterator instanceof MobEntity) {
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-									_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
-								}
+					if ((EnchantmentHelper.getEnchantmentLevel(KillEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+								_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "kill @s");
 							}
-							{
-								Entity _ent = entityiterator;
-								if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-									_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
-								}
+						}
+						{
+							Entity _ent = entityiterator;
+							if (!_ent.world.isRemote && _ent.world.getServer() != null) {
+								_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), "/deta merge entity @s (Health:0)");
 							}
-							xknockback = (entityiterator.getPosX() - entity.getPosX());
-							yknockback = (entityiterator.getPosY() - entity.getPosY());
-							zknockback = (entityiterator.getPosZ() - entity.getPosZ());
-							dis = (Math.abs(xknockback) + Math.abs(yknockback) + Math.abs(zknockback));
-							if (dis != 0) {
-								xknockback = ((xknockback / dis) * 3);
-								yknockback = Math.min((yknockback / dis) * 3, 2);
-								zknockback = ((zknockback / dis) * 3);
-							} else {
-								xknockback = 0;
-								yknockback = 0;
-								zknockback = 0;
-							}
+						}
+						xknockback = (entityiterator.getPosX() - entity.getPosX());
+						yknockback = (entityiterator.getPosY() - entity.getPosY());
+						zknockback = (entityiterator.getPosZ() - entity.getPosZ());
+						dis = (Math.abs(xknockback) + Math.abs(yknockback) + Math.abs(zknockback));
+						if (dis != 0) {
+							xknockback = ((xknockback / dis) * 3);
+							yknockback = Math.min((yknockback / dis) * 3, 2);
+							zknockback = ((zknockback / dis) * 3);
+						} else {
+							xknockback = 0;
+							yknockback = 0;
+							zknockback = 0;
+						}
+					} else {
+						entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
+						xknockback = (entityiterator.getPosX() - entity.getPosX());
+						yknockback = (entityiterator.getPosY() - entity.getPosY());
+						zknockback = (entityiterator.getPosZ() - entity.getPosZ());
+						dis = (Math.abs(xknockback) + Math.abs(yknockback) + Math.abs(zknockback));
+						if (dis != 0) {
+							xknockback = ((xknockback / dis) * 3);
+							yknockback = Math.min((yknockback / dis) * 3, 2);
+							zknockback = ((zknockback / dis) * 3);
+						} else {
+							xknockback = 0;
+							yknockback = 0;
+							zknockback = 0;
 						}
 					}
 				}
