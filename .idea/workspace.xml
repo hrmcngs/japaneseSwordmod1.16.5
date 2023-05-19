@@ -5,79 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac8f19e3-0689-474b-ab6c-aa73df1818c0" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Arrow2ehuekutogaYouXiaoShinoteituku.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Arrow2ehuekutogaYouXiaoShinoteituku.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/BloodehuekutogaYouXiaoShinoteituku.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/BloodehuekutogaYouXiaoShinoteituku.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/DemonizedkatanaYoukuritukusitatoki.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/DemonizedkatanaYoukuritukusitatoki.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/DemonizedkatanaturuwoShoudeChituteiruJiannoteituku.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/DemonizedkatanaturuwoShoudeChituteiruJiannoteituku.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Hannyou.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Hannyou.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Hanyou.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Hanyou.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Kill1.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Kill1.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Kuroimob.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/KuroimobenteiteigaSiWangsitaShi.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/MagicWand.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/MagicWandYoukuritukusitatoki.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/MagicWandaitemuwoShoudeChituteiruJiannoteituku.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Magicksword.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Magicksword.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/MagickswordFeibiDaoJugaFeindeiruJian.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/MagickswordFeibiDaoJugaFeindeiruJian.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/MagickswordYuanJuLiWuQigaLiYongsaretaShi.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Nanka.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Nanka.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Nikki.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Ok.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Ok.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Rea.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/ReaYoukuritukusitatoki.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Tap.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Tap.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/TestBow.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/TiShiLiaowoShibetatoki.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TiShiLiaowoShibetatoki.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/TokubetunoYoukuritukusitatoki.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TokubetunoYoukuritukusitatoki.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/UgokasuehuekutogaYouXiaoShinoteituku.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/UgokasuehuekutogaYouXiaoShinoteituku.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/WazakigaYasaretatoki.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/WazakigaYasaretatoki.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/ja_jp.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/ja_jp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariables.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariablesStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariablesStorage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariablesSyncMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariablesSyncMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/gui/overlay/TapOverlay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/item/AncientbooksItem$ItemCustom.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/item/AncientbooksItem$ItemCustom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/item/AncientbooksItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/item/AncientbooksItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/procedures/NamaenaninisiyoukanaProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/AncientbooksaitemuwoShoudeChituteiruJiannoteituku.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/AncientbooksaitemuwoShoudeChituteiruJiannoteituku.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Namaenaninisiyoukana.mod.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Tap.mod.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/japanesesword.mcreator" beforeDir="false" afterPath="$PROJECT_DIR$/japanesesword.mcreator" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/JapaneseswordModVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/JapaneseswordModVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/TestBowcode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/entity/KuroimobEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/entity/renderer/KuroimobRenderer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/entity/renderer/MagickswordRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/entity/renderer/MagickswordRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/entity/renderer/TestBowRenderer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/gui/NikkiGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/gui/NikkiGuiWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/gui/overlay/TapOverlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/gui/overlay/TapOverlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/HannyouItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/item/HannyouItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/HanyouItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/item/HanyouItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/MagicWandItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/MagickswordItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/item/MagickswordItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/ReaItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/TestBowItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/Arrow2ehuekutogaYouXiaoShinoteitukuProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/Arrow2ehuekutogaYouXiaoShinoteitukuProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/BloodehuekutogaYouXiaoShinoteitukuProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/BloodehuekutogaYouXiaoShinoteitukuProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/DemonizedkatanaYoukuritukusitatokiProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/DemonizedkatanaYoukuritukusitatokiProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/DemonizedkatanaturuwoShoudeChituteiruJiannoteitukuProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/DemonizedkatanaturuwoShoudeChituteiruJiannoteitukuProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/Kill1Procedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/Kill1Procedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/KuroimobenteiteigaSiWangsitaShiProcedure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/MagicWandYoukuritukusitatokiProcedure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/MagicWandaitemuwoShoudeChituteiruJiannoteitukuProcedure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/MagickswordFeibiDaoJugaFeindeiruJianProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/MagickswordFeibiDaoJugaFeindeiruJianProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/MagickswordYuanJuLiWuQigaLiYongsaretaShiProcedure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/MobbbProcedure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/NankaProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/NankaProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/ReaYoukuritukusitatokiProcedure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/TokubetunoYoukuritukusitatokiProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/TokubetunoYoukuritukusitatokiProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/UgokasuehuekutogaYouXiaoShinoteitukuProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/UgokasuehuekutogaYouXiaoShinoteitukuProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/WazakigaYasaretatokiProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/WazakigaYasaretatokiProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/village/OkTrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/village/OkTrade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/gui/overlay/TapOverlay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/AncientbooksItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/item/AncientbooksItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/NamaenaninisiyoukanaProcedure.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/ja_jp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/ja_jp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/bamboo_bow.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/bamboo_bow.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/kuroimob_spawn_egg.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/magic_wand.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/rea.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/models/item/test_bow.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/models/armor/aaaaaaaaaae_layer_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/models/armor/aaaaaaaaaae_layer_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/models/armor/uraomote_layer_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/models/armor/uraomote_layer_2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,10 +74,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/hrmcn/MCreatorWorkspaces/japanesesword",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hrmcn\MCreatorWorkspaces\japanesesword\src\main\resources\assets\japanesesword\textures" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -138,7 +101,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671263396947</updated>
+      <workItem from="1684312665203" duration="468000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

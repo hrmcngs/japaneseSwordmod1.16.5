@@ -234,6 +234,9 @@ public class JapaneseswordModVariables {
 			nbt.putDouble("mana", instance.mana);
 			nbt.putString("naninisiyoukana", instance.naninisiyoukana);
 			nbt.putDouble("kaunnta", instance.kaunnta);
+			nbt.putDouble("zibunnbasyo", instance.zibunnbasyo);
+			nbt.putDouble("Yzibun", instance.Yzibun);
+			nbt.putDouble("Zzibun", instance.Zzibun);
 			return nbt;
 		}
 
@@ -253,6 +256,9 @@ public class JapaneseswordModVariables {
 			instance.mana = nbt.getDouble("mana");
 			instance.naninisiyoukana = nbt.getString("naninisiyoukana");
 			instance.kaunnta = nbt.getDouble("kaunnta");
+			instance.zibunnbasyo = nbt.getDouble("zibunnbasyo");
+			instance.Yzibun = nbt.getDouble("Yzibun");
+			instance.Zzibun = nbt.getDouble("Zzibun");
 		}
 	}
 
@@ -270,6 +276,9 @@ public class JapaneseswordModVariables {
 		public double mana = 0;
 		public String naninisiyoukana = "\"\"";
 		public double kaunnta = 0;
+		public double zibunnbasyo = 0;
+		public double Yzibun = 0;
+		public double Zzibun = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
@@ -312,6 +321,9 @@ public class JapaneseswordModVariables {
 		clone.mana = original.mana;
 		clone.naninisiyoukana = original.naninisiyoukana;
 		clone.kaunnta = original.kaunnta;
+		clone.zibunnbasyo = original.zibunnbasyo;
+		clone.Yzibun = original.Yzibun;
+		clone.Zzibun = original.Zzibun;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -350,6 +362,9 @@ public class JapaneseswordModVariables {
 					variables.mana = message.data.mana;
 					variables.naninisiyoukana = message.data.naninisiyoukana;
 					variables.kaunnta = message.data.kaunnta;
+					variables.zibunnbasyo = message.data.zibunnbasyo;
+					variables.Yzibun = message.data.Yzibun;
+					variables.Zzibun = message.data.Zzibun;
 				}
 			});
 			context.setPacketHandled(true);

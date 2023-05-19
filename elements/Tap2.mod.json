@@ -7,6 +7,21 @@
       {
         "type": "label",
         "data": {
+          "name": "label_varnaninisiyoukana",
+          "text": {
+            "fixedValue": "<VAR:naninisiyoukana>"
+          },
+          "color": {
+            "value": -16711681,
+            "falpha": 0.0
+          },
+          "x": 10,
+          "y": 224
+        }
+      },
+      {
+        "type": "label",
+        "data": {
           "name": "label_varnanndarou",
           "text": {
             "fixedValue": "<VAR:nanndarou>"
@@ -15,26 +30,8 @@
             "value": -6710887,
             "falpha": 0.0
           },
-          "x": 349,
-          "y": 230
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "name": "label_varnaninisiyoukana",
-          "text": {
-            "fixedValue": "<VAR:naninisiyoukana>"
-          },
-          "color": {
-            "value": -16724788,
-            "falpha": 0.0
-          },
-          "displayCondition": {
-            "name": "Namaenaninisiyoukana"
-          },
-          "x": 0,
-          "y": 223
+          "x": 341,
+          "y": 224
         }
       }
     ],

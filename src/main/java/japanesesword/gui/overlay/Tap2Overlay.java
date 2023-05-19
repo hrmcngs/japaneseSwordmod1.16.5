@@ -12,13 +12,10 @@ import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.Minecraft;
 
-import java.util.Collections;
-
 import japanesesword.JapaneseswordModVariables;
-import japanesesword.procedures.NamaenaninisiyoukanaProcedure;
 
 @Mod.EventBusSubscriber
-public class TapOverlay {
+public class Tap2Overlay {
 	@OnlyIn(Dist.CLIENT)
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public static void eventHandler(RenderGameOverlayEvent.Post event) {
@@ -43,11 +40,10 @@ public class TapOverlay {
 			double y = _y;
 			double z = _z;
 			if (true) {
+				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
+						"" + ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new JapaneseswordModVariables.PlayerVariables())).naninisiyoukana) + "", posX + -203, posY + 104, -16711681);
 				Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(), "" + ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new JapaneseswordModVariables.PlayerVariables())).nanndarou) + "",
-						posX + 136, posY + 110, -6710887);
-				if (NamaenaninisiyoukanaProcedure.executeProcedure(Collections.emptyMap()))
-					Minecraft.getInstance().fontRenderer.drawString(event.getMatrixStack(),
-							"" + ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new JapaneseswordModVariables.PlayerVariables())).naninisiyoukana) + "", posX + -213, posY + 103, -16724788);
+						posX + 128, posY + 104, -6710887);
 			}
 		}
 	}

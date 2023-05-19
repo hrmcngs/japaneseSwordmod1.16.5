@@ -17,8 +17,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.JapaneseswordModElements;
 import japanesesword.procedures.AncientbooksaitemuwoShoudeChituteiruJiannoteitukuProcedure;
+
+import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
 public class AncientbooksItem extends JapaneseswordModElements.ModElement {
