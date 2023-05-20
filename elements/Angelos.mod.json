@@ -10,6 +10,18 @@
     "textureLeggings": "airr",
     "enableBoots": true,
     "textureBoots": "airb",
+    "onHelmetTick": {
+      "name": "AngelosherumetutonoMeiteitukunoibento"
+    },
+    "onBodyTick": {
+      "name": "AngelosherumetutonoMeiteitukunoibento"
+    },
+    "onLeggingsTick": {
+      "name": "AngelosherumetutonoMeiteitukunoibento"
+    },
+    "onBootsTick": {
+      "name": "AngelosherumetutonoMeiteitukunoibento"
+    },
     "creativeTab": {
       "value": "COMBAT"
     },

@@ -7699,6 +7699,20 @@
           }
         ]
       }
+    },
+    {
+      "name": "AngelosherumetutonoMeiteitukunoibento",
+      "type": "procedure",
+      "sortid": 498,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "angelosherumetutono_meiteitukunoibento",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/AngelosherumetutonoMeiteitukunoibentoProcedure.java"
+        ],
+        "dependencies": []
+      }
     }
   ],
   "variable_elements": [
