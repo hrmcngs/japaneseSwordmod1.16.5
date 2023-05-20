@@ -1,0 +1,30 @@
+{
+  "_fv": 39,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "nazarakoime",
+    "customModelName": "netherite_katana:default",
+    "name": "§8MagicNetheriteKatana",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "TOOLS"
+    },
+    "toolType": "Axe",
+    "harvestLevel": 10,
+    "efficiency": 7.0,
+    "attackSpeed": 100.0,
+    "enchantability": 9,
+    "damageVsEntity": 10.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": true,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInUseTick": {
+      "name": "NetheriteKatanaturuwoShoudeChituteiruJiannoteituku"
+    }
+  }
+}

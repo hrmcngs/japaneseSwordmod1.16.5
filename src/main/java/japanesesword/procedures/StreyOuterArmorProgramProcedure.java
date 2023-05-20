@@ -45,8 +45,7 @@ public class StreyOuterArmorProgramProcedure {
 						.getItem() == BlackStreyOuterArmorItem.legs
 				&& ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.FEET) : ItemStack.EMPTY)
 						.getItem() == BlackStreyOuterArmorItem.boots) {
-			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 1, (true), (false)));
+			
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.INVISIBILITY, (int) 2, (int) 2, (true), (false)));
 			entity.fallDistance = (float) (0);

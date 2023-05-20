@@ -100,8 +100,7 @@ public class BlackStreyOuterArmorItem extends JapaneseswordModElements.ModElemen
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("black_strey_outer_armor_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EventItemGroup.tab)) {
@@ -116,8 +115,7 @@ public class BlackStreyOuterArmorItem extends JapaneseswordModElements.ModElemen
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("black_strey_outer_armor_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EventItemGroup.tab)) {
@@ -132,8 +130,7 @@ public class BlackStreyOuterArmorItem extends JapaneseswordModElements.ModElemen
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("black_strey_outer_armor_leggings"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EventItemGroup.tab)) {
@@ -148,8 +145,7 @@ public class BlackStreyOuterArmorItem extends JapaneseswordModElements.ModElemen
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("black_strey_outer_armor_boots"));
 	}
