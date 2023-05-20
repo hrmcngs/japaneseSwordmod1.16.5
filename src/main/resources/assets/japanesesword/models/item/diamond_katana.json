@@ -1,0 +1,7 @@
+{
+  "parent": "japanesesword:custom/diamond_katana",
+  "textures": {
+    "0": "japanesesword:blocks/diamond_katana",
+    "particle": "japanesesword:items/daiatantou"
+  }
+}

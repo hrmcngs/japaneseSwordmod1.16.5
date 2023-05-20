@@ -3,9 +3,9 @@
   "_type": "tool",
   "definition": {
     "renderType": 1,
-    "texture": "kinnnokatana",
-    "customModelName": "golden_katana:default",
-    "name": "§6MagicGoldenKatana",
+    "texture": "daiatantou",
+    "customModelName": "diamond_katana:default",
+    "name": "§3MagicDiamondKatana",
     "specialInfo": [],
     "creativeTab": {
       "value": "TOOLS"
@@ -14,17 +14,14 @@
     "harvestLevel": 10,
     "efficiency": 7.0,
     "attackSpeed": 100.0,
-    "enchantability": 9,
-    "damageVsEntity": 6.0,
+    "enchantability": 6,
+    "damageVsEntity": 8.0,
     "usageCount": 0,
     "blocksAffected": [],
     "hasGlow": true,
     "repairItems": [],
     "immuneToFire": false,
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false,
-    "onRightClickedInAir": {
-      "name": "GoldenkatanaYoukuritukusitatoki"
-    }
+    "damageOnCrafting": false
   }
 }

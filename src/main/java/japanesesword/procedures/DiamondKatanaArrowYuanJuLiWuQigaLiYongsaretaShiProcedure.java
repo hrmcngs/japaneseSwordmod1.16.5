@@ -1,6 +1,5 @@
 package japanesesword.procedures;
 
-import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.entity.Entity;
@@ -24,8 +23,6 @@ public class DiamondKatanaArrowYuanJuLiWuQigaLiYongsaretaShiProcedure {
 		}
 		IWorld world = (IWorld) dependencies.get("world");
 		Entity immediatesourceentity = (Entity) dependencies.get("immediatesourceentity");
-		if (world instanceof ServerWorld) {
-			((ServerWorld) world).spawnParticle(ParticleTypes.END_ROD, (immediatesourceentity.getPosX()), (immediatesourceentity.getPosY()), (immediatesourceentity.getPosZ()), (int) 5, 3, 3, 3, 1);
-		}
+		world.addParticle(ParticleTypes.END_ROD, (immediatesourceentity.getPosX()), (immediatesourceentity.getPosY()), (immediatesourceentity.getPosZ()), 0, 0, 0);
 	}
 }

@@ -42,7 +42,7 @@ public class GoldenkatanaItem extends JapaneseswordModElements.ModElement {
 			}
 
 			public float getEfficiency() {
-				return 6f;
+				return 7f;
 			}
 
 			public float getAttackDamage() {
