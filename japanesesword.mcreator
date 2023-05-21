@@ -383,19 +383,6 @@
       "registry_name": "nagenaihu"
     },
     {
-      "name": "Nagenaihuresipu",
-      "type": "recipe",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nagenaihuresipu",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/recipes/nagenaihuresipu.json"
-        ]
-      }
-    },
-    {
       "name": "Naihu",
       "type": "rangeditem",
       "sortid": 36,
@@ -426,19 +413,6 @@
       "metadata": {
         "files": [
           "src/main/resources/data/japanesesword/recipes/naihuresipi.json"
-        ]
-      }
-    },
-    {
-      "name": "Naihunege",
-      "type": "recipe",
-      "sortid": 41,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "naihunege",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/recipes/naihunege.json"
         ]
       }
     },
@@ -817,49 +791,6 @@
       "registry_name": "nannk"
     },
     {
-      "name": "Nanka8",
-      "type": "block",
-      "sortid": 71,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nanka_8"
-    },
-    {
-      "name": "Ginn",
-      "type": "item",
-      "sortid": 72,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gin",
-      "metadata": {
-        "files": [
-          "src/main/java/japanesesword/item/GinnItem.java",
-          "src/main/resources/assets/japanesesword/models/item/gin.json"
-        ]
-      }
-    },
-    {
-      "name": "Gin",
-      "type": "recipe",
-      "sortid": 73,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "gin",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/recipes/gin.json"
-        ]
-      }
-    },
-    {
-      "name": "Ginnburokku",
-      "type": "block",
-      "sortid": 74,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ginnburokku"
-    },
-    {
       "name": "TekitouherumetutonoMeiteitukunoibento",
       "type": "procedure",
       "sortid": 75,
@@ -1085,32 +1016,6 @@
             "name": "entity",
             "type": "entity"
           }
-        ]
-      }
-    },
-    {
-      "name": "Ginnbunnkai",
-      "type": "recipe",
-      "sortid": 95,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ginnbunnkai",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/recipes/ginnbunnkai.json"
-        ]
-      }
-    },
-    {
-      "name": "Ginnburokkuturikata",
-      "type": "recipe",
-      "sortid": 96,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ginnburokkuturikata",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/japanesesword/recipes/ginnburokkuturikata.json"
         ]
       }
     },
@@ -7713,6 +7618,134 @@
         ],
         "dependencies": []
       }
+    },
+    {
+      "name": "DiamondKatanaYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 499,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_katana_youkuritukusitatoki",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/DiamondKatanaYoukuritukusitatokiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DiamondKatanaturuwoShoudeChituteiruJiannoteituku",
+      "type": "procedure",
+      "sortid": 500,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_katanaturuwo_shoude_chituteiru_jiannoteituku",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/DiamondKatanaturuwoShoudeChituteiruJiannoteitukuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NetheriteKatanaYoukuritukusitatoki",
+      "type": "procedure",
+      "sortid": 501,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "netherite_katana_youkuritukusitatoki",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/NetheriteKatanaYoukuritukusitatokiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MagicGoldenKatanaRecipe",
+      "type": "recipe",
+      "sortid": 502,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_golden_katana_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/magic_golden_katana_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "MagicDiamondKatanaRecipe",
+      "type": "recipe",
+      "sortid": 503,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_diamond_katana_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/magic_diamond_katana_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "MagicNetheriteKatanaRecipe",
+      "type": "recipe",
+      "sortid": 504,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magic_netherite_katana_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/japanesesword/recipes/magic_netherite_katana_recipe.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -7993,8 +8026,6 @@
       "item.japanesesword.a_5": "A5",
       "advancements.wizard.title": "Wizard",
       "item.japanesesword.a_1": "A 1",
-      "block.japanesesword.ginnburokku": "銀ブロック",
-      "item.japanesesword.gin": "銀インゴット",
       "item.0526ngs.ngsk": "0526ngsの小太刀",
       "effect.effect_10": "エフェクト",
       "item.0526ngs.ngso": "0526ngsの大太刀",
@@ -8132,7 +8163,6 @@
       "item.japanesesword.zanngekimob_spawn_egg": "Zanngekimob Spawn Egg",
       "item.0526ngs.sukop": "Sukop",
       "item.japanesesword.hannyou_chestplate": "Hannyou 個の胴着",
-      "block.japanesesword.nanka_8": "銀鉱石",
       "item.japanesesword.ken_spawn_egg": "Ken Spawn Egg",
       "item.japanesesword.diamond_katana": "§3MagicDiamondKatana",
       "item.japanesesword.otachi": "大太刀",
@@ -8451,8 +8481,6 @@
       "item.japanesesword.a_5": "A 5",
       "advancements.wizard.title": "Wizard",
       "item.japanesesword.a_1": "A 1",
-      "block.japanesesword.ginnburokku": "Ginnburokku",
-      "item.japanesesword.gin": "銀インゴット",
       "item.0526ngs.ngsk": "0526ngsの小太刀",
       "effect.effect_10": "エフェクト",
       "item.0526ngs.ngso": "0526ngsの大太刀",
@@ -8590,7 +8618,6 @@
       "item.japanesesword.zanngekimob_spawn_egg": "Zanngekimob Spawn Egg",
       "item.0526ngs.sukop": "Sukop",
       "item.japanesesword.hannyou_chestplate": "Hannyou 個の胴着",
-      "block.japanesesword.nanka_8": "Nanka 8",
       "item.japanesesword.ken_spawn_egg": "Ken Spawn Egg",
       "item.japanesesword.diamond_katana": "§3MagicDiamondKatana",
       "item.japanesesword.otachi": "大太刀",

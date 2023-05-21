@@ -10,37 +10,37 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:Ginn"
+        "value": "Blocks.GOLD_BLOCK"
       },
       {
-        "value": "CUSTOM:Ginn"
+        "value": "Blocks.GOLD_BLOCK"
       },
       {
-        "value": "CUSTOM:Ginn"
+        "value": "Blocks.GOLD_BLOCK"
       },
       {
-        "value": "CUSTOM:Ginn"
+        "value": "Items.NETHER_STAR"
       },
       {
-        "value": "CUSTOM:Ginn"
+        "value": "CUSTOM:Kinnnokatana"
       },
       {
-        "value": "CUSTOM:Ginn"
+        "value": "Blocks.DRAGON_EGG"
       },
       {
-        "value": "CUSTOM:Ginn"
+        "value": "Blocks.GOLD_BLOCK"
       },
       {
-        "value": "CUSTOM:Ginn"
+        "value": "Blocks.GOLD_BLOCK"
       },
       {
-        "value": "CUSTOM:Ginn"
+        "value": "Blocks.GOLD_BLOCK"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Ginnburokku"
+      "value": "CUSTOM:Goldenkatana"
     },
-    "name": "ginnburokkuturikata",
+    "name": "magic_golden_katana_recipe",
     "namespace": "mod"
   }
 }

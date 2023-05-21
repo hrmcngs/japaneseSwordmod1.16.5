@@ -29,32 +29,32 @@ import japanesesword.enchantment.KillEnchantment;
 
 import japanesesword.JapaneseswordMod;
 
-public class GoldenkatanaYoukuritukusitatokiProcedure {
+public class NetheriteKatanaYoukuritukusitatokiProcedure {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency world for procedure GoldenkatanaYoukuritukusitatoki!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency world for procedure NetheriteKatanaYoukuritukusitatoki!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency x for procedure GoldenkatanaYoukuritukusitatoki!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency x for procedure NetheriteKatanaYoukuritukusitatoki!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency y for procedure GoldenkatanaYoukuritukusitatoki!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency y for procedure NetheriteKatanaYoukuritukusitatoki!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency z for procedure GoldenkatanaYoukuritukusitatoki!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency z for procedure NetheriteKatanaYoukuritukusitatoki!");
 			return;
 		}
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				JapaneseswordMod.LOGGER.warn("Failed to load dependency entity for procedure GoldenkatanaYoukuritukusitatoki!");
+				JapaneseswordMod.LOGGER.warn("Failed to load dependency entity for procedure NetheriteKatanaYoukuritukusitatoki!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");
@@ -89,7 +89,7 @@ public class GoldenkatanaYoukuritukusitatokiProcedure {
 			if (world instanceof ServerWorld) {
 				((World) world).getServer().getCommandManager().handleCommand(
 						new CommandSource(ICommandSource.DUMMY, new Vector3d(xPos, yPos, zPos), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-						"particle dust 0.99 1 0.32 1 ~ ~ ~ 0.01 0.01 0.01 1 1 force");
+						"particle dust 0.000 0.000 0.000 1 ~ ~ ~ 0.01 0.01 0.01 1 1 force");
 			}
 			rad_now = (rad_now + Math.toRadians(10));
 		}
@@ -101,7 +101,7 @@ public class GoldenkatanaYoukuritukusitatokiProcedure {
 			if (world instanceof ServerWorld) {
 				((World) world).getServer().getCommandManager().handleCommand(
 						new CommandSource(ICommandSource.DUMMY, new Vector3d(xPos, yPos, zPos), Vector2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""), ((World) world).getServer(), null).withFeedbackDisabled(),
-						"particle dust 0.99 1 0.32 1 ~ ~ ~ 0.01 0.01 0.01 1 1 force");
+						"particle dust 0.000 0.000 0.000 1 ~ ~ ~ 0.01 0.01 0.01 1 1 force");
 			}
 			{
 				List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(xPos - (1 / 2d), yPos - (1 / 2d), zPos - (1 / 2d), xPos + (1 / 2d), yPos + (1 / 2d), zPos + (1 / 2d)), null).stream().sorted(new Object() {
@@ -139,7 +139,7 @@ public class GoldenkatanaYoukuritukusitatokiProcedure {
 									zknockback = 0;
 								}
 							} else {
-								entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 6);
+								entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 								xknockback = (entityiterator.getPosX() - entity.getPosX());
 								yknockback = (entityiterator.getPosY() - entity.getPosY());
 								zknockback = (entityiterator.getPosZ() - entity.getPosZ());
