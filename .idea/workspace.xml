@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac8f19e3-0689-474b-ab6c-aa73df1818c0" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/ja_jp.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/ja_jp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariablesStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariablesStorage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariablesSyncMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables$PlayerVariablesSyncMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/JapaneseswordModVariables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/gui/overlay/TapOverlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/item/AncientbooksItem$ItemCustom.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/item/AncientbooksItem$ItemCustom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/item/AncientbooksItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/japanesesword/item/AncientbooksItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/japanesesword/procedures/NamaenaninisiyoukanaProcedure.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/AncientbooksaitemuwoShoudeChituteiruJiannoteituku.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/AncientbooksaitemuwoShoudeChituteiruJiannoteituku.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Namaenaninisiyoukana.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Tap.mod.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Katanamizu.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Katanamizu.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Katananether.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Katananether.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Katanasasatteru.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Katanasasatteru.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/Saiseinakami.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/Saiseinakami.mod.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/japanesesword.mcreator" beforeDir="false" afterPath="$PROJECT_DIR$/japanesesword.mcreator" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/JapaneseswordModVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/JapaneseswordModVariables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/gui/overlay/TapOverlay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/item/AncientbooksItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/item/AncientbooksItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/NamaenaninisiyoukanaProcedure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/SaiseinakamiProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/procedures/SaiseinakamiProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/world/structure/KatanamizuStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/world/structure/KatanamizuStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/world/structure/KatananetherStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/world/structure/KatananetherStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/japanesesword/world/structure/KatanasasatteruStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/japanesesword/world/structure/KatanasasatteruStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/ja_jp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/ja_jp.json" afterDir="false" />
     </list>
@@ -74,20 +65,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/hrmcn/MCreatorWorkspaces/japanesesword",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hrmcn/MCreatorWorkspaces/japanesesword&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hrmcn\MCreatorWorkspaces\japanesesword\src\main\resources\assets\japanesesword\textures" />
@@ -102,6 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671263396947</updated>
       <workItem from="1684312665203" duration="468000" />
+      <workItem from="1684830935403" duration="5000" />
     </task>
     <servers />
   </component>
