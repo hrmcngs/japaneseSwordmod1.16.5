@@ -7737,6 +7737,156 @@
           "src/main/java/japanesesword/world/structure/KatananetherStructure.java"
         ]
       }
+    },
+    {
+      "name": "NetheriteKatanaBlock",
+      "type": "block",
+      "sortid": 504,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "netherite_katana_block"
+    },
+    {
+      "name": "SugoiposiyonnoXiaoGuogaKaiShiShiYongsaretatoki",
+      "type": "procedure",
+      "sortid": 505,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugoiposiyonno_xiao_guoga_kai_shi_shi_yongsaretatoki",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/SugoiposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Oriruyo",
+      "type": "potioneffect",
+      "sortid": 506,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oriruyo",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/OriruyoPotionEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "OriruyoposiyonXiaoGuogaQieretaShi",
+      "type": "procedure",
+      "sortid": 507,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oriruyoposiyon_xiao_guoga_qiereta_shi",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/OriruyoposiyonXiaoGuogaQieretaShiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SugoiposiyonXiaoGuogaQieretaShi",
+      "type": "procedure",
+      "sortid": 508,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugoiposiyon_xiao_guoga_qiereta_shi",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/SugoiposiyonXiaoGuogaQieretaShiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SugoiehuekutogaYouXiaoShinoteituku",
+      "type": "procedure",
+      "sortid": 509,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugoiehuekutoga_you_xiao_shinoteituku",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/SugoiehuekutogaYouXiaoShinoteitukuProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sugoi",
+      "type": "potioneffect",
+      "sortid": 510,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sugoi",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/potion/SugoiPotionEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "BlackHusukArmorherumetutonoMeiteitukunoibento",
+      "type": "procedure",
+      "sortid": 511,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_husuk_armorherumetutono_meiteitukunoibento",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/procedures/BlackHusukArmorherumetutonoMeiteitukunoibentoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BlackHusukArmor",
+      "type": "armor",
+      "sortid": 512,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "black_husuk_armor",
+      "metadata": {
+        "files": [
+          "src/main/java/japanesesword/item/BlackHusukArmorItem.java",
+          "src/main/resources/assets/japanesesword/models/item/black_husuk_armor_helmet.json",
+          "src/main/resources/assets/japanesesword/models/item/black_husuk_armor_boots.json",
+          "src/main/resources/assets/japanesesword/models/item/black_husuk_armor_chestplate.json",
+          "src/main/resources/assets/japanesesword/models/item/black_husuk_armor_leggings.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -7959,14 +8109,14 @@
     "en_us": {
       "entity.japanesesword.ken_2": "Ken",
       "item.japanesesword.udewa_boots": "Udewa 個のブーツ",
-      "item.0526ngs.tossin": "Tossin",
       "item.japanesesword.black_strey_outer_armor_leggings": "Black Strey Outer leggings",
+      "item.0526ngs.tossin": "Tossin",
       "item.japanesesword.magic_katana_spawn_egg": "Magic Katana Spawn Egg",
       "item.0526ngs.zanngekimob_spawn_egg": "Zanngekimob Spawn Egg",
-      "entity.0526ngs.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.sukop": "Sukop",
-      "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
+      "entity.0526ngs.dokunosukelton": "毒を使うスケルトン",
       "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
+      "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.g": "g",
       "item.0526ngs.tetunokatana": "Tetunokatana",
@@ -7980,22 +8130,23 @@
       "item.0526ngs.aamor_black_leggings": "Blackarmorレギンス",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "item.0526ngs.airbougu_leggings": "Airレギンス",
+      "item.japanesesword.black_husuk_armor_leggings": "Black Husk Leggins",
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
-      "block.0526ngs.doku": "Doku",
       "item.0526ngs.demonizedkatana": "§4§k§o§ldemoniedkatana",
+      "block.0526ngs.doku": "Doku",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
       "item.japanesesword.musucdiscne_ne.desc": "ネガティブフィイス",
-      "item.0526ngs.kogatana": "小刀",
       "item.japanesesword.nagenaihu": "投げナイフ",
+      "item.0526ngs.kogatana": "小刀",
       "subtitles.un": "U.N.オーエンは彼女なのか？",
       "item.0526ngs.kinnnokatana": "金の刀",
       "item.japanesesword.hakuzaya": "白鞘",
       "item.0526ngs.daiakatana": "ダイアモンドの刀",
       "item.0526ngs.musicdisc_ka.desc": "神々が恋した幻想郷",
       "item.0526ngs.magic_book": "Magic Book",
-      "item.japanesesword.naginata": "薙刀",
       "item.japanesesword.katanakatana": "白楼剣",
+      "item.japanesesword.naginata": "薙刀",
       "entity.japanesesword.white_person": "White Person",
       "item.0526ngs.naginata": "薙刀",
       "block.0526ngs.yabaiaitemu": "液体",
@@ -8010,8 +8161,8 @@
       "item.0526ngs.hon_2": "本",
       "item.0526ngs.hon_3": "本",
       "effect.renngeki": "renngeki",
-      "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
       "item.japanesesword.demonized_katana_1": "§4§k§o§ldemonizedKatana343",
+      "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
       "item.japanesesword.kogatana": "小刀",
       "item.0526ngs.otachi": "大太刀",
       "item.japanesesword.a_5": "A5",
@@ -8021,8 +8172,8 @@
       "effect.effect_10": "エフェクト",
       "item.0526ngs.ngso": "0526ngsの大太刀",
       "item.japanesesword.katana_1": "桜観剣",
-      "item.japanesesword.wizard_armor_boots": "Wizard boots",
       "item.0526ngs.hanyou_leggings": "Hannyou 個のレギンス",
+      "item.japanesesword.wizard_armor_boots": "Wizard boots",
       "enchantment.japanesesword.bakudan": "explosion",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
       "effect.kageka": "影化",
@@ -8032,14 +8183,14 @@
       "item.japanesesword.angelos_helmet": "Angelos",
       "item.japanesesword.booktokubetu": "book rare",
       "item.0526ngs.hannyou_chestplate": "Hannyou 個の胴着",
-      "item.japanesesword.ginyade_leggings": "Ginyade レギンス",
       "effect.ugokasu": "動かす",
+      "item.japanesesword.ginyade_leggings": "Ginyade レギンス",
       "item.japanesesword.otachibloodcurse": "§4§k守血刀",
       "item.japanesesword.nagerukatana": "Nagerukatana",
       "item.japanesesword.mcsucdiscko": "広有射怪鳥事",
       "item.0526ngs.stonekatana": "Stonekatana",
-      "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "item.0526ngs.nezaraitokatana": "ネザーライトの刀",
+      "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "item.japanesesword.wizard_armor_leggings": "Wizard leggings",
       "effect.supuidokyouka": "スピード強化版",
       "effect.terepoto": "flamsword",
@@ -8048,13 +8199,15 @@
       "effect.oriru": "orirutoki",
       "item.0526ngs.nagenaihu": "投げナイフ",
       "item.japanesesword.musicdisc_un.desc": "U.N.オーエンは彼女なのか？",
+      "effect.oriruyo": "orirunnya",
       "enchantment.0526ngs.demonized": "§4§l§kDemonized",
       "item.0526ngs.halloween_20221031kama": "§6§l§nHalloween 2022 10/31の鎌",
       "item.japanesesword.airbougu_helmet": "Airヘルメット",
       "effect.keneffect": "keneffect",
-      "item.japanesesword.mcsucdiscka": "神々が恋した幻想郷",
       "item.0526ngs.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
+      "item.japanesesword.mcsucdiscka": "神々が恋した幻想郷",
       "item.0526ngs.hanyou_chestplate": "Hannyou 個の胴着",
+      "item.japanesesword.black_husuk_armor_chestplate": "Black Husk Chestplate",
       "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
       "item.japanesesword.tyouhatusuru": "Tyouhatusuru",
       "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
@@ -8073,8 +8226,8 @@
       "item.0526ngs.halloween_20221031_helmet": "§6§l§n§oHalloween 2022 10/31のヘルメット",
       "item.0526ngs.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.kawasiro_leggings": "白い革防具",
-      "item.0526ngs.ookenoken": "王の刀",
       "item.japanesesword.strey_outer_armor_boots": "Strey Outer boots",
+      "item.0526ngs.ookenoken": "王の刀",
       "item.japanesesword.hannyou_leggings": "Hannyou 個のレギンス",
       "item.0526ngs.musicdisc_na.desc": "ナイト・オブ・ナイト",
       "item.japanesesword.udewa_helmet": "Udewa ヘルメット",
@@ -8089,8 +8242,8 @@
       "item.0526ngs.tekitou_helmet": "Tekitou ヘルメット",
       "item.japanesesword.bookblood": "Book blood",
       "item.japanesesword.kusari_2_boots": "Kusari 個のブーツ",
-      "item.japanesesword.no_kamaroi": "§4§k刀と鎌大好き",
       "item.0526ngs.norooinokatana": "§r 呪いの刀",
+      "item.japanesesword.no_kamaroi": "§4§k刀と鎌大好き",
       "item.0526ngs.musicdisc_tu.desc": "月まで届け、不死の煙",
       "itemGroup.tabevent": "Event",
       "advancements.tidaisuki.title": "吸血鬼の仲間入り",
@@ -8135,6 +8288,7 @@
       "advancements.ounozisseki.title": "君王だって",
       "item.japanesesword.ngsk": "0526ngsの小太刀",
       "advancements.hitokiri.title": "剣に夢見て",
+      "effect.sugoi": "ii",
       "item.0526ngs.yuugenkenn": "幽玄剣",
       "item.0526ngs.airbougu_boots": "Airブーツ",
       "item.0526ngs.musucdiscne_ne": "ネガティブフィイス",
@@ -8302,6 +8456,7 @@
       "item.japanesesword.musicdisc_ko.desc": "広有射怪鳥事",
       "subtitles.na": "ナイト・オブザ・ナイツ",
       "enchantment.japanesesword.yawo": "遠距離武器を反らす",
+      "item.japanesesword.black_husuk_armor_helmet": "Black Husk Helmet",
       "subtitles.ne": "ネガティブフィス",
       "item.japanesesword.tubanoatukatana": "鍔のある刀",
       "entity.japanesesword.kabotya": "Kabotya",
@@ -8378,6 +8533,7 @@
       "item.japanesesword.musicdisc_na.desc": "ナイト・オブ・ナイト",
       "item.0526ngs.poisonbook": "Poisonbook",
       "effect.otirutokidamenai": "落ちる時のダメージがない",
+      "item.japanesesword.black_husuk_armor_boots": "Black Husuk Boots",
       "item.0526ngs.kuromob_spawn_egg": "Kuromob Spawn Egg",
       "enchantment.japanesesword.ansi": "暗視",
       "entity.0526ngs.ken_2": "Ken",
@@ -8414,14 +8570,14 @@
     "ja_jp": {
       "entity.japanesesword.ken_2": "Ken",
       "item.japanesesword.udewa_boots": "Udewa 個のブーツ",
-      "item.0526ngs.tossin": "Tossin",
       "item.japanesesword.black_strey_outer_armor_leggings": "Strey Outer Armor 個のレギンス",
+      "item.0526ngs.tossin": "Tossin",
       "item.japanesesword.magic_katana_spawn_egg": "Magic Katana Spawn Egg",
       "item.0526ngs.zanngekimob_spawn_egg": "Zanngekimob Spawn Egg",
-      "entity.0526ngs.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.sukop": "Sukop",
-      "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
+      "entity.0526ngs.dokunosukelton": "毒を使うスケルトン",
       "item.japanesesword.hanyou_boots": "Hannyou 個のブーツ",
+      "entity.japanesesword.dokunosukelton": "毒を使うスケルトン",
       "advancements.ounozisseki.descr": "honnというアイテムで王のボタンを押す",
       "effect.g": "g",
       "item.0526ngs.tetunokatana": "Tetunokatana",
@@ -8435,22 +8591,23 @@
       "item.0526ngs.aamor_black_leggings": "Blackarmorレギンス",
       "advancements.ninngenndayo.descr": "honnというアイテムで民間人のボタンを押す",
       "item.0526ngs.airbougu_leggings": "Airレギンス",
+      "item.japanesesword.black_husuk_armor_leggings": "Black Husk Leggins",
       "item.japanesesword.nezarazyouigokan_helmet": "Nezarazyouigokan ヘルメット",
-      "block.0526ngs.doku": "Doku",
       "item.0526ngs.demonizedkatana": "§4§k§o§ldemoniedkatana",
+      "block.0526ngs.doku": "Doku",
       "item.japanesesword.mcsucdiscka.desc": "神々が恋した幻想郷",
       "item.japanesesword.turuhasi": "強化ダイヤモンドのツルハシ",
       "item.japanesesword.musucdiscne_ne.desc": "ネガティブフィイス",
-      "item.0526ngs.kogatana": "小刀",
       "item.japanesesword.nagenaihu": "投げナイフ",
+      "item.0526ngs.kogatana": "小刀",
       "subtitles.un": "U.N.オーエンは彼女なのか?",
       "item.0526ngs.kinnnokatana": "金の刀",
       "item.japanesesword.hakuzaya": "白鞘",
       "item.0526ngs.daiakatana": "ダイアモンドの刀",
       "item.0526ngs.musicdisc_ka.desc": "神々が恋した幻想郷",
       "item.0526ngs.magic_book": "Magic Book",
-      "item.japanesesword.katanakatana": "白楼剣",
       "item.japanesesword.naginata": "薙刀",
+      "item.japanesesword.katanakatana": "白楼剣",
       "entity.japanesesword.white_person": "White Person",
       "item.0526ngs.naginata": "薙刀",
       "block.0526ngs.yabaiaitemu": "液体",
@@ -8465,8 +8622,8 @@
       "item.0526ngs.hon_2": "本",
       "item.0526ngs.hon_3": "本",
       "effect.renngeki": "renngeki",
-      "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
       "item.japanesesword.demonized_katana_1": "§4§k§o§ldemonizedKatana343",
+      "item.japanesesword.kyoukanezaraitonokatana": "強化ネザーライトの刀",
       "item.japanesesword.kogatana": "小刀",
       "item.0526ngs.otachi": "大太刀",
       "item.japanesesword.a_5": "A 5",
@@ -8476,8 +8633,8 @@
       "effect.effect_10": "エフェクト",
       "item.0526ngs.ngso": "0526ngsの大太刀",
       "item.japanesesword.katana_1": "桜観剣",
-      "item.japanesesword.wizard_armor_boots": "Wizard boots",
       "item.0526ngs.hanyou_leggings": "Hannyou 個のレギンス",
+      "item.japanesesword.wizard_armor_boots": "Wizard boots",
       "enchantment.japanesesword.bakudan": "Bakudan",
       "entity.japanesesword.zanngekimob": "Zanngekimob",
       "effect.kageka": "影化",
@@ -8487,14 +8644,14 @@
       "item.japanesesword.angelos_helmet": "Angelos",
       "item.japanesesword.booktokubetu": "レアな本",
       "item.0526ngs.hannyou_chestplate": "Hannyou 個の胴着",
-      "effect.ugokasu": "動かす",
       "item.japanesesword.ginyade_leggings": "Ginyade 個のレギンス",
+      "effect.ugokasu": "動かす",
       "item.japanesesword.otachibloodcurse": "§4§k守血刀",
       "item.japanesesword.nagerukatana": "Nagerukatana",
       "item.japanesesword.mcsucdiscko": "広有射怪鳥事",
       "item.0526ngs.stonekatana": "Stonekatana",
-      "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "item.0526ngs.nezaraitokatana": "ネザーライトの刀",
+      "item.japanesesword.mint_helmet": "Mint ヘルメット",
       "item.japanesesword.wizard_armor_leggings": "Wizard leggings",
       "effect.supuidokyouka": "スピード強化版",
       "effect.terepoto": "flamsword",
@@ -8503,13 +8660,15 @@
       "effect.oriru": "orirutoki",
       "item.0526ngs.nagenaihu": "投げナイフ",
       "item.japanesesword.musicdisc_un.desc": "U.N.オーエンは彼女なのか？",
+      "effect.oriruyo": "orirunnya",
       "enchantment.0526ngs.demonized": "§4§l§kDemonized",
       "item.0526ngs.halloween_20221031kama": "§6§l§nHalloween 2022 10/31の鎌",
       "item.japanesesword.airbougu_helmet": "Airヘルメット",
       "effect.keneffect": "keneffect",
-      "item.japanesesword.mcsucdiscka": "神々が恋した幻想郷",
       "item.0526ngs.kyoukadaiyamonndonokatana": "強化ダイヤモンドの刀",
+      "item.japanesesword.mcsucdiscka": "神々が恋した幻想郷",
       "item.0526ngs.hanyou_chestplate": "Hannyou 個の胴着",
+      "item.japanesesword.black_husuk_armor_chestplate": "Black Husk Chestplate",
       "item.japanesesword.tekitou_leggings": "Tekitou 個のレギンス",
       "item.japanesesword.tyouhatusuru": "Tyouhatusuru",
       "item.minecraft.splash_potion.effect.doku_3": "毒2残留スプラッシュ",
@@ -8528,8 +8687,8 @@
       "item.0526ngs.halloween_20221031_helmet": "§6§l§n§oHalloween 2022 10/31のヘルメット",
       "item.0526ngs.mint_leggings": "Mint 個のレギンス",
       "item.japanesesword.kawasiro_leggings": "白い革防具",
-      "item.0526ngs.ookenoken": "王の刀",
       "item.japanesesword.strey_outer_armor_boots": "Strey Outer Armor 個のブーツ",
+      "item.0526ngs.ookenoken": "王の刀",
       "item.japanesesword.hannyou_leggings": "Hannyou 個のレギンス",
       "item.0526ngs.musicdisc_na.desc": "ナイト・オブ・ナイト",
       "item.japanesesword.udewa_helmet": "Udewa ヘルメット",
@@ -8544,8 +8703,8 @@
       "item.0526ngs.tekitou_helmet": "Tekitou ヘルメット",
       "item.japanesesword.bookblood": "Book blood",
       "item.japanesesword.kusari_2_boots": "Kusari 個のブーツ",
-      "item.japanesesword.no_kamaroi": "§4§k刀と鎌大好き",
       "item.0526ngs.norooinokatana": "§r 呪いの刀",
+      "item.japanesesword.no_kamaroi": "§4§k刀と鎌大好き",
       "item.0526ngs.musicdisc_tu.desc": "月まで届け、不死の煙",
       "itemGroup.tabevent": "Event",
       "advancements.tidaisuki.title": "吸血鬼の仲間入り",
@@ -8590,6 +8749,7 @@
       "advancements.ounozisseki.title": "君王だって",
       "item.japanesesword.ngsk": "0526ngsの小太刀",
       "advancements.hitokiri.title": "武士に夢見て",
+      "effect.sugoi": "ii",
       "item.0526ngs.yuugenkenn": "幽玄剣",
       "item.0526ngs.airbougu_boots": "Airブーツ",
       "item.0526ngs.musucdiscne_ne": "ネガティブフィイス",
@@ -8757,6 +8917,7 @@
       "item.japanesesword.musicdisc_ko.desc": "広有射怪鳥事",
       "subtitles.na": "ナイト・オブザ・ナイツ",
       "enchantment.japanesesword.yawo": "遠距離武器を反らす",
+      "item.japanesesword.black_husuk_armor_helmet": "Black Husk Helmet",
       "subtitles.ne": "ネガティブフィス",
       "item.japanesesword.tubanoatukatana": "鍔のある刀",
       "entity.japanesesword.kabotya": "Kabotya",
@@ -8833,6 +8994,7 @@
       "item.japanesesword.musicdisc_na.desc": "ナイト・オブ・ナイト",
       "item.0526ngs.poisonbook": "Poisonbook",
       "effect.otirutokidamenai": "落ちる時のダメージがない",
+      "item.japanesesword.black_husuk_armor_boots": "Black Husuk Boots",
       "item.0526ngs.kuromob_spawn_egg": "Kuromob Spawn Egg",
       "enchantment.japanesesword.ansi": "暗視",
       "entity.0526ngs.ken_2": "Ken",

@@ -22,25 +22,25 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.StreyOuterArmorProgramProcedure;
+import japanesesword.procedures.BlackHusukArmorherumetutonoMeiteitukunoibentoProcedure;
 
 import japanesesword.itemgroup.EventItemGroup;
 
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag
-public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
-	@ObjectHolder("japanesesword:strey_outer_armor_helmet")
+public class BlackHusukArmorItem extends JapaneseswordModElements.ModElement {
+	@ObjectHolder("japanesesword:black_husuk_armor_helmet")
 	public static final Item helmet = null;
-	@ObjectHolder("japanesesword:strey_outer_armor_chestplate")
+	@ObjectHolder("japanesesword:black_husuk_armor_chestplate")
 	public static final Item body = null;
-	@ObjectHolder("japanesesword:strey_outer_armor_leggings")
+	@ObjectHolder("japanesesword:black_husuk_armor_leggings")
 	public static final Item legs = null;
-	@ObjectHolder("japanesesword:strey_outer_armor_boots")
+	@ObjectHolder("japanesesword:black_husuk_armor_boots")
 	public static final Item boots = null;
 
-	public StreyOuterArmorItem(JapaneseswordModElements instance) {
-		super(instance, 468);
+	public BlackHusukArmorItem(JapaneseswordModElements instance) {
+		super(instance, 512);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
 
 			@Override
 			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{6, 5, 12, 4}[slot.getIndex()];
+				return new int[]{16, 20, 24, 8}[slot.getIndex()];
 			}
 
 			@Override
@@ -63,7 +63,7 @@ public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
 
 			@Override
 			public net.minecraft.util.SoundEvent getSoundEvent() {
-				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_leather"));
 			}
 
 			@Override
@@ -74,7 +74,7 @@ public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public String getName() {
-				return "strey_outer_armor";
+				return "black_husuk_armor";
 			}
 
 			@Override
@@ -90,7 +90,7 @@ public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(EventItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/models/armor/stray_outer_normal_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+				return "japanesesword:textures/models/armor/black_husk_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
 
 			@Override
@@ -100,13 +100,13 @@ public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				BlackHusukArmorherumetutonoMeiteitukunoibentoProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
-		}.setRegistryName("strey_outer_armor_helmet"));
+		}.setRegistryName("black_husuk_armor_helmet"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(EventItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/models/armor/stray_outer_normal_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+				return "japanesesword:textures/models/armor/black_husk_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
 
 			@Override
@@ -115,13 +115,13 @@ public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				BlackHusukArmorherumetutonoMeiteitukunoibentoProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
-		}.setRegistryName("strey_outer_armor_chestplate"));
+		}.setRegistryName("black_husuk_armor_chestplate"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(EventItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/models/armor/stray_outer_normal_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+				return "japanesesword:textures/models/armor/black_husk_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
 
 			@Override
@@ -130,13 +130,13 @@ public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				BlackHusukArmorherumetutonoMeiteitukunoibentoProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
-		}.setRegistryName("strey_outer_armor_leggings"));
+		}.setRegistryName("black_husuk_armor_leggings"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(EventItemGroup.tab)) {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "japanesesword:textures/models/armor/stray_outer_normal_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+				return "japanesesword:textures/models/armor/black_husk_armor__layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
 			}
 
 			@Override
@@ -145,9 +145,9 @@ public class StreyOuterArmorItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				StreyOuterArmorProgramProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				BlackHusukArmorherumetutonoMeiteitukunoibentoProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
-		}.setRegistryName("strey_outer_armor_boots"));
+		}.setRegistryName("black_husuk_armor_boots"));
 	}
 
 }
