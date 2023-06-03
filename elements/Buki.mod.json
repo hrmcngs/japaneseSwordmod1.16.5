@@ -6,6 +6,6 @@
     "icon": {
       "value": "Blocks.CRAFTING_TABLE"
     },
-    "showSearch": true
+    "showSearch": false
   }
 }

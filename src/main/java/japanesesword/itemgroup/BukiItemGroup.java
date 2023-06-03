@@ -27,9 +27,9 @@ public class BukiItemGroup extends JapaneseswordModElements.ModElement {
 
 			@OnlyIn(Dist.CLIENT)
 			public boolean hasSearchBar() {
-				return true;
+				return false;
 			}
-		}.setBackgroundImageName("item_search.png");
+		};
 	}
 
 	public static ItemGroup tab;

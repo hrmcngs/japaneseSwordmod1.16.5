@@ -18,8 +18,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.TpehuekutogaYouXiaoShinoteitukuProcedure;
 import japanesesword.procedures.TpposiyonXiaoGuogaQieretaShiProcedure;
+import japanesesword.procedures.TpehuekutogaYouXiaoShinoteitukuProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TpPotionEffect {
