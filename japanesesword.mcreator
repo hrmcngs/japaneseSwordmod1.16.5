@@ -6818,7 +6818,7 @@
       "type": "procedure",
       "sortid": 439,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "demon_scythe_youkuritukusitatoki",
       "metadata": {
         "dependencies": [
@@ -7861,20 +7861,6 @@
       }
     },
     {
-      "name": "VillagerHelmet",
-      "type": "item",
-      "sortid": 515,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "villager_helmet",
-      "metadata": {
-        "files": [
-          "src/main/java/japanesesword/item/VillagerHelmetItem.java",
-          "src/main/resources/assets/japanesesword/models/item/villager_helmet.json"
-        ]
-      }
-    },
-    {
       "name": "SnowVillagerArmor",
       "type": "armor",
       "sortid": 516,
@@ -7887,19 +7873,6 @@
           "src/main/resources/assets/japanesesword/models/item/snow_villager_armor_leggings.json",
           "src/main/resources/assets/japanesesword/models/item/snow_villager_armor_chestplate.json",
           "src/main/resources/assets/japanesesword/models/item/snow_villager_armor_boots.json"
-        ]
-      }
-    },
-    {
-      "name": "VillagerTab",
-      "type": "tab",
-      "sortid": 517,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "villager_tab",
-      "metadata": {
-        "files": [
-          "src/main/java/japanesesword/itemgroup/VillagerTabItemGroup.java"
         ]
       }
     }
@@ -8308,7 +8281,6 @@
       "advancements.hitokiri.title": "剣に夢見て",
       "effect.sugoi": "ii",
       "item.0526ngs.yuugenkenn": "幽玄剣",
-      "item.japanesesword.villager_helmet": "Villager Helmet",
       "item.0526ngs.airbougu_boots": "Airブーツ",
       "item.0526ngs.musucdiscne_ne": "ネガティブフィイス",
       "item.japanesesword.udewa_chestplate": "Udewa 個の胴着",
@@ -8342,7 +8314,6 @@
       "item.0526ngs.mcsucdiscko.desc": "広有射怪鳥事",
       "item.0526ngs.nannka": "Nannka",
       "item.0526ngs.ken_2_spawn_egg": "Ken Spawn Egg",
-      "itemGroup.tabvillager_tab": "Event",
       "item.0526ngs.ti": "血",
       "item.japanesesword.axesword": "Axesword",
       "effect.arrow_343": "arrow343",
@@ -8773,7 +8744,6 @@
       "advancements.hitokiri.title": "武士に夢見て",
       "effect.sugoi": "ii",
       "item.0526ngs.yuugenkenn": "幽玄剣",
-      "item.japanesesword.villager_helmet": "Villager Helmet",
       "item.0526ngs.airbougu_boots": "Airブーツ",
       "item.0526ngs.musucdiscne_ne": "ネガティブフィイス",
       "item.japanesesword.udewa_chestplate": "Udewa 個の胴着",
@@ -8807,7 +8777,6 @@
       "item.0526ngs.mcsucdiscko.desc": "広有射怪鳥事",
       "item.0526ngs.nannka": "Nannka",
       "item.0526ngs.ken_2_spawn_egg": "Ken Spawn Egg",
-      "itemGroup.tabvillager_tab": "Event",
       "item.0526ngs.ti": "血",
       "item.japanesesword.axesword": "Axesword",
       "effect.arrow_343": "arrow343",

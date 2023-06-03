@@ -11,7 +11,7 @@
     "enableBoots": true,
     "textureBoots": "nanka_boots",
     "creativeTab": {
-      "value": "CUSTOM:VillagerTab"
+      "value": "CUSTOM:Event"
     },
     "armorTextureFile": "plains_",
     "helmetName": "Plains Helmet",
