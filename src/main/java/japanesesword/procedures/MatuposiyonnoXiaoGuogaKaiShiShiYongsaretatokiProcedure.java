@@ -53,7 +53,7 @@ public class MatuposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 		r = 1;
 		alpha = (entity.rotationYaw);
 		deta = (entity.rotationPitch);
-		for (int index0 = 0; index0 < (int) (100); index0++) {
+		for (int index0 = 0; index0 < 100; index0++) {
 			if (world instanceof ServerWorld) {
 				((World) world).getServer().getCommandManager()
 						.handleCommand(new CommandSource(ICommandSource.DUMMY,

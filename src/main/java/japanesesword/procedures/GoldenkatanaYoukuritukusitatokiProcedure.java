@@ -25,8 +25,6 @@ import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
-import japanesesword.enchantment.KillEnchantment;
-
 import japanesesword.JapaneseswordMod;
 
 public class GoldenkatanaYoukuritukusitatokiProcedure {
@@ -82,7 +80,7 @@ public class GoldenkatanaYoukuritukusitatokiProcedure {
 		rad = Math.toRadians(entity.rotationYaw);
 		dis = 0.1;
 		rad_now = Math.toRadians(entity.rotationYaw);
-		for (int index0 = 0; index0 < (int) (36); index0++) {
+		for (int index0 = 0; index0 < 36; index0++) {
 			xPos = (X + Math.cos(rad_now) * Math.cos(rad) * dis);
 			yPos = (Y + Math.sin(rad_now) * dis);
 			zPos = (Z + Math.cos(rad_now) * Math.sin(rad) * dis);
@@ -94,7 +92,7 @@ public class GoldenkatanaYoukuritukusitatokiProcedure {
 			rad_now = (rad_now + Math.toRadians(10));
 		}
 		dis = 0;
-		for (int index1 = 0; index1 < (int) (100); index1++) {
+		for (int index1 = 0; index1 < 100; index1++) {
 			xPos = (X + Math.sin(Math.toRadians(entity.rotationYaw + 180)) * dis);
 			yPos = (Y + Math.sin(Math.toRadians(entity.rotationPitch)) * dis * (-1));
 			zPos = (Z + Math.cos(Math.toRadians(entity.rotationYaw)) * dis);

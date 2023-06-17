@@ -22,7 +22,7 @@ public class OtirutokidamenaiehuekutogaYouXiaoShinoteitukuProcedure {
 		if (!entity.isOnGround()) {
 			entity.fallDistance = (float) (0);
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(OtirutokidamenaiPotionEffect.potion, (int) 1, (int) 1, (true), (true)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(OtirutokidamenaiPotionEffect.potion, (int) 1, (int) 1, true, true));
 		}
 	}
 }

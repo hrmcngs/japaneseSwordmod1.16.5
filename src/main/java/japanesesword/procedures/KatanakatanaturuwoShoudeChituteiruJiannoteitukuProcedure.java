@@ -28,14 +28,14 @@ public class KatanakatanaturuwoShoudeChituteiruJiannoteitukuProcedure {
 		double dis = 0;
 		if ((EnchantmentHelper.getEnchantmentLevel(HasiruEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 9, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 9, true, false));
 		} else {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 4, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 1, (int) 4, true, false));
 		}
 		if ((EnchantmentHelper.getEnchantmentLevel(YawoEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Arrow1PotionEffect.potion, (int) 1, (int) 1, true, false));
 		}
 	}
 }

@@ -42,9 +42,9 @@ public class SugoiposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				return false;
 			}
 		}.checkGamemode(entity))) {
-			entity.getPersistentData().putBoolean("tobasunnya", (true));
+			entity.getPersistentData().putBoolean("tobasunnya", true);
 			if (entity instanceof PlayerEntity) {
-				((PlayerEntity) entity).abilities.allowFlying = (false);
+				((PlayerEntity) entity).abilities.allowFlying = false;
 				((PlayerEntity) entity).sendPlayerAbilities();
 			}
 		}

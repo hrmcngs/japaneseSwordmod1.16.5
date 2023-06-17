@@ -20,6 +20,6 @@ public class Attack1posiyonXiaoGuogaQieretaShiProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(OriruPotionEffect.potion, (int) 80, (int) 1, (true), (false)));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(OriruPotionEffect.potion, (int) 80, (int) 1, true, false));
 	}
 }

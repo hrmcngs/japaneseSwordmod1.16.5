@@ -167,7 +167,7 @@ public class TpehuekutogaYouXiaoShinoteitukuProcedure {
 				}
 
 				private void run() {
-					entity.getPersistentData().putBoolean("tp", (false));
+					entity.getPersistentData().putBoolean("tp", false);
 					new Object() {
 						private int ticks = 0;
 						private float waitTicks;
@@ -189,7 +189,7 @@ public class TpehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 
 						private void run() {
-							entity.getPersistentData().putBoolean("tp", (true));
+							entity.getPersistentData().putBoolean("tp", true);
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
 					}.start(world, (int) 1);
@@ -208,7 +208,7 @@ public class TpehuekutogaYouXiaoShinoteitukuProcedure {
 				}
 			}.checkGamemode(entity))) {
 				if (entity instanceof PlayerEntity) {
-					((PlayerEntity) entity).abilities.disableDamage = (true);
+					((PlayerEntity) entity).abilities.disableDamage = true;
 					((PlayerEntity) entity).sendPlayerAbilities();
 				}
 			}

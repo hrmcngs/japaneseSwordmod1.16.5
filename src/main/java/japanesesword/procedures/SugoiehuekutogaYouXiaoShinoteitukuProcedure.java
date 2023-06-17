@@ -19,7 +19,7 @@ public class SugoiehuekutogaYouXiaoShinoteitukuProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, (int) 2, (int) 1, (true), (false)));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, (int) 2, (int) 1, true, false));
 		entity.fallDistance = (float) (0);
 	}
 }

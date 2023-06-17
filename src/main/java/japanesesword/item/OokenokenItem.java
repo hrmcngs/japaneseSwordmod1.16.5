@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import japanesesword.procedures.OokenokenturuwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.OokenokenYoukuritukusitatokiProcedure;
 
 import japanesesword.itemgroup.BukiItemGroup;
 
@@ -70,8 +69,7 @@ public class OokenokenItem extends JapaneseswordModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 
-				OokenokenYoukuritukusitatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+				OokenokenYoukuritukusitatokiProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -83,8 +81,7 @@ public class OokenokenItem extends JapaneseswordModElements.ModElement {
 				double z = entity.getPosZ();
 				if (selected)
 
-					OokenokenturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+					OokenokenturuwoShoudeChituteiruJiannoteitukuProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("ookenoken"));
 	}

@@ -24,8 +24,6 @@ import java.util.HashMap;
 import java.util.Collections;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.DemonKatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.DemonKatanamobugaturudeGongJisaretatokiProcedure;
 import japanesesword.procedures.DemonKatanaYoukuritukusitatokiProcedure;
 
 import japanesesword.JapaneseswordModElements;

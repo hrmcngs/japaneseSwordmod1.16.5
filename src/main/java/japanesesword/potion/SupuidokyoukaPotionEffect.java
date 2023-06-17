@@ -14,9 +14,6 @@ import net.minecraft.entity.ai.attributes.AttributeModifierManager;
 import net.minecraft.entity.LivingEntity;
 
 import java.util.stream.Stream;
-
-import japanesesword.procedures.NoroProcedure;
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;

@@ -20,8 +20,6 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import japanesesword.JapaneseswordModElements;
-import japanesesword.procedures.YuugenkennKongQiwoYoukuritukusitatokiProcedure;
-import japanesesword.procedures.YuugenkennenteiteigaaitemuwoZhentutaShiProcedure;
 
 @JapaneseswordModElements.ModElement.Tag
 public class YuugenkennItem extends JapaneseswordModElements.ModElement {

@@ -44,7 +44,7 @@ public class NoroiwotukeruehuekutogaYouXiaoShinoteitukuProcedure {
 					}
 					return 0;
 				}
-			}.check(entity)), (true), (false)));
+			}.check(entity)), true, false));
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.HUNGER, (int) (new Object() {
 				int check(Entity _entity) {
@@ -68,7 +68,7 @@ public class NoroiwotukeruehuekutogaYouXiaoShinoteitukuProcedure {
 					}
 					return 0;
 				}
-			}.check(entity)), (true), (false)));
+			}.check(entity)), true, false));
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NAUSEA, (int) (new Object() {
 				int check(Entity _entity) {
@@ -92,7 +92,7 @@ public class NoroiwotukeruehuekutogaYouXiaoShinoteitukuProcedure {
 					}
 					return 0;
 				}
-			}.check(entity)), (true), (false)));
+			}.check(entity)), true, false));
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WEAKNESS, (int) (new Object() {
 				int check(Entity _entity) {
@@ -116,7 +116,7 @@ public class NoroiwotukeruehuekutogaYouXiaoShinoteitukuProcedure {
 					}
 					return 0;
 				}
-			}.check(entity)), (true), (false)));
+			}.check(entity)), true, false));
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LUCK, (int) (new Object() {
 				int check(Entity _entity) {
@@ -140,6 +140,6 @@ public class NoroiwotukeruehuekutogaYouXiaoShinoteitukuProcedure {
 					}
 					return 0;
 				}
-			}.check(entity)), (true), (false)));
+			}.check(entity)), true, false));
 	}
 }

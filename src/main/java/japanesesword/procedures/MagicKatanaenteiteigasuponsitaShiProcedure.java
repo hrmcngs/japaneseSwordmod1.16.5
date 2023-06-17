@@ -45,9 +45,9 @@ public class MagicKatanaenteiteigasuponsitaShiProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
-		entity.getPersistentData().putBoolean("upmagickatana", (true));
+		entity.getPersistentData().putBoolean("upmagickatana", true);
 		if (entity instanceof PlayerEntity) {
-			((PlayerEntity) entity).abilities.disableDamage = (true);
+			((PlayerEntity) entity).abilities.disableDamage = true;
 			((PlayerEntity) entity).sendPlayerAbilities();
 		}
 		entity.getPersistentData().putDouble("magickatanaX", x);
@@ -74,7 +74,7 @@ public class MagicKatanaenteiteigasuponsitaShiProcedure {
 			}
 
 			private void run() {
-				entity.getPersistentData().putBoolean("upmagickatana", (false));
+				entity.getPersistentData().putBoolean("upmagickatana", false);
 				new Object() {
 					private int ticks = 0;
 					private float waitTicks;

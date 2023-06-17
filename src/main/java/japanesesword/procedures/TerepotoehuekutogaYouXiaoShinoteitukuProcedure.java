@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.Comparator;
 
 import japanesesword.JapaneseswordMod;
-import japanesesword.enchantment.KillEnchantment;
 
 public class TerepotoehuekutogaYouXiaoShinoteitukuProcedure {
 
@@ -67,11 +66,11 @@ public class TerepotoehuekutogaYouXiaoShinoteitukuProcedure {
 			entity.getPersistentData().putDouble("yaw", (Math.toRadians(entity.rotationYaw) + Math.random() * 360));
 			entity.getPersistentData().putDouble("yaw2", (Math.random() * 360));
 			dis = 1;
-			for (int index0 = 0; index0 < (int) (7); index0++) {
+			for (int index0 = 0; index0 < 7; index0++) {
 				degree = (entity.getPersistentData().getDouble("yaw"));
 				rad = 1.75;
 				rad_now = (entity.getPersistentData().getDouble("yaw2"));
-				for (int index1 = 0; index1 < (int) (70); index1++) {
+				for (int index1 = 0; index1 < 70; index1++) {
 					x_pos = (x + Math.cos(rad_now) * Math.cos(degree) * rad * dis);
 					xRabius = (y + 1 + Math.sin(rad_now) * rad * dis);
 					z_pos = (z + Math.cos(rad_now) * Math.sin(degree) * rad * dis);
@@ -115,11 +114,11 @@ public class TerepotoehuekutogaYouXiaoShinoteitukuProcedure {
 			entity.getPersistentData().putDouble("yaw", (Math.toRadians(entity.rotationYaw) + Math.random() * 360));
 			entity.getPersistentData().putDouble("yaw2", (Math.random() * 360));
 			dis = 1;
-			for (int index2 = 0; index2 < (int) (7); index2++) {
+			for (int index2 = 0; index2 < 7; index2++) {
 				degree = (entity.getPersistentData().getDouble("yaw"));
 				rad = 1.75;
 				rad_now = (entity.getPersistentData().getDouble("yaw2"));
-				for (int index3 = 0; index3 < (int) (70); index3++) {
+				for (int index3 = 0; index3 < 70; index3++) {
 					x_pos = (x + Math.cos(rad_now) * Math.cos(degree) * rad * dis);
 					xRabius = (y + 1 + Math.sin(rad_now) * rad * dis);
 					z_pos = (z + Math.cos(rad_now) * Math.sin(degree) * rad * dis);

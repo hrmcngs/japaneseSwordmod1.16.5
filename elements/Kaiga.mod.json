@@ -1,9 +1,11 @@
 {
-  "_fv": 39,
+  "_fv": 43,
   "_type": "painting",
   "definition": {
     "texture": "41yao_meng_.png",
     "width": 16,
-    "height": 16
+    "height": 16,
+    "title": "Kaiga",
+    "author": "Unknown"
   }
 }

@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.NgskYoukuritukusitatokiProcedure;
 import japanesesword.procedures.NgskturuwoShoudeChituteiruJiannoteitukuProcedure;
 
 import japanesesword.itemgroup.BukiItemGroup;

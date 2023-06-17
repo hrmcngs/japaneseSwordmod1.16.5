@@ -20,7 +20,7 @@ public class YonndadakeProcedure {
 		if (entity instanceof PlayerEntity)
 			((PlayerEntity) entity).closeScreen();
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u7528\u3082\u306A\u3044\u306E\u306B\u547C\u3070\u306A\u3044\u3067\u304F\u3060\u3055\u3044\u3088"), (false));
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u7528\u3082\u306A\u3044\u306E\u306B\u547C\u3070\u306A\u3044\u3067\u304F\u3060\u3055\u3044\u3088"), false);
 		}
 	}
 }

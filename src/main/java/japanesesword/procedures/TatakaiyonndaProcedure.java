@@ -20,8 +20,8 @@ public class TatakaiyonndaProcedure {
 		if (entity instanceof PlayerEntity)
 			((PlayerEntity) entity).closeScreen();
 		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u5148\u624B\u3092\u3069\u3046\u305E"), (false));
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u5148\u624B\u3092\u3069\u3046\u305E"), false);
 		}
-		entity.getPersistentData().putBoolean("\u79C1\u3068\u6226\u3046", (true));
+		entity.getPersistentData().putBoolean("\u79C1\u3068\u6226\u3046", true);
 	}
 }

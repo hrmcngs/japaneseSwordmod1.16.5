@@ -13,9 +13,6 @@ import net.minecraft.potion.Effect;
 import net.minecraft.entity.LivingEntity;
 
 import java.util.stream.Stream;
-
-import japanesesword.procedures.Effect10ehuekutogaYouXiaoShinoteitukuProcedure;
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;

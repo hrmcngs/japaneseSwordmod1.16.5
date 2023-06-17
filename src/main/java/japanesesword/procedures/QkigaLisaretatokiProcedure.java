@@ -16,7 +16,7 @@ public class QkigaLisaretatokiProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity.getPersistentData().getBoolean("\u81EA\u52D5\u653B\u6483")) {
-			entity.getPersistentData().putBoolean("\u81EA\u52D5\u653B\u6483", (false));
+			entity.getPersistentData().putBoolean("\u81EA\u52D5\u653B\u6483", false);
 		}
 	}
 }

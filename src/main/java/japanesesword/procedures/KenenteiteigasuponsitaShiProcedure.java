@@ -58,7 +58,7 @@ public class KenenteiteigasuponsitaShiProcedure {
 			}
 		}.compareDistOf(x, y, z)).findFirst().orElse(null)).getUniqueID().toString());
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(KeneffectPotionEffect.potion, (int) 99999, (int) 1, (true), (false)));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(KeneffectPotionEffect.potion, (int) 99999, (int) 1, true, false));
 		new Object() {
 			private int ticks = 0;
 			private float waitTicks;

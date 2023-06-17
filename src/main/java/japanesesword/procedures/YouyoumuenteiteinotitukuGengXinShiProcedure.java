@@ -27,7 +27,6 @@ import java.util.List;
 import java.util.Comparator;
 
 import japanesesword.JapaneseswordMod;
-import japanesesword.enchantment.KillEnchantment;
 
 public class YouyoumuenteiteinotitukuGengXinShiProcedure {
 
@@ -90,7 +89,7 @@ public class YouyoumuenteiteinotitukuGengXinShiProcedure {
 			XRadius2 = 3;
 			ZRadius2 = 3;
 			Y_pos = (y + 1);
-			for (int index0 = 0; index0 < (int) (36); index0++) {
+			for (int index0 = 0; index0 < 36; index0++) {
 				X = (x + Math.cos(loop) * XRadius2);
 				Y = Y_pos;
 				Z = (z + Math.sin(loop) * ZRadius2);

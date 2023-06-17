@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac8f19e3-0689-474b-ab6c-aa73df1818c0" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/ja_jp.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/assets/japanesesword/lang/ja_jp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/data/japanesesword/recipes/nakaminoresipi.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Dokunosukelton.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/HusukArmor.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/HusukArmor.mod.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Nakaminoresipi.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/NetheriteKatanaBlock.mod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elements/Zanngekimob.mod.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/japanesesword.mcreator" beforeDir="false" afterPath="$PROJECT_DIR$/japanesesword.mcreator" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/blockstates/netherite_katana_block.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/ja_jp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/lang/ja_jp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/japanesesword/recipes/nakaminoresipi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/evoker_boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/evoker_chestplet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/evoker_helmet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/evoker_leggings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/nanka_boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/nanka_chestplate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/nanka_leggings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/snow_villager_boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/snow_villager_chestplate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/japanesesword/textures/items/snow_villager_leggings.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +95,7 @@
       <workItem from="1684312665203" duration="468000" />
       <workItem from="1684830935403" duration="5000" />
       <workItem from="1685788031730" duration="2000" />
+      <workItem from="1685887434935" duration="1000" />
     </task>
     <servers />
   </component>

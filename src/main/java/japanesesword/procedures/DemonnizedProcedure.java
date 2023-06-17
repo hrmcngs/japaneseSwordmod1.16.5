@@ -14,7 +14,6 @@ import java.util.Map;
 import java.util.HashMap;
 
 import japanesesword.JapaneseswordMod;
-import japanesesword.enchantment.DemonizedEnchantment;
 
 public class DemonnizedProcedure {
 	@Mod.EventBusSubscriber

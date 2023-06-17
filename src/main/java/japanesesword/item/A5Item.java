@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import japanesesword.itemgroup.BukiItemGroup;
-import japanesesword.procedures.A5YoukuritukusitatokiProcedure;
+
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag

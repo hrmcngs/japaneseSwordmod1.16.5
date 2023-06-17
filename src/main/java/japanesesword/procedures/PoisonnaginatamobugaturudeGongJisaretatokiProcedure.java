@@ -19,6 +19,6 @@ public class PoisonnaginatamobugaturudeGongJisaretatokiProcedure {
 		}
 		Entity sourceentity = (Entity) dependencies.get("sourceentity");
 		if (sourceentity instanceof LivingEntity)
-			((LivingEntity) sourceentity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1, (false), (false)));
+			((LivingEntity) sourceentity).addPotionEffect(new EffectInstance(Effects.POISON, (int) 60, (int) 1, false, false));
 	}
 }

@@ -21,9 +21,6 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import japanesesword.JapaneseswordModElements;
-import japanesesword.procedures.NoroituruwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.OtachibloodYoukuritukusitatokiProcedure;
-import japanesesword.procedures.OtachibloodenteiteigaaitemuwoZhentutaShiProcedure;
 
 @JapaneseswordModElements.ModElement.Tag
 public class OtachibloodcurseItem extends JapaneseswordModElements.ModElement {

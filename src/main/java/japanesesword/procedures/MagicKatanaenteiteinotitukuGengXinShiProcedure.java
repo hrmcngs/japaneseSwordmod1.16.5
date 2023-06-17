@@ -21,8 +21,6 @@ import java.util.Collection;
 import japanesesword.potion.NoMagicKatanaPotionEffect;
 
 import japanesesword.JapaneseswordMod;
-import japanesesword.entity.KillMagicKatanaEntity;
-import japanesesword.entity.MagicKatanaEntity;
 
 public class MagicKatanaenteiteinotitukuGengXinShiProcedure {
 
@@ -92,7 +90,7 @@ public class MagicKatanaenteiteinotitukuGengXinShiProcedure {
 								if (entity instanceof KillMagicKatanaEntity.CustomEntity) {
 									if (entityiterator instanceof MobEntity) {
 										if (entityiterator instanceof LivingEntity)
-											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 3, (true), (false)));
+											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 3, true, false));
 										{
 											Entity _ent = entityiterator;
 											if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -109,7 +107,7 @@ public class MagicKatanaenteiteinotitukuGengXinShiProcedure {
 								} else if (entity instanceof MagicKatanaEntity.CustomEntity) {
 									if (entityiterator instanceof MobEntity) {
 										if (entityiterator instanceof LivingEntity)
-											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 3, (true), (false)));
+											((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 3, true, false));
 										entityiterator.attackEntityFrom(DamageSource.GENERIC, (float) 10);
 									}
 								}

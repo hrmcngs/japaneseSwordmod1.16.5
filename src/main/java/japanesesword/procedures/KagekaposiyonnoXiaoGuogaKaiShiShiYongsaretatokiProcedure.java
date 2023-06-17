@@ -32,7 +32,7 @@ public class KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				return false;
 			}
 		}.checkGamemode(entity)) {
-			entity.getPersistentData().putBoolean("creative", (true));
+			entity.getPersistentData().putBoolean("creative", true);
 			if (entity instanceof PlayerEntity)
 				((PlayerEntity) entity).setGameType(GameType.SPECTATOR);
 		}
@@ -47,7 +47,7 @@ public class KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				return false;
 			}
 		}.checkGamemode(entity)) {
-			entity.getPersistentData().putBoolean("adventure", (true));
+			entity.getPersistentData().putBoolean("adventure", true);
 			if (entity instanceof PlayerEntity)
 				((PlayerEntity) entity).setGameType(GameType.SPECTATOR);
 		}
@@ -62,7 +62,7 @@ public class KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				return false;
 			}
 		}.checkGamemode(entity)) {
-			entity.getPersistentData().putBoolean("surval", (true));
+			entity.getPersistentData().putBoolean("surval", true);
 			if (entity instanceof PlayerEntity)
 				((PlayerEntity) entity).setGameType(GameType.SPECTATOR);
 		}
@@ -77,7 +77,7 @@ public class KagekaposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 				return false;
 			}
 		}.checkGamemode(entity)) {
-			entity.getPersistentData().putBoolean("spectar", (true));
+			entity.getPersistentData().putBoolean("spectar", true);
 		}
 	}
 }

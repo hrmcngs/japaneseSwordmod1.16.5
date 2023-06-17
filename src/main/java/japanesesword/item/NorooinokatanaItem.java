@@ -21,9 +21,6 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import japanesesword.JapaneseswordModElements;
-import japanesesword.procedures.NoroinokatanaKongQiwoYoukuritukusitatokiProcedure;
-import japanesesword.procedures.NoroinokatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.NorooinokatanaenteiteigaaitemuwoZhentutaShiProcedure;
 
 @JapaneseswordModElements.ModElement.Tag
 public class NorooinokatanaItem extends JapaneseswordModElements.ModElement {

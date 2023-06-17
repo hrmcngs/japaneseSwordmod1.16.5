@@ -17,8 +17,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.AncientbooksaitemuwoShoudeChituteiruJiannoteitukuProcedure;
-
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag

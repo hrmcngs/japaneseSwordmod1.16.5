@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "japanesesword:items/snow_villager_boots"
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "_fv": 39,
+  "_fv": 43,
   "_type": "tab",
   "definition": {
-    "name": "villager_tab",
+    "name": "event",
     "icon": {
-      "value": "CUSTOM:VillagerHelmet"
+      "value": "Blocks.CARVED_PUMPKIN"
     },
     "showSearch": false
   }

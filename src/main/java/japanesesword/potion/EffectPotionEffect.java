@@ -17,8 +17,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.EffectehuekutogaYouXiaoShinoteitukuProcedure;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EffectPotionEffect {
 	@ObjectHolder("japanesesword:effect")
@@ -72,10 +70,9 @@ public class EffectPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			EffectehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(Stream
-					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
-							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			EffectehuekutogaYouXiaoShinoteitukuProcedure.executeProcedure(
+					Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
 		@Override

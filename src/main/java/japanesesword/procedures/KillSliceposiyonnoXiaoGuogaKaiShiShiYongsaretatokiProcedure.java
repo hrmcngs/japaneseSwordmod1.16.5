@@ -51,7 +51,7 @@ public class KillSliceposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 			}.compareDistOf(x, y, z)).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof LivingEntity)
-					((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(KillchopupPotionEffect.potion, (int) 120, (int) 1, (true), (false)));
+					((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(KillchopupPotionEffect.potion, (int) 120, (int) 1, true, false));
 			}
 		}
 	}

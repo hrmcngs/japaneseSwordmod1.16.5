@@ -91,16 +91,16 @@ public class Arrow1ehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
-								entityiterator.getPersistentData().putBoolean("Check", (true));
+								entityiterator.getPersistentData().putBoolean("Check", true);
 								dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4) + Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4) + Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
 								if (dis1 <= 0.4) {
-									entityiterator.getPersistentData().putBoolean("My arrow", (true));
+									entityiterator.getPersistentData().putBoolean("My arrow", true);
 								} else {
-									entityiterator.getPersistentData().putBoolean("My arrow", (false));
+									entityiterator.getPersistentData().putBoolean("My arrow", false);
 								}
 								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
-										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										entityiterator.getPersistentData().putBoolean("Check2", true);
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()), (entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)), (entityiterator.getPosZ()), 0, 1, 0);
 										entityiterator.setMotion(((-1.5) * entityiterator.getMotion().getX()), ((-1.5) * entityiterator.getMotion().getY()), ((-1.5) * entityiterator.getMotion().getZ()));
 									} else {
@@ -132,16 +132,16 @@ public class Arrow1ehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
-								entityiterator.getPersistentData().putBoolean("Check", (true));
+								entityiterator.getPersistentData().putBoolean("Check", true);
 								dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4) + Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4) + Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
 								if (dis1 <= 0.8) {
-									entityiterator.getPersistentData().putBoolean("My arrow", (true));
+									entityiterator.getPersistentData().putBoolean("My arrow", true);
 								} else {
-									entityiterator.getPersistentData().putBoolean("My arrow", (false));
+									entityiterator.getPersistentData().putBoolean("My arrow", false);
 								}
 								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
-										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										entityiterator.getPersistentData().putBoolean("Check2", true);
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()), (entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)), (entityiterator.getPosZ()), 0, 1, 0);
 										{
 											Entity _ent = entityiterator;
@@ -185,16 +185,16 @@ public class Arrow1ehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 						if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 							if (entityiterator.getPersistentData().getBoolean("Check") == false) {
-								entityiterator.getPersistentData().putBoolean("Check", (true));
+								entityiterator.getPersistentData().putBoolean("Check", true);
 								dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4) + Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4) + Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
 								if (dis1 <= 1.2) {
-									entityiterator.getPersistentData().putBoolean("My arrow", (true));
+									entityiterator.getPersistentData().putBoolean("My arrow", true);
 								} else {
-									entityiterator.getPersistentData().putBoolean("My arrow", (false));
+									entityiterator.getPersistentData().putBoolean("My arrow", false);
 								}
 								if (entityiterator.getPersistentData().getBoolean("battozyutu") == false && entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 									if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
-										entityiterator.getPersistentData().putBoolean("Check2", (true));
+										entityiterator.getPersistentData().putBoolean("Check2", true);
 										world.addParticle(ParticleTypes.SWEEP_ATTACK, (entityiterator.getPosX()), (entityiterator.getPosY() + MathHelper.nextDouble(new Random(), -0.1, 0.5)), (entityiterator.getPosZ()), 0, 1, 0);
 										{
 											Entity _ent = entityiterator;

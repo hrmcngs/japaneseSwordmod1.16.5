@@ -40,7 +40,7 @@ public class KusaritiesutopuretonoMeiteitukunoibentoProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		entity.setMotion(0, (-5), 0);
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 255, (true), (false)));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 255, true, false));
 		{
 			Entity _ent = entity;
 			_ent.setPositionAndUpdate(x, y, z);

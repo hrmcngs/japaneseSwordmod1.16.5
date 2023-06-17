@@ -74,16 +74,16 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 						|| entityiterator instanceof SnowballEntity || entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 					if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 						if (entityiterator.getPersistentData().getBoolean("Check") == false) {
-							entityiterator.getPersistentData().putBoolean("Check", (true));
+							entityiterator.getPersistentData().putBoolean("Check", true);
 							dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4) + Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4) + Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
 							if (dis1 <= 0.4) {
-								entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								entityiterator.getPersistentData().putBoolean("My arrow", true);
 							} else {
-								entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								entityiterator.getPersistentData().putBoolean("My arrow", false);
 							}
 							if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 								if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
-									entityiterator.getPersistentData().putBoolean("Check2", (true));
+									entityiterator.getPersistentData().putBoolean("Check2", true);
 									if (world instanceof World && !world.isRemote()) {
 										((World) world).playSound(null, new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
 												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.land")), SoundCategory.VOICE, (float) 1, (float) 1);
@@ -167,16 +167,16 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 						|| entityiterator instanceof SnowballEntity || entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 					if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 						if (entityiterator.getPersistentData().getBoolean("Check") == false) {
-							entityiterator.getPersistentData().putBoolean("Check", (true));
+							entityiterator.getPersistentData().putBoolean("Check", true);
 							dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4) + Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4) + Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
 							if (dis1 <= 0.8) {
-								entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								entityiterator.getPersistentData().putBoolean("My arrow", true);
 							} else {
-								entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								entityiterator.getPersistentData().putBoolean("My arrow", false);
 							}
 							if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 								if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
-									entityiterator.getPersistentData().putBoolean("Check2", (true));
+									entityiterator.getPersistentData().putBoolean("Check2", true);
 									if (world instanceof World && !world.isRemote()) {
 										((World) world).playSound(null, new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
 												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.land")), SoundCategory.VOICE, (float) 1, (float) 1);
@@ -260,16 +260,16 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 						|| entityiterator instanceof SnowballEntity || entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 					if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 						if (entityiterator.getPersistentData().getBoolean("Check") == false) {
-							entityiterator.getPersistentData().putBoolean("Check", (true));
+							entityiterator.getPersistentData().putBoolean("Check", true);
 							dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4) + Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4) + Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
 							if (dis1 <= 1.2) {
-								entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								entityiterator.getPersistentData().putBoolean("My arrow", true);
 							} else {
-								entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								entityiterator.getPersistentData().putBoolean("My arrow", false);
 							}
 							if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 								if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
-									entityiterator.getPersistentData().putBoolean("Check2", (true));
+									entityiterator.getPersistentData().putBoolean("Check2", true);
 									if (world instanceof World && !world.isRemote()) {
 										((World) world).playSound(null, new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
 												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.land")), SoundCategory.VOICE, (float) 1, (float) 1);
@@ -353,16 +353,16 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 						|| entityiterator instanceof SnowballEntity || entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 					if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 						if (entityiterator.getPersistentData().getBoolean("Check") == false) {
-							entityiterator.getPersistentData().putBoolean("Check", (true));
+							entityiterator.getPersistentData().putBoolean("Check", true);
 							dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4) + Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4) + Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
 							if (dis1 <= 1.6) {
-								entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								entityiterator.getPersistentData().putBoolean("My arrow", true);
 							} else {
-								entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								entityiterator.getPersistentData().putBoolean("My arrow", false);
 							}
 							if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 								if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
-									entityiterator.getPersistentData().putBoolean("Check2", (true));
+									entityiterator.getPersistentData().putBoolean("Check2", true);
 									if (world instanceof World && !world.isRemote()) {
 										((World) world).playSound(null, new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
 												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.land")), SoundCategory.VOICE, (float) 1, (float) 1);
@@ -446,16 +446,16 @@ public class Arrow2ehuekutogaYouXiaoShinoteitukuProcedure {
 						|| entityiterator instanceof SnowballEntity || entityiterator instanceof EggEntity || entityiterator instanceof SmallFireballEntity) {
 					if (!(entityiterator.getPosX() + entityiterator.getPosY() + entityiterator.getPosZ() == 0)) {
 						if (entityiterator.getPersistentData().getBoolean("Check") == false) {
-							entityiterator.getPersistentData().putBoolean("Check", (true));
+							entityiterator.getPersistentData().putBoolean("Check", true);
 							dis1 = Math.sqrt(Math.pow(entityiterator.getPosX() - entity.getPosX(), 0.4) + Math.pow(entityiterator.getPosY() - entity.getPosY(), 0.4) + Math.pow(entityiterator.getPosZ() - entity.getPosZ(), 0.4));
 							if (dis1 <= 2) {
-								entityiterator.getPersistentData().putBoolean("My arrow", (true));
+								entityiterator.getPersistentData().putBoolean("My arrow", true);
 							} else {
-								entityiterator.getPersistentData().putBoolean("My arrow", (false));
+								entityiterator.getPersistentData().putBoolean("My arrow", false);
 							}
 							if (entityiterator.getPersistentData().getBoolean("My arrow") == false) {
 								if (entityiterator.getPersistentData().getBoolean("Check2") == false) {
-									entityiterator.getPersistentData().putBoolean("Check2", (true));
+									entityiterator.getPersistentData().putBoolean("Check2", true);
 									if (world instanceof World && !world.isRemote()) {
 										((World) world).playSound(null, new BlockPos(entityiterator.getPosX(), entityiterator.getPosY(), entityiterator.getPosZ()),
 												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.land")), SoundCategory.VOICE, (float) 1, (float) 1);

@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.KatanakatanaYoukuritukusitatokiProcedure;
 import japanesesword.procedures.KatanakatanaturuwoShoudeChituteiruJiannoteitukuProcedure;
 
 import japanesesword.JapaneseswordModElements;

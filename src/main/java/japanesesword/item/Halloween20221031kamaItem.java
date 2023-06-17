@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.Halloween20221031kamaYoukuritukusitatokiProcedure;
 import japanesesword.procedures.NgsoturuwoShoudeChituteiruJiannoteitukuProcedure;
 
 import japanesesword.itemgroup.EventItemGroup;

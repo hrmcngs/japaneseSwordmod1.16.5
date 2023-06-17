@@ -20,8 +20,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import japanesesword.itemgroup.BukiItemGroup;
-import japanesesword.procedures.PoizunswordKongQiwoYoukuritukusitatokiProcedure;
-import japanesesword.procedures.PoizunswordmobugaturudeGongJisaretatokiProcedure;
+
 import japanesesword.JapaneseswordModElements;
 
 @JapaneseswordModElements.ModElement.Tag

@@ -21,7 +21,6 @@ import java.util.Collections;
 import java.util.AbstractMap;
 
 import japanesesword.procedures.TyoutouturuwoShoudeChituteiruJiannoteitukuProcedure;
-import japanesesword.procedures.TyoutouYoukuritukusitatokiProcedure;
 
 import japanesesword.itemgroup.BukiItemGroup;
 

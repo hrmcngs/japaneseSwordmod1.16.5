@@ -24,10 +24,10 @@ public class WazakigaYasaretatokiProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (((entity instanceof ServerPlayerEntity) && (entity.world instanceof ServerWorld))
-				? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:zyoudan"))).isDone()
+				? ((ServerPlayerEntity) entity).getAdvancements().getProgress(((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:deleted_mod_element"))).isDone()
 				: false) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(KurutaimunasiPotionEffect.potion, (int) 300, (int) 1, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(KurutaimunasiPotionEffect.potion, (int) 300, (int) 1, true, false));
 		}
 	}
 }

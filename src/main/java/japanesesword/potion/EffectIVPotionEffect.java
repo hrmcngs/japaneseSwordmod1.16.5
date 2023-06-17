@@ -18,7 +18,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.EffectIVehuekutogaYouXiaoShinoteitukuProcedure;
 import japanesesword.procedures.EffectIVposiyonXiaoGuogaQieretaShiProcedure;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)

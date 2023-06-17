@@ -42,7 +42,7 @@ public class SliceposiyonnoXiaoGuogaKaiShiShiYongsaretatokiProcedure {
 					}.compareDistOf((entity.getPosX()), (entity.getPosY()), (entity.getPosZ()))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof LivingEntity)
-					((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(ChopUpPotionEffect.potion, (int) 120, (int) 1, (true), (false)));
+					((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(ChopUpPotionEffect.potion, (int) 120, (int) 1, true, false));
 			}
 		}
 	}

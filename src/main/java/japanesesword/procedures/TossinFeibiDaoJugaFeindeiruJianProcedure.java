@@ -32,7 +32,7 @@ public class TossinFeibiDaoJugaFeindeiruJianProcedure {
 		double xPos = 0;
 		double slot = 0;
 		double dis = 0;
-		immediatesourceentity.getPersistentData().putBoolean("battozyutu", (true));
+		immediatesourceentity.getPersistentData().putBoolean("battozyutu", true);
 		immediatesourceentity.setMotion(
 				(entity.world
 						.rayTraceBlocks(new RayTraceContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getLook(1f).x * 20, entity.getLook(1f).y * 20, entity.getLook(1f).z * 20), RayTraceContext.BlockMode.OUTLINE,

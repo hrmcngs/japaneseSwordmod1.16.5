@@ -20,9 +20,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.NoKamaroiYoukuritukusitatokiProcedure;
 import japanesesword.procedures.NoKamaroienteiteigaaitemuwoZhentutaShiProcedure;
-import japanesesword.procedures.NoKamaroituruwoShoudeChituteiruJiannoteitukuProcedure;
+
 import japanesesword.itemgroup.BukiItemGroup;
 
 import japanesesword.JapaneseswordModElements;

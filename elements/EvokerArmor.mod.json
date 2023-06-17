@@ -1,8 +1,8 @@
 {
-  "_fv": 39,
+  "_fv": 43,
   "_type": "armor",
   "definition": {
-    "enableHelmet": true,
+    "enableHelmet": false,
     "textureHelmet": "evoker_helmet",
     "enableBody": true,
     "textureBody": "evoker_chestplet",
@@ -11,7 +11,7 @@
     "enableBoots": true,
     "textureBoots": "evoker_boots",
     "creativeTab": {
-      "value": "CUSTOM:Event"
+      "value": "CUSTOM:VillagerItems"
     },
     "armorTextureFile": "evoker_",
     "helmetName": "Evoker Helmet",
@@ -25,11 +25,11 @@
     "helmetModelName": "Default",
     "helmetModelPart": "Helmet",
     "helmetModelTexture": "From armor",
-    "bodyModelName": "Default",
-    "bodyModelPart": "Body",
-    "armsModelPartL": "Arms L",
-    "armsModelPartR": "Arms R",
-    "bodyModelTexture": "From armor",
+    "bodyModelName": "Modelillusioner_armor_layer_3_Converted",
+    "bodyModelPart": "body",
+    "armsModelPartL": "left_arm",
+    "armsModelPartR": "right_arm",
+    "bodyModelTexture": "evoker_layer_3.png",
     "leggingsModelName": "Default",
     "leggingsModelPartL": "Leggings L",
     "leggingsModelPartR": "Leggings R",

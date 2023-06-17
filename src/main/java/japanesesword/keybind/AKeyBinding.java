@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.AbstractMap;
 
 import japanesesword.JapaneseswordModElements;
-import japanesesword.procedures.AkigaYasaretatokiProcedure;
+
 import japanesesword.JapaneseswordMod;
 
 @JapaneseswordModElements.ModElement.Tag

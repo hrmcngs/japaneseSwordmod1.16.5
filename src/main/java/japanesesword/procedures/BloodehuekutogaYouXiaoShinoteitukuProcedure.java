@@ -91,7 +91,7 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 						return 0;
 					}
-				}.check(entity)), (true), (false)));
+				}.check(entity)), true, false));
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.MINING_FATIGUE, (int) (new Object() {
 					int check(Entity _entity) {
@@ -115,7 +115,7 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 						return 0;
 					}
-				}.check(entity)), (true), (false)));
+				}.check(entity)), true, false));
 			if (entity instanceof LivingEntity)
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WEAKNESS, (int) (new Object() {
 					int check(Entity _entity) {
@@ -139,7 +139,7 @@ public class BloodehuekutogaYouXiaoShinoteitukuProcedure {
 						}
 						return 0;
 					}
-				}.check(entity)), (true), (false)));
+				}.check(entity)), true, false));
 			if (entity instanceof LivingEntity) {
 				((LivingEntity) entity).attackEntityFrom(new DamageSource("died of bleeding").setDamageBypassesArmor(), (float) (new Object() {
 					int check(Entity _entity) {

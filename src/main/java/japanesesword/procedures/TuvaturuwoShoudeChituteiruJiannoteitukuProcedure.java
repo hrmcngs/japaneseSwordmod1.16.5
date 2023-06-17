@@ -24,10 +24,10 @@ public class TuvaturuwoShoudeChituteiruJiannoteitukuProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((EnchantmentHelper.getEnchantmentLevel(HasiruEnchantment.enchantment, ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 60, (int) 4, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SPEED, (int) 60, (int) 4, true, false));
 		} else {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 60, (int) 1, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 60, (int) 1, true, false));
 		}
 	}
 }

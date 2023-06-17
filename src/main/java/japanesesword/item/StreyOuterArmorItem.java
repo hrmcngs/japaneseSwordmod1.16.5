@@ -22,8 +22,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.StreyOuterArmorProgramProcedure;
-
 import japanesesword.itemgroup.EventItemGroup;
 
 import japanesesword.JapaneseswordModElements;

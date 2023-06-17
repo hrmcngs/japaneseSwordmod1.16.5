@@ -8,7 +8,6 @@ import net.minecraft.entity.Entity;
 import java.util.Map;
 
 import japanesesword.JapaneseswordMod;
-import japanesesword.item.KamanoyoteiItem;
 
 public class NoKamaroienteiteigaaitemuwoZhentutaShiProcedure {
 

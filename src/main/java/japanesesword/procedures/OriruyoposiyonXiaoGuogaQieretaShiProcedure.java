@@ -34,7 +34,7 @@ public class OriruyoposiyonXiaoGuogaQieretaShiProcedure {
 		if (entity.isOnGround()) {
 			entity.fallDistance = (float) (0);
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, (int) 2, (int) 1, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, (int) 2, (int) 1, true, false));
 			new Object() {
 				private int ticks = 0;
 				private float waitTicks;
@@ -65,7 +65,7 @@ public class OriruyoposiyonXiaoGuogaQieretaShiProcedure {
 		} else {
 			entity.fallDistance = (float) (0);
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, (int) 2, (int) 1, (true), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOW_FALLING, (int) 2, (int) 1, true, false));
 			new Object() {
 				private int ticks = 0;
 				private float waitTicks;
@@ -88,7 +88,7 @@ public class OriruyoposiyonXiaoGuogaQieretaShiProcedure {
 
 				private void run() {
 					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(OriruyoPotionEffect.potion, (int) 5, (int) 1, (true), (false)));
+						((LivingEntity) entity).addPotionEffect(new EffectInstance(OriruyoPotionEffect.potion, (int) 5, (int) 1, true, false));
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
 			}.start(world, (int) 5);

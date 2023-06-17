@@ -39,7 +39,7 @@ public class KusaributunoMeiteitukunoibentoProcedure {
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 255, (true), (false)));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 2, (int) 255, true, false));
 		entity.setMotion(0, (-5), 0);
 		{
 			Entity _ent = entity;

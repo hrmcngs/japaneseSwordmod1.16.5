@@ -17,8 +17,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.AbstractMap;
 
-import japanesesword.procedures.BarrierehuekutogaYouXiaoShinoteitukuProcedure;
-
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class HanekaesuPotionEffect {
 	@ObjectHolder("japanesesword:hanekaesu")

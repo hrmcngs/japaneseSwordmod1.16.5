@@ -20,6 +20,6 @@ public class EffectIIIposiyonXiaoGuogaQieretaShiProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(EffectVPotionEffect.potion, (int) 21, (int) 1, (false), (false)));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(EffectVPotionEffect.potion, (int) 21, (int) 1, false, false));
 	}
 }

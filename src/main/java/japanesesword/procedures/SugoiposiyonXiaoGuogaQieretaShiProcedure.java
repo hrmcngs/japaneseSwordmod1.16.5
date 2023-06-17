@@ -22,8 +22,8 @@ public class SugoiposiyonXiaoGuogaQieretaShiProcedure {
 		if (entity.getPersistentData().getBoolean("tobasunnya") == true) {
 			entity.fallDistance = (float) (0);
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(OriruyoPotionEffect.potion, (int) 80, (int) 1, (true), (false)));
-			entity.getPersistentData().putBoolean("tobasunnya", (false));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(OriruyoPotionEffect.potion, (int) 80, (int) 1, true, false));
+			entity.getPersistentData().putBoolean("tobasunnya", false);
 		}
 	}
 }

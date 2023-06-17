@@ -65,7 +65,7 @@ public class FProcedure {
 		}
 		if ((entity.getCapability(JapaneseswordModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new JapaneseswordModVariables.PlayerVariables())).b == 10) {
 			if (entity instanceof ServerPlayerEntity) {
-				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:syodan"));
+				Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager().getAdvancement(new ResourceLocation("japanesesword:deleted_mod_element"));
 				AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 				if (!_ap.isDone()) {
 					Iterator _iterator = _ap.getRemaningCriteria().iterator();

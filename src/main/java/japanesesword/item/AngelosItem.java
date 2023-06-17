@@ -24,8 +24,6 @@ import net.minecraft.client.renderer.entity.model.BipedModel;
 
 import java.util.Collections;
 
-import japanesesword.procedures.AngelosherumetutonoMeiteitukunoibentoProcedure;
-
 import japanesesword.JapaneseswordModElements;
 
 import com.mojang.blaze3d.vertex.IVertexBuilder;
